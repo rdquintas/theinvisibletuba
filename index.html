@@ -8,9 +8,9 @@
   </head>
 
   <script>
+    // this is just a dummy password logic
     var pwd = prompt("Password:", "");
-    debugger;
-    if (pwd.toLowerCase() !== "tuba") {
+    if (!pwd || pwd.toLowerCase() !== "tuba") {
         alert("Access Denied");
         window.stop();
     }
