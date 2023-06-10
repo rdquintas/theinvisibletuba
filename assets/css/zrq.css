@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.zrq-hide-me{
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #sv__logo {
+    padding-right: 0;
+    color: #fff;
+    left: 25px;
+    width: 400px;
+  }
+  #sv__logo h1 {
+    font-size: 1.5em;
+    margin-top: 28px;
+  }
+}
