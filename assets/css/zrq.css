@@ -1,8 +1,82 @@
 @charset "UTF-8";
 
-.zrq-hide-me{
+.zrq-hide-me {
   display: none;
 }
+
+.zrq-hero-slider i {
+  padding: 0px;
+}
+
+.zrq-video-center {
+  text-align: center;
+}
+
+.zrq-header .zrq-logo {
+  top: -3px;
+}
+
+.zrq-hero-slider .zrq-icon-tuba-transp i:before {
+  content: '';
+  background-image: url('../img/icons/zrq-tuba-transparent.svg');
+  font-family: initial;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(290deg) brightness(108%) contrast(108%);
+  background-size: 33px 33px;
+  height: 33px;
+  width: 33px;
+  position: relative;
+  padding: 0px;
+  top: 3px;
+  left: -1px;
+}
+
+.zrq-hero-slider .zrq-icon-trumpet-transp i:before {
+  content: '';
+  background-image: url('../img/icons/zrq-trumpet-transparent.svg');
+  font-family: initial;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(290deg) brightness(108%) contrast(108%);
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 3px;
+  left: -1px;
+}
+
+/* .zrq-icon-trumpet-transp i:before {
+  content: '';
+  font-family: initial;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(290deg) brightness(108%) contrast(108%);
+  background-size: 40px 40px;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 3px;
+  left: -1px;
+  padding: 0px;
+} */
+
+
+/* .zrq-img-2560 { */
+/* display: none; */
+/* content:url("http://placehold.co/2561x1440"); */
+/* } */
+
+
+
+/* 
+@media only screen and (max-width: 1200px){ 
+  .zrq-img-1400, .zrq-img-2560 {
+    display: none;
+  }
+
+  .zrq-img-1200{
+    display: block;
+  }
+} */
+
+
+
 
 @media only screen and (min-width: 768px) {
   #sv__logo {
@@ -11,6 +85,7 @@
     left: 25px;
     width: 400px;
   }
+
   #sv__logo h1 {
     font-size: 1.5em;
     margin-top: 28px;
