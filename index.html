@@ -30,7 +30,8 @@
     <meta name="keywords" content="fullscreen image, grid layout, isotope grid, transition, css3" />
     <meta name="author" content="Ricardo Quintas" />
     <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" /> 
     <!-- Style block allowing child pages to inject their own styles -->
     <link href="assets/css/revolution5.min.css" rel="stylesheet" type="text/css" media="all" />
     <!-- Styles -->
@@ -69,7 +70,7 @@
     
 </head>
 
-<body class="loading">
+<body class="loading zrq-page-index">
         <!--
         #################################
             - Header Section -
@@ -670,20 +671,20 @@
                         <!-- Box -->
                         <div class="box box-lg box-1 card-shadow-dk">
 
-                            <div class="content">
-                                <!-- <h3>First time visit?</h3> -->
-                                <!-- <p>Click here to learn about us and never say that again.</p> -->
-                                <!-- <i class="fa fa-long-arrow-right fa-lg animate-off"></i> -->
-                                <!-- <i class="fa fa-long-arrow-right fa-lg animate-on"></i> -->
+                            <div class="content zrq-transparent"> 
+                                <h3>First time visit?</h3>
+                                <p>Click here to learn about us and never say that again.</p>
+                                <i class="fa fa-long-arrow-right fa-lg animate-off"></i>
+                                <i class="fa fa-long-arrow-right fa-lg animate-on"></i>
                             </div>
-                            <!-- <div class="box-overlay"></div> -->
-                            <img src="http://placehold.co/642x480" alt="First Visit">
-                            <!-- <a href="about.html" class="box-link"></a> -->
+                            <div class="box-overlay"></div>
+                            <img src="/assets/img/642_480_v00.png" alt="First Visit">
+                            <a href="about.html" class="box-link"></a>
                         </div>
                         <!-- End Box -->
                         <!-- Box -->
                         <div class="box box-sm-hours box-4 card-shadow-dk">
-                            <div class="content">
+                            <div class="content zrq-">
                                 <i class="fa fa-clock-o fa-lg clock"></i>
                                 <p>our weekly shop hours</p>
                                 <i class="fa fa-long-arrow-right fa-lg animate-off"></i>
@@ -721,8 +722,7 @@
         </div>
         <!-- end section -->
         <!-- Why Choose Us -->
-        <div id="whyus-skr" class="section container-fluid no-padding sv-approach-container">
-            <!--<div class="sv-approach" style="background-image: url(assets/images/why-us/shave-choose-us.jpg);"></div>-->
+        <!-- <div id="whyus-skr" class="section container-fluid no-padding sv-approach-container">
             <div class="parallax__background" data-center="background-position: 50% 0px;" data-bottom-top="background-position: 50% 300px;" data-top-bottom="background-position: 50% -250px;" style="background-image: url(http://placehold.co/2560x1292);"></div>
             <div class="inner-lg">
                 <div class="sv__container--md">
@@ -764,13 +764,9 @@
                             <a href="#" class="btn book-now-btn">Learn more</a>
                         </div>
                     </div>
-                    <!-- end wrapper -->
                 </div>
-                <!-- end container md -->
             </div>
-            <!-- end inner-lg -->
-        </div>
-        <!-- end section -->
+        </div> -->
         <!-- Buy Theme -->
         <div class="section container-fluid no-padding gold-bg">
             <div class="inner-md">
@@ -782,17 +778,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- end row -->
             </div>
-            <!-- end inner-md -->
         </div>
-        <!-- end section -->
         <!-- 3 Col Module: Design -->
         <div class="section container-fluid white-bg no-padding">
             <div class="inner-lg">
-                <!-- Sell Box -->
                 <div class="sv__container--md col3__module">
-                    <!-- Intro -->
                     <div class="col-sm-12 no-padding">
                         <div class="intro">
                             <h6>Stand Out</h6>
@@ -800,16 +791,12 @@
                             <h5>A niche theme specifically created for any barbershop needs</h5>
                         </div>
                     </div>
-                    <!-- End Intro -->
-                    <!-- Sell box featured image -->
                     <div class="col-sm-12 no-padding zrq-video-center">
                         <iframe width="900" height="500" src="https://www.youtube.com/embed/DQpcnV_KFWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <!-- <img class="img-responsive" src="http://placehold.co/900x500" alt="featured barber products"> -->
                     </div>
-                    <!-- Icon grid container -->
                     <div class="col3__container">
                         <div class="row wrapper">
-                            <!-- Item 1 -->
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
@@ -821,7 +808,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Item 2 -->
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
@@ -833,7 +819,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Item 3 -->
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
@@ -846,18 +831,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end row -->
                     </div>
-                    <!-- end icon container-->
                 </div>
-                <!-- end sell-box -->
             </div>
-            <!-- end inner-lg -->
         </div>
-        <!-- end section -->
         <!-- featured blog posts -->
-        <div class="section container-fluid no-padding blog-container blog-featured">
-            <!-- Black bar -->
+        <!-- <div class="section container-fluid no-padding blog-container blog-featured">
             <div class="container-fluid no-padding black-bg">
                 <div class="inner-lg">
                     <div class="row no-margin">
@@ -870,9 +849,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end black bar -->
             <div class="row no-margin">
-                <!-- item -->
                 <article class="col-xs-12 col-sm-6 no-padding post-thumb">
                     <div class="post-thumb-img" style="background-image: url('http://placehold.co/1300x813')"></div>
                     <a class="post-thumb-link" href="blog-details.html"></a>
@@ -886,7 +863,6 @@
                         <h2 class="post-thumb-title"><a href="blog-details.html">Wet vs. Dry Cuts</a></h2>
                     </div>
                 </article>
-                <!-- item -->
                 <article class="col-xs-12 col-sm-6 no-padding post-thumb">
                     <div class="post-thumb-img" style="background-image: url('http://placehold.co/1300x813')"></div>
                     <a class="post-thumb-link" href="blog-details.html"></a>
@@ -901,25 +877,18 @@
                     </div>
                 </article>
             </div>
-            <!-- end row -->
-        </div>
-        <!-- End blog -->
+        </div> -->
         <!-- Contact Section -->
         <div id="shop-hours" class="section container-fluid white-bg no-padding">
             <div class="inner-lg">
                 <div class="sv__container--md">
                     <div class="contact__wrapper">
                         <div class="section__wrapper">
-                            <!-- Contact Overview -->
                             <div class="contact__card">
-                                <!-- Contact Image Left -->
                                 <div class="contact__card--left">
                                     <img class="img-responsive" src="http://placehold.co/783x592" alt="The Shave Barbershop HTML Theme">
                                 </div>
-                                <!-- end content left -->
-                                <!-- Contact Content Right -->
                                 <div class="contact__card--right">
-                                    <!-- Barbershop Location & Phone -->
                                     <div class="contact__shop">
                                         <div class="contact__card--content">
                                             <h3>Location</h3>
@@ -928,7 +897,6 @@
                                             <a class="phone" href="tel:123.456.7890">123.456.7890</a>
                                         </div>
                                     </div>
-                                    <!-- Barbershop Email -->
                                     <div class="contact__us">
                                         <div class="contact__us--content card-shadow-lt icon-up-down">
                                             <div class="inner__content">
@@ -937,7 +905,6 @@
                                             <a href="#">Email Us</a>
                                         </div>
                                     </div>
-                                    <!-- Barbershop Hours -->
                                     <div class="contact__hours">
                                         <div class="contact__card--content">
                                             <h3>Weekly Hours</h3>
@@ -948,21 +915,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- end content right -->
                             </div>
-                            <!-- end contact card -->
                         </div>
-                        <!-- end section wrapper -->
                     </div>
-                    <!-- end contact wrapper -->
                 </div>
-                <!-- end container -->
             </div>
-            <!-- end inner-lg -->
         </div>
-        <!-- end section -->
-        <!-- Buy Theme -->
-        <div id="sell-skr" class="section sv__container--fluid no-padding">
+        <!-- <div id="sell-skr" class="section sv__container--fluid no-padding">
             <div class="parallax__background" data-center="background-position: 50% 0px;" data-bottom-top="background-position: 50% 300px;" data-top-bottom="background-position: 50% -250px;" style="background-image: url(http://placehold.co/2560x1199);">
                 <div class="inner-lg">
                     <div class="inner-lg">
@@ -974,13 +933,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end inner-lg -->
                 </div>
-                <!-- end inner-lg -->
             </div>
-            <!-- end parallax bg -->
-        </div>
-        <!-- end section -->
+        </div> -->
         <!-- Testimonials -->
         <div class="section container-fluid no-padding white-bg">
             <div class="row no-margin">
@@ -1077,61 +1032,49 @@
                                    <!-- replace with white logo png version -->
                                     <img class="img-responsive logo-white" src="/assets/img/logo_t_white.png" alt="The Shave barbershop HTML theme" />
                                 </div>
-                                <h3>The Shave</h3>
-                                <h4>Barbershop</h4>
+                                <h3>The Invisible Tuba</h3>
+                                <h4>Band</h4>
                             </div>
                         </div>
                         <!-- Footer Description -->
                         <div class="footer__desc">
-                            <!-- email container -->
                             <div class="email__wrapper">
-                                <!-- email form -->
                                 <div class="email__form form-group">
                                     <form>
-                                        <!-- email input -->
                                         <input type="email" class="form-control email__form--input" id="footer-email" name="EMAIL" required placeholder="Your Email Address">
-                                        <!-- subtext to email -->
                                         <div class="email__offers">
-                                            <p>Stay updated on the latest + special offers and more.</p>
+                                            <p>Stay updated, get our Newsletter.</p>
                                         </div>
-                                        <!-- end sub-text -->
-                                        <button type="submit" class="btn book-now-btn form-btn">Submit</button>
+                                        <button type="submit" class="btn book-now-btn form-btn">Subscribe</button>
                                     </form>
                                 </div>
-                                <!-- end email form -->
                             </div>
-                            <!-- end email container -->
-                            <!-- address container -->
                             <div class="row footer__contact">
-                                <!-- address -->
                                 <div class="col-xs-12 col-sm-6 footer__address no-padding">
-                                    <p>2355 Two Bits St.</p>
-                                    <p>Grooming, CA 30003</p>
+                                    <p>We're from Lisbon</p>
+                                    <p>Portugal</p>
                                 </div>
-                                <!-- email -->
                                 <div class="col-xs-12 col-sm-6 contact no-padding">
-                                    <a class="email" href="mailto:hello@theshave.com">hello@theshave.com</a>
+                                    <a class="email" href="mailto:info@theinvisibletuba.com">info@theinvisibletuba.com</a>
                                     <a class="phone" href="tel:123.456.7890">123.456.7890</a>
                                 </div>
                             </div>
-                            <!-- end address container -->
-                            <!-- social media -->
                             <div class="row social-footer">
                                 <div class="col-xs-12 col-sm-6 col-md-8">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="https://www.facebook.com/theinvisibletuba/"><i class="fa fa-facebook"></i></a></li>
+                                        <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                                        <li><a href="https://www.instagram.com/theinvisibletuba/"><i class="fa fa-instagram"></i></a></li>
+                                        <!-- <li><a href="#"><i class="fa fa-pinterest"></i></a></li> -->
+                                        <li><a href="https://www.youtube.com/channel/UCtFTM_VFRRNGB0tRN1S81vg"><i class="fa fa-youtube-play"></i></a></li>
+                                        <!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
                                     </ul>
                                 </div>
                                 <!-- end col -->
                                 <!-- copyright -->
                                 <div class="col-xs-12 col-sm-6 col-md-4">
                                     <div class="copyright">
-                                        <p>&copy; 2015 The Shave, LTD</p>
+                                        <p>&copy; 2023 Ricardo Quintas</p>
                                     </div>
                                 </div>
                                 <!-- end col -->
