@@ -13,6 +13,7 @@ module.exports = function (grunt) {
           "index_pt.html": "app/index_pt.html",
           "pictures.html": "app/pictures.html",
           "theband.html": "app/theband.html",
+          "audio.html": "app/audio.html",
         },
       },
     },
