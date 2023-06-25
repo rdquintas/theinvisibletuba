@@ -28,15 +28,15 @@ index.html
 =================
 */
 .zrq-page-index .zrq-transparent {
- color: #fff;
- /* background: #ffffff4d; */
- background-color: rgba(0, 0, 0, 0.53);
+  color: #fff;
+  /* background: #ffffff4d; */
+  background-color: rgba(0, 0, 0, 0.53);
 }
 
 .zrq-page-index .zrq-transparent p {
   color: #fff;
- }
- 
+}
+
 .zrq-page-index .zrq-hero-slider .zrq-icon-tuba-transp i:before {
   content: '';
   background-image: url('../img/icons/zrq-tuba-transparent.svg');
@@ -62,6 +62,16 @@ index.html
   position: relative;
   top: 3px;
   left: -1px;
+}
+
+
+/* 
+=================
+_footer.html
+=================
+*/
+.zrq-footer .zrq-left-margin {
+  left: 51px;
 }
 
 /* .zrq-icon-trumpet-transp i:before {

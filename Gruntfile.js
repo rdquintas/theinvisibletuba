@@ -4,12 +4,13 @@ module.exports = function (grunt) {
     bake: {
       your_target: {
         options: {
-          // Task-specific options go here.
+          content: "app/data.json",
         },
 
         files: {
           "contact.html": "app/contact.html",
           "index.html": "app/index.html",
+          "index_pt.html": "app/index_pt.html",
           "pictures.html": "app/pictures.html",
           "theband.html": "app/theband.html",
         },

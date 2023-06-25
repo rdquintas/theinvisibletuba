@@ -6,7 +6,7 @@ This is the repo for the website:
 
 
 ## Some details
-- uses [grunt-bake](https://www.npmjs.com/package/grunt-bake) plugin, to concatenate all those boring html files
+- uses [grunt-bake](https://github.com/roboshoes/grunt-bake) plugin, to concatenate all those boring html files
 - uses [git-ftp](https://github.com/git-ftp/git-ftp) to deploy using FTP from the console 
 
 
