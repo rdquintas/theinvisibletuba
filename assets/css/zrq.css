@@ -19,6 +19,24 @@ GENERIC
 
 .zrq-header .zrq-logo {
   top: -3px;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.zrq-header .zrq-logo img {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.zrq-footer .zrq-logo {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+
+.zrq-footer .zrq-logo img {
+  width: 300px !important;
+  height: 300px !important;
 }
 
 /* 
@@ -131,5 +149,11 @@ _footer.html
   #sv__logo h1 {
     font-size: 1.5em;
     margin-top: 28px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #sv__logo h1 {
+    display: none;
   }
 }
