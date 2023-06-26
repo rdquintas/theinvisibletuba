@@ -803,6 +803,11 @@
             // ==========================================================================
             var tpj = jQuery;
             var sliderId = "#rev_slider_46_1";
+
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                sliderId = "#rev_slider_46_1_mobile";
+            } 
+
             var revapi46;
             tpj(document).ready(function() {
                 if (tpj(sliderId).revolution == undefined) {
@@ -908,7 +913,7 @@
             }); /*ready*/
 
             $(window).bind('resizeEnd', function() {
-                $("#rev_slider_46_1").revredraw();
+                $(sliderId).revredraw();
             });
             $(window).on('resize', function() {
                 if (this.resizeTO) clearTimeout(this.resizeTO);
