@@ -9,13 +9,15 @@ GENERIC
   display: none;
 }
 
-.zrq-hero-slider i {
-  padding: 0px;
-}
-
 .zrq-video-center {
   text-align: center;
 }
+
+/* 
+=================
+_header.html
+=================
+*/
 
 .zrq-header .zrq-logo {
   top: -3px;
@@ -28,6 +30,12 @@ GENERIC
   height: 50px !important;
 }
 
+
+/* 
+=================
+_footer.html
+=================
+*/
 .zrq-footer .zrq-logo {
   width: 300px !important;
   height: 300px !important;
@@ -44,6 +52,31 @@ GENERIC
 index.html
 =================
 */
+.zrq-page-index .zrq-hero-slider i {
+  padding: 0px;
+}
+
+.zrq-page-index .zrq-hero-slider .sv-feature-headline {
+  /* font-size: 2rem !important; */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.zrq-page-index .zrq-hero-slider .sv-feature-subtitle {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* zrq-hero-slider for mobile */
+.zrq-page-index .zrq-hero-slider.zrq-hero-slider-mobile .sv-feature-subtitle {
+  font-size: 1.2rem !important;
+}
+
+/* zrq-hero-slider for mobile */
+.zrq-page-index .zrq-hero-slider.zrq-hero-slider-mobile .sv-feature-headline {
+  font-size: 2rem !important;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 .zrq-page-index .zrq-transparent {
   color: #fff;
   /* background: #ffffff4d; */
