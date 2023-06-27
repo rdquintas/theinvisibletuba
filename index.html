@@ -36,7 +36,7 @@
     <link href="assets/css/revolution5.min.css" rel="stylesheet" type="text/css" media="all" />
     <!-- Styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />     -->
     <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/zrq.css" rel="stylesheet" type="text/css" media="all" />
     <!--[if IE 9]>
@@ -44,7 +44,7 @@
         <![endif]-->
     <script>
         // this is just a dummy password logic  ;o)
-        if (document.location.host !== "127.0.0.1:5500") {          
+        if (document.location.host !== "127.0.0.1:5500") {           
             var pwd = prompt("Password:", "");        
             if (!pwd || pwd.toLowerCase() !== "tuba") {
                 alert("Access Denied");
@@ -67,6 +67,7 @@
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.slideanims.min.js"></script>
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.video.min.js"></script>
+    <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>
     
 </head>
 
@@ -603,19 +604,14 @@
                 <!-- end image wrapper -->
                 <!-- Begin Tab Section -->
                 <div class="svfm2__tabs">
-                    <!-- Tab header -->
                     <div class="svfm2__header">
                         <div class="headline-container">
                             <h2>Find your style</h2>
                             <h3>Beard &amp; Mustache</h3>
                         </div>
                     </div>
-                    <!-- end tab header -->
-                    <!-- Tab Wrapper -->
                     <div class="tabs__content" role="tabpanel" data-tab-id="svfm2-content-toggle">
-                        <!-- Tab List -->
                         <ul id="svfm2Tab" class="nav nav-tabs nav-justified white-tabs" role="tablist">
-                            <!-- Tab Item -->
                             <li id="beard-mustache" role="presentation" class="tab__control active" data-title="Beard & Mustache">
                                 <a href="#beard" id="beard-tab" role="tab" data-toggle="tab" aria-controls="beard" aria-expanded="false">
                                     <div class="tab-wrapper-icons">
@@ -625,34 +621,28 @@
                                         <span class="text">Beard &amp; Mustache</span>
                                     </div>
                                 </a>
-                            </li>
-                            <!-- End Tab Item -->
-                            <!-- Tab Item -->
+                            </li>                  
                             <li id="shave" role="presentation" class="tab__control" data-title="Shave">
                                 <a href="#shaving" role="tab" id="shaving-tab" data-toggle="tab" aria-controls="shaving" aria-expanded="false">
                                     <div class="tab-wrapper-icons">
                                         <span class="tab-icon">
-                                    <i class="icon-sv-razor"></i>
+                                    <i class="fa fa-music"></i>
                                 </span>
                                         <span class="text">Shaving</span>
                                     </div>
                                 </a>
                             </li>
-                            <!-- End Tab Item -->
-                            <!-- Tab Item -->
                             <li id="haircuts" role="presentation" class="tab__control" data-title="Hair Cuts">
                                 <a href="#hair-cuts" role="tab" id="haircuts-tab" data-toggle="tab" aria-controls="hair-cuts" aria-expanded="false">
                                     <div class="tab-wrapper-icons">
                                         <span class="tab-icon">
-                                    <i class="icon-sv-scissors"></i>
-                                </span>
+                                            <i class="fa-regular fa-hand-point-down"></i>
+                                       </span>
                                         <span class="text">Hair Cuts</span>
                                     </div>
                                 </a>
                             </li>
-                            <!-- End Tab Item -->
                         </ul>
-                        <!-- End Tab list -->
                         <!-- tab content -->
                         <div id="myTabContent" class="tab-content">
                             <!-- start breard and mustache -->
@@ -866,7 +856,7 @@
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
-                                        <i class="icon-sv-gears fa-3x"></i>
+                                        <i class="fa-solid fa-star-half-stroke fa-3x"></i>
                                     </div>
                                     <div class="col3__item--content">
                                         <h5>Great Features</h5>
@@ -877,7 +867,7 @@
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
-                                        <i class="icon-sv-design fa-3x"></i>
+                                        <i class="fa-solid fa-meteor fa-3x"></i>
                                     </div>
                                     <div class="col3__item--content">
                                         <h5>Unique Page design</h5>
@@ -888,7 +878,7 @@
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
-                                        <i class="icon-sv-options fa-3x"></i>
+                                        <i class="fa-solid fa-martini-glass fa-3x"></i>
                                     </div>
                                     <div class="col3__item--content">
                                         <h5>tons of options</h5>
@@ -1114,11 +1104,11 @@
                             <div class="row social-footer">
                                 <div class="col-xs-12 col-sm-6 col-md-8">
                                     <ul>
-                                        <li><a href="https://www.facebook.com/theinvisibletuba/"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://www.facebook.com/theinvisibletuba/"><i class="fa fa-facebook fa-2x"></i></a></li>
                                         <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
-                                        <li><a href="https://www.instagram.com/theinvisibletuba/"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="https://www.instagram.com/theinvisibletuba/"><i class="fa fa-instagram fa-2x"></i></a></li>
                                         <!-- <li><a href="#"><i class="fa fa-pinterest"></i></a></li> -->
-                                        <li><a href="https://www.youtube.com/channel/UCtFTM_VFRRNGB0tRN1S81vg"><i class="fa fa-youtube-play"></i></a></li>
+                                        <li><a href="https://www.youtube.com/channel/UCtFTM_VFRRNGB0tRN1S81vg"><i class="fa fa-youtube-play fa-2x"></i></a></li>
                                         <!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
                                     </ul>
                                 </div>
