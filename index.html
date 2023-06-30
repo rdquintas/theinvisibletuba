@@ -37,6 +37,7 @@
     <!-- Styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
     <!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />     -->
+    <link rel="stylesheet" href="assets/css/grt-youtube-popup.css">
     <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/zrq.css" rel="stylesheet" type="text/css" media="all" />
     <!--[if IE 9]>
@@ -846,17 +847,18 @@
                             <h5>A niche theme specifically created for any barbershop needs</h5>
                         </div>
                     </div>
-                    <div class="col-sm-12 no-padding zrq-video-center">
-                        <iframe width="100%" height="500" src="https://www.youtube.com/embed/hKEJP85aBqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <!-- <iframe width="900" height="500" src="https://www.youtube.com/embed/DQpcnV_KFWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-                        <!-- <img class="img-responsive" src="http://placehold.co/900x500" alt="featured barber products"> -->
+                    <div class="col-sm-12 no-padding youtube-link zrq-margin-bottom" youtubeid="hKEJP85aBqg">
+                         <a href="#">                  
+                            <!-- <iframe width="100%" height="500" src="https://www.youtube.com/embed/hKEJP85aBqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                            <img class="img-responsive" src="/assets/img/900_500_v00.png" alt="featured barber products">
+                        </a>
                     </div>
                     <div class="col3__container">
                         <div class="row wrapper">
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
-                                        <i class="fa-solid fa-star-half-stroke fa-3x"></i>
+                                        <i class="fa-solid fa-star-half-stroke fa-2x"></i>
                                     </div>
                                     <div class="col3__item--content">
                                         <h5>Great Features</h5>
@@ -867,7 +869,7 @@
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
-                                        <i class="fa-solid fa-meteor fa-3x"></i>
+                                        <i class="fa-solid fa-meteor fa-2x"></i>
                                     </div>
                                     <div class="col3__item--content">
                                         <h5>Unique Page design</h5>
@@ -878,7 +880,7 @@
                             <div class="col-sm-4">
                                 <div class="col3__item">
                                     <div class="icon__wrapper">
-                                        <i class="fa-solid fa-martini-glass fa-3x"></i>
+                                        <i class="fa-solid fa-martini-glass fa-2x"></i>
                                     </div>
                                     <div class="col3__item--content">
                                         <h5>tons of options</h5>
@@ -1245,6 +1247,7 @@
         <script src="assets/scripts/window-settings.min.js"></script>
         <script src="assets/scripts/nav-settings.min.js"></script>
         <script src="assets/scripts/main-settings.min.js"></script>
+        <script src="assets/scripts/grt-youtube-popup.js"></script>
         <script src="assets/scripts/zrq.js"></script>
         <script>
         (function($) {

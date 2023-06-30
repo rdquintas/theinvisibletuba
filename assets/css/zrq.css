@@ -9,9 +9,6 @@ GENERIC
   display: none;
 }
 
-.zrq-video-center {
-  text-align: center;
-}
 
 /* 
 =================
@@ -114,6 +111,10 @@ index.html
   position: relative;
   top: 3px;
   left: -1px;
+}
+
+.zrq-page-index .zrq-margin-bottom {
+  margin-bottom: 2rem;
 }
 
 /* 

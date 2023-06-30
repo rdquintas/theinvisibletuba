@@ -10,3 +10,5 @@ document.addEventListener(
   },
   true
 );
+
+$(".youtube-link").grtyoutube();
