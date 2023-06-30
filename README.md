@@ -8,6 +8,8 @@ This is the repo for the website:
 ## Some details
 - uses [grunt-bake](https://github.com/roboshoes/grunt-bake) plugin, to concatenate all those boring html files
 - uses [git-ftp](https://github.com/git-ftp/git-ftp) to deploy using FTP from the console 
+- uses [grt-youtube-popup](https://grt107.github.io/grt-youtube-popup/) GRT Youtube Popup - jQuery Plugin 
+
 
 
 ## How to build ?
