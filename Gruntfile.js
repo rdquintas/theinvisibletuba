@@ -12,7 +12,7 @@ module.exports = function (grunt) {
           "index.html": "app/index.html",
           "index_pt.html": "app/index_pt.html",
           "pictures.html": "app/pictures.html",
-          "theband.html": "app/theband.html",
+          "epk.html": "app/epk.html",
           "audio.html": "app/audio.html",
         },
       },
