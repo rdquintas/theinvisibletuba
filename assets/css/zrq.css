@@ -20,14 +20,15 @@ _header.html
 }
 
 .zrq-header .zrq-logo {
-  top: -3px;
-  width: 50px !important;
-  height: 50px !important;
+  top: -20px;
+  position: fixed !important;
+  width: 120px !important;
+  height: 120px !important;
 }
 
 .zrq-header .zrq-logo img {
-  width: 50px !important;
-  height: 50px !important;
+  width: 120px !important;
+  height: 120px !important;
 }
 
 
@@ -37,14 +38,14 @@ _footer.html
 =================
 */
 .zrq-footer .zrq-logo {
-  width: 300px !important;
-  height: 300px !important;
+  width: 200px !important;
+  height: 200px !important;
 }
 
 
 .zrq-footer .zrq-logo img {
-  width: 300px !important;
-  height: 300px !important;
+  width: 200px !important;
+  height: 200px !important;
 }
 
 /* 
@@ -185,7 +186,7 @@ _footer.html
 
 
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   #sv__logo {
     padding-right: 0;
     color: #fff;
@@ -197,10 +198,16 @@ _footer.html
     font-size: 1.5em;
     margin-top: 28px;
   }
-}
+} */
 
 @media only screen and (max-width: 768px) {
-  #sv__logo h1 {
-    display: none;
+  .zrq-header {
+    overflow: visible !important;
+  }
+
+  .zrq-header .zrq-logo {
+    top: -10px;
+    overflow: visible !important;
+    position: relative !important;
   }
 }
