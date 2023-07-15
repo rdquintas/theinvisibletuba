@@ -11,4 +11,12 @@ document.addEventListener(
   true
 );
 
-$(".youtube-link").grtyoutube();
+$(document).ready(function () {
+  $(".zrq-focus-input").click(function (oEvent) {
+    setTimeout(function () {
+      $("#footer-email")[0].focus();
+    }, 200);
+  });
+
+  $(".youtube-link").grtyoutube();
+});

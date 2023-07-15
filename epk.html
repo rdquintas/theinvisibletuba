@@ -112,8 +112,8 @@
                         </li> -->
                         <!-- Book now btn for mobile -->
                         <li class="mobile-modal book-now-m">
-                            <a data-toggle="modal" data-target="#bookNowModal">Book Today</a>
-                        </li>
+                            <a data-toggle="modal" data-target="#bookNowModal">Contact Us</a>
+                        </li>        
                         <!-- ZRQ <li class="has-children">
                             <a href="service-shave.html">Our Services</a>
                             <ul class="cd-dropdown-icons is-hidden">
@@ -374,8 +374,9 @@
                         <!-- <li class="single-item"><a href="theband.html">The Band</a></li> --> 
                         <li class="single-item"><a href="pictures.html">Photos/Videos</a></li>
                         <li class="single-item"><a href="audio.html">Audio</a></li>
-                        <li class="single-item"><a href="epk.html">Press Kit | EPK</a></li>
+                        <!-- <li class="single-item"><a href="epk.html">Press Kit | EPK</a></li> --> 
                         <li class="single-item"><a href="contact.html">Contacts</a></li>
+                        <!-- <li class="single-item"><a href="index_pt.html">Portugues</a></li> -->
                     </ul>
                 </nav>
                 <!-- end nav -->
@@ -385,7 +386,7 @@
             <div class="nav__book hidden-xs">
                 <!-- ZRQ <div id="phone" class="quick-link white"><a href="#"><i class="fa fa-phone"></i></a></div> -->
                 <!-- ZRQ <div id="hours" class="quick-link white"><a href="#"><i class="fa fa-clock-o"></i></a></div> -->            
-                <a href="index_pt.html" class="book__nav white">PT</a>
+                <!-- <a href="index_pt.html" class="book__nav white">PT</a> -->
                 <a href="#" class="book__nav" data-toggle="modal" data-target="#bookNowModal">Contact us</a>
             </div>
         </header>
@@ -669,6 +670,7 @@
             - Footer -
         #################################
         -->
+        <div id="zrq-footer"></div>
         <footer class="loading zrq-footer">
             <div class="sv__container--md">
                 <!-- Footer Wrapper -->
@@ -677,10 +679,13 @@
                         <!-- Footer Logo -->
                         <div class="footer__logo no-padding">
                             <div class="logo__container">
-                                <div class="footer__logo--img zrq-logo">
-                                   <!-- replace with white logo png version -->
-                                    <img class="img-responsive logo-white" src="/assets/img/logo_transp_v00.png" alt="The Shave barbershop HTML theme" />
-                                </div>
+
+                                <a  href="index.html">
+                                    <div class="footer__logo--img zrq-logo">
+                                    <!-- replace with white logo png version -->
+                                        <img class="img-responsive logo-white" src="/assets/img/logo_transp_v00.png" alt="The Shave barbershop HTML theme" />
+                                    </div>
+                                </a>
                                 <!-- <h3>The Invisible Tuba</h3>
                                 <h4>Band</h4> -->
                             </div>
@@ -719,45 +724,37 @@
                                         <!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
                                     </ul>
                                 </div>
-                                <!-- end col -->
-                                <!-- copyright -->
                                 <div class="col-xs-12 col-sm-6 col-md-4">
                                     <div class="copyright">
-                                        <p>&copy; The Invisible Tuba</p>
+                                        <p>&copy; The Invisible Tuba
+                                            <script>document.write( new Date().getFullYear() );</script>
+                                        </p>
                                     </div>
                                 </div>
-                                <!-- end col -->
                             </div>
-                            <!-- end social media -->
                         </div>
-                        <!-- end right side -->
                     </div>
-                    <!-- end row -->
                 </div>
-                <!-- end container -->
             </div>
-            <!-- end container md -->
         </footer>
-        <!-- end foother -->
-        <!-- Book now modal -->
+      <!--
+        #################################
+            - Modal Popups -
+        #################################
+        -->
+        <!-- Contact-Us Modal -->
         <div class="zrq-footer modal fade" id="bookNowModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="row">
-                        <!-- Modal Section 1 -->
                         <div class="col-xs-12 no-padding modal-info">
-                            <!-- Mobile close btn (hidden on larger screens) -->
                             <button type="button" class="modal-close" aria-label="Close"><i class="fa fa-times"></i>
                             </button>
-                            <!-- Section 1 content -->
                             <div class="modal-bookNow" style="background-image: url(/assets/img/492_250_v00.png);">
                                 <h3>Book today</h3>
                                 <h5>We are masters of the blade</h5>
                             </div>
-                            <!-- end modal content -->
                         </div>
-                        <!-- end modal section 1 -->
-                        <!-- Modal Section 2 new -->
                         <div class="col-xs-12 no-padding">
                             <div class="modal-form">
                                 <ul class="book-list">
@@ -791,18 +788,11 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- end modal-form -->
                         </div>
-                        <!-- end modal section 2 -->
                     </div>
-                    <!-- end row -->
                 </div>
-                <!-- end modal-content -->
             </div>
-            <!-- end modal-dialog -->
         </div>
-        <!-- End Modal -->
-        <!-- shave shop phone -->
         <div class="zrq-footer sv-toast" data-toast="phone">
             <div class="alert alert-success sv-phone" role="alert">
                 <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -812,8 +802,6 @@
                 <a href="" class="tele">303-303-3030</a>
             </div>
         </div>
-        <!-- end shop pimes -->
-        <!-- shave shop times -->
         <div class="zrq-footer sv-toast" data-toast="hours">
             <div class="alert alert-success sv-hours" role="alert">
                 <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -827,7 +815,6 @@
                 </div>
             </div>
         </div>
-        <!-- end shop times -->
         <!-- <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
