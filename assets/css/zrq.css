@@ -13,6 +13,9 @@ GENERIC
   color: #af8c45
 }
 
+image {
+  max-width: 100% !important;
+}
 
 /* 
 =================
