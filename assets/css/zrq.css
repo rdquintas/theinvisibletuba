@@ -229,9 +229,9 @@ _footer.html
 } */
 
 @media only screen and (max-width: 768px) {
-  .zrq-header {
+  /* .zrq-header {
     overflow: visible !important;
-  }
+  } */
 
   .zrq-header .zrq-logo {
     top: -10px;
