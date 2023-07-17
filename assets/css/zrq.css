@@ -19,10 +19,6 @@ GENERIC
 _header.html
 =================
 */
-.zrq-header {
-  width: 500px !important;
-}
-
 .zrq-header .zrq-logo {
   top: -20px;
   position: fixed !important;
@@ -148,7 +144,6 @@ _footer.html
 .zrq-footer .zrq-left-margin {
   left: 51px;
 }
-
 
 @media only screen and (max-width: 768px) {
   .zrq-header {
