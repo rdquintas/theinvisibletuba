@@ -55,13 +55,13 @@
         <![endif]-->
     <script>
         // this is just a dummy password logic  ;o)
-        // if (document.location.host !== "127.0.0.1:5500") {           
-        //     var pwd = prompt("Password:", "");        
-        //     if (!pwd || pwd.toLowerCase() !== "tuba") {
-        //         alert("Access Denied");
-        //         window.stop();
-        //     }
-        // }
+        if (document.location.host !== "127.0.0.1:5500") {           
+            var pwd = prompt("Password:", "");        
+            if (!pwd || pwd.toLowerCase() !== "tuba") {
+                alert("Access Denied");
+                window.stop();
+            }
+        }
     </script>
     <script src="assets/scripts/jquery.min.js"></script>
 
