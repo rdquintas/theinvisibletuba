@@ -7,6 +7,6 @@
     "grunt-contrib-watch": "^1.1.0"
   },
   "scripts": {
-    "git-deploy": "git add . && git commit -m 'fixes' && git push & git ftp push"  
+    "git-deploy": "git add . && git commit -m '$ZRQ' && git push & git ftp push"  
   }
 }
