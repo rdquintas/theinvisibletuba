@@ -17,6 +17,11 @@ This is the repo for the website:
 - and then edit the html files inside the ``/app`` folder and they will be concataned automatically to the root folder
 - **NEVER EDIT** the html files on the root folder as they will be overwritten by the ``grunt watch``
 - to add new html files just configure and add them to the file ``Gruntfile.js``
+- I have created a npm script on ``package.json`` that should be executed like this
+  
+  ``npm run git -- 'message here'``
+
+  this will do a git push and git ftp push
 
 ## How to deploy with GIT FTP ?
 
