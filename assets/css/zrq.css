@@ -67,6 +67,12 @@ _footer.html
   animation-iteration-count: infinite;
 }
 
+.zrq-footer .zrq-cookies {
+  text-align: center;
+  color: #fff;
+}
+
+
 /* 
 =================
 index.html
