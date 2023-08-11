@@ -13,6 +13,11 @@ GENERIC
   color: #af8c45
 }
 
+.zrq-red {
+  color: red;
+}
+
+
 /* 
 =================
 _header.html
@@ -37,7 +42,6 @@ _header.html
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
 }
-
 
 /* 
 =================
