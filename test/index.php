@@ -5,14 +5,14 @@
     //$_POST['email']; 
     $subject = "zrqSubject";
     $message = "zrqMessage"; //getRequestURI();
-    $from = "rdquintas@yahoo.com";
+    $from = "info@theinvisibletuba.com";
     $headers = "From:" . $from;
 
     if (mail($to, $subject, $message, $headers)) {
         echo "Mail Sent.";
     }
     else {
-        echo "failed";
+        echo "failed 1707";
     }
 // }
 
