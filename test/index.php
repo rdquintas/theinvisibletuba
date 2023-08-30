@@ -10,7 +10,7 @@ require_once '../lib/swift_required.php';
 // password_caixa_email -> deverá preencher com a password da respectiva caixa
 $transport = Swift_SmtpTransport::newInstance('mail.theinvisibletuba.com', 25)
 ->setUsername('info@theinvisibletuba.com')
-->setPassword('#uUcpSANQqA5')
+->setPassword('')
 ;
 $mailer = Swift_Mailer::newInstance($transport);
  
