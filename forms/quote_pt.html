@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      href="assets/css/zrq.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+  </head>
+  <body class="zrq-form-quote">
+    <h1>Hello, world!</h1>
+
+    <form class="row g-3 p-5 needs-validation" novalidate>
+      <!-- NAME -->
+      <div class="col-md-12">
+        <label for="validationCustom01" class="form-label fs-4"
+          >Your name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="col-md-12">
+        <label for="validationCustom01" class="form-label fs-4"
+          >Your email</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="validationCustom01"
+          placeholder="Your email address"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <!-- TYPE OF EVENT -->
+      <div class="col-md-12">
+        <label for="validationCustom04" class="form-label fs-4"
+          >Type of event</label
+        >
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">Choose one</option>
+          <option>CORPORATE: Office Party</option>
+          <option>CORPORATE: Christmas Party</option>
+          <option>CORPORATE: Store Opening</option>
+          <option>CORPORATE: Product Promo</option>
+          <option>CORPORATE: Festival</option>
+          <option>CORPORATE: Fair/Conference</option>
+          <option>CORPORATE: Other</option>
+          <option>PRIVATE: Wedding</option>
+          <option>PRIVATE: Student Event</option>
+          <option>PRIVATE: Birthday Event</option>
+          <option>PRIVATE: Other</option>
+        </select>
+        <div class="invalid-feedback">Please select a valid state.</div>
+      </div>
+
+      <!-- DATE OF EVENT -->
+      <div class="col-md-12">
+        <label for="validationCustom02" class="form-label fs-4"
+          >Date of event</label
+        >
+        <input
+          type="date"
+          class="form-control"
+          id="validationCustom02"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <!-- SCHEDULE -->
+      <div class="col-md-12">
+        <label for="validationCustom02" class="form-label fs-4"
+          >Time and Duration</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom02"
+          placeholder="For ex: from 20h till midnight"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <!-- LOCATION OF EVENT -->
+      <div class="col-md-12">
+        <label for="validationCustom02" class="form-label fs-4"
+          >Location of event</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom02"
+          placeholder="For ex: Sintra..."
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <!-- NUMBER OF GUESTS -->
+      <div class="col-md-12">
+        <label for="validationCustom02" class="form-label fs-4"
+          >Number of guests</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom02"
+          placeholder="How many guests more or less..."
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <!-- ENVIRONMENT -->
+      <div class="col-md-12">
+        <label for="validationCustom01" class="form-label fs-4"
+          >Environment</label
+        >
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault1"
+            checked
+          />
+          <label class="form-check-label" for="flexRadioDefault1">
+            Indoors
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Outdoors
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Don't know
+          </label>
+        </div>
+      </div>
+
+      <!-- ANYTHING ELSE -->
+      <div class="col-md-12 fs-4">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Comments</label
+        >
+        <textarea
+          placeholder="Feel free to add any extra comments or requirements..."
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+      </div>
+
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
