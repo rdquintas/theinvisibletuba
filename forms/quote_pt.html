@@ -20,7 +20,7 @@
   <body class="zrq-form-quote">
     <h1>Hello, world!</h1>
 
-    <form class="row g-3 p-1 needs-validation" novalidate>
+    <form class="row g-3 p-1 needs-validation" id="zrqForm" novalidate>
       <!-- NAME -->
       <div class="col-md-12">
         <label for="validationCustom01" class="form-label fs-4"
@@ -32,7 +32,7 @@
           id="validationCustom01"
           required
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- EMAIL -->
@@ -47,7 +47,7 @@
           placeholder="Your email address"
           required
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- TYPE OF EVENT -->
@@ -79,14 +79,11 @@
             Private
           </label>
         </div>
-   
       </div>
 
       <!-- OCCASION -->
       <div class="col-md-12">
-        <label for="validationCustom04" class="form-label fs-4"
-          >Occasion</label
-        >
+        <label for="validationCustom04" class="form-label fs-4">Occasion</label>
         <select class="form-select" id="occasion" required>
           <option selected value="">Choose one</option>
           <option>Office Party</option>
@@ -97,7 +94,7 @@
           <option>Fair/Conference</option>
           <option>Other</option>
         </select>
-        <div class="invalid-feedback">Please select a valid state.</div>
+        <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- DATE OF EVENT -->
@@ -111,7 +108,7 @@
           id="validationCustom02"
           required
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- SCHEDULE -->
@@ -126,7 +123,7 @@
           placeholder="For ex: from 20h till midnight"
           required
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- LOCATION OF EVENT -->
@@ -141,7 +138,7 @@
           placeholder="For ex: Sintra..."
           required
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- NUMBER OF GUESTS -->
@@ -207,7 +204,7 @@
           >Comments</label
         >
         <textarea
-          placeholder="Feel free to add any extra comments or requirements..."
+          placeholder="Any extra comments or requirements..."
           class="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
@@ -225,6 +222,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
     <script src="assets/scripts/zrq.js"></script>
   </body>
 </html>
