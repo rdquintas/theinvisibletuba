@@ -20,6 +20,10 @@ body {
         background-size: 100%;
 
     }
+    
+    .zrq-form-quote .zrq-logo {
+        max-width: 40%;
+    }
 
     .zrq-form-quote form {
         max-width: 100%;
