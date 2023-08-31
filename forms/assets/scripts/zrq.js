@@ -35,12 +35,11 @@ $(document).ready(function () {
   });
 
   $("#zrqForm").on("submit", function (oEvent) {
-if (!this.checkValidity()) {
-    oEvent.preventDefault()
-    oEvent.stopPropagation()
+    if (!this.checkValidity()) {    
+      oEvent.preventDefault();
+      oEvent.stopPropagation();
     }
-
-    this.classList.add('was-validated')
-    // $("#zrqForm").validate();
+     
+    this.classList.add("was-validated");
   });
 });

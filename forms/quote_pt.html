@@ -18,32 +18,46 @@
     />
   </head>
   <body class="zrq-form-quote">
-    <h1>Hello, world!</h1>
+    <div class="px-4 text-center">
+      <a href="https://theinvisibletuba.com" target="_blank">
+        <img
+          class="d-block mx-auto mb-4"
+          src="../assets/img/logo_transp_v00.png"
+          alt=""
+        />
+      </a>
+      <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Quickly design and customize responsive mobile-first sites with
+          Bootstrap, the world’s most popular front-end open source toolkit,
+          featuring Sass variables and mixins, responsive grid system, extensive
+          prebuilt components, and powerful JavaScript plugins.
+        </p>
+      </div>
+    </div>
 
-    <form class="row g-3 p-1 needs-validation" id="zrqForm" novalidate>
+    <form
+      class="row g-3 p-1 needs-validation"
+      id="zrqForm"
+      action="send.php"
+      method="post"
+      novalidate
+    >
       <!-- NAME -->
       <div class="col-md-12">
-        <label for="validationCustom01" class="form-label fs-4"
-          >Your name</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="validationCustom01"
-          required
-        />
+        <label class="form-label fs-4 text-white">Your name</label>
+        <input type="text" class="form-control" name="name" required />
         <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- EMAIL -->
       <div class="col-md-12">
-        <label for="validationCustom01" class="form-label fs-4"
-          >Your email</label
-        >
+        <label class="form-label fs-4 text-white">Your email</label>
         <input
           type="email"
           class="form-control"
-          id="validationCustom01"
+          name="email"
           placeholder="Your email address"
           required
         />
@@ -52,19 +66,17 @@
 
       <!-- TYPE OF EVENT -->
       <div class="col-md-12">
-        <label for="validationCustom01" class="form-label fs-4"
-          >Type of event</label
-        >
+        <label class="form-label fs-4 text-white">Type of event</label>
 
         <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
-            name="typeEvent"
+            name="event_type"
             id="typeEventCorporate"
             checked
           />
-          <label class="form-check-label" for="typeEventCorporate">
+          <label class="form-check-label text-white">
             Corporate
           </label>
         </div>
@@ -72,10 +84,10 @@
           <input
             class="form-check-input"
             type="radio"
-            name="typeEvent"
+            name="event_type"
             id="typeEventPrivate"
           />
-          <label class="form-check-label" for="typeEventPrivate">
+          <label class="form-check-label text-white">
             Private
           </label>
         </div>
@@ -83,8 +95,13 @@
 
       <!-- OCCASION -->
       <div class="col-md-12">
-        <label for="validationCustom04" class="form-label fs-4">Occasion</label>
-        <select class="form-select" id="occasion" required>
+        <label class="form-label fs-4 text-white">Occasion</label>
+        <select
+          class="form-select"
+          name="event_occasion"
+          id="occasion"
+          required
+        >
           <option selected value="">Choose one</option>
           <option>Office Party</option>
           <option>Christmas Party</option>
@@ -99,13 +116,12 @@
 
       <!-- DATE OF EVENT -->
       <div class="col-md-12">
-        <label for="validationCustom02" class="form-label fs-4"
-          >Date of event</label
-        >
+        <label class="form-label fs-4 text-white">Date of event</label>
         <input
           type="date"
           class="form-control"
-          id="validationCustom02"
+          name="event_date"
+          id="event_date"
           required
         />
         <div class="invalid-feedback">Required Field</div>
@@ -113,13 +129,11 @@
 
       <!-- SCHEDULE -->
       <div class="col-md-12">
-        <label for="validationCustom02" class="form-label fs-4"
-          >Time and Duration</label
-        >
+        <label class="form-label fs-4 text-white">Time and Duration</label>
         <input
           type="text"
           class="form-control"
-          id="validationCustom02"
+          name="duration"
           placeholder="For ex: from 20h till midnight"
           required
         />
@@ -128,13 +142,13 @@
 
       <!-- LOCATION OF EVENT -->
       <div class="col-md-12">
-        <label for="validationCustom02" class="form-label fs-4"
+        <label class="form-label fs-4 text-white"
           >Location of event</label
         >
         <input
           type="text"
           class="form-control"
-          id="validationCustom02"
+          name="event_location"
           placeholder="For ex: Sintra..."
           required
         />
@@ -143,22 +157,22 @@
 
       <!-- NUMBER OF GUESTS -->
       <div class="col-md-12">
-        <label for="validationCustom02" class="form-label fs-4"
+        <label class="form-label fs-4 text-white"
           >Number of guests</label
         >
         <input
           type="text"
           class="form-control"
-          id="validationCustom02"
+          name="guests"
           placeholder="How many guests more or less..."
           required
         />
-        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required Field</div>
       </div>
 
       <!-- ENVIRONMENT -->
       <div class="col-md-12">
-        <label for="validationCustom01" class="form-label fs-4"
+        <label class="form-label fs-4 text-white"
           >Environment</label
         >
 
@@ -166,11 +180,11 @@
           <input
             class="form-check-input"
             type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault1"
+            name="event_env"
+            id="indoor"
             checked
           />
-          <label class="form-check-label" for="flexRadioDefault1">
+          <label class="form-check-label text-white">
             Indoors
           </label>
         </div>
@@ -178,10 +192,10 @@
           <input
             class="form-check-input"
             type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault2"
+            name="event_env"
+            id="outdoor"
           />
-          <label class="form-check-label" for="flexRadioDefault2">
+          <label class="form-check-label text-white">
             Outdoors
           </label>
         </div>
@@ -189,10 +203,10 @@
           <input
             class="form-check-input"
             type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault2"
+            name="event_env"
+            id="dont_know"
           />
-          <label class="form-check-label" for="flexRadioDefault2">
+          <label class="form-check-label text-white">
             Don't know
           </label>
         </div>
@@ -200,13 +214,13 @@
 
       <!-- ANYTHING ELSE -->
       <div class="col-md-12 fs-4">
-        <label for="exampleFormControlTextarea1" class="form-label"
+        <label class="form-label text-white"
           >Comments</label
         >
         <textarea
           placeholder="Any extra comments or requirements..."
           class="form-control"
-          id="exampleFormControlTextarea1"
+          name="text"
           rows="3"
         ></textarea>
       </div>
@@ -215,6 +229,10 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form>
+
+    <!-- <div class="alert alert-danger " role="alert">
+        This is a danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+      </div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
