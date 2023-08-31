@@ -2,13 +2,12 @@
     max-width: 600px;
     margin: 0 auto;
     background-color: #0000009e;
-
 }
 
 
 body {
     background-image: url("../../../assets/img/1921_1281_v00.jpg");
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;    
     background-attachment: fixed;
 }
 
@@ -18,14 +17,15 @@ body {
     body {
         background-image: url("../../../assets/img/1170_2532_v00.jpg");
         background-size: 100%;
-
+        background-attachment: scroll;
     }
     
     .zrq-form-quote .zrq-logo {
-        max-width: 40%;
+        max-width: 50%;
     }
 
     .zrq-form-quote form {
+        background-color: #000;
         max-width: 100%;
     }
 }
