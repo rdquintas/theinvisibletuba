@@ -31,7 +31,7 @@ $form->event_location = $_POST["event_location"];
 $form->guests = $_POST["guests"];
 $form->text = $_POST["text"];
 
-echo($form);
+print_r($form);
 //     $form->xxx = $_POST["xxx"]:
 // $form->xxx = $_POST["xxx"]:
 // $form->xxx = $_POST["xxx"]:
