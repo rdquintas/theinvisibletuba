@@ -53,10 +53,13 @@ _footer.html
   height: 200px !important;
 }
 
-
 .zrq-footer .zrq-logo img {
   width: 200px !important;
   height: 200px !important;
+}
+
+.zrq-footer .zrq-center {
+  text-align: center;
 }
 
 .zrq-footer .zrq-logo img:hover {
