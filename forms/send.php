@@ -1,17 +1,17 @@
 <?php 
-require_once 'lib/swift_required.php';
+require_once '../lib/swift_required.php';
 
-$transport = Swift_SmtpTransport::newInstance('mail.theinvisibletuba.com', 25)
-->setUsername('info@theinvisibletuba.com')
-->setPassword('yyyy');
+// $transport = Swift_SmtpTransport::newInstance('mail.theinvisibletuba.com', 25)
+// ->setUsername('info@theinvisibletuba.com')
+// ->setPassword('yyyy');
 
-$mailer = Swift_Mailer::newInstance($transport);
+// $mailer = Swift_Mailer::newInstance($transport);
 
 $form = new stdClass();
 
-$form->lang = "PT";
+$form->language = $_POST["language"];
 
-if ($form->lang == "EN") {
+if ($form->language == "en") {
     $subjectForTuba = "Request for Quote";
     $subjectConfirmation = "Confirmation Message";
 } else {
@@ -19,28 +19,43 @@ if ($form->lang == "EN") {
     $subjectConfirmation = "Confirmação de Pedido";
 }
 
-$form->name = "Ricardo";
-$form->email = "rdquintas@yahoo.com";
-$form->guests = "100";
-$form->event_type = "CORPORATE";
-$form->event_env = "INDOORS";
-$form->event_occasion = "Office Party";
-$form->event_location = "Sintra";
-$form->event_date = "04/02/1971";
-$form->duration = "2 hours";
-$form->text = "I want this party to be mermaizing";
 
-$body = prepareBody($form);
+$form->tag = $_POST["tag"];
+$form->name = $_POST["name"];
+$form->email = $_POST["email"];
+$form->event_type = $_POST["event_type"];
+$form->event_occasion = $_POST["event_occasion"];
+$form->event_date = $_POST["event_date"];
+$form->duration = $_POST["duration"];
+$form->event_location = $_POST["event_location"];
+$form->guests = $_POST["guests"];
+$form->text = $_POST["text"];
 
-$messageForTuba = createMessage($form->email, 'info@theinvisibletuba.com', $subjectForTuba, $body);
-$messageForCustomer = createMessage('info@theinvisibletuba.com', $form->email, $subjectConfirmation, $body);
+echo($form);
+//     $form->xxx = $_POST["xxx"]:
+// $form->xxx = $_POST["xxx"]:
+// $form->xxx = $_POST["xxx"]:
+// $form->email = "rdquintas@yahoo.com";
+// $form->guests = "100";
+// $form->event_type = "CORPORATE";
+// $form->event_env = "INDOORS";
+// $form->event_occasion = "Office Party";
+// $form->event_location = "Sintra";
+// $form->event_date = "04/02/1971";
+// $form->duration = "2 hours";
+// $form->text = "I want this party to be mermaizing";
 
-if ($mailer->send($messageForTuba) and $mailer->send($messageForCustomer)) {
-    header('Location: thankyou.html');
-    exit();
-} else {
-  echo "Failed\n";
-}
+// $body = prepareBody($form);
+
+// $messageForTuba = createMessage($form->email, 'info@theinvisibletuba.com', $subjectForTuba, $body);
+// $messageForCustomer = createMessage('info@theinvisibletuba.com', $form->email, $subjectConfirmation, $body);
+
+// if ($mailer->send($messageForTuba) and $mailer->send($messageForCustomer)) {
+//     header('Location: thankyou.html');
+//     exit();
+// } else {
+//   echo "Failed\n";
+// }
 
 
 function createMessage($from, $to, $subject, $body) {    
