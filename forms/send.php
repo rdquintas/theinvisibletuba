@@ -19,7 +19,6 @@ if ($form->language == "en") {
     $subjectConfirmation = "Confirmação de Pedido";
 }
 
-
 $form->tag = $_POST["tag"];
 $form->name = $_POST["name"];
 $form->email = $_POST["email"];
@@ -32,32 +31,25 @@ $form->event_location = $_POST["event_location"];
 $form->guests = $_POST["guests"];
 $form->text = $_POST["text"];
 
-print_r($form);
-//     $form->xxx = $_POST["xxx"]:
-// $form->xxx = $_POST["xxx"]:
-// $form->xxx = $_POST["xxx"]:
-// $form->email = "rdquintas@yahoo.com";
-// $form->guests = "100";
-// $form->event_type = "CORPORATE";
-// $form->event_env = "INDOORS";
-// $form->event_occasion = "Office Party";
-// $form->event_location = "Sintra";
-// $form->event_date = "04/02/1971";
-// $form->duration = "2 hours";
-// $form->text = "I want this party to be mermaizing";
+// print_r($form);
 
-// $body = prepareBody($form);
+$body = prepareBody($form);
+
+echo($body);
 
 // $messageForTuba = createMessage($form->email, 'info@theinvisibletuba.com', $subjectForTuba, $body);
 // $messageForCustomer = createMessage('info@theinvisibletuba.com', $form->email, $subjectConfirmation, $body);
 
 // if ($mailer->send($messageForTuba) and $mailer->send($messageForCustomer)) {
-//     header('Location: thankyou.html');
+//     if ($form->language == "en") {
+//         header('Location: thankyou.html');        
+//     } else {
+//         header('Location: thankyou_pt.html');
+//     }    
 //     exit();
 // } else {
 //   echo "Failed\n";
 // }
-
 
 function createMessage($from, $to, $subject, $body) {    
     $message = Swift_Message::newInstance($subject)
@@ -68,6 +60,7 @@ function createMessage($from, $to, $subject, $body) {
     return $message;
 }
   
+
 function prepareBody($form) {    
     if ($form->lang == "EN") {
         $body .= "Hi " . $form->name . ",\r\n";
@@ -86,10 +79,11 @@ function prepareBody($form) {
         $body .= "OTHER DETAILS: " . $form->text . "\r\n";        
         $body .= "=============" . "\r\n";
         $body .= "\r\n\r\n" . "Many Thanks ;o)" . "\r\n\r\n";    
-        $body .= "/The Invisible Tuba";
+        $body .= "/The Invisible Tuba" . "\r\n\r\n\r\n\r\n\r\n";  ;
+        $body .= $form->tag . "\r\n";        
     } else {
         $body .= "Olá " . $form->name . ",\r\n";
-        $body .= "Obrigado pelo seu pedido, entraremos em contacto consigo o mais rápido possível e enviaremos uma proposta de orçamento para o seu email." . "\r\n\r\n";
+        $body .= "Obrigado pelo teu pedido, entraremos em contacto contigo o mais rápido possível e enviaremos uma proposta de orçamento para o teu email." . "\r\n\r\n";
         $body .= "Sumário do pedido efectuado:" . "\r\n";
         $body .= "=============" . "\r\n";
         $body .= "NAME: " . $form->name . "\r\n";
@@ -104,7 +98,8 @@ function prepareBody($form) {
         $body .= "OUTROS DETALHES: " . $form->text . "\r\n";    
         $body .= "=============" . "\r\n";
         $body .= "\r\n\r\n" . "Muito Obrigado ;o)" . "\r\n\r\n";    
-        $body .= "/The Invisible Tuba";    
+        $body .= "/The Invisible Tuba" . "\r\n\r\n\r\n\r\n\r\n";  ;
+        $body .= $form->tag . "\r\n";    
     }
    
     return $body;
