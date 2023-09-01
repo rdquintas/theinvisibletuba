@@ -11,6 +11,8 @@ $.urlParam = function (name) {
 $(document).ready(function () {
   var tagFromURL = $.urlParam("tag");
 
+  $("#zrqForm")[0].reset();
+
   if (tagFromURL) {
     $("#tag").val(tagFromURL);
   } else {
@@ -63,6 +65,8 @@ $(document).ready(function () {
 
   $("#languagePT").change((a, b, c) => {
     const chosenLng = "pt";
+    $("#zrqForm")[0].reset();
+    $("#languagePT").prop('checked', true);
     i18next.changeLanguage(chosenLng, () => {
       $("body").localize();
     });
@@ -70,6 +74,8 @@ $(document).ready(function () {
 
   $("#languageEN").change((a, b, c) => {
     const chosenLng = "en";
+    $("#zrqForm")[0].reset();
+    $("#languageEN").prop('checked', true);
     i18next.changeLanguage(chosenLng, () => {
       $("body").localize();
     });

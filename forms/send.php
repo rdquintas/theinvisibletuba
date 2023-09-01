@@ -1,11 +1,11 @@
 <?php 
 require_once '../../lib/swift_required.php';
 
-// $transport = Swift_SmtpTransport::newInstance('mail.theinvisibletuba.com', 25)
-// ->setUsername('info@theinvisibletuba.com')
-// ->setPassword('yyyy');
+$transport = Swift_SmtpTransport::newInstance('mail.theinvisibletuba.com', 25)
+->setUsername('info@theinvisibletuba.com')
+->setPassword('yyyy');
 
-// $mailer = Swift_Mailer::newInstance($transport);
+$mailer = Swift_Mailer::newInstance($transport);
 
 $form = new stdClass();
 
@@ -37,19 +37,19 @@ $body = prepareBody($form);
 
 echo($body);
 
-// $messageForTuba = createMessage($form->email, 'info@theinvisibletuba.com', $subjectForTuba, $body);
-// $messageForCustomer = createMessage('info@theinvisibletuba.com', $form->email, $subjectConfirmation, $body);
+$messageForTuba = createMessage($form->email, 'info@theinvisibletuba.com', $subjectForTuba, $body);
+$messageForCustomer = createMessage('info@theinvisibletuba.com', $form->email, $subjectConfirmation, $body);
 
-// if ($mailer->send($messageForTuba) and $mailer->send($messageForCustomer)) {
-//     if ($form->language == "en") {
-//         header('Location: thankyou.html');        
-//     } else {
-//         header('Location: thankyou_pt.html');
-//     }    
-//     exit();
-// } else {
-//   echo "Failed\n";
-// }
+if ($mailer->send($messageForTuba) and $mailer->send($messageForCustomer)) {
+    if ($form->language == "en") {
+        header('Location: thankyou.html');        
+    } else {
+        header('Location: thankyou_pt.html');
+    }    
+    exit();
+} else {
+  echo "Failed\n";
+}
 
 function createMessage($from, $to, $subject, $body) {    
     $message = Swift_Message::newInstance($subject)
