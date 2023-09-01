@@ -1,7 +1,8 @@
 .zrq-form-quote form {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #0000009e;
+    background-color: rgb(0 0 0 / 62%);
+    margin-bottom: 8rem;
 }
 
 
@@ -9,6 +10,8 @@ body {
     background-image: url("../../../assets/img/1921_1281_v00.jpg");
     background-repeat: no-repeat;    
     background-attachment: fixed;
+    background-size: 100%;
+    background-color: #000;
 }
 
 
@@ -25,7 +28,7 @@ body {
     }
 
     .zrq-form-quote form {
-        background-color: #000;
+        /* background-color: #000; */
         max-width: 100%;
     }
 }
