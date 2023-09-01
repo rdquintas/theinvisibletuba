@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>The Invisible Tuba</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -38,61 +38,86 @@
           href="https://theinvisibletuba.com"
           class="btn btn-primary mb-3"
           target="_blank"
+          data-i18n="intro.button"
         >
           Go to our website
         </a>
 
-        <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
-
-        <!-- <h1 data-i18n="intro.title"></h1> -->
-
-        <h1 class="display-5 fw-bold text-white">Do you want to</h1>
-        <h1 class="display-5 fw-bold text-white">book us ?</h1>
+        <h1 class="display-5 fw-bold text-white" data-i18n="intro.title1">
+          Do you want to
+        </h1>
+        <h1 class="display-5 fw-bold text-white" data-i18n="intro.title2">
+          book us ?
+        </h1>
         <!-- <div class="col-lg-6 mx-auto"> -->
-        <p class="display-6 text-white">
+        <p class="display-6 text-white" data-i18n="intro.title3">
           Plese fill the form bellow and we'll send you a quote.
         </p>
         <!-- </div> -->
       </div>
 
       <!-- LANGUAGE -->
-      <div class="col-md-12">
+      <div class="col-md-12 text-center">
         <input
           class="form-check-input"
           type="radio"
           name="language"
-          id="en"
+          id="languageEN"
+          value="en"
           checked
         />
-        <label class="form-check-label text-white me-3"> English </label>
+        <label class="form-check-label text-white me-1" data-i18n="intro.en">
+          English
+        </label>
+        <img src="../assets/img/icons/en.png" alt="" class="me-5" />
 
-        <input class="form-check-input" type="radio" name="language" id="pt" />
-        <label class="form-check-label text-white"> Português </label>
+        <input
+          class="form-check-input"
+          type="radio"
+          name="language"
+          id="languagePT"
+          value="pt"
+        />
+        <label class="form-check-label text-white me-1" data-i18n="intro.pt">
+          Português
+        </label>
+        <img src="../assets/img/icons/pt.png" alt="" />
       </div>
 
       <!-- NAME -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Your name</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.name_lbl"
+          >Your name</label
+        >
         <input type="text" class="form-control" name="name" required />
-        <div class="invalid-feedback">Required Field</div>
+        <div class="invalid-tooltip" data-i18n="form.required">
+          Required Field
+        </div>
       </div>
 
       <!-- EMAIL -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Your email</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.email_lbl"
+          >Your email</label
+        >
         <input
+          data-i18n="[placeholder]form.email_phd"
           type="email"
           class="form-control"
           name="email"
           placeholder="Your email address"
           required
         />
-        <div class="invalid-feedback">Required Field</div>
+        <div class="invalid-tooltip" data-i18n="form.required">
+          Required Field
+        </div>
       </div>
 
       <!-- TYPE OF EVENT -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Type of event</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.type_lbl"
+          >Type of event</label
+        >
 
         <div class="form-check">
           <input
@@ -102,7 +127,12 @@
             id="typeEventCorporate"
             checked
           />
-          <label class="form-check-label text-white fs-4"> Corporate </label>
+          <label
+            class="form-check-label text-white fs-4"
+            data-i18n="form.corporate"
+          >
+            Corporate
+          </label>
         </div>
         <div class="form-check">
           <input
@@ -111,34 +141,47 @@
             name="event_type"
             id="typeEventPrivate"
           />
-          <label class="form-check-label text-white fs-4"> Private </label>
+          <label
+            class="form-check-label text-white fs-4"
+            data-i18n="form.private"
+          >
+            Private
+          </label>
         </div>
       </div>
 
       <!-- OCCASION -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Occasion</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.occasion_lbl"
+          >Occasion</label
+        >
         <select
           class="form-select"
           name="event_occasion"
           id="occasion"
           required
         >
-          <option selected value="">Choose one</option>
-          <option>Office Party</option>
-          <option>Christmas Party</option>
-          <option>Store Opening</option>
-          <option>Product Promo</option>
-          <option>Festival</option>
-          <option>Fair/Conference</option>
-          <option>Other</option>
+          <option selected value="" data-i18n="form.corporate_1">
+            Choose one
+          </option>
+          <option data-i18n="form.corporate_2">Office Party</option>
+          <option data-i18n="form.corporate_3">Christmas Party</option>
+          <option data-i18n="form.corporate_4">Store Opening</option>
+          <option data-i18n="form.corporate_5">Product Promo</option>
+          <option data-i18n="form.corporate_6">Festival</option>
+          <option data-i18n="form.corporate_7">Fair/Conference</option>
+          <option data-i18n="form.corporate_8">Other</option>
         </select>
-        <div class="invalid-feedback">Required Field</div>
+        <div class="invalid-tooltip" data-i18n="form.required">
+          Required Field
+        </div>
       </div>
 
       <!-- DATE OF EVENT -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Date of event</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.date_lbl"
+          >Date of event</label
+        >
         <input
           type="date"
           class="form-control"
@@ -146,51 +189,72 @@
           id="event_date"
           required
         />
-        <div class="invalid-feedback">Required Field</div>
+        <div class="invalid-tooltip" data-i18n="form.required">
+          Required Field
+        </div>
       </div>
 
       <!-- SCHEDULE -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Time and Duration</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.time_lbl"
+          >Time and Duration</label
+        >
         <input
+          data-i18n="[placeholder]form.time_phd"
           type="text"
           class="form-control"
           name="duration"
           placeholder="For ex: from 20h till midnight"
           required
         />
-        <div class="invalid-feedback">Required Field</div>
+        <div class="invalid-tooltip" data-i18n="form.required">
+          Required Field
+        </div>
       </div>
 
       <!-- LOCATION OF EVENT -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Location of event</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.location_lbl"
+          >Location of event</label
+        >
         <input
+          data-i18n="[placeholder]form.location_phd"
           type="text"
           class="form-control"
           name="event_location"
           placeholder="For ex: Sintra..."
           required
         />
-        <div class="invalid-feedback">Required Field</div>
+        <div class="invalid-tooltip" data-i18n="form.required">
+          Required Field
+        </div>
       </div>
 
       <!-- NUMBER OF GUESTS -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Number of guests</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label fs-4 text-white" data-i18n="form.guests_lbl"
+          >Number of guests</label
+        >
         <input
+          data-i18n="[placeholder]form.guests_phd"
           type="text"
           class="form-control"
           name="guests"
           placeholder="How many guests more or less..."
           required
         />
-        <div class="invalid-feedback">Required Field</div>
+        <div class="invalid-tooltip" data-i18n="form.required">
+          Required Field
+        </div>
       </div>
 
       <!-- ENVIRONMENT -->
-      <div class="col-md-12">
-        <label class="form-label fs-4 text-white">Environment</label>
+      <div class="col-md-12 position-relative">
+        <label
+          class="form-label fs-4 text-white"
+          data-i18n="form.environment_lbl"
+          >Environment</label
+        >
 
         <div class="form-check">
           <input
@@ -200,7 +264,12 @@
             id="indoor"
             checked
           />
-          <label class="form-check-label text-white fs-4"> Indoors </label>
+          <label
+            class="form-check-label text-white fs-4"
+            data-i18n="form.environment1"
+          >
+            Indoors
+          </label>
         </div>
         <div class="form-check">
           <input
@@ -209,7 +278,12 @@
             name="event_env"
             id="outdoor"
           />
-          <label class="form-check-label text-white fs-4"> Outdoors </label>
+          <label
+            class="form-check-label text-white fs-4"
+            data-i18n="form.environment2"
+          >
+            Outdoors
+          </label>
         </div>
         <div class="form-check">
           <input
@@ -218,14 +292,22 @@
             name="event_env"
             id="dont_know"
           />
-          <label class="form-check-label text-white fs-4"> Don't know </label>
+          <label
+            class="form-check-label text-white fs-4"
+            data-i18n="form.environment3"
+          >
+            Don't know
+          </label>
         </div>
       </div>
 
       <!-- ANYTHING ELSE -->
-      <div class="col-md-12 fs-4">
-        <label class="form-label text-white">Comments</label>
+      <div class="col-md-12 position-relative">
+        <label class="form-label text-white fs-4" data-i18n="form.comments_lbl"
+          >Comments</label
+        >
         <textarea
+          data-i18n="[placeholder]form.comments_phd"
           placeholder="Any extra comments or requirements..."
           class="form-control"
           name="text"
@@ -234,13 +316,11 @@
       </div>
 
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="submit" data-i18n="form.submit">
+          Submit form
+        </button>
       </div>
     </form>
-
-    <!-- <div class="alert alert-danger " role="alert">
-        This is a danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-      </div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -250,7 +330,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+
 
     <script src="assets/scripts/zrq.js"></script>
   </body>
