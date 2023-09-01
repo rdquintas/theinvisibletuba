@@ -26,6 +26,7 @@ $form->email = $_POST["email"];
 $form->event_type = $_POST["event_type"];
 $form->event_occasion = $_POST["event_occasion"];
 $form->event_date = $_POST["event_date"];
+$form->event_env = $_POST["event_env"];
 $form->duration = $_POST["duration"];
 $form->event_location = $_POST["event_location"];
 $form->guests = $_POST["guests"];
