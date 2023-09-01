@@ -1,15 +1,32 @@
+$.urlParam = function (name) {
+  var results = new RegExp("[?&]" + name + "=([^&#]*)").exec(
+    window.location.href
+  );
+  if (results == null) {
+    return null;
+  }
+  return decodeURI(results[1]) || 0;
+};
+
 $(document).ready(function () {
+  var tagFromURL = $.urlParam("tag");
+
+  if (tagFromURL) {
+    $("#tag").val(tagFromURL);
+  } else {
+    $("#tag").val("");
+  }
+
   $("#typeEventCorporate").change(function () {
-    // $('title').text($.t(i18next.t('intro.button')));
     var newOptions = {
-      "Choose one": "Choose one",
-      "Office Party": "Office Party",
-      "Christmas Party": "Christmas Party",
-      "Store Opening": "Store Opening",
-      "Product Promo": "Product Promo",
-      Festival: "Festival",
-      "Fair/Conference": "Fair/Conference",
-      Other: "Other",
+      [i18next.t("form.corporate_1")]: i18next.t("form.corporate_1"),
+      [i18next.t("form.corporate_2")]: i18next.t("form.corporate_2"),
+      [i18next.t("form.corporate_3")]: i18next.t("form.corporate_3"),
+      [i18next.t("form.corporate_4")]: i18next.t("form.corporate_4"),
+      [i18next.t("form.corporate_5")]: i18next.t("form.corporate_5"),
+      [i18next.t("form.corporate_6")]: i18next.t("form.corporate_6"),
+      [i18next.t("form.corporate_7")]: i18next.t("form.corporate_7"),
+      [i18next.t("form.corporate_8")]: i18next.t("form.corporate_8"),
     };
 
     var $el = $("#occasion");
@@ -21,11 +38,11 @@ $(document).ready(function () {
 
   $("#typeEventPrivate").change(function (oEvvbet) {
     var newOptions = {
-      "Choose one": "Choose one",
-      Wedding: "Wedding",
-      "Student Event": "Student Event",
-      "Birthday Event": "Birthday Event",
-      Other: "Other",
+      [i18next.t("form.private_1")]: i18next.t("form.private_1"),
+      [i18next.t("form.private_2")]: i18next.t("form.private_2"),
+      [i18next.t("form.private_3")]: i18next.t("form.private_3"),
+      [i18next.t("form.private_4")]: i18next.t("form.private_4"),
+      [i18next.t("form.private_5")]: i18next.t("form.private_5"),
     };
 
     var $el = $("#occasion");
@@ -165,7 +182,8 @@ $(document).ready(function () {
                 environment2: "Ar livre",
                 environment3: "Não sei",
                 comments_lbl: "Comentários",
-                comments_phd: "Qualquer comentário ou requisito que queiras acrescentar...",
+                comments_phd:
+                  "Qualquer comentário ou requisito que queiras acrescentar...",
                 submit: "Enviar pedido",
               },
             },
