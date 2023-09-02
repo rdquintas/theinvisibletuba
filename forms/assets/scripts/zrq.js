@@ -66,7 +66,7 @@ $(document).ready(function () {
   $("#languagePT").change((a, b, c) => {
     const chosenLng = "pt";
     $("#zrqForm")[0].reset();
-    $("#languagePT").prop('checked', true);
+    $("#languagePT").prop("checked", true);
     i18next.changeLanguage(chosenLng, () => {
       $("body").localize();
     });
@@ -75,7 +75,7 @@ $(document).ready(function () {
   $("#languageEN").change((a, b, c) => {
     const chosenLng = "en";
     $("#zrqForm")[0].reset();
-    $("#languageEN").prop('checked', true);
+    $("#languageEN").prop("checked", true);
     i18next.changeLanguage(chosenLng, () => {
       $("body").localize();
     });
@@ -139,6 +139,7 @@ $(document).ready(function () {
                 environment3: "Don't know",
                 comments_lbl: "Comments",
                 comments_phd: "Any extra comments or requirements...",
+                newsletter: "Yes, I want to subscribe your Newsletter",
                 submit: "Submit form",
               },
             },
@@ -190,6 +191,7 @@ $(document).ready(function () {
                 comments_lbl: "Comentários",
                 comments_phd:
                   "Qualquer comentário ou requisito que queiras acrescentar...",
+                newsletter: "Sim, quero subscrever a vossa Newsletter",
                 submit: "Enviar pedido",
               },
             },
