@@ -58,9 +58,24 @@ $(document).ready(function () {
     if (!this.checkValidity()) {
       oEvent.preventDefault();
       oEvent.stopPropagation();
+      this.classList.add("was-validated");
+      var warningModal = new bootstrap.Modal(
+        document.getElementById("warningModal"),
+        {
+          keyboard: false,
+        }
+      );
+      warningModal.show();
+    } else {
+      this.classList.add("was-validated");
+      var spinnerModal = new bootstrap.Modal(
+        document.getElementById("spinnerModal"),
+        {
+          keyboard: false,
+        }
+      );
+      spinnerModal.show();
     }
-
-    this.classList.add("was-validated");
   });
 
   $("#languagePT").change((a, b, c) => {
@@ -141,6 +156,9 @@ $(document).ready(function () {
                 comments_phd: "Any extra comments or requirements...",
                 newsletter: "Yes, I want to subscribe your Newsletter",
                 submit: "Submit form",
+                spinner: "Please wait",
+                aviso1: "Warning",
+                aviso2: "Please, fill all required fields",
               },
             },
           },
@@ -193,6 +211,9 @@ $(document).ready(function () {
                   "Qualquer comentário ou requisito que queiras acrescentar...",
                 newsletter: "Sim, quero subscrever a vossa Newsletter",
                 submit: "Enviar pedido",
+                spinner: "Aguardar...",
+                aviso1: "Aviso",
+                aviso2: "Preencher todos os campos obrigatórios por favor",
               },
             },
           },

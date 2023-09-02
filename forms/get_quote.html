@@ -1,7 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<!-- 
+  <!-- 
    Hi, you're looking at a web page built with love by:
    
    Ricardo
@@ -20,18 +19,25 @@
    June/2023
 -->
 
-<head>
-
   <head>
     <meta charset="utf-8" />
     <title>The Invisible Tuba</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content=" 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="description"
+      content=" 
     The Invisible Tuba is a Lisbon-based Dixieland band with a mission to entertain, uplift, and connect with audiences. 
-    Expect memorable moments, interactive theatrical stunts, and a wide range of lively genres." />
-    <meta name="keywords" content="trad jazz,swing,dixieland,new orleans,jazz,blues,clarinet,tuba,the invisible tuba,captain farms,mattia corda,trumpet,washboard,trombone,banjo,busking,ragtime,music band,lisbon,portugal" />
+    Expect memorable moments, interactive theatrical stunts, and a wide range of lively genres."
+    />
+    <meta
+      name="keywords"
+      content="trad jazz,swing,dixieland,new orleans,jazz,blues,clarinet,tuba,the invisible tuba,captain farms,mattia corda,trumpet,washboard,trombone,banjo,busking,ragtime,music band,lisbon,portugal"
+    />
     <meta name="author" content="Ricardo Quintas" />
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" /> 
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -73,13 +79,8 @@
         </p>
       </div>
 
-   <!-- TAG -->
-      <input    
-      type="hidden"
-      name="tag"
-      id="tag"
-      value=""
-    />
+      <!-- TAG -->
+      <input type="hidden" name="tag" id="tag" value="" />
 
       <!-- LANGUAGE -->
       <div class="col-md-12 text-center">
@@ -157,7 +158,7 @@
             data-i18n="[value]form.corporate"
             class="form-check-input fs-4"
             type="radio"
-            name="event_type"            
+            name="event_type"
             id="typeEventCorporate"
             checked
           />
@@ -358,26 +359,89 @@
         ></textarea>
       </div>
       <div class="form-check">
-        <input class="form-check-input fs-4" type="checkbox" value="" name="newsletter" id="flexCheckDefault" checked>
-        <label class="form-check-label text-white fs-4" for="flexCheckDefault"  data-i18n="form.newsletter">
+        <input
+          class="form-check-input fs-4"
+          type="checkbox"
+          value=""
+          name="newsletter"
+          id="flexCheckDefault"
+          checked
+        />
+        <label
+          class="form-check-label text-white fs-4"
+          for="flexCheckDefault"
+          data-i18n="form.newsletter"
+        >
           Yes, I want to subscribe your Newsletter
         </label>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary btn-lg" type="submit" data-i18n="form.submit">
+        <button
+          class="btn btn-primary btn-lg"
+          id="btnSubmit"
+          type="submit"
+          data-i18n="form.submit"
+        >
           Submit form
         </button>
       </div>
 
       <a
-      href="https://theinvisibletuba.com"
-      class="btn btn-warning mt-5 mb-3 col-8 mx-auto "
-      target="_blank"
-      data-i18n="intro.button"
-    >
-      Go to our website
-    </a>
+        href="https://theinvisibletuba.com"
+        class="btn btn-warning mt-5 mb-3 col-8 mx-auto"
+        target="_blank"
+        data-i18n="intro.button"
+      >
+        Go to our website
+      </a>
     </form>
+
+    <!-- SPINNER Modal -->
+    <div class="modal fade" id="spinnerModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="text-center">
+            <div class="spinner-border m-5" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <h3 data-i18n="form.spinner">Please wait</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WARNING Modal -->
+    <div
+      class="modal fade"
+      id="warningModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" data-i18n="form.aviso1">Warning</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body"><p data-i18n="form.aviso2">Please, fill all required fields.</p></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -390,5 +454,4 @@
 
     <script src="assets/scripts/zrq.js"></script>
   </body>
-
 </html>
