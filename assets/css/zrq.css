@@ -121,6 +121,13 @@ index.html
   color: #fff;
 }
 
+.zrq-page-index .zrq-quote-btn {
+  display: block;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+}
+
 .zrq-page-index .zrq-margin-bottom {
   margin-bottom: 2rem;
 }
@@ -157,6 +164,12 @@ _footer.html
 */
 .zrq-footer .zrq-left-margin {
   left: 51px;
+}
+
+@media only screen and (min-width: 768px) {
+  .zrq-page-index .zrq-quote-btn {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 768px) {
