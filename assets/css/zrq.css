@@ -166,6 +166,10 @@ _footer.html
   left: 51px;
 }
 
+.zrq-footer .zrq-left-align {
+  text-align: left;
+}
+
 @media only screen and (min-width: 768px) {
   .zrq-page-index .zrq-quote-btn {
     display: none;
