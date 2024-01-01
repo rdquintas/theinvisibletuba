@@ -512,15 +512,15 @@
 		// ==========================================================================
 		// Scroll to functions
 		// ==========================================================================
-		$('.box-sm-hours').find('a').on('click', function (e) {
-			e.preventDefault();
+		// $('.box-sm-hours').find('a').on('click', function (e) {
+		// 	e.preventDefault();
 
-			$('html, body').animate({
-				scrollTop: $( $.attr(this, 'href') ).offset().top - 80
-			}, 900);
-			return false;
+		// 	$('html, body').animate({
+		// 		scrollTop: $( $.attr(this, 'href') ).offset().top - 80
+		// 	}, 900);
+		// 	return false;
 
-		});
+		// });
 
 		// ==========================================================================
 		// Feature Module 2
