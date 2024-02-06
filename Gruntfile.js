@@ -12,6 +12,8 @@ module.exports = function (grunt) {
           "contact_pt.html": "app/contact_pt.html",
           "index.html": "app/index.html",
           "index_pt.html": "app/index_pt.html",
+          "concerts.html": "app/concerts.html",
+          "concerts_pt.html": "app/concerts_pt.html",
           "pictures.html": "app/pictures.html",
           "pictures_pt.html": "app/pictures_pt.html",
           "audio.html": "app/audio.html",
