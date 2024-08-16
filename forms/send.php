@@ -70,7 +70,7 @@ function prepareBody($form) {
         $body .= "NAME: " . $form->name . "\r\n";
         $body .= "EMAIL: " . $form->email . "\r\n";
         $body .= "NR. GUESTS: " . $form->guests . "\r\n";
-        $body .= "EVENT TYPE: " . $form->event_type . "\r\n";
+      //  $body .= "EVENT TYPE: " . $form->event_type . "\r\n";
         $body .= "EVENT ENVIRONMENT: " . $form->event_env . "\r\n";
         $body .= "EVENT OCCASION: " . $form->event_occasion . "\r\n";
         $body .= "EVENT LOCATION: " . $form->event_location . "\r\n";
@@ -89,7 +89,7 @@ function prepareBody($form) {
         $body .= "NAME: " . $form->name . "\r\n";
         $body .= "EMAIL: " . $form->email . "\r\n";
         $body .= "NR. CONVIDADOS: " . $form->guests . "\r\n";
-        $body .= "TIPO DE EVENTO: " . $form->event_type . "\r\n";
+       // $body .= "TIPO DE EVENTO: " . $form->event_type . "\r\n";
         $body .= "AR-LIVRE OU INTERIOR: " . $form->event_env . "\r\n";
         $body .= "MOTIVO FESTA: " . $form->event_occasion . "\r\n";
         $body .= "LOCAL: " . $form->event_location . "\r\n";
