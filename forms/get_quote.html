@@ -89,8 +89,7 @@
           type="radio"
           name="language"
           id="languageEN"
-          value="en"
-          checked
+          value="en"          
         />
         <label
           class="form-check-label text-white me-1"
@@ -107,6 +106,7 @@
           name="language"
           id="languagePT"
           value="pt"
+          checked
         />
         <label
           class="form-check-label text-white me-1"
@@ -148,7 +148,7 @@
       </div>
 
       <!-- TYPE OF EVENT -->
-      <div class="col-md-12 position-relative">
+      <!-- <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.type_lbl"
           >Type of event</label
         >
@@ -186,12 +186,12 @@
             Private
           </label>
         </div>
-      </div>
+      </div> -->
 
       <!-- OCCASION -->
       <div class="col-md-12 position-relative">
-        <label class="form-label fs-4 text-white" data-i18n="form.occasion_lbl"
-          >Occasion</label
+        <label class="form-label fs-4 text-white" data-i18n="form.type_lbl"
+          >Type of event</label
         >
         <select
           class="form-select"
@@ -199,16 +199,17 @@
           id="occasion"
           required
         >
-          <option selected value="" data-i18n="form.corporate_1">
-            Choose one
+          <option selected value="" data-i18n="form.type0">
+            Escolhe um
           </option>
-          <option data-i18n="form.corporate_2">Office Party</option>
-          <option data-i18n="form.corporate_3">Christmas Party</option>
-          <option data-i18n="form.corporate_4">Store Opening</option>
-          <option data-i18n="form.corporate_5">Product Promo</option>
-          <option data-i18n="form.corporate_6">Festival</option>
-          <option data-i18n="form.corporate_7">Fair/Conference</option>
-          <option data-i18n="form.corporate_8">Other</option>
+          <option data-i18n="form.type1">Festa Escritório</option>
+          <option data-i18n="form.type2">Festa de Natal</option>
+          <option data-i18n="form.type3">Festival</option>
+          <option data-i18n="form.type4">Casamento</option>
+          <option data-i18n="form.type5">Festa Estudantes</option>
+          <option data-i18n="form.type6">Aniversário</option>
+          <option data-i18n="form.type7">Concerto num Bar/Pub</option>
+          <option data-i18n="form.type99">Outro</option>
         </select>
         <div class="invalid-tooltip" data-i18n="form.required">
           Required Field
