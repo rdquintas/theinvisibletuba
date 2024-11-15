@@ -42,9 +42,9 @@ $messageForCustomer = createMessage('info@theinvisibletuba.com', $form->email, $
 
 if ($mailer->send($messageForTuba) and $mailer->send($messageForCustomer)) {
     if ($form->language == "en") {
-        header('Location: thankyou.html');        
+        header('Location: thankyou_en.html');        
     } else {
-        header('Location: thankyou_pt.html');
+        header('Location: thankyou.html');
     }    
     exit();
 } else {
