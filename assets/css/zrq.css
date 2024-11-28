@@ -158,6 +158,13 @@ concerts.html
   text-decoration:underline;
 }
 
+.zrq-page-concerts .zrq-hrline {
+  border-top: 3px solid #000;
+}
+
+.zrq-page-concerts .zrq-padding {
+  padding: 2rem;
+}
 
 /* 
 =================
