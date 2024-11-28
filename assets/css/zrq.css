@@ -162,9 +162,14 @@ concerts.html
   border-top: 3px solid #000;
 }
 
-.zrq-page-concerts .zrq-padding {
-  padding: 2rem;
+.zrq-page-concerts .zrq-margin {
+  margin-bottom: 2rem;
 }
+
+.zrq-page-concerts .zrq-link {
+  text-decoration: underline;
+}
+
 
 /* 
 =================
