@@ -132,6 +132,19 @@ index.html
   margin-bottom: 2rem;
 }
 
+.zrq-page-index .zrq-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.zrq-page-index .zrq-center {
+  text-align: center;
+}
+
+.zrq-page-index .zrq-padding-bottom {
+  padding-bottom: 2rem;
+}
+
 /* 
 =================
 audio.html
@@ -155,7 +168,7 @@ concerts.html
 }
 
 .zrq-page-concerts .zrq-newsletter {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .zrq-page-concerts .zrq-hrline {
@@ -169,7 +182,7 @@ concerts.html
 
 .zrq-page-concerts .zrq-link {
   text-decoration: underline;
-} 
+}
 
 
 /* 
