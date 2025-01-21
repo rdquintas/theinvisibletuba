@@ -187,6 +187,39 @@ concerts.html
 
 /* 
 =================
+events/concert
+=================
+*/
+
+.zrq-page-events-concert .zrq-soldout {
+  pointer-events: none;
+}
+
+.zrq-page-events-concert .zrq-soldout .price__table {
+ color: rgb(170, 170, 170);
+}
+
+.zrq-page-events-concert .zrq-soldout .price__first {
+  color: #af8c4560;
+} 
+
+.zrq-page-events-concert .zrq-soldout .btn {
+  color: red;
+  background-color: rgb(247, 200, 200);
+  font-size: 1rem;
+} 
+
+.zrq-page-events-concert .zrq-soldout .zrq-text{
+  color: red;
+  font-size: 3rem;
+  font-weight: bold;
+  z-index: 9999;
+  transform: rotate(-25deg);
+}
+
+
+/* 
+=================
 contact.html
 =================
 */
