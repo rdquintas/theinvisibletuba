@@ -274,6 +274,9 @@ events/concert
 .zrq-page-events-concert .zrq-cookies {
   margin-top: 3rem;
 }
+.zrq-page-events-concert .zrq-border-radius {
+  border-radius: 50px;
+}
 
 
 @media only screen and (max-width: 768px) {
