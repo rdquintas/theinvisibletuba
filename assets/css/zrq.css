@@ -191,9 +191,23 @@ events/concert
 =================
 */
 
-.zrq-page-events-concert .zrq-soldout {
-  pointer-events: none;
+
+.zrq-page-events-concert .zrq-border-radius {
+  border-radius: 50px;
 }
+
+.zrq-page-events-concert .hero-container {
+  background-color: initial;
+}
+
+.zrq-page-events-concert .hero-background {
+  opacity: 1;
+}
+
+.zrq-page-events-concert .zrq-hero-text {
+  background-color: #252525a4;
+}
+
 
 .zrq-page-events-concert .zrq-center {
   text-align: center;
@@ -279,9 +293,15 @@ events/concert
 }
 
 
+
 @media only screen and (max-width: 768px) {
   .zrq-page-events-concert .zrq-hero-image {
     background-image: url(/assets/img/375_667_v00.png);
+  }
+
+  .zrq-page-events-concert .zrq-header .zrq-logo img {
+    width: 100px !important;
+    height: 100px !important;
   }
 }
 
