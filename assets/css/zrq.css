@@ -266,6 +266,11 @@ events/concert
   background-image: url(/assets/img/2560x1200_v01.png);
 }
 
+.zrq-page-events-concert .zrq-cookies {
+  margin-top: 2rem;
+}
+
+
 @media only screen and (max-width: 768px) {
   .zrq-page-events-concert .zrq-hero-image {
     background-image: url(/assets/img/375_667_v00.png);
