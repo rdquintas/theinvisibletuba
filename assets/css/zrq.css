@@ -205,9 +205,12 @@ events/concert
 }
 
 .zrq-page-events-concert .zrq-hero-text {
-  background-color: #252525a4;
+  background-color: #25252554;
 }
 
+.zrq-page-events-concert .hero-title {
+  opacity: 0.8;
+}
 
 .zrq-page-events-concert .zrq-center {
   text-align: center;
