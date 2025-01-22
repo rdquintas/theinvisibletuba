@@ -258,6 +258,20 @@ events/concert
   margin-top: 2rem;
 }
 
+.zrq-page-events-concert .zrq-padding{
+  padding: 3rem;
+}
+
+.zrq-page-events-concert .zrq-hero-image {
+  background-image: url(/assets/img/2560x1200_v01.png);
+}
+
+@media only screen and (max-width: 768px) {
+  .zrq-page-events-concert .zrq-hero-image {
+    background-image: url(/assets/img/375_667_v00.png);
+  }
+}
+
 
 /* 
 =================
