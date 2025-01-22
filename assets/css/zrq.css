@@ -195,6 +195,16 @@ events/concert
   pointer-events: none;
 }
 
+.zrq-page-events-concert .zrq-center {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.zrq-page-events-concert .zrq-link {
+  text-decoration: underline;
+  color: blue;
+}
+
 .zrq-page-events-concert .zrq-soldout .price__table {
  color: rgb(170, 170, 170);
 }
@@ -209,12 +219,43 @@ events/concert
   font-size: 1rem;
 } 
 
-.zrq-page-events-concert .zrq-soldout .zrq-text{
+.zrq-page-events-concert .zrq-soldout .zrq-text {
   color: red;
   font-size: 3rem;
   font-weight: bold;
   z-index: 9999;
   transform: rotate(-25deg);
+}
+
+.zrq-page-events-concert .zrq-musicians .maintext {
+  transform: translateY(-36px);
+  background-color: #252525a4;
+}
+
+.zrq-page-events-concert .zrq-musicians .subtext {
+  transform: translateY(0);
+  background-color: #252525a4;
+}
+
+.zrq-page-events-concert .zrq-title-color {
+ color: #b91d1d
+}
+
+.zrq-page-events-concert .zrq-footer .social-footer {
+  height: 5rem;
+}
+
+.zrq-page-events-concert .zrq-footer .email {
+  color: white;
+  text-decoration: underline;
+}
+
+.zrq-page-events-concert .zrq-footer .zrq-zapezape {
+  width: 250px;
+}
+
+.zrq-page-events-concert .zrq-footer .zrq-top-margin{
+  margin-top: 2rem;
 }
 
 
