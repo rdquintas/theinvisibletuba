@@ -312,6 +312,10 @@ events/concert
     background-image: url(/assets/img/750x1334_v00.png);
   }
 
+  .zrq-page-events-concert .hero-content {
+    top: 40%;
+  }
+  
   .zrq-page-events-concert .zrq-header .zrq-logo img {
     width: 100px !important;
     height: 100px !important;
