@@ -212,8 +212,6 @@ events/concert
   opacity: 0.9;
 }
 
-
-
 .zrq-page-events-concert .zrq-center {
   text-align: center;
   margin-top: 3rem;
@@ -222,6 +220,12 @@ events/concert
 .zrq-page-events-concert .zrq-link {
   text-decoration: underline;
   color: blue;
+}
+
+.zrq-page-events-concert .zrq-normal-text {
+  text-transform: none;
+  color: #b91d1d;
+  font-style: italic;
 }
 
 .zrq-page-events-concert .zrq-soldout .price__table {
