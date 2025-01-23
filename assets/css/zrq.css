@@ -190,10 +190,14 @@ concerts.html
 events/concert
 =================
 */
-
-
 .zrq-page-events-concert .zrq-border-radius {
   border-radius: 50px;
+}
+
+.zrq-page-events-concert .zrq-country-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
 
 .zrq-page-events-concert .hero-container {
