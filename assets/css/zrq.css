@@ -337,6 +337,11 @@ events/concert
     width: 100px !important;
     height: 100px !important;
   }
+
+  .zrq-page-events-concert .zrq-german-text {
+    font-size: 2rem;
+  }
+  
 }
 
 
