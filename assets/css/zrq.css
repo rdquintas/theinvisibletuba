@@ -269,6 +269,10 @@ events/concert
   height: 5rem;
 }
 
+.zrq-page-events-concert .zrq-footer .zrq-text-size {
+  font-size: 1.5rem;
+}
+
 .zrq-page-events-concert .zrq-footer .email {
   color: white;
   text-decoration: underline;
