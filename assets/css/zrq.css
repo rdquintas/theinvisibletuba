@@ -200,6 +200,14 @@ events/concert
   margin-right: 5px;
 }
 
+.zrq-page-events-concert .zrq-black-opacity {
+  color: #0000003a;
+}
+
+.zrq-page-events-concert .zrq-euro {
+  margin-top: 10px;
+}
+
 .zrq-page-events-concert .hero-container {
   background-color: initial;
 }
