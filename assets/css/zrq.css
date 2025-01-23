@@ -212,13 +212,7 @@ events/concert
   opacity: 0.9;
 }
 
-.zrq-page-events-concert .zrq-subtitle1 {
- display: block;
-}
 
-.zrq-page-events-concert .zrq-subtitle2 {
-  display: none;
- }
 
 .zrq-page-events-concert .zrq-center {
   text-align: center;
@@ -313,14 +307,6 @@ events/concert
   .zrq-page-events-concert .zrq-header .zrq-logo img {
     width: 100px !important;
     height: 100px !important;
-  }
-
-  .zrq-page-events-concert .zrq-subtitle1 {
-    display: none;
-  }
-  
-  .zrq-page-events-concert .zrq-subtitle2 {
-    display: block;
   }
 }
 
