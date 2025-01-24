@@ -341,6 +341,11 @@ events/concert
   .zrq-page-events-concert .zrq-german-text {
     font-size: 1.8rem !important;
   }
+
+  .zrq-page-events-concert #venue .inner-lg {
+    padding-top: 0;
+  }
+  
   
 }
 
