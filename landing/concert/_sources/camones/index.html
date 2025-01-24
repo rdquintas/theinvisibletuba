@@ -90,6 +90,8 @@
                     <li class="single-item"><a href="index_es.html"><img class="zrq-country-icon" src="../../assets/img/icons/spain.png"></img>Español</a></li>
                     <li class="single-item"><a href="index_de.html"><img class="zrq-country-icon" src="../../assets/img/icons/germany.png"></img>Deutsch</a></li>
                     <li class="single-item"><a href="index_nl.html"><img class="zrq-country-icon" src="../../assets/img/icons/holland.png"></img>Nederlands</a></li>
+                    <li class="single-item"><a href="index_it.html"><img class="zrq-country-icon" src="../../assets/img/icons/italy.png"></img>Italiano</a></li>
+                    <li class="single-item"><a href="index_se.html"><img class="zrq-country-icon" src="../../assets/img/icons/sweden.png"></img>Svenska</a></li>
                     <li class="single-item"><a href="index_jp.html"><img class="zrq-country-icon" src="../../assets/img/icons/japan.png"></img>日本語 Japanese</a></li>                    
                 </ul>
             </nav>
@@ -120,7 +122,7 @@
                         <h3 class="text-center white">Make your trip to Lisbon unforgettable.</h3>
                         <h4 class="text-center white">Join the city’s funniest band for an evening you’ll be talking about for years! 😊.</h4>
                         <div class="text-center">
-                            <a href="#tickets" class="zrq-focus-input btn book-now-btn black-bg btn-white">BUY TICKETS</a>                            
+                            <a href="{{link_tickets}}" target="_blank" class="zrq-focus-input btn book-now-btn black-bg btn-white">BUY TICKETS</a>                            
                         </div>
                     </div>
                 </div>
@@ -219,7 +221,7 @@
                             <div class="col-sm-12 col-md-6 mobile-space-sm">                                
                                 <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->             
                                  <!-- IMAGEM DO BAR -->                               
-                                <img class="img-responsive img-center active" src="../../assets/img/457x558_camones.png" alt="The Invisible Tuba">
+                                <img class="img-responsive img-center active" src="{{venue_photo}}" alt="The Invisible Tuba">
                                 <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                             </div>
                             <div class="col-sm-12 col-md-6 col-half margin-left-5 mobile-space-sm">
@@ -228,8 +230,8 @@
                                 </div>
                                 <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->                                
                                 <div class="content black">
-                                    <p>We're playing at <a class="zrq-link" target="_blank" href="https://www.facebook.com/camonesartesbar/?locale=pt_PT">CAMONES ARTES BAR</a>,
-                                         one of the busiest (intimate) musical venues in Lisbon.</p>
+                                    <p>We're playing at <a class="zrq-link" target="_blank" href="{{venue_link}}">{{venue_name}}</a>,
+                                        {{venue_desc1.en}} </p>
                                 </div>
                                 <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                 <div class="approach-list inner-sm">
@@ -240,7 +242,7 @@
                                         <div class="approach-content black">
                                             <h6 class="title">When ?</h6>
                                             <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->  
-                                            <p>We're playing live on 29/March at 21:30 (doors open at 20:00)</p>
+                                            <p>{{gig_date.en}}</p>
                                             <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                         </div>
                                     </div>
@@ -251,11 +253,11 @@
                                         <div class="approach-content black">
                                             <h6 class="title">Where ?</h6>
                                             <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
-                                            <p><a class="zrq-link" target="_blank" href="https://www.facebook.com/camonesartesbar/?locale=pt_PT">CAMONES ARTES BAR</a>
-                                                 is located in Bairro da Graça (one of the hidden gems in Lisbon and a very trendy neighborhood).</p>
-                                            <p>Address: R. Josefa Maria 4B, 1170-195 Lisboa</p>
-                                            <p>Click <a class="zrq-link" target="_blank" href="https://www.facebook.com/camonesartesbar/?locale=pt_PT">here</a> for more details</p>
-                                            <p>Or call them:<a class="zrq-link" class="phone" href="tel:(+351)214 068 809">(+351)214 068 809</a></p>
+                                            <p><a class="zrq-link" target="_blank" href="{{venue_link}}">{{venue_name}}</a>
+                                                 {{venue_desc2.en}}</p>
+                                            <p>Address: {{venue_address}}</p>
+                                            <p>Click <a class="zrq-link" target="_blank" href="{{venue_link}}">here</a> for more details</p>
+                                            <p>Or call them:<a class="zrq-link" class="phone" href="tel:{{venue_phone}}">{{venue_phone}}</a></p>
                                             <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                         </div>
                                     </div>
@@ -266,7 +268,7 @@
                                         <div class="approach-content black">
                                             <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                             <h6 class="title">What do they offer ?</h6>
-                                            <p>A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available</p>
+                                            <p>{{venue_offer.en}}</p>
                                             <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                         </div>
                                     </div>
@@ -324,8 +326,8 @@
                                 
                                 <div class="price">
                                     <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
-                                    <p class="price__first"><span>€</span>20</p>
-                                    <p class="price__second black"><span>€</span>20</p>                                    
+                                    <p class="price__first"><span>€</span>{{price_1}}</p>
+                                    <p class="price__second black"><span>€</span>{{price_1}}</p>                                    
                                     <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                 </div>   
                                 <div class="price__sentence zrq-red">
@@ -334,7 +336,7 @@
                                 <ul>
                                     <!-- <li><i class="fa fa-long-arrow-right"></i>Hot Towel Steam</li> -->
                                 </ul>
-                                <a class="btn book-now-btn" href="#">Click to buy</a>
+                                <a class="zrq-focus-input btn book-now-btn black-bg btn-white" target="_blank" href="{{link_tickets}}">Click to buy</a>
                             </div>
                         </div>
 
@@ -354,7 +356,7 @@
                                 </div>
                                 <div class="price">
                                     <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
-                                    <p class="zrq-black-opacity"><span class="zrq-euro">€</span>35</p>
+                                    <p class="zrq-black-opacity"><span class="zrq-euro">€</span>{{price_2}}</p>
                                     <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                 </div>
                                 <ul>
@@ -380,7 +382,7 @@
                                 </div>
                                 <div class="price">
                                     <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
-                                    <p class="zrq-black-opacity"><span class="zrq-euro">€</span>70</p>
+                                    <p class="zrq-black-opacity"><span class="zrq-euro">€</span>{{price_3}}</p>
                                     <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                 </div>
                                 <ul>
@@ -406,7 +408,7 @@
                 <div class="row no-margin">
                     <div class="col-xs-12">
                         <h2 class="text-center white">This band is big</h2>
-                        <h5 class="text-center white">And sometimes we also invite guests, so each show is unique and different.</h5>
+                        <h5 class="text-center white">And sometimes we also invite guest artists, so each show is unique and different.</h5>
                     </div>
                 </div>
             </div>
@@ -487,7 +489,7 @@
                                         <p>Our normal tickets won't guarantee you a table. 
                                             So please try to be there as soon as the doors open if you want to have a table of your own. 
                                             Otherwise you can also contact the venue directly to this number: 
-                                            <a class="zrq-link" class="phone" href="tel:(+351)214 068 809">(+351)214 068 809</a>
+                                            <a class="zrq-link" class="phone" href="tel:{{venue_phone}}">{{venue_phone}}</a>
                                         </p>
                                     </div>
                                 </div>
@@ -508,7 +510,7 @@
                                         <p>Yes you can, but we recommend you not to take risks. Our shows usually sell out.</p>
                                         <p> Don’t Miss Out: Once they’re gone, they’re gone — book your spot today!</p>
                                         <!-- >>>>>>>> CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->                                        
-                                        <a href="#tickets" target="_blank" class="zrq-focus-input btn book-now-btn black-bg btn-white">BUY TICKETS</a>                            
+                                        <a href="{{link_tickets}}" target="_blank" class="zrq-focus-input btn book-now-btn black-bg btn-white">BUY TICKETS</a>
                                         <!-- <<<<<<<< CHANGE THIS //////////////////////////////////////////////////////////////////////////////////////////////////////   -->
                                     </div>
                                 </div>
@@ -563,7 +565,7 @@
                 <div class="row footer__row">
                     <div class="footer__logo no-padding">
                         <div class="logo__container">
-                            <a  href="index_en.html">
+                            <a href="/../../index_en.html" target="_blank">
                                 <div class="footer__logo--img zrq-logo">
                                     <img class="img-responsive logo-white" src="../../assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
                                 </div>

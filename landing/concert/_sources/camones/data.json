@@ -1,0 +1,55 @@
+{
+  "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
+  "venue_phone": "(+351)214 068 809",
+  "venue_name": "CAMONES ARTES BAR",
+  "venue_desc1": {
+    "en": " one of the busiest (intimate) musical venues in Lisbon",
+    "de": " einer der belebtesten (intimsten) Musikveranstaltungsorte in Lissabon",
+    "es": " uno de los bares musicales más concurridos de Lisboa",
+    "fr": " l'une des salles de concert les plus fréquentées de Lisbonne",
+    "jp": " で演奏します, リスボンで最も賑やかな（親密な）音楽会場の一つ.",
+    "nl": " een van de drukste (intieme) muzieklocaties in Lissabon",
+    "it": " uno dei locali musicali più frequentati (e intimi) di Lisbona",
+    "se": " en av de mest trafikerade (intima) musikplatserna i Lissabon",
+    "pt": " um dos melhores locais em Lisboa com música ao vivo"
+  },
+  "venue_desc2": {
+    "en": " is located in Bairro da Graça (one of the hidden gems in Lisbon and a very trendy neighborhood)",
+    "de": " befindet sich im Bairro da Graça (eines der versteckten Juwelen in Lissabon und ein sehr trendiges Viertel)",
+    "es": " está ubicado en el Bairro da Graça (uno de los rincones más secretos de Lisboa y un barrio super de moda)",
+    "fr": " est situé dans le Bairro da Graça (l'un des joyaux cachés de Lisbonne et un quartier très branché)",
+    "jp": " バイロ ダ グラサ（リスボンの隠れた名所のひとつで、とてもトレンディな地区）に位置しています。",
+    "nl": " is gelegen in Bairro da Graça (een van de verborgen pareltjes in Lissabon en een zeer trendy wijk)",
+    "it": " si trova nel Bairro da Graça (uno dei gioielli nascosti di Lisbona e un quartiere molto alla moda)",
+    "se": " ligger i Bairro da Graça (en av de dolda pärlorna i Lissabon och ett mycket trendigt område)",
+    "pt": " está localizado no Bairro da Graça"
+  },
+  "venue_link": "https://www.facebook.com/camonesartesbar/?locale=pt_PT",
+  "venue_photo": "../../assets/img/457x558_camones.png",
+  "venue_offer": {
+    "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
+    "de": "Eine große Auswahl an erlesenen Getränken, Bieren und dem besten portugiesischen Wein. Tapas und leichte Mahlzeiten sind ebenfalls erhältlich",
+    "es": "Una gran variedad de los mejores licores, cervezas y el mejor vino Portugués. También tienen tapas y comidas ligeras",
+    "fr": "Un vaste choix des meilleurs boisson, bières et vins Portugais. Des tapas et des repas légers sont également disponibles",
+    "jp": "最高級のスピリッツ、ビール、最高のポルトガルワインを豊富に取り揃えています。タパスや軽食もご用意しております。",
+    "nl": "Een groot aanbod van de beste dranken, bieren en de beste Portugese wijn. Tapas en lichte maaltijden zijn ook beschikbaar",
+    "it": "Una vasta gamma delle migliori bevande, birre e dei migliori vini portoghesi. Sono disponibili anche tapas e pasti leggeri",
+    "se": "Ett stort utbud av de finaste spriten, öl och det bästa portugisiska vinet. Tapas och lättare måltider finns också tillgängliga",
+    "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras"
+  },
+  "gig_date": {
+    "en": "We're playing live on 29/March at 21:30 (doors open at 20:00)",
+    "de": "Wir spielen live am 29 März um 21:30 Uhr (Einlass 20:00 Uhr)",
+    "es": "Tocamos en vivo el 29 de marzo a las 21:30 (las puertas abren a las 20:00).",
+    "fr": "Nous jouons en live le 29/03 à 21h30 (ouverture des portes à 20h00)",
+    "jp": "3月29日 21:30よりライブを行います（開場20:00",
+    "nl": "We spelen live op 29/maart om 21:30 (deuren open om 20:00)",
+    "it": "Suoneremo dal vivo il 29/marzo alle 21:30 (apertura porte alle 20:00)",
+    "se": "Vi spelar live den 29/mars kl 21:30 (dörrarna öppnar kl 20:00)",
+    "pt": "Vamos tocar ao vivco a 29/Março às 21:30 (as portas abrem às 20:00)"
+  },
+  "price_1": "20",
+  "price_2": "35",
+  "price_3": "70",
+  "link_tickets": "https://www.google.com"
+}
