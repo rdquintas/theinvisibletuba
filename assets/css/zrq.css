@@ -322,6 +322,37 @@ events/concert
   border-radius: 50px;
 }
 
+.zrq-page-events-concert .zrq-payment ul {
+  background-color: #f4f4f4;
+}
+.zrq-page-events-concert .zrq-payment .zrq-seetickets-logo img {
+  width: 250px;
+}
+.zrq-page-events-concert .zrq-payment .zrq-star-logo img {
+  background-color: #000;
+  padding: 7px;
+}
+.zrq-page-events-concert .zrq-payment li {
+  display: inline-block;
+}
+
+.zrq-page-events-concert .zrq-payment li img {
+  width: 60px;
+}
+
+.zrq-page-events-concert .zrq-seetickets   {
+  text-align: center;
+}
+.zrq-page-events-concert .zrq-seetickets li  {
+  display: inline-block;
+  padding: 15px;
+}
+.zrq-page-events-concert .zrq-seetickets li img {
+  width: 250px;
+}
+.zrq-page-events-concert .zrq-seetickets .zrq-seetickets-logo img {
+  background-color: white;
+}
 
 
 @media only screen and (max-width: 768px) {
