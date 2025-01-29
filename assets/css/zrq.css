@@ -325,9 +325,19 @@ events/concert
   margin-top: 2rem;
 }
 
-.zrq-page-events-concert .social-footer .zrq-socialmedia-icon {
+.zrq-page-events-concert .zrq-socialmedia-icon {
   width: 40px;
 }
+
+.zrq-page-events-concert .zrq-social-cenas {
+  margin-top: 2rem;
+}
+
+.zrq-page-events-concert .zrq-social-cenas li {
+  display: inline-block;
+}
+
+
 
 .zrq-page-events-concert .zrq-bottom-margin2{
   margin-bottom: 4rem;
@@ -409,6 +419,10 @@ events/concert
   
   .zrq-page-events-concert .zrq-seetickets   {
     margin-top: 3rem;
+  }
+
+  .zrq-page-events-concert .zrq-padding {
+    padding: 1rem;
   }
   
 }
