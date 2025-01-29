@@ -239,6 +239,14 @@ events/concert
   color: blue;
 }
 
+.zrq-page-events-concert .zrq-we-have-a-gig .approach-icon-wrapper {
+  float: none;
+}
+
+.zrq-page-events-concert .zrq-we-have-a-gig .fa-2x {
+  font-size: 35px;
+}
+
 .zrq-page-events-concert .zrq-normal-text {
   text-transform: none;
   color: #b91d1d;
