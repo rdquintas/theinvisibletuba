@@ -245,6 +245,20 @@ events/concert
   font-style: italic;
 }
 
+.zrq-page-events-concert .zrq-previous-price {
+  position: relative;
+  text-decoration: line-through;
+  font-size: 35px;
+  top: -45px;
+  color: #0000003a;
+ }
+ 
+ .zrq-page-events-concert .zrq-previous-price span {
+  font-size: 15px;
+  color: #0000003a;
+ }
+ 
+
 .zrq-page-events-concert .zrq-soldout .price__table {
  color: rgb(170, 170, 170);
 }
