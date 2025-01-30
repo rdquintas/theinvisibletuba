@@ -408,7 +408,7 @@ landing - concert
 }
 
 .zrq-page-events-concert .youtube-link:hover img {  
-  transform: scale(1.1); /* Increases size by 10% */
+  transform: scale(1.1);
 }
 
 
@@ -444,6 +444,10 @@ landing - concert
 
   .zrq-page-events-concert .zrq-overlay {  
     width: 180px;
+  }
+  
+  .zrq-page-events-concert .zrq-benefit {  
+    margin-bottom: -90px;
   }
   
 }
