@@ -187,7 +187,7 @@ concerts.html
 
 /* 
 =================
-events/concert
+landing - concert
 =================
 */
 .zrq-page-events-concert .zrq-border-radius {
@@ -392,7 +392,29 @@ events/concert
   background-color: white;
 }
 
+.zrq-page-events-concert .zrq-youtube-thumb {  
+  width: 75%; 
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.zrq-page-events-concert .zrq-overlay {  
+  position: absolute;
+  top: 570px;
+  right: 95px;
+  width: 210px;
+  text-align: center;
+}
+.zrq-page-events-concert .youtube-link img {  
+  transition: transform 0.2s ease-in-out;
+}
 
+.zrq-page-events-concert .youtube-link:hover img {  
+  transform: scale(1.1); /* Increases size by 10% */
+}
+
+.zrq-page-events-concert .grtyoutube-iframe {
+  height: 500px;
+}
 
 
 @media only screen and (max-width: 768px) {
@@ -422,6 +444,262 @@ events/concert
   }
 
   .zrq-page-events-concert .zrq-padding {
+    padding: 1rem;
+  }
+
+  .zrq-page-events-concert .zrq-overlay {  
+    right: 75px;    
+  }
+  
+}
+
+/* 
+=================
+landing - corporate
+=================
+*/
+
+.zrq-page-events-corporate .grtyoutube-iframe {
+  height: 500px;
+}
+
+.zrq-page-events-corporate .zrq-border-radius {
+  border-radius: 50px;
+}
+
+.zrq-page-events-corporate .zrq-country-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.zrq-page-events-corporate .zrq-black-opacity {
+  color: #0000003a;
+}
+
+.zrq-page-events-corporate .zrq-red {
+  color: red;
+  font-size: 1rem;
+}
+
+.zrq-page-events-corporate .zrq-euro {
+  margin-top: 10px;
+}
+
+.zrq-page-events-corporate .hero-container {
+  background-color: initial;
+}
+
+.zrq-page-events-corporate .hero-background {
+  opacity: 1;
+}
+
+.zrq-page-events-corporate .zrq-hero-text {
+  background-color: #25252554;
+}
+
+.zrq-page-events-corporate .hero-title {
+  opacity: 0.9;
+}
+
+.zrq-page-events-corporate .zrq-center {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.zrq-page-events-corporate .zrq-link {
+  text-decoration: underline;
+  color: blue;
+}
+
+.zrq-page-events-corporate .zrq-we-have-a-gig .approach-icon-wrapper {
+  float: none;
+}
+
+.zrq-page-events-corporate .zrq-we-have-a-gig .fa-2x {
+  font-size: 35px;
+}
+
+.zrq-page-events-corporate .zrq-normal-text {
+  text-transform: none;
+  color: #b91d1d;
+  font-style: italic;
+}
+
+.zrq-page-events-corporate .zrq-previous-price {
+  position: relative;
+  text-decoration: line-through;
+  font-size: 35px;
+  top: -45px;
+  color: #0000003a;
+ }
+ 
+ .zrq-page-events-corporate .zrq-previous-price span {
+  font-size: 15px;
+  color: #0000003a;
+ }
+ 
+
+.zrq-page-events-corporate .zrq-soldout .price__table {
+ color: rgb(170, 170, 170);
+}
+
+.zrq-page-events-corporate .zrq-soldout .price__first {
+  color: #af8c4560;
+} 
+
+.zrq-page-events-corporate .zrq-soldout .btn {
+  color: red;
+  background-color: rgb(247, 200, 200);
+  font-size: 1rem;
+} 
+
+.zrq-page-events-corporate .zrq-soldout .zrq-text {
+  color: red;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+  z-index: 9999;
+  transform: rotate(-25deg);
+}
+
+.zrq-page-events-corporate .zrq-musicians .maintext {
+  transform: translateY(-36px);
+  background-color: #252525a4;
+}
+
+.zrq-page-events-corporate .zrq-musicians .subtext {
+  transform: translateY(0);
+  background-color: #252525a4;
+}
+
+.zrq-page-events-corporate .zrq-title-color {
+ color: #b91d1d
+}
+
+.zrq-page-events-corporate .zrq-footer .social-footer {
+  height: 5rem;
+}
+
+.zrq-page-events-corporate .zrq-footer .zrq-text-size {
+  font-size: 1.5rem;
+}
+
+.zrq-page-events-corporate .zrq-footer .email {
+  color: white;
+  text-decoration: underline;
+}
+
+.zrq-page-events-corporate .zrq-footer .zrq-zapezape {
+  width: 250px;
+}
+
+.zrq-page-events-corporate .zrq-footer .zrq-top-margin{
+  margin-top: 2rem;
+}
+
+.zrq-page-events-corporate .zrq-socialmedia-icon {
+  width: 40px;
+}
+
+.zrq-page-events-corporate .zrq-social-cenas {
+  margin-top: 2rem;
+}
+
+.zrq-page-events-corporate .zrq-social-cenas li {
+  display: inline-block;
+}
+
+
+
+.zrq-page-events-corporate .zrq-bottom-margin2{
+  margin-bottom: 4rem;
+}
+
+.zrq-page-events-corporate .zrq-padding{
+  padding: 3rem;
+}
+
+.zrq-page-events-corporate .zrq-hero-image {
+  background-image: url(/assets/img/2560x1200_v01.png);
+}
+
+.zrq-page-events-corporate .zrq-cookies {
+  margin-top: 3rem;
+}
+.zrq-page-events-corporate .zrq-border-radius {
+  border-radius: 50px;
+}
+
+.zrq-page-events-corporate .zrq-payment ul {
+  background-color: #f4f4f4;
+}
+.zrq-page-events-corporate .zrq-payment .zrq-seetickets-logo img {
+  width: 200px;
+}
+.zrq-page-events-corporate .zrq-payment .zrq-star-logo img {
+  background-color: #000;
+  padding: 7px;
+  width: 200px;
+}
+.zrq-page-events-corporate .zrq-payment li {
+  display: inline-block;
+}
+
+.zrq-page-events-corporate .zrq-payment li img {
+  width: 60px;
+}
+
+.zrq-page-events-corporate .zrq-seetickets   {
+  text-align: center;
+  margin-top: 1rem;
+}
+.zrq-page-events-corporate .zrq-seetickets li  {
+  display: inline-block;
+  padding: 15px;
+}
+.zrq-page-events-corporate .zrq-seetickets li img {
+  width: 250px;
+}
+.zrq-page-events-corporate .zrq-seetickets .zrq-seetickets-logo img {
+  background-color: white;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .zrq-page-events-corporate #header {
+    background-color: black ;
+    height: 45px;
+  }
+
+  .zrq-page-events-corporate .zrq-hero-image {
+    background-image: url(/assets/img/750x1334_v00.png);
+  }
+
+  .zrq-page-events-corporate .hero-content {
+    top: 40%;
+  }
+  
+  .zrq-page-events-corporate .zrq-header .zrq-logo img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .zrq-page-events-corporate .zrq-german-text {
+    font-size: 1.8rem !important;
+  }
+
+  .zrq-page-events-corporate #venue .inner-lg {
+    padding-top: 0;
+  }
+  
+  .zrq-page-events-corporate .zrq-seetickets   {
+    margin-top: 3rem;
+  }
+
+  .zrq-page-events-corporate .zrq-padding {
     padding: 1rem;
   }
   
