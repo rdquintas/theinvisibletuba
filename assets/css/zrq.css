@@ -398,9 +398,9 @@ landing - concert
   margin-top: 2rem;
 }
 .zrq-page-events-concert .zrq-overlay {  
-  position: absolute;
-  top: 570px;
-  right: 95px;
+  position: relative;
+  bottom: 90px;
+  left: 60px;
   width: 210px;
   text-align: center;
 }
@@ -413,7 +413,7 @@ landing - concert
 }
 
 .zrq-page-events-concert .grtyoutube-iframe {
-  height: 500px;
+  /* height: 500px; */
 }
 
 
@@ -447,9 +447,6 @@ landing - concert
     padding: 1rem;
   }
 
-  .zrq-page-events-concert .zrq-overlay {  
-    right: 75px;    
-  }
   
 }
 
