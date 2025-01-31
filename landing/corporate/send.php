@@ -22,7 +22,7 @@ $form->newsletter_cb = $_POST["newsletter_cb"];
 // echo($form);
 
 header('Content-Type:text/html; charset=UTF-8');
-echo ($form);
+echo ("caralho");
 
 // $body = prepareBody($form);
 
