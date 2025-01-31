@@ -63,6 +63,7 @@
 
 
         $(".zrq-talk-to-us").click(function (oEvent) {
+          $("#zrqForm").trigger("reset");
           $('#warningModal').modal('show');          
         });
 
@@ -71,19 +72,6 @@
           $('#warningModal').modal('hide');
           $('#obrigadoModal').modal('hide');
         });
-
-        // $.ajax({
-        //     type: 'POST',
-        //     dataType: 'json',
-        //     url: ajaxurl,
-        //     data: { action: 'get_cart_item', post_id: cartData },
-        // })
-        // .done($.ajax({
-        //      type: "POST",
-        //      url: ajaxurl,
-        //      data: { action: 'build_shopping_cart_html'},
-        //      success: alert("Cart Updated"),
-        //  }));
 
 
         $("#zrqForm").on("submit", function (oEvent) {
