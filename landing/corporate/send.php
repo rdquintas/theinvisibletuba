@@ -10,8 +10,8 @@ $mailer = Swift_Mailer::newInstance($transport);
 $form = new stdClass();
 
 
-$subjectForTuba = "Pedido de Orçamento";
-$subjectConfirmation = "Confirmação de Pedido";
+$subjectForTuba = "Pedido de Informação";
+$subjectConfirmation = "Pedido de Informação";
 $form->nome = $_POST["nome"];
 $form->email = $_POST["email"];
 $form->empresa = $_POST["empresa"];
