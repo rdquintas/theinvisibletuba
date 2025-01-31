@@ -1,5 +1,5 @@
 <?php
-require_once '../../lib/swift_required.php';
+require_once '../../../lib/swift_required.php';
 
 $transport = Swift_SmtpTransport::newInstance('mail.theinvisibletuba.com', 25)
     ->setUsername('info@theinvisibletuba.com')
