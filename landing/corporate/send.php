@@ -18,11 +18,16 @@ $form->empresa = $_POST["empresa"];
 $form->mensagem = $_POST["mensagem"];
 $form->newsletter_cb = $_POST["newsletter_cb"];
 
+if ($form->newsletter_cb == "true") {
+    $form->newsletter_cb = "sim";
+} else {
+    $form->newsletter_cb = "não";
+}
+
 // print_r($form);
 // echo($form);
 
 header('Content-Type:application/json; charset=UTF-8');
-// print "Dass";
 echo json_encode($form);
 
 // $body = prepareBody($form);
