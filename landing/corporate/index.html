@@ -88,23 +88,17 @@
 
         $("#zrqForm").on("submit", function (oEvent) {
           oEvent.preventDefault();
+          $('#warningModal').modal('hide');
+          $('#spinnerModal').modal('show');
           $.ajax({
             type: 'post',
             url: 'send.php',
             data: $('#zrqForm').serialize(),
             success: function (obj) {
-                debugger;
-              alert('form was submitted');
+                $('#spinnerModal').modal('hide');
+                $('#obrigadoModal').modal('show');
             }
-          });
-           
-            // oEvent.stopPropagation();            
-            // $('#warningModal').modal('hide');
-            // $('#spinnerModal').modal('show');
-            // setTimeout(()=> {
-            //     $('#spinnerModal').modal('hide');
-            //     $('#obrigadoModal').modal('show');
-            // },2000);                        
+          });                                 
         });    
 
      });
@@ -706,6 +700,7 @@
           <div class="modal-content">
                <div class="modal-body">
                     <h2>Obrigado 😁</h2>
+                    <p>Mensagem enviada.</p>
                     <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
                </div>
           </div>
