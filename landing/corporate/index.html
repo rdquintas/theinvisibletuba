@@ -58,6 +58,56 @@
     <script type="text/javascript" src="../../assets/scripts/extensions/revolution.extension.video.min.js"></script>
     <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>
     
+    <script>
+     $(document).ready(function(){
+
+
+        $(".zrq-talk-to-us").click(function (oEvent) {
+          $('#warningModal').modal('show');          
+        });
+
+
+        $(".zrq-btn-close").click(function (oEvent) {
+          $('#warningModal').modal('hide');
+          $('#obrigadoModal').modal('hide');
+        });
+
+        // $.ajax({
+        //     type: 'POST',
+        //     dataType: 'json',
+        //     url: ajaxurl,
+        //     data: { action: 'get_cart_item', post_id: cartData },
+        // })
+        // .done($.ajax({
+        //      type: "POST",
+        //      url: ajaxurl,
+        //      data: { action: 'build_shopping_cart_html'},
+        //      success: alert("Cart Updated"),
+        //  }));
+
+
+        $("#zrqForm").on("submit", function (oEvent) {
+          oEvent.preventDefault();
+          $.ajax({
+            type: 'post',
+            url: 'send.php',
+            data: $('#zrqForm').serialize(),
+            success: function () {
+              alert('form was submitted');
+            }
+          });
+           
+            // oEvent.stopPropagation();            
+            // $('#warningModal').modal('hide');
+            // $('#spinnerModal').modal('show');
+            // setTimeout(()=> {
+            //     $('#spinnerModal').modal('hide');
+            //     $('#obrigadoModal').modal('show');
+            // },2000);                        
+        });    
+
+     });
+    </script>
 </head>
 
 
@@ -114,11 +164,11 @@
                 <div class="row no-margin">
                     <div class="col-xs-12">
                         <div class="text-center">
-                            <a href="https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-camones-bar/camones-artes-bar/3293864?preview=true&lang=en-GB" target="_blank" class="zrq-focus-input btn book-now-btn black-bg btn-white">FALA CONNOSCO</a>                            
-                        </div>
+                            <button class="zrq-talk-to-us btn book-now-btn black-bg btn-white">FALA CONNOSCO</button>                          
+                        </div>                               
                         <br>
                         <h3 class="text-center white">Contrata a banda mais engraçada de Lisboa para os teus eventos corporativos!</h3>
-                        <h4 class="text-center white">Queres acrescentar entusiasmo e entretenimento inesquecível aos eventos da tua empresa? 😊</h4>                    
+                        <h4 class="text-center white">Queres acrescentar entusiasmo e entretenimento inesquecível aos eventos da tua empresa? 😊</h4>                     
                     </div>
                 </div>
             </div>
@@ -137,36 +187,57 @@
                         <div class="row wrapper">
                             <h2 class="sub-intro">Somos os <span class="zrq-title-color">The Invisible Tuba</span></h2>
                             <h3 class="zrq-bottom-margin2">A band that makes you <span class="zrq-normal-text">#HappyRightNow</span></h3>
-                            <div class="col-sm-4">
-                                <div class="col3__item">
-                                    <div class="icon__wrapper">
-                                        <i class="fa-regular fa-face-smile-wink fa-3x"></i>
-                                    </div>
+                            <div class="col-sm-4 zrq-benefit">
+                                <div class="col3__item">                               
                                     <div class="col3__item--content">
                                         <h5>Boost Team Moral</h5>
                                         <p>A (nossa) música ao vivo cria uma experiência compartilhada, promovendo a conexão e a camaradagem entre os funcionários.</p>
+                                        <div class="videos youtube-link" youtubeid="F7pZXvy-wcM">
+                                            <a href="#">
+                                                <div class="zrq-youtube-thumb">
+                                                    <img class="img-responsive" src="../../assets/img/1080x1920_v01.jpg" alt="The Invisible Tuba">
+                                                </div>
+                                                <div class="zrq-overlay">
+                                                    <img class="img-responsive" src="../../assets/img/icons/watchnow.png" alt="The Invisible Tuba">
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <div class="col3__item">
-                                    <div class="icon__wrapper">
-                                        <i class="fa-solid fa-camera fa-3x"></i>
-                                    </div>
+                            <div class="col-sm-4 zrq-benefit">
+                                <div class="col3__item">                        
                                     <div class="col3__item--content">
                                         <h5>Alívio do Stress</h5>
                                         <p>Diversão, gargalhadas e músicas otimistas ajudam as equipas a relaxar e recarregar.</p>
+                                        <div class="videos youtube-link" youtubeid="fo1Y_jb_abw">
+                                            <a href="#">
+                                                <div class="zrq-youtube-thumb">
+                                                    <img class="img-responsive" src="../../assets/img/1080x1920_v02.jpg" alt="The Invisible Tuba">
+                                                </div>
+                                                <div class="zrq-overlay">
+                                                    <img class="img-responsive" src="../../assets/img/icons/watchnow.png" alt="The Invisible Tuba">
+                                                </div>
+                                            </a>
+                                        </div>                                
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <div class="col3__item">
-                                    <div class="icon__wrapper">
-                                        <i class="fa-solid fa-music fa-3x"></i>
-                                    </div>
+                            <div class="col-sm-4 zrq-benefit">
+                                <div class="col3__item">                                 
                                     <div class="col3__item--content">
                                         <h5>Entretenimento personalizável</h5>
                                         <p>Seja numa gala formal, num evento de team building, no lançamento de um novo produto ou num jantar especial - adaptamo-nos à vossa vibração e tipo de público.</p>
+                                        <div class="videos youtube-link" youtubeid="lymjCYPfZek">
+                                            <a href="#">
+                                                <div class="zrq-youtube-thumb">
+                                                    <img class="img-responsive" src="../../assets/img/1080x1920_v00.jpg" alt="The Invisible Tuba">
+                                                </div>
+                                                <div class="zrq-overlay">
+                                                    <img class="img-responsive" src="../../assets/img/icons/watchnow.png" alt="The Invisible Tuba">
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -176,6 +247,22 @@
             </div>            
         </div>
  
+        <div class="zrq-subtitle2 white section container-fluid no-padding black-bg">
+            <div class="inner-sm">
+                <div class="row no-margin">
+                    <div class="col-xs-12">
+                        <div class="text-center">
+                            <p>Queres falar AGORA ?</p>
+                            <a aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/351967285043"> 
+                                <img class="zrq-zapezape" alt="Chat on WhatsApp" src="../../assets/img/icons/WhatsAppButtonGreenLarge.png" />
+                            </a>                          
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!--
         #################################
             - SIDE BY SIDE PICS -
@@ -195,8 +282,8 @@
                     <h2 class="text-center black">Adoramos tocar para empresas!</h2>
                 </div>        
                 <div class="content black">
-                    <p class="text-center">Os THE INVISIBLE TUBA são atualmente uma das bandas de topo mais cool de Lisboa.</p>
-                    <p class="text-center">Esta banda garante-te uma forma divertida e memorável de celebrares um evento único.</p>                    
+                    <p class="text-center">Os THE INVISIBLE TUBA são atualmente uma das bandas mais cool de Lisboa.</p>
+                    <p class="text-center">Connosco terás uma festa única e memorável. O divertimento é garantido.</p>                    
                     <p class="text-center">Ouve algumas das nossas canções <a class="zrq-link" target="_blank" href="../../audio_en.html">AQUI</a></p>
                     <ul class="text-center zrq-social-cenas">                                    
                         <li><a target="_blank" href="https://www.instagram.com/theinvisibletuba/"><img class="zrq-socialmedia-icon" alt="" src="../../assets/img/icons/instagram.png"/></a></li>
@@ -284,34 +371,6 @@
             </div>
         </div>
 
-        <div class="section container-fluid no-padding black-bg">
-            <div class="inner-sm">
-                <div class="row no-margin">
-                    <div class="col-xs-12">
-                        <h4 class="text-center white">Atmosfera autêntica de Lisboa.</h4>
-                        <h4 class="text-center white">Transforma a tua viagem a Lisboa em algo inesquecível.</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section container-fluid no-padding black-bg">
-            <div class="inner-sm">
-                <div class="row no-margin">
-                    <div class="col-xs-12">
-                        <div class="videos youtube-link" youtubeid="F7pZXvy-wcM">
-                            <a href="#">
-                                <!-- https://www.youtube.com/watch?v=hKEJP85aBqg&ab_channel=TheInvisibleTuba -->
-                                <!-- https://youtube.com/shorts/F7pZXvy-wcM?si=PYEBW3aLIxfKOQFE -->
-                            <!-- <h5>Style 12</h5> -->
-                            <!-- <div class="subtext">Trendy, Hipster</div> -->
-                            <img class="img-responsive img-center active" src="../../assets/img/457x558_camones.png" alt="The Invisible Tuba">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     
 
@@ -381,7 +440,7 @@
                 <div class="row no-margin">
                     <div class="col-xs-12">
                         <div class="text-center">
-                            <a href="https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-camones-bar/camones-artes-bar/3293864?preview=true&lang=en-GB" target="_blank" class="zrq-focus-input btn book-now-btn black-bg btn-white">COMPRAR BILHETES</a>                            
+                            <button class="zrq-talk-to-us btn book-now-btn black-bg btn-white">FALA CONNOSCO</button>   
                         </div>
                     </div>
                 </div>
@@ -592,6 +651,82 @@
     </div>
     <script type="text/javascript" src="../../assets/scripts/cookie-banner.js"></script>
     <!-- End of Cookie Banner -->  
+
+    <!--
+    #################################
+        - MODAL -
+    #################################
+    -->
+      <div class="modal fade zrq-modal-send-msg"  id="warningModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h3>Olá! 😊</h3>
+                    <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
+                </div>
+                
+              </div>
+          <div class="modal-body">
+            <form id="zrqForm" action="send.php" method="post">
+                <h4>Queres contratar-nos ?</h4>
+                <h4>Pedir um orçamento ?</h4>
+                <h4>Tirar alguma dúvida ?</h4>
+                <div class="form-group">
+                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                  <input name="nome" type="text" class="form-control" id="exampleInputName" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <input name="empresa" type="text" class="form-control" id="exampleInputCompany" placeholder="Empresa">
+                  </div>
+                <div class="form-group">
+                    <textarea name="mensagem" class="form-control" placeholder="Escreve a tua mensagem..." id="floatingTextarea2" style="height: 100px" required></textarea>
+                </div>
+      
+                <div class="checkbox">
+                  <label>
+                    <input name="newsletter_cb" type="checkbox" checked> Quero receber a vossa newsletter
+                  </label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success">ENVIAR</button>                
+              </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- OBRIGADO Modal -->
+    <div class="modal fade zrq-modal-send-msg"  id="obrigadoModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+               <div class="modal-body">
+                    <h2>Obrigado 😁</h2>
+                    <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
+               </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- SPINNER Modal -->
+    <div class="modal fade" id="spinnerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="text-center">
+                <div class="spinner-border m-5" role="status">
+                <span class="visually-hidden">A enviar...</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+                    <h3 data-i18n="form.spinner">Por favor espera</h3>
+                </div>                
+            </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

@@ -458,10 +458,6 @@ landing - corporate
 =================
 */
 
-.zrq-page-events-corporate .grtyoutube-iframe {
-  height: 500px;
-}
-
 .zrq-page-events-corporate .zrq-border-radius {
   border-radius: 50px;
 }
@@ -664,6 +660,50 @@ landing - corporate
   background-color: white;
 }
 
+.zrq-page-events-corporate .zrq-overlay {  
+  width: 180px;
+}
+
+.zrq-page-events-corporate .zrq-benefit {  
+  margin-bottom: -90px;
+}
+
+
+.zrq-page-events-corporate .zrq-youtube-thumb {  
+  width: 75%; 
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.zrq-page-events-corporate .zrq-overlay {  
+  position: relative;
+  bottom: 90px;
+  margin: 0 auto;
+  width: 210px;
+}
+.zrq-page-events-corporate .youtube-link img {  
+  transition: transform 0.2s ease-in-out;
+}
+
+.zrq-page-events-corporate .youtube-link:hover img {  
+  transform: scale(1.1);
+}
+
+.zrq-page-events-corporate .zrq-subtitle2 .zrq-zapezape {  
+  width: 250px;
+}
+
+.zrq-page-events-corporate .modal .modal-content {  
+  background-color: white;
+}
+
+.zrq-page-events-corporate .modal .modal-header {  
+  text-align: right;
+}
+
+.zrq-page-events-corporate .modal .modal-header h3 {  
+  float: left;
+  margin-top: 4px;
+}
 
 
 
@@ -702,6 +742,10 @@ landing - corporate
     padding: 1rem;
   }
   
+  .zrq-page-events-corporate .zrq-overlay {  
+    width: 180px;
+  }
+
 }
 
 
