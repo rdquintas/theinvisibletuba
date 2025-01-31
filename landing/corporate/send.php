@@ -21,9 +21,9 @@ $form->newsletter_cb = $_POST["newsletter_cb"];
 // print_r($form);
 // echo($form);
 
-header('Content-Type:text/html; charset=UTF-8');
+header('Content-Type:application/json; charset=UTF-8');
 // print "Dass";
-echo "caralho";
+echo json_encode($form);;
 
 // $body = prepareBody($form);
 
