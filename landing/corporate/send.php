@@ -22,8 +22,8 @@ $form->newsletter_cb = $_POST["newsletter_cb"];
 // echo($form);
 
 header('Content-Type:text/html; charset=UTF-8');
-print "Dass";
-// echo "caralho";
+// print "Dass";
+echo "caralho";
 
 // $body = prepareBody($form);
 

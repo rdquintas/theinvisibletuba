@@ -92,7 +92,8 @@
             type: 'post',
             url: 'send.php',
             data: $('#zrqForm').serialize(),
-            success: function () {
+            success: function (obj) {
+                debugger;
               alert('form was submitted');
             }
           });
