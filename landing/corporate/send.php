@@ -23,7 +23,7 @@ $form->newsletter_cb = $_POST["newsletter_cb"];
 
 header('Content-Type:application/json; charset=UTF-8');
 // print "Dass";
-echo json_encode($form);;
+echo json_encode($form);
 
 // $body = prepareBody($form);
 
