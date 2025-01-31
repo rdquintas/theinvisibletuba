@@ -18,11 +18,15 @@ $form->empresa = $_POST["empresa"];
 $form->mensagem = $_POST["mensagem"];
 $form->newsletter_cb = $_POST["newsletter_cb"];
 
-print_r($form);
+// print_r($form);
+// echo($form);
 
-$body = prepareBody($form);
+header('Content-Type:text/html; charset=UTF-8');
+echo ($form);
 
-echo ($body);
+// $body = prepareBody($form);
+
+// echo ($body);
 
 // $messageForTuba = createMessage($form->email, 'info@theinvisibletuba.com', $subjectForTuba, $body);
 // $messageForCustomer = createMessage('info@theinvisibletuba.com', $form->email, $subjectConfirmation, $body);
