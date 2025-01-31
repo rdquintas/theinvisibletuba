@@ -1,5 +1,5 @@
 <?php
-require_once '../../lib/swift_required.php';
+// require_once '../../lib/swift_required.php';
 
 // $transport = Swift_SmtpTransport::newInstance('mail.theinvisibletuba.com', 25)
 // ->setUsername('info@theinvisibletuba.com')
@@ -43,8 +43,7 @@ echo ($body);
 // }
 
 
-function prepareBody($form)
-{
+function prepareBody($form) {
     $body = "";
     $body .= "Olá " . $form->name . ",\r\n";
     $body .= "Obrigado pelo teu pedido, entraremos em contacto contigo o mais rápido possível e enviaremos uma proposta de orçamento para o teu email." . "\r\n\r\n";
@@ -60,3 +59,5 @@ function prepareBody($form)
     $body .= "/The Invisible Tuba" . "\r\n\r\n\r\n\r\n\r\n";;
     return $body;
 }
+
+?>
