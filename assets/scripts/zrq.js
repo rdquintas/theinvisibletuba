@@ -11,6 +11,18 @@ document.addEventListener(
   true
 );
 
+function closeCookies() {
+  window.nk_hideCookieBanner();
+  gtag('consent', 'update', {
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'ad_storage': 'granted',
+    'analytics_storage': 'granted'
+  });
+}
+
+
+
 $(document).ready(function () {
   $(".zrq-focus-input").click(function (oEvent) {
     setTimeout(function () {
