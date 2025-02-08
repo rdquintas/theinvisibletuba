@@ -1,4 +1,29 @@
-Receita para fazer um generate para um novo landing page dum concerto
+##########################################################################
+Receita para fazer alterar a HOME PAGE e retirar/colocar um concerto
+##########################################################################
+Basta ir ao data.json aqui
+  theinvisibletuba GIT\app\data.json
+  
+  e alterar 
+  concert.isEnabled:"false"
+  para
+  concert.isEnabled:"true"
+  
+  e depois alterar os campos do data.json em conformidade
+  
+  
+  Ao alterar esta flag o grunt-bake vai-me fazer isto:
+  if TRUE
+    colocoa o concerto
+	e esconde o banner da newsletter
+  if FALSE
+    esconde o concerto
+	e coloca o banner da newsletter
+  
+
+##########################################################################
+Receita para fazer um generate para um novo LANDING PAGE dum concerto
+##########################################################################
 
 1) Apago todos os .html aqui
    theinvisibletuba GIT\landing\concert\*
