@@ -103,6 +103,10 @@
             success: function (obj) {
                 $('#spinnerModal').modal('hide');
                 $('#obrigadoModal').modal('show');
+            },
+            error: function (obj) {
+                $('#spinnerModal').modal('hide');
+                $('#obrigadoModal').modal('show');
             }
           });                                 
         });    
