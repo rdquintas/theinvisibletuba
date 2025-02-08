@@ -17,6 +17,11 @@ GENERIC
   color: red;
 }
 
+.zrq-country-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
 
 /* 
 =================
@@ -86,6 +91,26 @@ _footer.html
   color: #b91d1d;
   font-style: italic;
 }
+
+
+.zrq-modal-newsletter .modal-content {  
+  background-color: white;
+}
+
+.zrq-modal-newsletter .modal-header {  
+  text-align: right;
+}
+
+.zrq-modal-newsletter .modal-header h3 {  
+  float: left;
+  margin-top: 4px;
+}
+
+.zrq-modal-newsletter .zrq-btn-close {  
+  float: right;
+}
+
+
 
 /* 
 =================
@@ -202,12 +227,6 @@ landing - concert
 */
 .zrq-page-events-concert .zrq-border-radius {
   border-radius: 50px;
-}
-
-.zrq-page-events-concert .zrq-country-icon {
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
 }
 
 .zrq-page-events-concert .zrq-black-opacity {

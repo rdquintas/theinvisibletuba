@@ -78,7 +78,37 @@
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.slideanims.min.js"></script>
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.video.min.js"></script>
-    <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>   
+    
+    <script>
+     $(document).ready(function(){
+        $(".zrq-subs-newsletter").click(function (oEvent) {
+          $("#zrqForm").trigger("reset");
+          $('#warningModal').modal('show');          
+        });
+
+        $(".zrq-btn-close").click(function (oEvent) {
+          $('#warningModal').modal('hide');
+          $('#obrigadoModal').modal('hide');
+        });
+
+        $("#zrqForm").on("submit", function (oEvent) {
+          oEvent.preventDefault();
+          $('#warningModal').modal('hide');
+          $('#spinnerModal').modal('show');
+          $.ajax({
+            type: 'post',
+            url: 'https://b7d65a72.sibforms.com/serve/MUIFALsqe_G-XgsqS1T0POOjPNBbyr4uYT3q5EDHVZIF3H_P5eYdzh9iJkntaqhlwu43_a7YyDEonpiaHT-K9nhDT2Pkha2B-Cnkv0NWrJnOWiGiQ8iPFt97ttSNqsWGB14KF_PsXwsXib_yjvejiRXqw9ButOhOW6YYNgy4QMECBImk27kZ8GkJZk_tyLiZcJ-JsVE03PqvuOuN',
+            data: $('#zrqForm').serialize(),
+            success: function (obj) {
+                $('#spinnerModal').modal('hide');
+                $('#obrigadoModal').modal('show');
+            }
+          });                                 
+        });    
+
+     });
+    </script>
 </head>
 
 <body class="loading zrq-page-audio">
@@ -128,9 +158,9 @@
                         <li class="single-item"><a href="pictures.html">Fotos/Videos</a></li>
                         <li class="single-item"><a href="audio.html">Audio</a></li>
                         <!-- <li class="single-item"><a href="epk.html">Press Kit | EPK</a></li> --> 
-                        <li class="single-item"><a href="https://b7d65a72.sibforms.com/serve/MUIFAGSqeNh7J6lB-lv4vSVOUCGDp_eZqnj1vvAaXtez8WuhBNIPBmEE6yjxt3INZPQbUSeb7KCjotXHaRzNXr8pUZQl5hjnUdhqd5-APRjiZTP316YKTT6k6qBDjuLOWJglj-TCso-cBidX11QYhYDsNZmoFjcT9phejaKEHfZOz1iZw270dCUsYvtXVUB3y5onDARKSr5BGnKS">Newsletter <i class="zrq-red fa fa-heart"></i></a></li>
+                        <!-- <li class="single-item"><a href="https://b7d65a72.sibforms.com/serve/MUIFAGSqeNh7J6lB-lv4vSVOUCGDp_eZqnj1vvAaXtez8WuhBNIPBmEE6yjxt3INZPQbUSeb7KCjotXHaRzNXr8pUZQl5hjnUdhqd5-APRjiZTP316YKTT6k6qBDjuLOWJglj-TCso-cBidX11QYhYDsNZmoFjcT9phejaKEHfZOz1iZw270dCUsYvtXVUB3y5onDARKSr5BGnKS">Newsletter <i class="zrq-red fa fa-heart"></i></a></li> -->
                         <li class="single-item"><a href="contact.html">Contactos</a></li>
-                        <li class="single-item"><a href="index_en.html">English</a></li> 
+                        <li class="single-item"><a href="index_en.html"><img class="zrq-country-icon" src="/assets/img/icons/united-kingdom.png"></img>English</a></li>                  
                     </ul>
                 </nav>
                 <!-- end nav -->
@@ -480,61 +510,7 @@
                     <a class="book__nav" href="privacy.html">Privacy Policy</a>                                        
                 </p>
             </div>  
-        </footer>
-      <!--
-        #################################
-            - Modal Popups -
-        #################################
-        -->
-        <!-- Contact-Us Modal -->
-        <div class="zrq-footer modal fade" id="bookNowModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="row">
-                        <div class="col-xs-12 no-padding modal-info">
-                            <button type="button" class="modal-close" aria-label="Close"><i class="fa fa-times"></i>
-                            </button>
-                            <div class="modal-bookNow" style="background-image: url(/assets/img/492_250_v00.png);">
-                                <h3>Contrata-nos hoje</h3>
-                                <h5>E prepara-te para dançar</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 no-padding">
-                            <div class="modal-form">
-                                <ul class="book-list">
-                                    <li>
-                                        <a href="">
-                                            <div class="list-content">
-                                                <i class="fa fa-phone fa-2x"></i>
-                                                <span>Contactos</span>
-                                                <p>(+351)967 285 043 | Ricardo</p>
-                                                <p class="zrq-left-margin">info@theinvisibletuba.com</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- <li>
-                                        <a href="contact.html">
-                                            <div class="list-content">
-                                                <i class="fa fa-map-marker fa-2x"></i>
-                                                <span>Walk-ins welcome</span>
-                                                <p>2020 Wilabee way, Atlanta Ga 30030</p>
-                                            </div>
-                                        </a>
-                                    </li> -->
-                                    <li> 
-                                        <a href="/forms/get_quote.html?tag=website">
-                                            <div class="list-content zrq-center">                                                                            
-                                                <button class="btn book-now-btn">Pedir orçamento</button>
-                                            </div>
-                                        </a>                                  
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
+        </footer>   
 
         <script src="assets/scripts/jquery.menu-aim.js"></script>
         <script src="assets/scripts/modernizr.min.js"></script>
@@ -692,6 +668,61 @@
         <!-- End of Cookie Banner -->    
 
 
+        <!--
+        #################################
+            - MODAL -
+        #################################
+        -->
+        <div class="modal fade zrq-modal-newsletter"  id="warningModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form id="zrqForm" action="https://b7d65a72.sibforms.com/serve/MUIFALsqe_G-XgsqS1T0POOjPNBbyr4uYT3q5EDHVZIF3H_P5eYdzh9iJkntaqhlwu43_a7YyDEonpiaHT-K9nhDT2Pkha2B-Cnkv0NWrJnOWiGiQ8iPFt97ttSNqsWGB14KF_PsXwsXib_yjvejiRXqw9ButOhOW6YYNgy4QMECBImk27kZ8GkJZk_tyLiZcJ-JsVE03PqvuOuN" method="post">
+                      <h4>Coloca o teu email</h4>
+                      <div class="form-group">
+                        <input class="form-control " type="email" id="EMAIL" name="EMAIL" autocomplete="off"
+                                            placeholder="EMAIL" data-required="true" required />
+
+                      </div>
+                      <br>
+                      <button type="submit" class="btn btn-success">ENVIAR</button>          
+                      <button type="button" class="zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>      
+                    </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OBRIGADO Modal -->
+          <div class="modal fade zrq-modal-newsletter"  id="obrigadoModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                     <div class="modal-body">
+                          <h2>Obrigado 😁</h2>
+                          <p>Subcrição confirmada</p>
+                          <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Fechar</button>
+                     </div>
+                </div>
+              </div>
+          </div>
+
+          <!-- SPINNER Modal -->
+          <div class="modal fade" id="spinnerModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                  <div class="text-center">
+                      <div class="spinner-border m-5" role="status">
+                      <span class="visually-hidden">A enviar...</span>
+                      </div>
+                      <div>
+                          <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+                          <h3 data-i18n="form.spinner">Por favor espera</h3>
+                      </div>                
+                  </div>
+                  </div>
+              </div>
+          </div>
 
 </body>
 

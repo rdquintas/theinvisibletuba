@@ -78,7 +78,37 @@
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.slideanims.min.js"></script>
     <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.video.min.js"></script>
-    <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>   
+    
+    <script>
+     $(document).ready(function(){
+        $(".zrq-subs-newsletter").click(function (oEvent) {
+          $("#zrqForm").trigger("reset");
+          $('#warningModal').modal('show');          
+        });
+
+        $(".zrq-btn-close").click(function (oEvent) {
+          $('#warningModal').modal('hide');
+          $('#obrigadoModal').modal('hide');
+        });
+
+        $("#zrqForm").on("submit", function (oEvent) {
+          oEvent.preventDefault();
+          $('#warningModal').modal('hide');
+          $('#spinnerModal').modal('show');
+          $.ajax({
+            type: 'post',
+            url: 'https://b7d65a72.sibforms.com/serve/MUIFALsqe_G-XgsqS1T0POOjPNBbyr4uYT3q5EDHVZIF3H_P5eYdzh9iJkntaqhlwu43_a7YyDEonpiaHT-K9nhDT2Pkha2B-Cnkv0NWrJnOWiGiQ8iPFt97ttSNqsWGB14KF_PsXwsXib_yjvejiRXqw9ButOhOW6YYNgy4QMECBImk27kZ8GkJZk_tyLiZcJ-JsVE03PqvuOuN',
+            data: $('#zrqForm').serialize(),
+            success: function (obj) {
+                $('#spinnerModal').modal('hide');
+                $('#obrigadoModal').modal('show');
+            }
+          });                                 
+        });    
+
+     });
+    </script>
 </head>
 
 <body class="loading zrq-page-audio">
@@ -128,9 +158,9 @@
                         <li class="single-item"><a href="pictures_en.html">Photos/Videos</a></li>
                         <li class="single-item"><a href="audio_en.html">Audio</a></li>
                         <!-- <li class="single-item"><a href="epk.html">Press Kit | EPK</a></li> --> 
-                        <li class="single-item"><a href="https://b7d65a72.sibforms.com/serve/MUIFAGSqeNh7J6lB-lv4vSVOUCGDp_eZqnj1vvAaXtez8WuhBNIPBmEE6yjxt3INZPQbUSeb7KCjotXHaRzNXr8pUZQl5hjnUdhqd5-APRjiZTP316YKTT6k6qBDjuLOWJglj-TCso-cBidX11QYhYDsNZmoFjcT9phejaKEHfZOz1iZw270dCUsYvtXVUB3y5onDARKSr5BGnKS">Newsletter <i class="zrq-red fa fa-heart"></i></a></li>
+                        <!-- <li class="single-item"><a href="https://b7d65a72.sibforms.com/serve/MUIFAGSqeNh7J6lB-lv4vSVOUCGDp_eZqnj1vvAaXtez8WuhBNIPBmEE6yjxt3INZPQbUSeb7KCjotXHaRzNXr8pUZQl5hjnUdhqd5-APRjiZTP316YKTT6k6qBDjuLOWJglj-TCso-cBidX11QYhYDsNZmoFjcT9phejaKEHfZOz1iZw270dCUsYvtXVUB3y5onDARKSr5BGnKS">Newsletter <i class="zrq-red fa fa-heart"></i></a></li> -->
                         <li class="single-item"><a href="contact_en.html">Contacts</a></li>
-                        <li class="single-item"><a href="index.html">Português</a></li> 
+                        <li class="single-item"><a href="index.html"><img class="zrq-country-icon" src="/assets/img/icons/portugal.png">Português</a></li> 
                     </ul>
                 </nav>
                 <!-- end nav -->
@@ -487,7 +517,44 @@
         <script type="text/javascript" src="assets/scripts/cookie-banner.js"></script>
         <!-- End of Cookie Banner -->
 
+    <!--
+        #################################
+            - MODAL -
+        #################################
+        -->
+        <div class="modal fade zrq-modal-newsletter"  id="warningModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form id="zrqForm" action="https://b7d65a72.sibforms.com/serve/MUIFALsqe_G-XgsqS1T0POOjPNBbyr4uYT3q5EDHVZIF3H_P5eYdzh9iJkntaqhlwu43_a7YyDEonpiaHT-K9nhDT2Pkha2B-Cnkv0NWrJnOWiGiQ8iPFt97ttSNqsWGB14KF_PsXwsXib_yjvejiRXqw9ButOhOW6YYNgy4QMECBImk27kZ8GkJZk_tyLiZcJ-JsVE03PqvuOuN" method="post">
+                      <h4>Write your email</h4>
+                      <div class="form-group">
+                        <input class="form-control " type="email" id="EMAIL" name="EMAIL" autocomplete="off"
+                                            placeholder="EMAIL" data-required="true" required />
 
+                      </div>
+                      <br>
+                      <button type="submit" class="btn btn-success">SEND</button>          
+                      <button type="button" class="zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Cancel</button>      
+                    </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OBRIGADO Modal -->
+          <div class="modal fade zrq-modal-newsletter"  id="obrigadoModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                     <div class="modal-body">
+                          <h2>Thanks 😁</h2>
+                          <p>Subscription Confirmed</p>
+                          <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                     </div>
+                </div>
+              </div>
+          </div>
 
 </body>
 

@@ -22,7 +22,6 @@ function closeCookies() {
 }
 
 
-
 $(document).ready(function () {
   $(".zrq-focus-input").click(function (oEvent) {
     setTimeout(function () {
@@ -32,3 +31,5 @@ $(document).ready(function () {
 
   $(".youtube-link").grtyoutube();
 });
+
+
