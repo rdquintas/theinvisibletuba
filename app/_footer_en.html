@@ -56,63 +56,7 @@
             </p>
         </div>  
     </footer>
-
-  <!--
-    #################################
-        - Modal Popups -
-    #################################
-    -->
-    <!-- Contact-Us Modal -->
-    <div class="zrq-footer modal fade" id="bookNowModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="row">
-                    <div class="col-xs-12 no-padding modal-info">
-                        <button type="button" class="modal-close" aria-label="Close"><i class="fa fa-times"></i>
-                        </button>
-                        <div class="modal-bookNow" style="background-image: url(/assets/img/492_250_v00.png);">
-                            <h3>Book today</h3>
-                            <h5>And get ready to dance</h5>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 no-padding">
-                        <div class="modal-form">
-                            <ul class="book-list">
-                                <li>
-                                    <a href="">
-                                        <div class="list-content">
-                                            <i class="fa fa-phone fa-2x"></i>
-                                            <span>Contacts</span>
-                                            <p>{{phone1}} | {{phone1_name}}</p>
-                                            <p class="zrq-left-margin">{{email}}</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- <li>
-                                    <a href="contact.html">
-                                        <div class="list-content">
-                                            <i class="fa fa-map-marker fa-2x"></i>
-                                            <span>Walk-ins welcome</span>
-                                            <p>2020 Wilabee way, Atlanta Ga 30030</p>
-                                        </div>
-                                    </a>
-                                </li> -->
-                                <li> 
-                                    <a href="/forms/get_quote.html?tag=website">
-                                        <div class="list-content zrq-center">                                                                                        
-                                            <button class="btn book-now-btn">Get a quote</button>
-                                        </div>
-                                    </a>                                  
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
   
-
     <script src="assets/scripts/jquery.menu-aim.js"></script>
     <script src="assets/scripts/modernizr.min.js"></script>
     <script src="assets/scripts/bootstrap.min.js"></script>
@@ -122,7 +66,6 @@
     <script src="assets/scripts/jquery.prefetch.min.js"></script>
     <script src="assets/scripts/ScrollMagic.min.js"></script>
     <script src="assets/scripts/debug.addIndicators.min.js"></script>
-    <!-- Settings -->
     <script src="assets/scripts/window-settings.min.js"></script>
     <script src="assets/scripts/nav-settings.min.js"></script>
     <script src="assets/scripts/main-settings.min.js"></script>
@@ -268,7 +211,7 @@
     <script type="text/javascript" src="assets/scripts/cookie-banner.js"></script>
     <!-- End of Cookie Banner -->
 
-<!--
+     <!--
     #################################
         - MODAL -
     #################################
@@ -299,10 +242,27 @@
           <div class="modal-dialog">
             <div class="modal-content">
                  <div class="modal-body">
-                      <h2>Thanks 😁</h2>
+                      <h2>Than you 😁</h2>
                       <p>Subscription Confirmed</p>
                       <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
                  </div>
             </div>
+          </div>
+      </div>
+  
+      <!-- SPINNER Modal -->
+      <div class="modal fade" id="spinnerModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+              <div class="text-center">
+                  <div class="spinner-border m-5" role="status">
+                  <span class="visually-hidden">Sending...</span>
+                  </div>
+                  <div>
+                      <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+                      <h3 data-i18n="form.spinner">Please wait</h3>
+                  </div>                
+              </div>
+              </div>
           </div>
       </div>

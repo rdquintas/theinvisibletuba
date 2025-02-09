@@ -23,6 +23,21 @@ GENERIC
   margin-right: 5px;
 }
 
+
+.zrq-newsletter-modals .modal-content {  
+  background-color: white;
+}
+
+.zrq-newsletter-modals .modal-header {  
+  text-align: right;
+}
+
+.zrq-newsletter-modals .modal-header h3 {  
+  float: left;  
+}
+
+
+
 /* 
 =================
 _header.html
@@ -92,23 +107,6 @@ _footer.html
   font-style: italic;
 }
 
-
-.zrq-modal-newsletter .modal-content {  
-  background-color: white;
-}
-
-.zrq-modal-newsletter .modal-header {  
-  text-align: right;
-}
-
-.zrq-modal-newsletter .modal-header h3 {  
-  float: left;
-  margin-top: 4px;
-}
-
-.zrq-modal-newsletter .zrq-btn-close {  
-  float: right;
-}
 
 
 
