@@ -11,21 +11,25 @@
     "venue_name": "CAMONES ARTES BAR",
     "venue_desc1": {
       "en": " one of the busiest (intimate) musical venues in Lisbon",
-      "pt": " um dos melhores locais em Lisboa com música ao vivo"
+      "pt": " um dos melhores locais em Lisboa com música ao vivo",
+      "es": " Uno de los mejores lugares de Lisboa con música en vivo."
     },
     "venue_desc2": {
       "en": " is located in Bairro da Graça (one of the hidden gems in Lisbon and a very trendy neighborhood)",
-      "pt": " está localizado no Bairro da Graça"
+      "pt": " está localizado no Bairro da Graça",
+      "es": " Está situado en el Barrio de Graça."
     },
     "venue_link": "https://www.facebook.com/camonesartesbar/?locale=pt_PT",
     "venue_photo": "../../assets/img/457x558_camones.png",
     "gig_date": {
       "en": "We're playing live on 29/March at 21:30 (doors open at 20:00)",
-      "pt": "Vamos tocar ao vivo a 29/Março às 21:30 (as portas abrem às 20:00)"
+      "pt": "Vamos tocar ao vivo a 29/Março às 21:30 (as portas abrem às 20:00)",
+      "es": "Estaremos tocando en vivo el 29 de marzo a las 21:30h (las puertas abren a las 20h)"
     },
     "venue_offer": {
       "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
-      "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras"
+      "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras",
+      "es": "Una buena selección de bebidas, cervezas y vinos portugueses. También sirven tapas y comidas ligeras."
     },
     "link_tickets": "https://bit.ly/tuba2903"
   }

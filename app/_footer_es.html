@@ -1,0 +1,271 @@
+  <!--
+    #################################
+        - Footer -
+    #################################
+    -->
+    <div id="zrq-footer"></div>
+    <footer class="loading zrq-footer">
+        <div class="sv__container--md">
+            <div class="footer__wrapper">
+                <div class="row footer__row">
+                    <div class="footer__logo no-padding">
+                        <div class="logo__container">
+                            <a href="index_es.html" target="_blank">
+                                <div class="footer__logo--img zrq-logo">
+                                    <img class="img-responsive logo-white" src="/assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
+                                </div>
+                                <p class="white zrq-text-size">A band that makes you <span class="zrq-normal-text">#HappyRightNow</span></p>
+                            </a>                                
+                        </div>
+                    </div>
+                    <div class="footer__desc">                
+                        <div class="row footer__contact">
+                            <h2 class="">Contactos</h2>
+                            <div class="col-xs-12 col-sm-12 footer__address no-padding">
+                                <p>EMAIL</p>
+                                <a class="email" href="mailto:{{email}}">{{email}}</a>
+                                <br><br>
+                                <p>TELÉFONO</p>
+                                <a class="phone" href="tel:{{phone1}}">{{phone1}} | {{phone1_name}}</a>
+                                <br><br>
+                                <p>WHATSAPP</p>
+                                <a aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/351967285043"> 
+                                    <img class="zrq-zapezape" alt="Chat on WhatsApp" src="/assets/img/icons/WhatsAppButtonGreenLarge.png" />
+                                </a>
+
+                            </div>                     
+                        </div>
+                        <div class="row social-footer zrq-top-margin">
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <p class="text-center">Social Media</p>
+                                <ul class="text-center">
+                                    <li><a target="_blank" href="https://www.instagram.com/theinvisibletuba/"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/instagram.png"/></a></li>
+                                    <li><a target="_blank" href="https://www.youtube.com/@theinvisibletuba4630"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/youtube.png"/></a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/theinvisibletuba/"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/facebook.png"/></a></li>
+                                </ul>
+                            </div>                       
+                        </div>                                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="zrq-cookies">
+            <p><a class="book__nav" href="https://www.cookiesandyou.com">Cookies</a> y 
+                <a class="book__nav" href="privacy.html">Privacy Policy</a>                                        
+            </p>
+        </div>  
+    </footer>   
+
+    <script src="assets/scripts/jquery.menu-aim.js"></script>
+    <script src="assets/scripts/modernizr.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <script src="assets/scripts/skrollr.min.js"></script>
+    <script src="assets/scripts/imagesloaded.min.js"></script>
+    <script src="assets/scripts/jquery-placeholder.min.js"></script>
+    <script src="assets/scripts/jquery.prefetch.min.js"></script>
+    <script src="assets/scripts/ScrollMagic.min.js"></script>
+    <script src="assets/scripts/debug.addIndicators.min.js"></script>
+    <script src="assets/scripts/window-settings.min.js"></script>
+    <script src="assets/scripts/nav-settings.min.js"></script>
+    <script src="assets/scripts/main-settings.min.js"></script>
+    <script src="assets/scripts/grt-youtube-popup.js"></script>
+    <script src="assets/scripts/zrq.js"></script>
+    <script>
+    (function($) {
+    'use strict';
+        // Revolution Slider Settings
+        // ==========================================================================
+        var tpj = jQuery;
+        var sliderId = "#rev_slider_46_1";
+  
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            sliderId = "#rev_slider_46_1_mobile";
+        } 
+        
+        var revapi46;
+        tpj(document).ready(function() {
+            if (tpj(sliderId).revolution == undefined) {
+                revslider_showDoubleJqueryError(sliderId);
+            } else {
+                revapi46 = tpj(sliderId).show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "assets/scripts/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 4500,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop:"false",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "erinyen",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_under: 600,
+                            hide_onleave: false,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            // tmp: '<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div>    <div class="tp-arr-img-over">   </div><span class="tp-arr-titleholder">{{title}}</span>     </div>',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 30,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 30,
+                                v_offset: 0
+                            }
+                        },
+                        thumbnails: {
+                            style: "gyges",
+                            enable: true,
+                            width: 100,
+                            height: 60,
+                            min_width: 60,
+                            wrapper_padding: 0,
+                            wrapper_color: "transparent",
+                            wrapper_opacity: "1",
+                            // tmp: '<span class="tp-thumb-img-wrap">  <span class="tp-thumb-image"></span></span>',
+                            visibleAmount: 0,
+                            hide_onmobile: true,
+                            hide_under: 800,
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            span: false,
+                            position: "inner",
+                            space: 0,
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 20
+                        }
+                    },
+                    responsiveLevels: [1300, 1186, 977, 778, 480],
+                    gridwidth: [1400, 1186, 977, 778, 480],
+                    gridheight: [960, 868, 768, 960, 720],
+                    lazyType: "none",
+                    parallax: {
+                        type: "mouse",
+                        origo: "slidercenter",
+                        speed: 2000,
+                        levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
+                        disable_onmobile: "on"
+                    },
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "off",
+                    stopAfterLoops: 3,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "0px",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*ready*/
+
+        $(window).bind('resizeEnd', function() {
+            $(sliderId).revredraw();
+        });
+        $(window).on('resize', function() {
+            if (this.resizeTO) clearTimeout(this.resizeTO);
+            this.resizeTO = setTimeout(function() {
+                $(this).trigger('resizeEnd');
+            }, 500);
+        });
+
+    })(jQuery);
+    </script>
+
+    <!-- Cookie Banner -->
+    <div class="nk-cookie-banner alert alert-warning text-center mb-0" role="alert">
+        &#x1F36A; Este sitio web utiliza cookies para garantizar una mejor experiencia de navegación.
+        <a href="https://www.cookiesandyou.com/" target="blank" class="alert-link">Saber más</a>
+        <button type="button" class="btn btn-primary btn-sm ml-3" onclick="closeCookies()">
+        OK
+        </button>
+    </div>
+    <script type="text/javascript" src="assets/scripts/cookie-banner.js"></script>
+    <!-- End of Cookie Banner -->    
+
+
+    <!--
+    #################################
+        - MODAL -
+    #################################
+    -->
+    <div class="zrq-newsletter-modals">
+        <div class="modal fade zrq-modal-newsletter"  id="warningModal" tabindex="-1">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                <form id="zrqForm" action="https://b7d65a72.sibforms.com/serve/MUIFALsqe_G-XgsqS1T0POOjPNBbyr4uYT3q5EDHVZIF3H_P5eYdzh9iJkntaqhlwu43_a7YyDEonpiaHT-K9nhDT2Pkha2B-Cnkv0NWrJnOWiGiQ8iPFt97ttSNqsWGB14KF_PsXwsXib_yjvejiRXqw9ButOhOW6YYNgy4QMECBImk27kZ8GkJZk_tyLiZcJ-JsVE03PqvuOuN" method="post">
+                    <h4>Pon tu email.</h4>
+                    <div class="form-group">
+                        <input class="form-control " type="email" id="EMAIL" name="EMAIL" autocomplete="off"
+                                            placeholder="EMAIL" data-required="true" required />
+
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-success">ENVIAR</button>          
+                    <button type="button" class="zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>      
+                    </form>
+    
+                </div>
+            </div>
+            </div>
+        </div>
+      
+        <!-- OBRIGADO Modal -->
+        <div class="modal fade zrq-modal-newsletter"  id="obrigadoModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h2>Gracias 😁</h2>
+                        <p>Suscripción confirmada</p>
+                        <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <!-- SPINNER Modal -->
+        <div class="modal fade" id="spinnerModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="text-center">
+                    <div class="spinner-border m-5" role="status">
+                    <span class="visually-hidden">Envío...</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+                        <h3 data-i18n="form.spinner">Por favor, espera.</h3>
+                    </div>                
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
