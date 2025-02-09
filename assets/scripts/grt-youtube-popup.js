@@ -33,16 +33,16 @@
 					 $("body").append('<div class="grtyoutube-popup '+settings.theme+'">'+
 								'<div class="grtyoutube-popup-content">'+
 									'<span class="grtyoutube-popup-close"></span>'+
-									'<iframe class="grtyoutube-iframe" src="https://www.youtube.com/embed/'+settings.videoID+'?rel=0&wmode=transparent&autoplay='+settings.autoPlay+'&iv_load_policy=3" allowfullscreen frameborder="0" allow="autoplay; fullscreen"></iframe>'+
+									'<iframe data-cmp-ab="1" data-cmp-vendor="c67725" class="grtyoutube-iframe cmplazyload" src="about:blank" data-cmp-src="https://www.youtube-nocookie.com/embed/'+settings.videoID+'?rel=0&wmode=transparent&autoplay='+settings.autoPlay+'&iv_load_policy=3" allowfullscreen frameborder="0" allow="autoplay; fullscreen"></iframe>'+
 								'</div>'+
 							'</div>');
 				});
 			}
 
 			// Close the box on click or escape
-			$(this).on('click', function (event) {
+			$(this).on('click', function (event) {				
 				event.preventDefault();
-				$(".grtyoutube-popup-close, .grtyoutube-popup").click(function(){
+				$(".grtyoutube-popup-close, .grtyoutube-popup").click(function(oEvent){
 					$(".grtyoutube-popup").remove();
 				});
 			});

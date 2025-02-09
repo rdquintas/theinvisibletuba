@@ -24,16 +24,16 @@ GENERIC
 }
 
 
-.zrq-newsletter-modals .modal-content {  
+.zrq-newsletter-modals .modal-content {
   background-color: white;
 }
 
-.zrq-newsletter-modals .modal-header {  
+.zrq-newsletter-modals .modal-header {
   text-align: right;
 }
 
-.zrq-newsletter-modals .modal-header h3 {  
-  float: left;  
+.zrq-newsletter-modals .modal-header h3 {
+  float: left;
 }
 
 
@@ -178,6 +178,42 @@ index.html
   padding-bottom: 2rem;
 }
 
+
+.zrq-page-index .zrq-youtube-videos .zrq-title-color {
+  color: #b91d1d
+}
+
+.zrq-page-index .zrq-youtube-videos .zrq-bottom-margin2 {
+  margin-bottom: 4rem;
+}
+
+.zrq-page-index .zrq-youtube-videos .zrq-youtube-thumb {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.zrq-page-index .zrq-youtube-videos .zrq-youtube-thumb {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.zrq-page-index .zrq-youtube-videos .zrq-overlay {
+  position: relative;
+  bottom: 90px;
+  margin: 0 auto;
+  width: 210px;
+}
+
+.zrq-page-index .zrq-youtube-videos .youtube-link img {
+  transition: transform 0.2s ease-in-out;
+}
+
+.zrq-page-index .zrq-youtube-videos .youtube-link:hover img {
+  transform: scale(1.1);
+}
+
 /* 
 =================
 audio.html
@@ -286,27 +322,27 @@ landing - concert
   font-size: 35px;
   top: -45px;
   color: #0000003a;
- }
- 
- .zrq-page-events-concert .zrq-previous-price span {
+}
+
+.zrq-page-events-concert .zrq-previous-price span {
   font-size: 15px;
   color: #0000003a;
- }
- 
+}
+
 
 .zrq-page-events-concert .zrq-soldout .price__table {
- color: rgb(170, 170, 170);
+  color: rgb(170, 170, 170);
 }
 
 .zrq-page-events-concert .zrq-soldout .price__first {
   color: #af8c4560;
-} 
+}
 
 .zrq-page-events-concert .zrq-soldout .btn {
   color: red;
   background-color: rgb(247, 200, 200);
   font-size: 1rem;
-} 
+}
 
 .zrq-page-events-concert .zrq-soldout .zrq-text {
   color: red;
@@ -328,7 +364,7 @@ landing - concert
 }
 
 .zrq-page-events-concert .zrq-title-color {
- color: #b91d1d
+  color: #b91d1d
 }
 
 .zrq-page-events-concert .zrq-footer .social-footer {
@@ -348,7 +384,7 @@ landing - concert
   width: 250px;
 }
 
-.zrq-page-events-concert .zrq-footer .zrq-top-margin{
+.zrq-page-events-concert .zrq-footer .zrq-top-margin {
   margin-top: 2rem;
 }
 
@@ -366,11 +402,11 @@ landing - concert
 
 
 
-.zrq-page-events-concert .zrq-bottom-margin2{
+.zrq-page-events-concert .zrq-bottom-margin2 {
   margin-bottom: 4rem;
 }
 
-.zrq-page-events-concert .zrq-padding{
+.zrq-page-events-concert .zrq-padding {
   padding: 3rem;
 }
 
@@ -381,6 +417,7 @@ landing - concert
 .zrq-page-events-concert .zrq-cookies {
   margin-top: 3rem;
 }
+
 .zrq-page-events-concert .zrq-border-radius {
   border-radius: 50px;
 }
@@ -388,14 +425,17 @@ landing - concert
 .zrq-page-events-concert .zrq-payment ul {
   background-color: #f4f4f4;
 }
+
 .zrq-page-events-concert .zrq-payment .zrq-seetickets-logo img {
   width: 200px;
 }
+
 .zrq-page-events-concert .zrq-payment .zrq-star-logo img {
   background-color: #000;
   padding: 7px;
   width: 200px;
 }
+
 .zrq-page-events-concert .zrq-payment li {
   display: inline-block;
 }
@@ -404,37 +444,42 @@ landing - concert
   width: 60px;
 }
 
-.zrq-page-events-concert .zrq-seetickets   {
+.zrq-page-events-concert .zrq-seetickets {
   text-align: center;
   margin-top: 1rem;
 }
-.zrq-page-events-concert .zrq-seetickets li  {
+
+.zrq-page-events-concert .zrq-seetickets li {
   display: inline-block;
   padding: 15px;
 }
+
 .zrq-page-events-concert .zrq-seetickets li img {
   width: 250px;
 }
+
 .zrq-page-events-concert .zrq-seetickets .zrq-seetickets-logo img {
   background-color: white;
 }
 
-.zrq-page-events-concert .zrq-youtube-thumb {  
-  width: 75%; 
+.zrq-page-events-concert .zrq-youtube-thumb {
+  width: 75%;
   margin: 0 auto;
   margin-top: 2rem;
 }
-.zrq-page-events-concert .zrq-overlay {  
+
+.zrq-page-events-concert .zrq-overlay {
   position: relative;
   bottom: 90px;
   margin: 0 auto;
   width: 210px;
 }
-.zrq-page-events-concert .youtube-link img {  
+
+.zrq-page-events-concert .youtube-link img {
   transition: transform 0.2s ease-in-out;
 }
 
-.zrq-page-events-concert .youtube-link:hover img {  
+.zrq-page-events-concert .youtube-link:hover img {
   transform: scale(1.1);
 }
 
@@ -447,7 +492,7 @@ landing - concert
   .zrq-page-events-concert .hero-content {
     top: 40%;
   }
-  
+
   .zrq-page-events-concert .zrq-header .zrq-logo img {
     width: 100px !important;
     height: 100px !important;
@@ -460,8 +505,8 @@ landing - concert
   .zrq-page-events-concert #venue .inner-lg {
     padding-top: 0;
   }
-  
-  .zrq-page-events-concert .zrq-seetickets   {
+
+  .zrq-page-events-concert .zrq-seetickets {
     margin-top: 3rem;
   }
 
@@ -469,14 +514,14 @@ landing - concert
     padding: 1rem;
   }
 
-  .zrq-page-events-concert .zrq-overlay {  
+  .zrq-page-events-concert .zrq-overlay {
     width: 180px;
   }
-  
-  .zrq-page-events-concert .zrq-benefit {  
+
+  .zrq-page-events-concert .zrq-benefit {
     margin-bottom: -90px;
   }
-  
+
 }
 
 /* 
@@ -554,27 +599,27 @@ landing - corporate
   font-size: 35px;
   top: -45px;
   color: #0000003a;
- }
- 
- .zrq-page-events-corporate .zrq-previous-price span {
+}
+
+.zrq-page-events-corporate .zrq-previous-price span {
   font-size: 15px;
   color: #0000003a;
- }
- 
+}
+
 
 .zrq-page-events-corporate .zrq-soldout .price__table {
- color: rgb(170, 170, 170);
+  color: rgb(170, 170, 170);
 }
 
 .zrq-page-events-corporate .zrq-soldout .price__first {
   color: #af8c4560;
-} 
+}
 
 .zrq-page-events-corporate .zrq-soldout .btn {
   color: red;
   background-color: rgb(247, 200, 200);
   font-size: 1rem;
-} 
+}
 
 .zrq-page-events-corporate .zrq-soldout .zrq-text {
   color: red;
@@ -596,7 +641,7 @@ landing - corporate
 }
 
 .zrq-page-events-corporate .zrq-title-color {
- color: #b91d1d
+  color: #b91d1d
 }
 
 .zrq-page-events-corporate .zrq-footer .social-footer {
@@ -616,7 +661,7 @@ landing - corporate
   width: 250px;
 }
 
-.zrq-page-events-corporate .zrq-footer .zrq-top-margin{
+.zrq-page-events-corporate .zrq-footer .zrq-top-margin {
   margin-top: 2rem;
 }
 
@@ -634,11 +679,11 @@ landing - corporate
 
 
 
-.zrq-page-events-corporate .zrq-bottom-margin2{
+.zrq-page-events-corporate .zrq-bottom-margin2 {
   margin-bottom: 4rem;
 }
 
-.zrq-page-events-corporate .zrq-padding{
+.zrq-page-events-corporate .zrq-padding {
   padding: 3rem;
 }
 
@@ -649,6 +694,7 @@ landing - corporate
 .zrq-page-events-corporate .zrq-cookies {
   margin-top: 3rem;
 }
+
 .zrq-page-events-corporate .zrq-border-radius {
   border-radius: 50px;
 }
@@ -656,14 +702,17 @@ landing - corporate
 .zrq-page-events-corporate .zrq-payment ul {
   background-color: #f4f4f4;
 }
+
 .zrq-page-events-corporate .zrq-payment .zrq-seetickets-logo img {
   width: 200px;
 }
+
 .zrq-page-events-corporate .zrq-payment .zrq-star-logo img {
   background-color: #000;
   padding: 7px;
   width: 200px;
 }
+
 .zrq-page-events-corporate .zrq-payment li {
   display: inline-block;
 }
@@ -672,62 +721,67 @@ landing - corporate
   width: 60px;
 }
 
-.zrq-page-events-corporate .zrq-seetickets   {
+.zrq-page-events-corporate .zrq-seetickets {
   text-align: center;
   margin-top: 1rem;
 }
-.zrq-page-events-corporate .zrq-seetickets li  {
+
+.zrq-page-events-corporate .zrq-seetickets li {
   display: inline-block;
   padding: 15px;
 }
+
 .zrq-page-events-corporate .zrq-seetickets li img {
   width: 250px;
 }
+
 .zrq-page-events-corporate .zrq-seetickets .zrq-seetickets-logo img {
   background-color: white;
 }
 
-.zrq-page-events-corporate .zrq-overlay {  
+.zrq-page-events-corporate .zrq-overlay {
   width: 180px;
 }
 
-.zrq-page-events-corporate .zrq-benefit {  
+.zrq-page-events-corporate .zrq-benefit {
   margin-bottom: -90px;
 }
 
 
-.zrq-page-events-corporate .zrq-youtube-thumb {  
-  width: 75%; 
+.zrq-page-events-corporate .zrq-youtube-thumb {
+  width: 75%;
   margin: 0 auto;
   margin-top: 2rem;
 }
-.zrq-page-events-corporate .zrq-overlay {  
+
+.zrq-page-events-corporate .zrq-overlay {
   position: relative;
   bottom: 90px;
   margin: 0 auto;
   width: 210px;
 }
-.zrq-page-events-corporate .youtube-link img {  
+
+.zrq-page-events-corporate .youtube-link img {
   transition: transform 0.2s ease-in-out;
 }
 
-.zrq-page-events-corporate .youtube-link:hover img {  
+.zrq-page-events-corporate .youtube-link:hover img {
   transform: scale(1.1);
 }
 
-.zrq-page-events-corporate .zrq-subtitle2 .zrq-zapezape {  
+.zrq-page-events-corporate .zrq-subtitle2 .zrq-zapezape {
   width: 250px;
 }
 
-.zrq-page-events-corporate .modal .modal-content {  
+.zrq-page-events-corporate .modal .modal-content {
   background-color: white;
 }
 
-.zrq-page-events-corporate .modal .modal-header {  
+.zrq-page-events-corporate .modal .modal-header {
   text-align: right;
 }
 
-.zrq-page-events-corporate .modal .modal-header h3 {  
+.zrq-page-events-corporate .modal .modal-header h3 {
   float: left;
   margin-top: 4px;
 }
@@ -736,7 +790,7 @@ landing - corporate
 
 @media only screen and (max-width: 768px) {
   .zrq-page-events-corporate #header {
-    background-color: black ;
+    background-color: black;
     height: 45px;
   }
 
@@ -747,7 +801,7 @@ landing - corporate
   .zrq-page-events-corporate .hero-content {
     top: 40%;
   }
-  
+
   .zrq-page-events-corporate .zrq-header .zrq-logo img {
     width: 100px !important;
     height: 100px !important;
@@ -760,16 +814,16 @@ landing - corporate
   .zrq-page-events-corporate #venue .inner-lg {
     padding-top: 0;
   }
-  
-  .zrq-page-events-corporate .zrq-seetickets   {
+
+  .zrq-page-events-corporate .zrq-seetickets {
     margin-top: 3rem;
   }
 
   .zrq-page-events-corporate .zrq-padding {
     padding: 1rem;
   }
-  
-  .zrq-page-events-corporate .zrq-overlay {  
+
+  .zrq-page-events-corporate .zrq-overlay {
     width: 180px;
   }
 
@@ -850,7 +904,7 @@ _footer.html
   width: 250px;
 }
 
-.zrq-footer .zrq-top-margin{
+.zrq-footer .zrq-top-margin {
   margin-top: 2rem;
 }
 
