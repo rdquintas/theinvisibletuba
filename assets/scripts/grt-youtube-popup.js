@@ -43,6 +43,11 @@
 			$(this).on('click', function (event) {				
 				event.preventDefault();
 				$(".grtyoutube-popup-close, .grtyoutube-popup").click(function(oEvent){
+					debugger;
+					if($(oEvent.target).hasClass("cmplazybtnlink") || $(oEvent.target).hasClass("cmpboxbtn") ||
+				       $(oEvent.target).hasClass("cmpboxbtnyes") || $(oEvent.target).hasClass("cmpcheckboxpreview"))  {
+						return;						
+					}	
 					$(".grtyoutube-popup").remove();
 				});
 			});
