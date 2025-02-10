@@ -254,6 +254,7 @@ concerts.html
 }
 
 
+
 /* 
 =================
 landing - concert
@@ -481,6 +482,18 @@ landing - concert
 
 .zrq-page-events-concert .youtube-link:hover img {
   transform: scale(1.1);
+}
+
+.zrq-page-events-concert .zrq-padding-bottom {
+  padding-bottom: 0px;
+}
+
+.zrq-page-events-concert .zrq-badges {
+  padding-bottom: 3rem;
+}
+
+.zrq-page-events-concert .zrq-badges img {
+  width: 130px;  
 }
 
 
