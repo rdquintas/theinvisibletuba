@@ -227,33 +227,6 @@ audio.html
   width: 100%;
 }
 
-/* 
-=================
-concerts.html
-=================
-*/
-.zrq-page-concerts .zrq-card {
-  text-align: left;
-}
-
-.zrq-page-concerts .zrq-newsletter {
-  text-decoration: underline;
-}
-
-.zrq-page-concerts .zrq-hrline {
-  border-top: 3px solid #000;
-  width: 30%;
-}
-
-.zrq-page-concerts .zrq-margin {
-  margin-bottom: 2rem;
-}
-
-.zrq-page-concerts .zrq-link {
-  text-decoration: underline;
-}
-
-
 
 /* 
 =================
@@ -391,6 +364,10 @@ landing - concert
 
 .zrq-page-events-concert .zrq-socialmedia-icon {
   width: 40px;
+}
+
+.zrq-page-events-concert .zrq-europ-icon {
+  width: 80px;
 }
 
 .zrq-page-events-concert .zrq-social-cenas {
