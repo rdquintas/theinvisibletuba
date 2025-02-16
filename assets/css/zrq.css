@@ -473,7 +473,15 @@ landing - concert
 }
 
 .zrq-page-events-concert .zrq-badges img {
-  width: 130px;  
+  width: 100px;  
+}
+
+.zrq-page-events-concert .zrq-badges .zrq-black-is-beautifull {
+  background-color: #000;
+}
+
+.zrq-page-events-concert .zrq-badges .zrq-black-is-beautifull img {
+  margin: 1rem; 
 }
 
 
