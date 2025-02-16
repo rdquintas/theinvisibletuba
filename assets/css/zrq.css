@@ -465,7 +465,7 @@ landing - concert
 }
 
 .zrq-page-events-concert .zrq-padding-bottom {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .zrq-page-events-concert .zrq-badges {
@@ -486,6 +486,10 @@ landing - concert
 
 
 @media only screen and (max-width: 768px) {
+  .zrq-page-events-concert .zrq-padding-bottom {
+    padding-bottom: rem;
+  }
+
   .zrq-page-events-concert .zrq-hero-image {
     background-image: url(/assets/img/750x1334_v00.png);
   }
