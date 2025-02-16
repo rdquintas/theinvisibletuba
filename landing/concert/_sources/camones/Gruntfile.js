@@ -19,9 +19,19 @@ module.exports = function (grunt) {
           "../../index_se.html": "index_se.html"
         },
       },
+    },
+    watch: {
+      scripts: {
+        files: ["*.*"],
+        tasks: ["bake"],
+        options: {
+          spawn: false,
+        },
+      },
     }
   });
 
   grunt.loadNpmTasks("grunt-bake");
+  grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.registerTask("default", ["bake"]);
 };
