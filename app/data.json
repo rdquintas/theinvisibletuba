@@ -5,7 +5,7 @@
   "phone2_name": "",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "false",
+    "isEnabled": "true",
     "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
     "venue_phone": "(+351)214 068 809",
     "venue_name": "CAMONES ARTES BAR",
@@ -31,6 +31,6 @@
       "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras",
       "es": "Una buena selección de bebidas, cervezas y vinos portugueses. También sirven tapas y comidas ligeras."
     },
-    "link_tickets": "https://bit.ly/tuba2903"
+    "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-camones-bar/camones-artes-bar/3293864?preview=true&lang=en-GB"
   }
 }
