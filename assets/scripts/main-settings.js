@@ -681,6 +681,7 @@
 		browserJs(browserID);
 
 		//Image Preloader check
-		shavePreloader();
+		// shavePreloader();
+		initLayout();
 
 })(jQuery);
