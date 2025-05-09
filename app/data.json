@@ -1,9 +1,9 @@
 {
-  "phone1": "(+351)938 394 796", 
-  "phone1_name": "Laura (PT)",
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
   "phone1_whatsapp": "393319267420",
   "phone2": "(+39)331 926 7420",
-  "phone2_name": "Laura (IT)",
+  "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "true",
@@ -16,8 +16,8 @@
       "es": " Uno de los mejores lugares de Lisboa con música en vivo."
     },
     "venue_desc2": {
-      "en": " is located in Cais do Sodré", 
-      "pt": " está localizado no Cais do Sodré", 
+      "en": " is located in Cais do Sodré",
+      "pt": " está localizado no Cais do Sodré",
       "es": " Está situado en Cais do Sodré."
     },
     "venue_link": "https://www.facebook.com/titanicsurmer/?locale=pt_PT",
