@@ -49,7 +49,7 @@
 }
 
 .grtyoutube-dark-theme .grtyoutube-popup-close {
-	background: url('icon-close-white.png') no-repeat;
+	background: url('../img/icons/icon-close-white.png') no-repeat;
 }
 
 .grtyoutube-light-theme {
@@ -63,7 +63,7 @@
 }
 
 .grtyoutube-light-theme .grtyoutube-popup-close {
-	background: url('icon-close-black.png') no-repeat;
+	background: url('../img/icons/icon-close-black.png') no-repeat;
 }
 
 

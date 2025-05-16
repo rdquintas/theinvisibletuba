@@ -29,11 +29,11 @@
 
 			// Initialize on click
 			if(getvideoid) {
-				$(this).on( "click", function() {
+				$(this).on( "click", function() {				
 					 $("body").append('<div class="grtyoutube-popup '+settings.theme+'">'+
 								'<div class="grtyoutube-popup-content">'+
 									'<span class="grtyoutube-popup-close"></span>'+
-									'<iframe data-cmp-ab="1" data-cmp-vendor="c67725" class="grtyoutube-iframe cmplazyload" src="about:blank" data-cmp-src="https://www.youtube-nocookie.com/embed/'+settings.videoID+'?rel=0&wmode=transparent&autoplay='+settings.autoPlay+'&iv_load_policy=3" allowfullscreen frameborder="0" allow="autoplay; fullscreen"></iframe>'+
+									'<iframe class="grtyoutube-iframe" src="https://www.youtube.com/embed/'+settings.videoID+'?rel=0&wmode=transparent&autoplay='+settings.autoPlay+'&iv_load_policy=3" allowfullscreen frameborder="0" allow="autoplay; fullscreen"></iframe>'+
 								'</div>'+
 							'</div>');
 				});
@@ -43,7 +43,6 @@
 			$(this).on('click', function (event) {				
 				event.preventDefault();
 				$(".grtyoutube-popup-close, .grtyoutube-popup").click(function(oEvent){
-					debugger;
 					if($(oEvent.target).hasClass("cmplazybtnlink") || $(oEvent.target).hasClass("cmpboxbtn") ||
 				       $(oEvent.target).hasClass("cmpboxbtnyes") || $(oEvent.target).hasClass("cmpcheckboxpreview"))  {
 						return;						
