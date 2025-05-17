@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-half margin-left-5 mobile-space-sm">
                         <div class="headline-sm">
-                            <h1 class="text-left black">Detalhes do concerto</h1>
+                            <h2 class="text-left black">Detalhes do concerto</h2>
                         </div>
                         <div class="content black">
                             <p>Vamos tocar aqui <a class="zrq-link" target="_blank"
@@ -44,7 +44,7 @@
                                     <h4 class="title">Onde ?</h4>
                                     <p><a class="zrq-link" target="_blank" href="{{concert.venue_link}}">{{concert.venue_name}}</a>
                                         {{concert.venue_desc2.pt}}</p>
-                                    <p>Address: {{concert.venue_address}}</p>
+                                    <p>Address: <a class="zrq-link" target="_blank" href="{{concert.venue_link}}">{{concert.venue_address}}</a></p>                                    
                                     <p>Clica <a class="zrq-link" target="_blank" href="{{concert.venue_link}}">aqui</a> para mais detalhes</p>
                                     <p>Ou liga para eles:<a class="zrq-link" class="phone"
                                             href="tel:{{concert.venue_phone}}">{{concert.venue_phone}}</a></p>
