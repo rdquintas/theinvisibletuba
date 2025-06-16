@@ -7,31 +7,31 @@
   "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "true",
-    "venue_address": "Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa",
-    "venue_phone": "info.titanicsurmer@gmail.com",
-    "venue_name": "TITANIC SUR MER",
+    "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
+    "venue_phone": "camonesreservas@gmail.com",
+    "venue_name": "CAMONES ARTES BAR",
     "venue_desc1": {
       "en": " one of the busiest (intimate) musical venues in Lisbon",
       "pt": " um dos melhores locais em Lisboa com música ao vivo",
       "es": " Uno de los mejores lugares de Lisboa con música en vivo."
     },
     "venue_desc2": {
-      "en": " is located in Cais do Sodré",
-      "pt": " está localizado no Cais do Sodré",
-      "es": " Está situado en Cais do Sodré."
+      "en": " is located in Graça",
+      "pt": " está localizado no Graça",
+      "es": " Está situado en Graça." 
     },
-    "venue_link": "https://maps.app.goo.gl/55YRZNcgJFUh6hGT8",
-    "venue_photo": "../../assets/img/1080x1350_titanic.png",
+    "venue_link": "https://maps.app.goo.gl/NTS29zrjyE26jKMT8", 
+    "venue_photo": "../../assets/img/457x558_camones.gif",
     "gig_date": {
-      "en": "We're playing live on 14/June at 22:00 (doors open at 21:30)",
-      "pt": "Vamos tocar ao vivo a 14/Junho às 22:00 (as portas abrem às 21:30)",
-      "es": "Estaremos tocando en vivo el 14 de Junio a las 22:00 (las puertas abren a las 21:30)"
+      "en": "We're playing live on 21/June at 21:30 (doors open at 20:00)",
+      "pt": "Vamos tocar ao vivo a 21/Junho às 21:30 (as portas abrem às 20:00)",
+      "es": "Estaremos tocando en vivo el 21 de Junio a las 21:30 (las puertas abren a las 20:00)"
     },
     "venue_offer": {
       "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
       "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras",
       "es": "Una buena selección de bebidas, cervezas y vinos portugueses. También sirven tapas y comidas ligeras."
     },
-    "link_tickets": "https://bit.ly/tuba1406_site"
+    "link_tickets": "https://bit.ly/tuba2106"
   }
 }
