@@ -1,7 +1,7 @@
 {
-  "venue_address": "Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa",
-  "venue_phone": "info.titanicsurmer@gmail.com",
-  "venue_name": "TITANIC SUR MER",
+  "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
+  "venue_phone": "camonesreservas@gmail.com",
+  "venue_name": "CAMONES ARTES BAR",
   "venue_desc1": {
     "en": " one of the busiest (intimate) musical venues in Lisbon",
     "de": " einer der belebtesten (intimsten) Musikveranstaltungsorte in Lissabon",
@@ -24,8 +24,8 @@
     "se": " ",
     "pt": " "
   },
-  "venue_link": "https://maps.app.goo.gl/55YRZNcgJFUh6hGT8",
-  "venue_photo": "../../assets/img/1080x1350_titanic.png",
+  "venue_link": "https://maps.app.goo.gl/NTS29zrjyE26jKMT8", 
+  "venue_photo": "../../assets/img/457x558_camones.gif",
   "venue_offer": {
     "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
     "de": "Eine große Auswahl an erlesenen Getränken, Bieren und dem besten portugiesischen Wein. Tapas und leichte Mahlzeiten sind ebenfalls erhältlich",
@@ -38,19 +38,19 @@
     "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras"
   },
   "gig_date": {
-    "en": "We're playing live on 14/06 at 22:00 (doors open at 21:30)",
-    "de": "Wir spielen live am 14/06 um 22:00 Uhr (Einlass 21:30 Uhr)",
-    "es": "Tocamos en vivo el 14/06 a las 22:00 (las puertas abren a las 21:30).",
-    "fr": "Nous jouons en live le 14/06 à 21h30 (ouverture des portes à 21:30)",
-    "jp": "6月14日 22:00よりライブを行います（開場21:30",
-    "nl": "We spelen live op 14/06 om 22:00 (deuren open om 21:30)",
-    "it": "Suoneremo dal vivo il 14/06 alle 22:00 (apertura porte alle 21:30)",
-    "se": "Vi spelar live den 14/06 kl 22:00 (dörrarna öppnar kl 21:30)",
-    "pt": "Vamos tocar ao vivo a 14/06 às 22:00 (as portas abrem às 21:30)"
+    "en": "We're playing live on 21/06 at 21:30 (doors open at 20:00)",
+    "de": "Wir spielen live am 21/06 um 21:30 Uhr (Einlass 20:00 Uhr)",
+    "es": "Tocamos en vivo el 21/06 a las 21:30 (las puertas abren a las 20:00).",
+    "fr": "Nous jouons en live le 21/06 à 21h30 (ouverture des portes à 20:00)",
+    "jp": "6月14日 21:30よりライブを行います（開場20:00",
+    "nl": "We spelen live op 21/06 om 21:30 (deuren open om 20:00)",
+    "it": "Suoneremo dal vivo il 21/06 alle 21:30 (apertura porte alle 20:00)",
+    "se": "Vi spelar live den 21/06 kl 21:30 (dörrarna öppnar kl 20:00)",
+    "pt": "Vamos tocar ao vivo a 21/06 às 21:30 (as portas abrem às 20:00)"
   },
   "price_1": "10",
   "price_1_previous": "15",
   "price_2": "25",
   "price_3": "55",
-  "link_tickets": "https://bit.ly/tuba1406_sitebifes_en"
+  "link_tickets": "https://bit.ly/tuba2106en"
 }
