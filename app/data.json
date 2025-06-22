@@ -6,7 +6,7 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "true",
+    "isEnabled": "false",
     "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
     "venue_phone": "camonesreservas@gmail.com",
     "venue_name": "CAMONES ARTES BAR",
