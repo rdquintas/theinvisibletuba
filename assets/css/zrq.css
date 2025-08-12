@@ -855,10 +855,10 @@ mediakit.html
 }
 
 .zrq-page-mediakit .zrq-link {
-  color: blue;
-  text-decoration: underline;
+  color: blue !important; 
+  text-decoration: underline !important;
 }
-
+ 
 .zrq-page-mediakit .zrq-quote {
   font-family: "Ubuntu", sans-serif !important;
   font-size: 28px !important;
