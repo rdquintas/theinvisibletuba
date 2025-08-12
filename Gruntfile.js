@@ -15,7 +15,9 @@ module.exports = function (grunt) {
           "audio.html": "app/audio.html",
           "audio_en.html": "app/audio_en.html",        
           "contact.html": "app/contact.html",
-          "contact_en.html": "app/contact_en.html"
+          "contact_en.html": "app/contact_en.html",
+          "mediakit.html": "app/mediakit.html",
+          "mediakit_en.html": "app/mediakit_en.html"
         },
       },
     },

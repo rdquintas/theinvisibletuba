@@ -845,6 +845,41 @@ landing - corporate
 
 }
 
+/* 
+=================
+mediakit.html
+=================
+*/
+.zrq-page-mediakit .hero-title {
+  text-align: center;
+}
+
+.zrq-page-mediakit .zrq-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.zrq-page-mediakit .zrq-quote {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 28px !important;
+  font-style: italic !important;
+  line-height: 1.25em !important;
+  text-align: left !important;
+  font-weight: 300 !important;
+}
+
+.zrq-page-mediakit .zrq-bullets {
+  padding: revert;
+}
+
+.zrq-page-mediakit .zrq-bullets li {
+  list-style-type: disc;
+}
+
+.zrq-page-mediakit .zrq-mb {
+  margin-bottom: 2rem;
+}
+
 
 /* 
 =================
