@@ -860,12 +860,7 @@ mediakit.html
 } 
  
 .zrq-page-mediakit .zrq-quote {
-  font-family: "Ubuntu", sans-serif !important;
-  font-size: 28px !important;
   font-style: italic !important;
-  line-height: 1.25em !important;
-  text-align: left !important;
-  font-weight: 300 !important;
 }
 
 .zrq-page-mediakit .zrq-bullets {
