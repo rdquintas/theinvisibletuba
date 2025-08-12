@@ -124,6 +124,17 @@ index.html
   padding: 0px;
 }
 
+.zrq-page-index .zrq-musicians .maintext {
+  transform: translateY(-36px);
+  background-color: #252525a4;
+}
+
+.zrq-page-index .zrq-musicians .subtext {
+  transform: translateY(0);
+  background-color: #252525a4;
+}
+
+
 .zrq-page-index .zrq-hero-slider .sv-feature-headline {
   /* font-size: 2rem !important; */
   background-color: rgba(0, 0, 0, 0.5);
