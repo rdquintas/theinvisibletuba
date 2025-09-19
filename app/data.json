@@ -6,32 +6,26 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "false",
-    "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
-    "venue_phone": "camonesreservas@gmail.com",
-    "venue_name": "CAMONES ARTES BAR",
+    "isEnabled": "true",
+    "venue_address": "Cais do Gás 1, 1200-109 Lisboa",
+    "venue_phone": "(+351)213 462 265",
+    "venue_email": "tokyo@tokyo.com.pt",
+    "venue_name": "TOKYO BAR",
     "venue_desc1": {
-      "en": " one of the busiest (intimate) musical venues in Lisbon",
-      "pt": " um dos melhores locais em Lisboa com música ao vivo",
-      "es": " Uno de los mejores lugares de Lisboa con música en vivo."
+      "en": " the best live music bar in Lisbon",
+      "pt": " o melhor bar de música ao vivo em Lisboa"
     },
-    "venue_desc2": {
-      "en": " is located in Graça",
-      "pt": " está localizado no Graça",
-      "es": " Está situado en Graça." 
-    },
-    "venue_link": "https://maps.app.goo.gl/NTS29zrjyE26jKMT8", 
-    "venue_photo": "../../assets/img/457x558_camones.gif",
+    "venue_link": "https://tokyo.com.pt/", 
+    "google_maps": "https://maps.app.goo.gl/TuGnhkFFXTrbhiYT8", 
+    "venue_photo": "../../assets/img/457x558_tokyo.gif",
     "gig_date": {
-      "en": "We're playing live on 21/June at 21:30 (doors open at 20:00)",
-      "pt": "Vamos tocar ao vivo a 21/Junho às 21:30 (as portas abrem às 20:00)",
-      "es": "Estaremos tocando en vivo el 21 de Junio a las 21:30 (las puertas abren a las 20:00)"
+      "en": "18/October at 22:00 (doors open at 21:30)",
+      "pt": "18/Outubro às 22:00 (as portas abrem às 21:30)"
     },
-    "venue_offer": {
-      "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
-      "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras",
-      "es": "Una buena selección de bebidas, cervezas y vinos portugueses. También sirven tapas y comidas ligeras."
+    "venue_info": {
+      "en": "Tokyo is more than just a nightlife venue. It's a cultural institution that has contributed to Lisbon's musical and social identity for over four decades. With a diverse program, a commitment to the artistic community, and the promotion of world music, TOKYO is an essential meeting place for those who enjoy live music and dancing the night away. In 2022, we moved to new facilities, also in Cais do Sodré, but the spirit remains the SAME.",
+      "pt": "O Tokyo é mais do que um espaço para sair à noite. É uma instituição cultural que tem contribuído para a identidade musical e social de Lisboa há mais de quatro décadas. Com uma programação diversificada, um compromisso com a comunidade artística e a divulgação de world music, o TOKYO é um ponto de encontro essencial para quem gosta de música ao vivo e de dançar pela noite fora. Em 2022 mudámo-nos para novas instalações, também no Cais do Sodré, mas o espírito, esse, continua o MESMO"
     },
-    "link_tickets": "https://bit.ly/tuba2106"
+    "link_tickets": "https://tickets.tokyo.com.pt/events/308"
   }
 }

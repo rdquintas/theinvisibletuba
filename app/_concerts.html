@@ -3,7 +3,7 @@
         <div class="row no-margin">
             <div class="col-xs-12">
                 <h3 class="text-center white">Vamos ter um concerto 😊 </h3>
-                <h4 class="text-center white">Já há poucos lugares disponíveis !!</h4>
+                <h4 class="text-center white">Esgota rápido !!</h4>
                 <div class="text-center">
                     <a href="{{concert.link_tickets}}" target="_blank"
                         class="zrq-focus-input btn book-now-btn black-bg btn-white">COMPRAR BILHETES</a>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="content black">
                             <p>Vamos tocar aqui <a class="zrq-link" target="_blank"
-                                    href="{{concert.venue_link}}">{{concert.venue_name}}</a>,
+                                    href="{{concert.google_maps}}">{{concert.venue_name}}</a>,
                                 {{concert.venue_desc1.pt}} </p>
                         </div>
                         <div class="approach-list inner-sm">
@@ -42,23 +42,36 @@
                                 <i class="fa fa-map-location-dot fa-2x"></i>
                                 <div class="approach-content black">
                                     <h4 class="title">Onde ?</h4>
-                                    <p><a class="zrq-link" target="_blank" href="{{concert.venue_link}}">{{concert.venue_name}}</a>
-                                        {{concert.venue_desc2.pt}}</p>
-                                    <p>Address: <a class="zrq-link" target="_blank" href="{{concert.venue_link}}">{{concert.venue_address}}</a></p>                                    
-                                    <p>Clica <a class="zrq-link" target="_blank" href="{{concert.venue_link}}">aqui</a> para mais detalhes</p>
-                                    <p>Ou liga para eles:<a class="zrq-link" class="phone"
-                                            href="tel:{{concert.venue_phone}}">{{concert.venue_phone}}</a></p>
+                                    <p><a class="zrq-link" target="_blank" href="{{concert.google_maps}}">{{concert.venue_name}}</a></p>
+                                    <p>Morada (Google Maps): <a class="zrq-link" target="_blank" href="{{concert.google_maps}}">{{concert.venue_address}}</a></p>
+                                    <!--(bake-start _if="concert.venue_link != ''")-->                                    
+                                    <p>Website: <a class="zrq-link" target="_blank" href="{{concert.venue_link}}">{{concert.venue_link}}</a></p>
+                                    <!--(bake-end)-->
+                                    <!--(bake-start _if="concert.venue_phone != ''")-->                                    
+                                    <p>Telefone: <a class="zrq-link" class="phone" href="tel:{{concert.venue_phone}}">{{concert.venue_phone}}</a></p>
+                                    <!--(bake-end)-->
+                                    <!--(bake-start _if="concert.venue_email != ''")-->                                 
+                                    <p>Email: <a class="zrq-link" href="mailto:{{concert.venue_email}}">{{concert.venue_email}}</a></p>
+                                    <!--(bake-end)-->                                    
                                 </div>
                             </div>
+                            <!--(bake-start _if="concert.venue_info.pt != ''")-->
                             <div class="approach-item">
-                                <i class="fa fa-martini-glass fa-2x"></i>
+                                <i class="fa fa-circle-info fa-2x"></i>
                                 <div class="approach-content black">
-                                    <h4 class="title">O que é que oferecem ?</h4>
-                                    <p>{{concert.venue_offer.pt}}</p>
+                                    <h4 class="title">Informação</h4>
+                                    <p>{{concert.venue_info.pt}}</p>
                                 </div>
                             </div>
+                            <!--(bake-end)-->
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row no-margin">
+                <div class="text-center">
+                    <a href="{{concert.link_tickets}}" target="_blank"
+                        class="zrq-focus-input btn book-now-btn black-bg btn-white">COMPRAR BILHETES</a>
                 </div>
             </div>
         </div>
