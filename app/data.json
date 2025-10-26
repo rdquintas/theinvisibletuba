@@ -6,26 +6,26 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "false", 
-    "venue_address": "Cais do Gás 1, 1200-109 Lisboa",
-    "venue_phone": "(+351)213 462 265",
-    "venue_email": "tokyo@tokyo.com.pt",
-    "venue_name": "TOKYO BAR",
+    "isEnabled": "true", 
+    "venue_address": "R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo",
+    "venue_phone": "(+351)219 574 276",
+    "venue_email": "",
+    "venue_name": "BAR ENTRELINHAS",
     "venue_desc1": {
-      "en": " the best live music bar in Lisbon",
-      "pt": " o melhor bar de música ao vivo em Lisboa"
+      "en": " the best live music bar in Alverca",
+      "pt": " o melhor bar de música ao vivo em Alverca"
     },
-    "venue_link": "https://tokyo.com.pt/", 
-    "google_maps": "https://maps.app.goo.gl/TuGnhkFFXTrbhiYT8", 
-    "venue_photo": "../../assets/img/457x558_tokyo.gif",
+    "venue_link": "https://www.instagram.com/entrelinhas2019/", 
+    "google_maps": "https://maps.app.goo.gl/WZLfTFx6bpibXf6F8", 
+    "venue_photo": "../../assets/img/457x558_entrelinhas.gif",
     "gig_date": {
-      "en": "18/October at 22:00 (doors open at 21:30)",
-      "pt": "18/Outubro às 22:00 (as portas abrem às 21:30)"
+      "en": "14/November at 21:00 (doors open at 20:00)",
+      "pt": "14/Novembro às 21:00 (as portas abrem às 20:00)"
     },
     "venue_info": {
-      "en": "Tokyo is more than just a nightlife venue. It's a cultural institution that has contributed to Lisbon's musical and social identity for over four decades. With a diverse program, a commitment to the artistic community, and the promotion of world music, TOKYO is an essential meeting place for those who enjoy live music and dancing the night away. In 2022, we moved to new facilities, also in Cais do Sodré, but the spirit remains the SAME.",
-      "pt": "O Tokyo é mais do que um espaço para sair à noite. É uma instituição cultural que tem contribuído para a identidade musical e social de Lisboa há mais de quatro décadas. Com uma programação diversificada, um compromisso com a comunidade artística e a divulgação de world music, o TOKYO é um ponto de encontro essencial para quem gosta de música ao vivo e de dançar pela noite fora. Em 2022 mudámo-nos para novas instalações, também no Cais do Sodré, mas o espírito, esse, continua o MESMO"
+      "en": "Entrelinhas is more than just a nightlife venue. With a decor full of personality and a welcoming atmosphere, it's the perfect place to enjoy high-quality live music while savoring delicious cocktails and snacks. Whether for a romantic evening, a gathering with friends, or a special event, Entrelinhas offers a unique experience that combines good music, good food, and good company.",                
+      "pt": "O Entrelinhas é mais do que um espaço para sair à noite. Com uma decoração cheia de personalidade e um ambiente acolhedor, é o local perfeito para desfrutar de música ao vivo de alta qualidade enquanto saboreia deliciosos cocktails e petiscos. Seja para uma noite romântica, uma reunião com amigos ou um evento especial, o Entrelinhas oferece uma experiência única que combina boa música, boa comida e boa companhia."
     },
-    "link_tickets": "https://tickets.tokyo.com.pt/events/308"
+    "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
   }
 }
