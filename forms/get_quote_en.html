@@ -67,13 +67,13 @@
         </a>
 
         <h1 class="display-5 fw-bold text-white" data-i18n="intro.title1">
-          Queres
+          Do you want to
         </h1>
         <h1 class="display-5 fw-bold text-white" data-i18n="intro.title2">
-          contratar-nos ?
+          book us ?
         </h1>
         <p class="display-6 text-white" data-i18n="intro.title3">
-          Preenche o formulário seguinte, para te podermos enviar um orçamento.
+          Plese fill the form bellow and we'll send you a quote.
         </p>
       </div>
 
@@ -81,7 +81,7 @@
       <input type="hidden" name="tag" id="tag" value="" />
 
       <!-- SET THE DEFAULT LANGUAGE -->
-      <input type="hidden" name="language" id="lang" value="PT" />
+      <input type="hidden" name="language" id="lang" value="EN" />
 
       <!-- LANGUAGE -->
       <!-- <div class="col-md-12 text-center">
@@ -122,29 +122,29 @@
       <!-- NAME -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.name_lbl"
-          >O teu nome</label
+          >Your name</label
         >
         <input type="text" class="form-control" name="name" required />
         <div class="invalid-tooltip" data-i18n="form.required">
-          Campo obrigatório
+          Required Field
         </div>
       </div>
 
       <!-- EMAIL -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.email_lbl"
-          >Email</label
+          >Your email</label
         >
         <input
           data-i18n="[placeholder]form.email_phd"
           type="email"
           class="form-control"
           name="email"
-          placeholder="O teu email"
+          placeholder="Your email address"
           required
         />
         <div class="invalid-tooltip" data-i18n="form.required">
-          Campo obrigatório
+          Required Field
         </div>
       </div>
 
@@ -192,7 +192,7 @@
       <!-- OCCASION -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.type_lbl"
-          >Tipo de evento</label
+          >Type of event</label
         >
         <select
           class="form-select"
@@ -201,26 +201,26 @@
           required
         >
           <option selected value="" data-i18n="form.type0">
-            Escolher um
+            Choose one
           </option>
-          <option data-i18n="form.type1">Festa Escritório</option>
-          <option data-i18n="form.type2">Festa de Natal</option>
+          <option data-i18n="form.type1">Office Party</option>
+          <option data-i18n="form.type2">Christmas Party</option>
           <option data-i18n="form.type3">Festival</option>
-          <option data-i18n="form.type4">Casamento</option>
-          <option data-i18n="form.type5">Festa Estudantes</option>
-          <option data-i18n="form.type6">Festa de Aniversário</option>
-          <option data-i18n="form.type5">Concerto num Bar</option>
-          <option data-i18n="form.type99">Outro</option>
+          <option data-i18n="form.type4">Wedding</option>
+          <option data-i18n="form.type5">Student Event</option>
+          <option data-i18n="form.type6">Birthday Party</option>
+          <option data-i18n="form.type6">Bar/Pub Concert</option>
+          <option data-i18n="form.type99">Other</option>
         </select>
         <div class="invalid-tooltip" data-i18n="form.required">
-          Campo obrigatório
+          Required Field
         </div>
       </div>
 
       <!-- DATE OF EVENT -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.date_lbl"
-          >Data do evento</label
+          >Date of event</label
         >
         <input
           type="date"
@@ -230,74 +230,74 @@
           required
         />
         <div class="invalid-tooltip" data-i18n="form.required">
-          Campo obrigatório
+          Required Field
         </div>
       </div>
 
       <!-- SCHEDULE -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.time_lbl"
-          >Horário e Duração</label
+          >Time and Duration</label
         >
         <input
           data-i18n="[placeholder]form.time_phd"
           type="text"
           class="form-control"
           name="duration"
-          placeholder="Por ex: das 20h até às 00h"
+          placeholder="For ex: from 20h till midnight"
           required
         />
         <div class="invalid-tooltip" data-i18n="form.required">
-          Campo obrigatório
+          Required Field
         </div>
       </div>
 
       <!-- LOCATION OF EVENT -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.location_lbl"
-          >Local do evento</label
+          >Location of event</label
         >
         <input
           data-i18n="[placeholder]form.location_phd"
           type="text"
           class="form-control"
           name="event_location"
-          placeholder="Por ex: Sintra..."
+          placeholder="For ex: Sintra..."
           required
         />
         <div class="invalid-tooltip" data-i18n="form.required">
-          Campo obrigatório
+          Required Field
         </div>
       </div>
 
       <!-- NUMBER OF GUESTS -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white" data-i18n="form.guests_lbl"
-          >Número de convidados</label
+          >Number of guests</label
         >
         <input
           data-i18n="[placeholder]form.guests_phd"
           type="text"
           class="form-control"
           name="guests"
-          placeholder="Coloca um número aprox..."
+          placeholder="How many guests more or less..."
           required
         />
         <div class="invalid-tooltip" data-i18n="form.required">
-          Campo obrigatório
+          Required Field
         </div>
       </div>
 
       <!-- PROMO CODE -->
       <div class="col-md-12 position-relative">
         <label class="form-label fs-4 text-white"
-          >Tens um PROMO CODE ?</label
+          >Do you have a PROMO CODE ?</label
         >
         <input
           type="text"
           class="form-control"
           name="promo_code"
-          placeholder="Coloca aqui o teu promo code se tiveres um..."          
+          placeholder="Type you promo code if you have one..."          
         />      
       </div>
 
@@ -306,7 +306,7 @@
         <label
           class="form-label fs-4 text-white"
           data-i18n="form.environment_lbl"
-          >Espaço</label
+          >Environment</label
         >
 
         <div class="form-check">
@@ -323,7 +323,7 @@
             class="form-check-label text-white fs-4"
             data-i18n="form.environment1"
           >
-            Interior
+            Indoors
           </label>
         </div>
         <div class="form-check">
@@ -339,7 +339,7 @@
             class="form-check-label text-white fs-4"
             data-i18n="form.environment2"
           >
-            Ar livre
+            Outdoors
           </label>
         </div>
         <div class="form-check">
@@ -355,7 +355,7 @@
             class="form-check-label text-white fs-4"
             data-i18n="form.environment3"
           >
-            Não sei
+            Don't know
           </label>
         </div>
       </div>
@@ -363,11 +363,11 @@
       <!-- ANYTHING ELSE -->
       <div class="col-md-12 position-relative">
         <label class="form-label text-white fs-4" data-i18n="form.comments_lbl"
-          >Comentários</label
+          >Comments</label
         >
         <textarea
           data-i18n="[placeholder]form.comments_phd"
-          placeholder="Qualquer comentário ou requisito que queiras acrescentar..."
+          placeholder="Any extra comments or requirements..."
           class="form-control"
           name="text"
           rows="3"
@@ -387,7 +387,7 @@
           for="flexCheckDefault"
           data-i18n="form.newsletter"
         >
-          Sim, quero subscrever a vossa Newsletter
+          Yes, I want to subscribe your Newsletter
         </label>
       </div>
       <div class="col-12">
@@ -397,7 +397,7 @@
           type="submit"
           data-i18n="form.submit"
         >
-          Enviar pedido
+          Submit form
         </button>
       </div>
 
@@ -407,7 +407,7 @@
         target="_blank"
         data-i18n="intro.button"
       >
-        Voltar para o nosso Website
+        Go to our website
       </a>
     </form>
 
@@ -417,9 +417,9 @@
         <div class="modal-content">
           <div class="text-center">
             <div class="spinner-border m-5" role="status">
-              <span class="visually-hidden">Aguardar...</span>
+              <span class="visually-hidden">Loading...</span>
             </div>
-            <h3 data-i18n="form.spinner">Por favor aguarda...</h3>
+            <h3 data-i18n="form.spinner">Please wait</h3>
           </div>
         </div>
       </div>
@@ -436,7 +436,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" data-i18n="form.aviso1">Aviso</h5>
+            <h5 class="modal-title" id="exampleModalLabel" data-i18n="form.aviso1">Warning</h5>
             <button
               type="button"
               class="btn-close"
@@ -444,7 +444,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body"><p data-i18n="form.aviso2">Preencher todos os campos obrigatórios por favor.</p></div>
+          <div class="modal-body"><p data-i18n="form.aviso2">Please, fill all required fields.</p></div>
           <div class="modal-footer">
             <button
               type="button"

@@ -19,40 +19,40 @@ $(document).ready(function () {
     $("#tag").val("");
   }
 
-  $("#typeEventCorporate").change(function () {
-    var newOptions = {
-      [i18next.t("form.corporate_1")]: i18next.t("form.corporate_1"),
-      [i18next.t("form.corporate_2")]: i18next.t("form.corporate_2"),
-      [i18next.t("form.corporate_3")]: i18next.t("form.corporate_3"),
-      [i18next.t("form.corporate_4")]: i18next.t("form.corporate_4"),
-      [i18next.t("form.corporate_5")]: i18next.t("form.corporate_5"),
-      [i18next.t("form.corporate_6")]: i18next.t("form.corporate_6"),
-      [i18next.t("form.corporate_7")]: i18next.t("form.corporate_7"),
-      [i18next.t("form.corporate_8")]: i18next.t("form.corporate_8"),
-    };
+  // $("#typeEventCorporate").change(function () {
+  //   var newOptions = {
+  //     [i18next.t("form.corporate_1")]: i18next.t("form.corporate_1"),
+  //     [i18next.t("form.corporate_2")]: i18next.t("form.corporate_2"),
+  //     [i18next.t("form.corporate_3")]: i18next.t("form.corporate_3"),
+  //     [i18next.t("form.corporate_4")]: i18next.t("form.corporate_4"),
+  //     [i18next.t("form.corporate_5")]: i18next.t("form.corporate_5"),
+  //     [i18next.t("form.corporate_6")]: i18next.t("form.corporate_6"),
+  //     [i18next.t("form.corporate_7")]: i18next.t("form.corporate_7"),
+  //     [i18next.t("form.corporate_8")]: i18next.t("form.corporate_8"),
+  //   };
 
-    var $el = $("#occasion");
-    $el.empty();
-    $.each(newOptions, function (key, value) {
-      $el.append($("<option></option>").attr("value", value).text(key));
-    });
-  });
+  //   var $el = $("#occasion");
+  //   $el.empty();
+  //   $.each(newOptions, function (key, value) {
+  //     $el.append($("<option></option>").attr("value", value).text(key));
+  //   });
+  // });
 
-  $("#typeEventPrivate").change(function (oEvvbet) {
-    var newOptions = {
-      [i18next.t("form.private_1")]: i18next.t("form.private_1"),
-      [i18next.t("form.private_2")]: i18next.t("form.private_2"),
-      [i18next.t("form.private_3")]: i18next.t("form.private_3"),
-      [i18next.t("form.private_4")]: i18next.t("form.private_4"),
-      [i18next.t("form.private_5")]: i18next.t("form.private_5"),
-    };
+  // $("#typeEventPrivate").change(function (oEvvbet) {
+  //   var newOptions = {
+  //     [i18next.t("form.private_1")]: i18next.t("form.private_1"),
+  //     [i18next.t("form.private_2")]: i18next.t("form.private_2"),
+  //     [i18next.t("form.private_3")]: i18next.t("form.private_3"),
+  //     [i18next.t("form.private_4")]: i18next.t("form.private_4"),
+  //     [i18next.t("form.private_5")]: i18next.t("form.private_5"),
+  //   };
 
-    var $el = $("#occasion");
-    $el.empty();
-    $.each(newOptions, function (key, value) {
-      $el.append($("<option></option>").attr("value", value).text(key));
-    });
-  });
+  //   var $el = $("#occasion");
+  //   $el.empty();
+  //   $.each(newOptions, function (key, value) {
+  //     $el.append($("<option></option>").attr("value", value).text(key));
+  //   });
+  // });
 
   $("#zrqForm").on("submit", function (oEvent) {
     if (!this.checkValidity()) {
@@ -78,23 +78,23 @@ $(document).ready(function () {
     }
   });
 
-  $("#languagePT").change((a, b, c) => {
-    const chosenLng = "pt";
-    $("#zrqForm")[0].reset();
-    $("#languagePT").prop("checked", true);
-    i18next.changeLanguage(chosenLng, () => {
-      $("body").localize();
-    });
-  });
+  // $("#languagePT").change((a, b, c) => {
+  //   const chosenLng = "pt";
+  //   $("#zrqForm")[0].reset();
+  //   $("#languagePT").prop("checked", true);
+  //   i18next.changeLanguage(chosenLng, () => {
+  //     $("body").localize();
+  //   });
+  // });
 
-  $("#languageEN").change((a, b, c) => {
-    const chosenLng = "en";
-    $("#zrqForm")[0].reset();
-    $("#languageEN").prop("checked", true);
-    i18next.changeLanguage(chosenLng, () => {
-      $("body").localize();
-    });
-  });
+  // $("#languageEN").change((a, b, c) => {
+  //   const chosenLng = "en";
+  //   $("#zrqForm")[0].reset();
+  //   $("#languageEN").prop("checked", true);
+  //   i18next.changeLanguage(chosenLng, () => {
+  //     $("body").localize();
+  //   });
+  // });
 
   // https://www.i18next.com
   i18next
