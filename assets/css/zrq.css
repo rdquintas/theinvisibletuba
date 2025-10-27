@@ -821,11 +821,11 @@ landing - corporate
 
   .zrq-page-events-corporate .zrq-hero-image {
     background-image: url(/assets/img/750x1334_v03.png);    
-    height: 1100px;
+    /* height: 1100px; */
   }
 
   .zrq-page-events-corporate .hero-content {
-    top: 5%;   
+    top: 40%;   
   }
 
   .zrq-page-events-corporate .zrq-header .zrq-logo img {
