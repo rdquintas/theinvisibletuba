@@ -846,7 +846,10 @@ landing - corporate
     width: 180px;
   }
 
-}
+  .zrq-page-events-corporate .zrq-benefit {
+      margin-bottom: initial;
+  }
+
 
 /* 
 =================
