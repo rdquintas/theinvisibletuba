@@ -134,6 +134,13 @@ index.html
   background-color: #252525a4;
 }
 
+.zrq-page-index .zrq-flow-root {
+  display: flow-root;
+}
+
+.zrq-page-index .zrq-flow-root a {
+  word-wrap: break-word;
+}
 
 .zrq-page-index .zrq-hero-slider .sv-feature-headline {
   /* font-size: 2rem !important; */
