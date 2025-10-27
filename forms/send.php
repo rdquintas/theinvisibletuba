@@ -63,7 +63,7 @@ function createMessage($from, $to, $subject, $body) {
   
 
 function prepareBody($form) {    
-    if ($form->lang == "EN") {
+    if ($form->language == "EN") {
         $body .= "Hi " . $form->name . ",\r\n";
         $body .= "Thank you for your request, we'll get back to you as soon as possible and we'll send you a detailled offer to your email." . "\r\n\r\n";
         $body .= "Here's the confirmation of your request:" . "\r\n";
