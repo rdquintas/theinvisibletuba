@@ -704,7 +704,9 @@ landing - corporate
 }
 
 .zrq-page-events-corporate .zrq-hero-image {
-  background-image: url(/assets/img/2560x1200_v01.png);
+  background-image: url(/assets/img/2560x1200_v02.png);
+  background-position: top !important;
+  height: 900px;
 }
 
 .zrq-page-events-corporate .zrq-cookies {
@@ -811,11 +813,12 @@ landing - corporate
   }
 
   .zrq-page-events-corporate .zrq-hero-image {
-    background-image: url(/assets/img/750x1334_v00.png);
+    background-image: url(/assets/img/750x1334_v03.png);    
+    height: 1100px;
   }
 
   .zrq-page-events-corporate .hero-content {
-    top: 40%;
+    top: 5%;   
   }
 
   .zrq-page-events-corporate .zrq-header .zrq-logo img {
