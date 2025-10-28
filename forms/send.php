@@ -32,6 +32,14 @@ $form->guests = $_POST["guests"];
 $form->text = $_POST["text"];
 $form->promo_code = $_POST["promo_code"];
 
+
+if ($_POST["newsletter"] == "true") {
+    $form->newsletter = "SIM";
+} else {
+    $form->newsletter = "NÃO";
+}
+
+
 // print_r($form);
 
 $body = prepareBody($form);
@@ -78,6 +86,7 @@ function prepareBody($form) {
         $body .= "EVENT DATE: " . $form->event_date . "\r\n";
         $body .= "DURATION: " . $form->duration . "\r\n";
         $body .= "PROMO CODE: " . $form->promo_code . "\r\n";
+        $body .= "NEWSLETTER: " . $form->newsletter . "\r\n";
         $body .= "OTHER DETAILS: " . $form->text . "\r\n";        
         $body .= "=============" . "\r\n";
         $body .= "\r\n\r\n" . "Many Thanks ;o)" . "\r\n\r\n";    
@@ -98,6 +107,7 @@ function prepareBody($form) {
         $body .= "DATA: " . $form->event_date . "\r\n";
         $body .= "DURAÇÃO: " . $form->duration . "\r\n";
         $body .= "PROMO CODE: " . $form->promo_code . "\r\n";
+        $body .= "NEWSLETTER: " . $form->newsletter . "\r\n";
         $body .= "OUTROS DETALHES: " . $form->text . "\r\n";    
         $body .= "=============" . "\r\n";
         $body .= "\r\n\r\n" . "Muito Obrigado ;o)" . "\r\n\r\n";    
