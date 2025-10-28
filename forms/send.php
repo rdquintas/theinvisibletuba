@@ -33,7 +33,7 @@ $form->text = $_POST["text"];
 $form->promo_code = $_POST["promo_code"];
 
 
-if ($_POST["newsletter"] == "true") {
+if (isset($_POST["newsletter"])) {
     $form->newsletter = "SIM";
 } else {
     $form->newsletter = "NÃO";
