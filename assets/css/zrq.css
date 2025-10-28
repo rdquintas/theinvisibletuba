@@ -826,6 +826,7 @@ landing - corporate
   .zrq-page-events-corporate .zrq-hero-image {
     background-image: url(/assets/img/375_667_v03.png);    
     height: 750px;    
+    width: 100%;
   }
 
   .zrq-page-events-corporate .hero-content {
