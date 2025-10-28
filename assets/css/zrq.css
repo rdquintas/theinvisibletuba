@@ -812,6 +812,14 @@ landing - corporate
 }
 
 
+  /* .zrq-page-events-corporate .zrq-desktop {
+    display: block;
+  }
+
+  .zrq-page-events-corporate .zrq-mobile {
+    display: none;
+  } */
+
 
 @media only screen and (max-width: 768px) {
   .zrq-page-events-corporate #header {
@@ -819,15 +827,19 @@ landing - corporate
     height: 45px;
   }
 
-  .zrq-page-events-corporate .hero-content.header {
+  /* .zrq-page-events-corporate .zrq-desktop {
     display: none;
   }
 
-  .zrq-page-events-corporate .zrq-hero-image {
+  .zrq-page-events-corporate .zrq-mobile {
+    display: block;
+  } */
+
+  /* .zrq-page-events-corporate .zrq-hero-image {
     background-image: url(/assets/img/375_667_v03.png);    
     height: 750px;    
     width: 100%;
-  }
+  } */
 
   .zrq-page-events-corporate .hero-content {
     top: 40%;   
