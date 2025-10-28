@@ -819,10 +819,13 @@ landing - corporate
     height: 45px;
   }
 
+  .zrq-page-events-corporate .hero-content.header {
+    display: none;
+  }
+
   .zrq-page-events-corporate .zrq-hero-image {
-    background-image: url(/assets/img/750x1334_v03.png);    
-    /* height: 1100px; */
-    width: 100%;
+    background-image: url(/assets/img/375_667_v03.png);    
+    height: 750px;    
   }
 
   .zrq-page-events-corporate .hero-content {
