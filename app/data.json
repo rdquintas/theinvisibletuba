@@ -6,7 +6,7 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "true", 
+    "isEnabled": "false", 
     "venue_address": "R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo",
     "venue_phone": "(+351)219 574 276",
     "venue_email": "",
