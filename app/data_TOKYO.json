@@ -6,7 +6,7 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "true", 
+    "isEnabled": "false", 
     "venue_address": "Cais do Gás 1, 1200-109 Lisboa",
     "venue_phone": "(+351)213 462 265",
     "venue_email": "tokyo@tokyo.com.pt",
@@ -19,13 +19,13 @@
     "google_maps": "https://maps.app.goo.gl/TuGnhkFFXTrbhiYT8", 
     "venue_photo": "../../assets/img/457x558_tokyo.gif",
     "gig_date": {
-      "en": "27/February at 22:00 (doors open at 21:30)",
-      "pt": "27/Fevereiro às 22:00 (as portas abrem às 21:30)"
+      "en": "18/October at 22:00 (doors open at 21:30)",
+      "pt": "18/Outubro às 22:00 (as portas abrem às 21:30)"
     },
     "venue_info": {
       "en": "Tokyo is more than just a nightlife venue. It's a cultural institution that has contributed to Lisbon's musical and social identity for over four decades. With a diverse program, a commitment to the artistic community, and the promotion of world music, TOKYO is an essential meeting place for those who enjoy live music and dancing the night away. In 2022, we moved to new facilities, also in Cais do Sodré, but the spirit remains the SAME.",
       "pt": "O Tokyo é mais do que um espaço para sair à noite. É uma instituição cultural que tem contribuído para a identidade musical e social de Lisboa há mais de quatro décadas. Com uma programação diversificada, um compromisso com a comunidade artística e a divulgação de world music, o TOKYO é um ponto de encontro essencial para quem gosta de música ao vivo e de dançar pela noite fora. Em 2022 mudámo-nos para novas instalações, também no Cais do Sodré, mas o espírito, esse, continua o MESMO"
     },
-    "link_tickets": "https://tickets.tokyo.com.pt/events/374" 
+    "link_tickets": "https://tickets.tokyo.com.pt/events/308"
   }
 }

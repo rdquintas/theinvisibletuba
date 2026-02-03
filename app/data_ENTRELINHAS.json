@@ -1,0 +1,31 @@
+{
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
+  "phone1_whatsapp": "393319267420",
+  "phone2": "(+39)331 926 7420",
+  "phone2_name": "Laura (whatsapp)",
+  "email": "info@theinvisibletuba.com",
+  "concert": {
+    "isEnabled": "false", 
+    "venue_address": "R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo",
+    "venue_phone": "(+351)219 574 276",
+    "venue_email": "",
+    "venue_name": "BAR ENTRELINHAS",
+    "venue_desc1": {
+      "en": " the best live music bar in Alverca",
+      "pt": " o melhor bar de música ao vivo em Alverca"
+    },
+    "venue_link": "https://www.instagram.com/entrelinhas2019/", 
+    "google_maps": "https://maps.app.goo.gl/WZLfTFx6bpibXf6F8", 
+    "venue_photo": "../../assets/img/457x558_entrelinhas.gif",
+    "gig_date": {
+      "en": "14/November at 21:00 (doors open at 20:00)",
+      "pt": "14/Novembro às 21:00 (as portas abrem às 20:00)"
+    },
+    "venue_info": {
+      "en": "Entrelinhas is unique. With a decor full of personality and a welcoming atmosphere, it's the perfect place to enjoy high-quality live music while savoring delicious cocktails and snacks.",                
+      "pt": "O Entrelinhas é único. Com uma decoração cheia de personalidade e um ambiente acolhedor, é o local perfeito para desfrutar de música ao vivo de alta qualidade enquanto saboreia deliciosos cocktails e petiscos."
+    },
+    "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
+  }
+}
