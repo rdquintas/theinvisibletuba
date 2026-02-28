@@ -6,7 +6,7 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "true", 
+    "isEnabled": "false",  
     "venue_address": "Cais do Gás 1, 1200-109 Lisboa",
     "venue_phone": "(+351)213 462 265",
     "venue_email": "tokyo@tokyo.com.pt",
