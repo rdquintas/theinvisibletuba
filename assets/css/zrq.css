@@ -410,7 +410,7 @@ landing - concert
 }
 
 .zrq-page-events-concert .zrq-hero-image {
-  background-image: url(/assets/img/2560x1200_v01.png);
+  background-image: url(/assets/img/2560x1200_v01.avif);
 }
 
 .zrq-page-events-concert .zrq-cookies {
@@ -509,7 +509,7 @@ landing - concert
   }
 
   .zrq-page-events-concert .zrq-hero-image {
-    background-image: url(/assets/img/750x1334_v00.png);
+    background-image: url(/assets/img/750x1334_v00.avif);
   }
 
   .zrq-page-events-concert .hero-content {
@@ -711,7 +711,7 @@ landing - corporate
 }
 
 .zrq-page-events-corporate .zrq-hero-image {
-  background-image: url(/assets/img/2560x1200_v02.png);
+  background-image: url(/assets/img/2560x1200_v02.avif);
   background-position: top !important;
   height: 900px;
 }
@@ -836,7 +836,7 @@ landing - corporate
   } */
 
   /* .zrq-page-events-corporate .zrq-hero-image {
-    background-image: url(/assets/img/375_667_v03.png);    
+    background-image: url(/assets/img/375_667_v03.avif);    
     height: 750px;    
     width: 100%;
   } */

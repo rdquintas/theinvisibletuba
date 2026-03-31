@@ -7,7 +7,7 @@
 
 
 .zrq-form-quote {
-    background-image: url("../../../assets/img/1921_1281_v00.jpg");
+    background-image: url("../../../assets/img/1921_1281_v00.avif");
     background-repeat: no-repeat;    
     background-attachment: fixed;
     background-size: 100%;
@@ -27,7 +27,7 @@
 @media only screen and (max-width: 800px) {
 
     .zrq-form-quote {
-        background-image: url("../../../assets/img/1170_2532_v00.jpg");
+        background-image: url("../../../assets/img/1170_2532_v00.avif");
         background-size: 100%;
         background-attachment: scroll;
     }
