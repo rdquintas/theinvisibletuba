@@ -6,7 +6,7 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "true",  
+    "isEnabled": "false",  
     "venue_address": "Rua do Possolo 5-9 1350, 1350-046 Lisboa",
     "venue_phone": "(+351)916 395 379",
     "venue_email": "geral@swingnsmile.com",
