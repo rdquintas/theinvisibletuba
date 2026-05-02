@@ -6,7 +6,7 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "true", 
+    "isEnabled": "false", 
     "venue_address": "Largo 5 Outubro - Oeiras",
     "venue_phone": "",
     "venue_email": "",
