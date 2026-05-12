@@ -1,0 +1,211 @@
+// ********************************
+// TOKYO BAR
+// ********************************
+{
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
+  "phone1_whatsapp": "393319267420",
+  "phone2": "(+39)331 926 7420",
+  "phone2_name": "Laura (whatsapp)",
+  "email": "info@theinvisibletuba.com",
+  "concert": {
+    "isEnabled": "false", 
+    "venue_address": "Cais do Gás 1, 1200-109 Lisboa",
+    "venue_phone": "(+351)213 462 265",
+    "venue_email": "tokyo@tokyo.com.pt",
+    "venue_name": "TOKYO BAR",
+    "venue_desc1": {
+      "en": " the best live music bar in Lisbon",
+      "pt": " o melhor bar de música ao vivo em Lisboa"
+    },
+    "venue_link": "https://tokyo.com.pt/", 
+    "google_maps": "https://maps.app.goo.gl/TuGnhkFFXTrbhiYT8", 
+    "venue_photo": "../../assets/img/457x558_tokyo.gif",
+    "gig_date": {
+      "en": "18/October at 22:00 (doors open at 21:30)",
+      "pt": "18/Outubro às 22:00 (as portas abrem às 21:30)"
+    },
+    "venue_info": {
+      "en": "Tokyo is more than just a nightlife venue. It's a cultural institution that has contributed to Lisbon's musical and social identity for over four decades. With a diverse program, a commitment to the artistic community, and the promotion of world music, TOKYO is an essential meeting place for those who enjoy live music and dancing the night away. In 2022, we moved to new facilities, also in Cais do Sodré, but the spirit remains the SAME.",
+      "pt": "O Tokyo é mais do que um espaço para sair à noite. É uma instituição cultural que tem contribuído para a identidade musical e social de Lisboa há mais de quatro décadas. Com uma programação diversificada, um compromisso com a comunidade artística e a divulgação de world music, o TOKYO é um ponto de encontro essencial para quem gosta de música ao vivo e de dançar pela noite fora. Em 2022 mudámo-nos para novas instalações, também no Cais do Sodré, mas o espírito, esse, continua o MESMO"
+    },
+    "link_tickets": "https://tickets.tokyo.com.pt/events/308"
+  }
+}
+
+// ********************************
+// TITANIC SUR MER
+// ********************************
+{
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
+  "phone1_whatsapp": "393319267420",
+  "phone2": "(+39)331 926 7420",
+  "phone2_name": "Laura (whatsapp)",
+  "email": "info@theinvisibletuba.com",
+  "concert": {
+    "isEnabled": "false",
+    "venue_address": "Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa",
+    "venue_phone": "",
+    "venue_email": "info.titanicsurmer@gmail.com",
+    "venue_name": "TITANIC SUR MER",
+    "venue_desc1": {
+      "en": " one of the busiest (intimate) musical venues in Lisbon",
+      "pt": " um dos melhores locais em Lisboa com música ao vivo"
+    },
+    "venue_link": "https://www.facebook.com/titanicsurmer/?locale=pt_PT",
+    "google_maps": "https://maps.app.goo.gl/ZCf3tTvTsw3Un5Ez5",
+    "venue_photo": "../../assets/img/1080x1350_titanic.png",
+    "gig_date": {
+      "en": "We're playing live on 21/June at 21:30 (doors open at 20:00)",
+      "pt": "Vamos tocar ao vivo a 21/Junho às 21:30 (as portas abrem às 20:00)"
+    },
+    "venue_offer": {
+      "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
+      "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras"
+    },
+    "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
+  }
+}
+
+
+// ********************************
+// SWING N'SMILE
+// ********************************
+{
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
+  "phone1_whatsapp": "393319267420",
+  "phone2": "(+39)331 926 7420",
+  "phone2_name": "Laura (whatsapp)",
+  "email": "info@theinvisibletuba.com",
+  "concert": {
+    "isEnabled": "true",  
+    "venue_address": "Rua do Possolo 5-9 1350, 1350-046 Lisboa",
+    "venue_phone": "(+351)916 395 379",
+    "venue_email": "geral@swingnsmile.com",
+    "venue_name": "Grupo Dramático e Escolar Os Combatentes",
+    "venue_desc1": {
+      "en": "",
+      "pt": ""
+    },
+    "venue_link": "https://gdecombatentes.pt/", 
+    "google_maps": "https://maps.app.goo.gl/VkJgNAxpSejSznWr5", 
+    "venue_photo": "../../assets/img/457x558_swingsmile.avif",
+    "gig_date": {
+      "en": "17/April at 21:00 (portas abrem às 19:00)", 
+      "pt": "17/Abril às 21:00 (doors open at 19:00)"
+    },
+    "venue_info": {
+      "en": "Come dance to the sounds of The Invisible Tuba! If the tuba is invisible… talent definitely isn't! On April 17th, we'll fill the fantastic Combatentes venue with great music, lots of energy, and a dance floor ready to go. If you don't dance yet, take advantage of the open Lindy Hop class given by Swing n' Smile and discover how easy it is to start. Then, stay for the concert and let yourself be carried away by the rhythm! And if what you're looking for is simply good music in Lisbon, you're more than welcome too. Come spend a different kind of night with us!",
+      "pt": "Vem dançar ao som dos The Invisible Tuba! <br> Se a tuba é invisível… o talento definitivamente não é! <br><br>No dia 17 de abril, vamos encher o fantástico espaço dos Combatentes com boa música, muita energia e uma pista pronta para dançar. <br><br>Se ainda não danças, aproveita a aula aberta de Lindy Hop dada pela Swing n' Smile e descobre como é fácil começar. Depois, fica para o concerto e deixa-te levar pelo ritmo!  <br><br>E se o que procuras é simplesmente boa música em Lisboa, também és mais do que bem-vindo. Vem passar uma noite diferente connosco! <br><br>Programa <br> - 19h00 Abertura de Portas e DJ 'Até Terça'<br> - 20h00 Aula aberta de Lindy Hop<br> - 21h00-23h00 Concerto com The Invisible Tuba<br>- 23h00-00h00 DJ 'Até Terça'"
+    },
+    "link_tickets": "https://www.seetickets.com/pt/event/swing-n-tuba-spring-party/grupo-dramatico-e-escolar-os-combatentes/3618934" 
+  }
+}
+
+// ********************************
+// OUTJAZZ
+// ********************************
+{
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
+  "phone1_whatsapp": "393319267420",
+  "phone2": "(+39)331 926 7420",
+  "phone2_name": "Laura (whatsapp)",
+  "email": "info@theinvisibletuba.com",
+  "concert": {
+    "isEnabled": "true", 
+    "venue_address": "Largo 5 Outubro - Oeiras",
+    "venue_phone": "",
+    "venue_email": "",
+    "venue_name": "Festival Somersby Out Jazz",
+    "venue_desc1": {
+      "en": " ",
+      "pt": " o melhor bar de música ao vivo em Lisboa"
+    },
+    "venue_link": "https://outjazz.pt/", 
+    "google_maps": "https://maps.app.goo.gl/dgg4Fn8tg1ttVrwNA", 
+    "venue_photo": "../../assets/img/outjazz.avif",
+    "gig_date": {
+      "en": "1/May at 18:00 (free entrance)",
+      "pt": "1/Maio às 18:00 (entrada grátis)"
+    },
+    "venue_info": {
+      "en": "Ao longo de duas décadas, o Somersby Out Jazz tornou-se muito mais do que um festival.<br> É hoje um ritual coletivo vivido ao ar livre, um ponto de encontro onde se cruzam gerações, histórias e momentos que se repetem, sem nunca serem iguais.<br>Entrada livre, todos os domingos, das 17h ao pôr do sol 🍃 <br> 20 anos a acontecer 🎶",
+      "pt": "Ao longo de duas décadas, o Somersby Out Jazz tornou-se muito mais do que um festival.<br> É hoje um ritual coletivo vivido ao ar livre, um ponto de encontro onde se cruzam gerações, histórias e momentos que se repetem, sem nunca serem iguais.<br>Entrada livre, todos os domingos, das 17h ao pôr do sol 🍃 <br> 20 anos a acontecer 🎶"
+    },
+    "link_tickets": "https://outjazz.pt/"
+  }
+}
+
+// ********************************
+// ENTRELINHAS
+// ********************************
+{
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
+  "phone1_whatsapp": "393319267420",
+  "phone2": "(+39)331 926 7420",
+  "phone2_name": "Laura (whatsapp)",
+  "email": "info@theinvisibletuba.com",
+  "concert": {
+    "isEnabled": "false", 
+    "venue_address": "R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo",
+    "venue_phone": "(+351)219 574 276",
+    "venue_email": "",
+    "venue_name": "BAR ENTRELINHAS",
+    "venue_desc1": {
+      "en": " the best live music bar in Alverca",
+      "pt": " o melhor bar de música ao vivo em Alverca"
+    },
+    "venue_link": "https://www.instagram.com/entrelinhas2019/", 
+    "google_maps": "https://maps.app.goo.gl/WZLfTFx6bpibXf6F8", 
+    "venue_photo": "../../assets/img/457x558_entrelinhas.gif",
+    "gig_date": {
+      "en": "14/November at 21:00 (doors open at 20:00)",
+      "pt": "14/Novembro às 21:00 (as portas abrem às 20:00)"
+    },
+    "venue_info": {
+      "en": "Entrelinhas is unique. With a decor full of personality and a welcoming atmosphere, it's the perfect place to enjoy high-quality live music while savoring delicious cocktails and snacks.",                
+      "pt": "O Entrelinhas é único. Com uma decoração cheia de personalidade e um ambiente acolhedor, é o local perfeito para desfrutar de música ao vivo de alta qualidade enquanto saboreia deliciosos cocktails e petiscos."
+    },
+    "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
+  }
+}
+
+
+// ********************************
+// CAMONES
+// ********************************
+{
+  "phone1": "(+351)938 394 796",
+  "phone1_name": "Laura (mobile)",
+  "phone1_whatsapp": "393319267420",
+  "phone2": "(+39)331 926 7420",
+  "phone2_name": "Laura (whatsapp)",
+  "email": "info@theinvisibletuba.com",
+  "concert": {
+    "isEnabled": "false",
+    "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
+    "venue_phone": "",
+    "venue_email": "camonesreservas@gmail.com",
+    "venue_name": "CAMONES ARTES BAR",
+    "venue_desc1": {
+      "en": " one of the busiest (intimate) musical venues in Lisbon",
+      "pt": " um dos melhores locais em Lisboa com música ao vivo"
+    },
+    "venue_link": "https://www.facebook.com/camonesartesbar/?locale=pt_PT",
+    "google_maps": "https://maps.app.goo.gl/NTS29zrjyE26jKMT8",
+    "venue_photo": "../../assets/img/457x558_camones.gif",
+    "gig_date": {
+      "en": "We're playing live on 21/June at 21:30 (doors open at 20:00)",
+      "pt": "Vamos tocar ao vivo a 21/Junho às 21:30 (as portas abrem às 20:00)"
+    },
+    "venue_offer": {
+      "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
+      "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras"
+    },
+    "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
+  }
+}

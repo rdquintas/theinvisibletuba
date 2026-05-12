@@ -6,26 +6,26 @@
   "phone2_name": "Laura (whatsapp)",
   "email": "info@theinvisibletuba.com",
   "concert": {
-    "isEnabled": "false", 
-    "venue_address": "Largo 5 Outubro - Oeiras",
-    "venue_phone": "",
+    "isEnabled": "true",
+    "venue_address": "R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo",
+    "venue_phone": "(+351)219 574 276",
     "venue_email": "",
-    "venue_name": "Festival Somersby Out Jazz",
+    "venue_name": "BAR ENTRELINHAS",
     "venue_desc1": {
-      "en": " ",
-      "pt": " "
+      "en": " the best live music bar in Alverca",
+      "pt": " o melhor bar de música ao vivo em Alverca"
     },
-    "venue_link": "https://outjazz.pt/", 
-    "google_maps": "https://maps.app.goo.gl/dgg4Fn8tg1ttVrwNA", 
-    "venue_photo": "../../assets/img/outjazz.avif",
+    "venue_link": "https://www.instagram.com/entrelinhas2019/",
+    "google_maps": "https://maps.app.goo.gl/WZLfTFx6bpibXf6F8",
+    "venue_photo": "../../assets/img/457x558_entrelinhas.gif",
     "gig_date": {
-      "en": "1/May at 18:00 (free entrance)",
-      "pt": "1/Maio às 18:00 (entrada grátis)"
+      "en": "30/May at 21:00 (doors open at 20:00)",
+      "pt": "30/Maio às 21:00 (as portas abrem às 20:00)"
     },
     "venue_info": {
-      "en": "Over two decades, Somersby Out Jazz has become much more than just a festival. Today, it is a collective outdoor ritual—a meeting point where generations and stories intersect in moments that repeat, yet are never the same.<br>Free entry, every Sunday, from 5 PM until sunset. 🍃 <br20 years in the making. 🎶",
-      "pt": "Ao longo de duas décadas, o Somersby Out Jazz tornou-se muito mais do que um festival.<br> É hoje um ritual coletivo vivido ao ar livre, um ponto de encontro onde se cruzam gerações, histórias e momentos que se repetem, sem nunca serem iguais.<br>Entrada livre, todos os domingos, das 17h ao pôr do sol 🍃 <br> 20 anos a acontecer 🎶"
+      "en": "Entrelinhas is unique. With a decor full of personality and a welcoming atmosphere, it's the perfect place to enjoy high-quality live music while savoring delicious cocktails and snacks.",
+      "pt": "O Entrelinhas é único. Com uma decoração cheia de personalidade e um ambiente acolhedor, é o local perfeito para desfrutar de música ao vivo de alta qualidade enquanto saboreia deliciosos cocktails e petiscos."
     },
-    "link_tickets": "https://outjazz.pt/"
+    "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3639814"
   }
 }
