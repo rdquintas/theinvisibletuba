@@ -1,13 +1,6 @@
 // ********************************
 // TOKYO BAR
 // ********************************
-{
-  "phone1": "(+351)938 394 796",
-  "phone1_name": "Laura (mobile)",
-  "phone1_whatsapp": "393319267420",
-  "phone2": "(+39)331 926 7420",
-  "phone2_name": "Laura (whatsapp)",
-  "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "false", 
     "venue_address": "Cais do Gás 1, 1200-109 Lisboa",
@@ -31,18 +24,11 @@
     },
     "link_tickets": "https://tickets.tokyo.com.pt/events/308"
   }
-}
+
 
 // ********************************
 // TITANIC SUR MER
 // ********************************
-{
-  "phone1": "(+351)938 394 796",
-  "phone1_name": "Laura (mobile)",
-  "phone1_whatsapp": "393319267420",
-  "phone2": "(+39)331 926 7420",
-  "phone2_name": "Laura (whatsapp)",
-  "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "false",
     "venue_address": "Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa",
@@ -60,25 +46,18 @@
       "en": "We're playing live on 21/June at 21:30 (doors open at 20:00)",
       "pt": "Vamos tocar ao vivo a 21/Junho às 21:30 (as portas abrem às 20:00)"
     },
-    "venue_offer": {
+    "venue_info": {
       "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
       "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras"
     },
     "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
   }
-}
+
 
 
 // ********************************
 // SWING N'SMILE
 // ********************************
-{
-  "phone1": "(+351)938 394 796",
-  "phone1_name": "Laura (mobile)",
-  "phone1_whatsapp": "393319267420",
-  "phone2": "(+39)331 926 7420",
-  "phone2_name": "Laura (whatsapp)",
-  "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "true",  
     "venue_address": "Rua do Possolo 5-9 1350, 1350-046 Lisboa",
@@ -102,18 +81,12 @@
     },
     "link_tickets": "https://www.seetickets.com/pt/event/swing-n-tuba-spring-party/grupo-dramatico-e-escolar-os-combatentes/3618934" 
   }
-}
+
+
 
 // ********************************
 // OUTJAZZ
 // ********************************
-{
-  "phone1": "(+351)938 394 796",
-  "phone1_name": "Laura (mobile)",
-  "phone1_whatsapp": "393319267420",
-  "phone2": "(+39)331 926 7420",
-  "phone2_name": "Laura (whatsapp)",
-  "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "true", 
     "venue_address": "Largo 5 Outubro - Oeiras",
@@ -137,18 +110,11 @@
     },
     "link_tickets": "https://outjazz.pt/"
   }
-}
 
 // ********************************
 // ENTRELINHAS
 // ********************************
 {
-  "phone1": "(+351)938 394 796",
-  "phone1_name": "Laura (mobile)",
-  "phone1_whatsapp": "393319267420",
-  "phone2": "(+39)331 926 7420",
-  "phone2_name": "Laura (whatsapp)",
-  "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "false", 
     "venue_address": "R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo",
@@ -172,19 +138,11 @@
     },
     "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
   }
-}
 
 
 // ********************************
 // CAMONES
 // ********************************
-{
-  "phone1": "(+351)938 394 796",
-  "phone1_name": "Laura (mobile)",
-  "phone1_whatsapp": "393319267420",
-  "phone2": "(+39)331 926 7420",
-  "phone2_name": "Laura (whatsapp)",
-  "email": "info@theinvisibletuba.com",
   "concert": {
     "isEnabled": "false",
     "venue_address": "R. Josefa Maria 4B, 1170-195 Lisboa",
@@ -202,10 +160,9 @@
       "en": "We're playing live on 21/June at 21:30 (doors open at 20:00)",
       "pt": "Vamos tocar ao vivo a 21/Junho às 21:30 (as portas abrem às 20:00)"
     },
-    "venue_offer": {
+    "venue_info": {
       "en": "A vast array of the finest spirits, beers and the best Portuguese wine. Tapas and light meals are also available",
       "pt": "Uma boa oferta de bebidas, cervejas e vinhos Portugueses. Também servem tapas e refeições ligeiras"
     },
     "link_tickets": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324"
   }
-}
