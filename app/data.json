@@ -6,6 +6,8 @@
   "phone2_name": "",
   "email": "info@theinvisibletuba.com",
   "newsletter_link": "https://theinvisibletuba.com/forms/newsletter",
+  "epk_link_pt": "/docs/epk/TheInvisibleTuba_PT_RQ.pdf",
+  "epk_link_en": "/docs/epk/TheInvisibleTuba_EN_RQ.pdf",
   "concert": {
     "isEnabled": "true",
     "venue_address": "Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa",
