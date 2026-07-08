@@ -125,7 +125,9 @@
                               <ul class="zrq-bullets">
                                 <li>EMAIL <a class="email zrq-link" href="mailto:{{email}}">{{email}}</a></li>
                                 <li>MOBILE <a class="phone zrq-link" href="tel:{{phone1}}">{{phone1}} | {{phone1_name}}</a></li>
-                                <li>WHATSAPP <a class="phone zrq-link" href="https://wa.me/{{phone1_whatsapp}}">{{phone2}} | {{phone2_name}}</a></li>
+                                <!--(bake-start _if="phone1_whatsapp != ''")-->
+                                <li>WHATSAPP <a class="phone zrq-link" href="https://wa.me/{{phone1_whatsapp}}">{{phone1}} | {{phone1_name}}</a></li>
+                                <!--(bake-end)-->
                             </ul>                                                    
                             <h3>FOLLOW US</h3>
                             <ul class="zrq-bullets">
