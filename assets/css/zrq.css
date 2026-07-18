@@ -884,6 +884,11 @@ mediakit.html
   text-align: center;
 }
 
+.zrq-page-mediakit .zrq-red-bold {
+  font-weight: bold;
+  color: red;
+}
+
 .zrq-page-mediakit .zrq-link {
   color: blue !important; 
   text-decoration: underline !important;
