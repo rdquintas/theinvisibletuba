@@ -124,6 +124,11 @@ index.html
   padding: 0px;
 }
 
+.zrq-page-index .zrq-center-img {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .zrq-page-index .zrq-musicians .maintext {
   transform: translateY(-36px);
   background-color: #252525a4;
@@ -231,6 +236,194 @@ index.html
 .zrq-page-index .zrq-youtube-videos .youtube-link:hover img {
   transform: scale(1.1);
 }
+
+/* 
+=================
+section concerts
+=================
+*/
+
+
+.zrq-concerts .agenda-section {
+  padding: 60px 20px;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.zrq-concerts .agenda-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.zrq-concerts .agenda-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.zrq-concerts .agenda-subtitle {
+  color: #d4af37;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.zrq-concerts .agenda-title {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.zrq-concerts .agenda-intro {
+  color: #cccccc;
+  font-size: 1.1rem;
+}
+
+.zrq-concerts .agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.zrq-concerts .agenda-card {
+  background: #1e1e1e;
+  border-left: 5px solid #d4af37;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.zrq-concerts .agenda-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 25px;
+}
+
+.zrq-concerts .agenda-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #2a2a2a;
+  color: #d4af37;
+  padding: 10px 18px;
+  border-radius: 6px;
+  min-width: 75px;
+  text-align: center;
+}
+
+.zrq-concerts .agenda-date .day {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.zrq-concerts .agenda-date .month {
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.zrq-concerts .agenda-details {
+  flex-grow: 1;
+  margin: 0 25px;
+}
+
+.zrq-concerts .event-name {
+  font-size: 1.3rem;
+  margin: 0 0 5px 0;
+  color: #ffffff;
+}
+
+.zrq-concerts .event-info {
+  margin: 0 0 5px 0;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+}
+
+.zrq-concerts .event-time {
+  font-size: 0.85rem;
+  color: #d4af37;
+}
+
+.zrq-concerts .agenda-action {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.zrq-concerts .btn-details {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.zrq-concerts .btn-agenda {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d4af37;
+  color: #121212;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* PAINEL EXPANSÍVEL */
+.agenda-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #161616;
+}
+
+.zrq-concerts .expand-content {
+  padding: 20px 25px;
+  border-top: 1px solid #2a2a2a;
+  color: #dddddd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.zrq-concerts .expand-content p {
+  margin: 5px 0;
+}
+
+.zrq-concerts .map-link {
+  color: #d4af37;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media (max-width: 650px) {
+ .zrq-concerts .agenda-main {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .zrq-concerts .agenda-details {
+    margin: 0;
+  }
+
+  .zrq-concerts .agenda-action {
+    flex-direction: column;
+    width: 100%;
+  }
+
+ .zrq-concerts .btn-details,
+ .zrq-concerts .btn-agenda {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
 
 /* 
 =================
@@ -491,7 +684,7 @@ landing - concert
 }
 
 .zrq-page-events-concert .zrq-badges img {
-  width: 100px;  
+  width: 100px;
 }
 
 .zrq-page-events-concert .zrq-badges .zrq-black-is-beautifull {
@@ -499,7 +692,7 @@ landing - concert
 }
 
 .zrq-page-events-concert .zrq-badges .zrq-black-is-beautifull img {
-  margin: 1rem; 
+  margin: 1rem;
 }
 
 
@@ -812,7 +1005,7 @@ landing - corporate
 }
 
 
-  /* .zrq-page-events-corporate .zrq-desktop {
+/* .zrq-page-events-corporate .zrq-desktop {
     display: block;
   }
 
@@ -842,7 +1035,7 @@ landing - corporate
   } */
 
   .zrq-page-events-corporate .hero-content {
-    top: 40%;   
+    top: 40%;
   }
 
   .zrq-page-events-corporate .zrq-header .zrq-logo img {
@@ -871,7 +1064,7 @@ landing - corporate
   }
 
   .zrq-page-events-corporate .zrq-benefit {
-      margin-bottom: initial;
+    margin-bottom: initial;
   }
 }
 
@@ -890,10 +1083,10 @@ mediakit.html
 }
 
 .zrq-page-mediakit .zrq-link {
-  color: blue !important; 
+  color: blue !important;
   text-decoration: underline !important;
-} 
- 
+}
+
 .zrq-page-mediakit .zrq-quote {
   font-style: italic !important;
 }

@@ -11,26 +11,108 @@
   "epk_link_pt": "/docs/epk/TheInvisibleTuba_PT.pdf",
   "epk_link_en": "/docs/epk/TheInvisibleTuba_EN.pdf",
   "concert": {
-    "isEnabled": "false",
-    "venue_address": "Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa",
-    "venue_phone": "",
-    "venue_email": "info.titanicsurmer@gmail.com",
-    "venue_name": "TITANIC SUR MER",
-    "venue_desc1": {
-      "en": " one of the busiest musical venues in Lisbon",
-      "pt": " um dos melhores locais em Lisboa com música ao vivo"
+    "isEnabled": true
+  },
+  "concerts": [
+    {
+      "id": "event-tokyo",
+      "day": "18",
+      "month": "OUT",
+      "month_en": "OCT",
+      "name": "TOKYO BAR",
+      "location": "Lisboa",
+      "time": "22:00",
+      "buttonText": "Comprar Bilhetes 🎟️",
+      "buttonText_en": "Buy Tickets 🎟️",
+      "buttonLink": "https://tickets.tokyo.com.pt/events/308",
+      "address": "Cais do Gás 1, 1200-109 Lisboa",
+      "mapsUrl": "https://maps.app.goo.gl/TuGnhkFFXTrbhiYT8",
+      "websiteUrl": "https://tokyo.com.pt/",
+      "phone": "(+351)213 462 265",
+      "email": "tokyo@tokyo.com.pt",
+      "info": "",
+      "info_en": "",
+      "isEnabled": false
     },
-    "venue_link": "https://www.facebook.com/titanicsurmer/?locale=pt_PT",
-    "google_maps": "https://maps.app.goo.gl/ZCf3tTvTsw3Un5Ez5",
-    "venue_photo": "../../assets/img/concertos/tubaskinny.avif",
-    "gig_date": {
-      "en": "We're playing live on 6/July at 21:00 (doors open at 20:30)",
-      "pt": "Vamos tocar ao vivo a 6/Julho às 21:00 (as portas abrem às 20:30)"
+    {
+      "id": "event-titanic",
+      "day": "7",
+      "month": "JUL",
+      "month_en": "JUL",
+      "name": "TITANIC SUR MER",
+      "location": "Lisboa",
+      "time": "21:30",
+      "buttonText": "Comprar Bilhetes 🎟️",
+      "buttonText_en": "Buy Tickets 🎟️",
+      "buttonLink": "https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324",
+      "address": "Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa",
+      "mapsUrl": "https://maps.app.goo.gl/ZCf3tTvTsw3Un5Ez5",
+      "websiteUrl": "https://www.facebook.com/titanicsurmer/?locale=pt_PT",
+      "phone": "",
+      "email": "info.titanicsurmer@gmail.com",
+      "info": "",
+      "info_en": "",
+      "isEnabled": false
     },
-    "venue_info": {
-      "en": "WHO ARE TUBA SKINNY? <br>Formed in 2009, what began as a group of street musicians has evolved into one of the world's most influential bands in the revival of 1920s and 1930s music.<br><br>With 15 albums released and a massive digital presence (accumulating tens of millions of views on YouTube), Tuba Skinny have achieved global cult status, selling out prestigious jazz festivals in Australia, Europe, and the United States.<br><br>Their importance lies in the authenticity and historical rigour with which they rescue the forgotten repertoire of early jazz, ragtime, and depression-era blues, combining a powerful rhythm section with brilliant horns.<br><br>Seeing Tuba Skinny live outside of New Orleans is an absolute rarity, making this concert in Lisbon a truly unique and unmissable opportunity for music lovers.<br><br>The first part of the show are brought to you by us THE INVISIBLE TUBA - yes, we are “tuba” too 😁",
-      "pt": "QUEM SÃO OS TUBA SKINNY ? <br>Formados em 2009, o que começou como um grupo de músicos de rua evoluiu para uma das bandas mais influentes do mundo no revivalismo da música das décadas de 1920 e 1930. <br><br> Com 15 álbuns lançados e uma presença digital massiva (acumulando dezenas de milhões de visualizações no YouTube), os Tuba Skinny conquistaram o estatuto de culto global, esgotando festivais de jazz de prestígio na Austrália, Europa e Estados Unidos. <br><br>A sua importância reside na autenticidade e no rigor histórico com que resgatam o repertório esquecido do jazz antigo, do ragtime e do depression-era blues, combinando uma secção rítmica poderosa com sopros brilhantes. <br><br>Ver os Tuba Skinny ao vivo fora de Nova Orleães é uma raridade absoluta, tornando este concerto em Lisboa uma oportunidade verdadeiramente única e imperdível para os amantes da música. <br><br>A primeira parte do espetáculo e as honras de abertura da noite ficam a cargo de nós THE INVISIBLE TUBA - sim, também somos “tuba” 😁"   
+    {
+      "id": "event-swingsmile",
+      "day": "17",
+      "month": "ABR",
+      "month_en": "APR",
+      "name": "SWING N' TUBA",
+      "location": "'Os Combatentes', Lisboa",
+      "time": "21:00",
+      "buttonText": "Entrada Livre",
+      "buttonText_en": "Free Entrance",
+      "buttonLink": "#",
+      "address": "Rua do Possolo 5-9 1350, 1350-046 Lisboa",
+      "mapsUrl": "https://maps.app.goo.gl/VkJgNAxpSejSznWr",
+      "websiteUrl": "https://gdecombatentes.pt",
+      "phone": "(+351)916 395 379",
+      "email": "geral@swingnsmile.com",
+      "info": "Vem dançar ao som dos The Invisible Tuba! Se a tuba é invisível… o talento definitivamente não é! No dia 17 de abril, vamos encher o fantástico espaço dos Combatentes com boa música, muita energia e uma pista pronta para dançar. Se ainda não danças, aproveita a aula aberta de Lindy Hop dada pela Swing n' Smile e descobre como é fácil começar. Depois, fica para o concerto e deixa-te levar pelo ritmo!  E se o que procuras é simplesmente boa música em Lisboa, também és mais do que bem-vindo. Vem passar uma noite diferente connosco! Programa 19h00 Abertura de Portas e DJ 'Até Terça'- 20h00 Aula aberta de Lindy Hop - 21h00-23h00 Concerto com The Invisible Tuba- 23h00-00h00 DJ 'Até Terça'",
+      "info_en": "Come dance to the sounds of The Invisible Tuba! If the tuba is invisible… talent definitely isn't! On April 17th, we'll fill the fantastic Combatentes venue with great music, lots of energy, and a dance floor ready to go. If you don't dance yet, take advantage of the open Lindy Hop class given by Swing n' Smile and discover how easy it is to start. Then, stay for the concert and let yourself be carried away by the rhythm! And if what you're looking for is simply good music in Lisbon, you're more than welcome too. Come spend a different kind of night with us!",
+      "isEnabled": false
     },
-    "link_tickets": "https://3cket.com/pt/event/tuba-skinny-em-lisboa"
-  }
+    {
+      "id": "event-entrelinhas",
+      "day": "26",
+      "month": "SET",
+      "month_en": "SEP",
+      "name": "ENTRELINHAS",
+      "location": "Alverca",
+      "time": "21:30",
+      "buttonText": "Bilhetes Brevemente...",
+      "buttonText_en": "Tickets Soon... ",
+      "buttonLink": "#",
+      "address": "R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo",
+      "mapsUrl": "https://maps.app.goo.gl/WZLfTFx6bpibXf6F8",
+      "websiteUrl": "https://www.instagram.com/entrelinhas2019/",
+      "phone": "(+351)219 574 276",
+      "email": "",
+      "info": "O Entrelinhas é único. Com uma decoração cheia de personalidade e um ambiente acolhedor, é o local perfeito para desfrutar de música ao vivo de alta qualidade enquanto saboreia deliciosos cocktails e petiscos.",
+      "info_en": "Entrelinhas is unique. With a decor full of personality and a welcoming atmosphere, it's the perfect place to enjoy high-quality live music while savoring delicious cocktails and snacks.",
+      "isEnabled": true
+    },
+     {
+      "id": "event-margem",
+      "day": "??",
+      "month": "OUT",
+      "month_en": "OCT",
+      "name": "RESTAURANTE À MARGEM",
+      "location": "Lisboa. Torre de Belém",
+      "time": "15:00",
+      "buttonText": "Entrada Livre",
+      "buttonText_en": "Free Entrance",
+      "buttonLink": "#",
+      "address": "Doca do Bom Sucesso, 1400-038 Lisboa",
+      "mapsUrl": "https://maps.app.goo.gl/WtFeGto2nVvSSAjt7",
+      "websiteUrl": "https://www.facebook.com/amargem.belem/?locale=pt_PT",
+      "phone": "(+351)918 620 032",
+      "email": "",
+      "info": "Vamos estar a tocar na esplanada deste maravilhoso restaurante, com uma vista incrível sobre o rio Tejo e a Torre de Belém. Um local perfeito para desfrutar de boa música, boa comida e boa companhia.",
+      "info_en": "We will be playing on the terrace of this wonderful restaurant, with an incredible view of the Tagus River and Belém Tower. A perfect place to enjoy great music, delicious food, and great company.",
+      "isEnabled": false
+    }
+  ]
 }

@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-<!--(bake _head.html)-->
+{% include "_head.html" %}
 
 <body class="loading">
-    <!--(bake _menu_en.html)-->
+    {% include "_menu_en.html" %}
 
     <main class="sv__main--content">
         <!--
@@ -237,7 +237,7 @@
             </div>
         </div>
     </main>
-    <!--(bake _footer_en.html)-->
+    {% include "_footer_en.html" %}
 
     <script src="assets/scripts/isotope.min.js"></script>
     <script src="assets/scripts/gallery-iso.min.js"></script>

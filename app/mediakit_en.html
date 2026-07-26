@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-<!--(bake _head.html)-->
+{% include "_head.html" %}
 
 <body class="loading zrq-page-mediakit">
-    <!--(bake _menu_en.html)-->
-
+    {% include "_menu_en.html" %}
     <main class="sv__main--content">  
         <article class="container-fluid white-bg no-padding hero">
             <div class="section container-fluid no-padding hero-container hero-static">
@@ -126,9 +125,9 @@
                               <ul class="zrq-bullets">
                                 <li>EMAIL <a class="email zrq-link" href="mailto:{{email}}">{{email}}</a></li>
                                 <li>MOBILE <a class="phone zrq-link" href="tel:{{phone1}}">{{phone1}} | {{phone1_name}}</a></li>
-                                <!--(bake-start _if="phone1_whatsapp != ''")-->
+                                {% if phone1_whatsapp %}
                                 <li>WHATSAPP <a class="phone zrq-link" href="https://wa.me/{{phone1_whatsapp}}">{{phone1}} | {{phone1_name}}</a></li>
-                                <!--(bake-end)-->
+                                {% endif %}
                             </ul>                                                    
                             <h3>FOLLOW US</h3>
                             <ul class="zrq-bullets">
@@ -157,6 +156,6 @@
             </div>
         </div>   
     </main>
-    <!--(bake _footer_en.html)-->
+    {% include "_footer_en.html" %}
 </body>
 </html>

@@ -1,79 +1,27 @@
-<div class="zrq-subtitle2 section container-fluid no-padding gold-bg">
-    <div class="inner-sm">
-        <div class="row no-margin">
-            <div class="col-xs-12">
-                <h3 class="text-center white">We have a concert 😊</h3>
-                <h4 class="text-center white">Only a few tickets left !!</h4>
-                <div class="text-center">
-                    <a href="{{concert.link_tickets}}" target="_blank"
-                        class="zrq-focus-input btn book-now-btn black-bg btn-white">BUY TICKETS</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="venue" class="zrq-we-have-a-gig section container-fluid no-padding grey-bg">
-    <div class="inner-lg">
+<div class="zrq-concerts">
+    <img class="img-responsive img-center active" src="/assets/img/1114x373_v01.avif" alt="The Invisible Tuba">
+    <div id="venue" class="zrq-we-have-a-gig section container-fluid no-padding grey-bg">
         <div class="sv__container--sm">
             <div class="row no-margin">
                 <div class="sv-wrapper">
-                    <div class="col-sm-12 col-md-12">
-                        <img class="img-responsive img-center active" src="{{concert.venue_photo}}" alt="The Invisible Tuba">
-                    </div>
-                    <div class="col-sm-12 col-md-12 margin-left-5 zrq-top">
-                        <div class="headline-sm">
-                            <h2 class="text-left black">Concert Details</h2>
-                        </div>
-                        <div class="content black">
-                            <p>We're playing at <a class="zrq-link" target="_blank"
-                                    href="{{concert.google_maps}}">{{concert.venue_name}}</a>,
-                                {{concert.venue_desc1.en}} </p>
-                        </div>
-                        <div class="approach-list inner-sm">
-                            <div class="approach-item">
-                                <i class="fa fa-calendar fa-2x"></i>
-                                <div class="approach-content black">
-                                    <h4 class="title">When ?</h4>
-                                    <p>{{concert.gig_date.en}}</p>
-                                </div>
+                    <!-- SECÇÃO AGENDA DE CONCERTOS -->
+                    <section id="agenda" class="agenda-section">
+                        <div class="agenda-container">
+                            <div class="agenda-header">
+                                <h2 class="agenda-title">Concert Schedule</h2>
+                                <p class="agenda-intro">Come dance with us! Discover where the next gig will be.</p>
                             </div>
-                            <div class="approach-item">
-                                <i class="fa fa-map-location-dot fa-2x"></i>
-                                <div class="approach-content black zrq-flow-root">
-                                    <h4 class="title">Where ?</h4>
-                                    <p><a class="zrq-link" target="_blank" href="{{concert.google_maps}}">{{concert.venue_name}}</a></p>
-                                    <p>Address (Google Maps): <a class="zrq-link" target="_blank" href="{{concert.google_maps}}">{{concert.venue_address}}</a></p>
-                                    <!--(bake-start _if="concert.venue_link != ''")-->                                    
-                                    <p>Website: <a class="zrq-link" target="_blank" href="{{concert.venue_link}}">{{concert.venue_link}}</a></p>
-                                    <!--(bake-end)-->
-                                    <!--(bake-start _if="concert.venue_phone != ''")-->                                    
-                                    <p>Telephone: <a class="zrq-link" class="phone" href="tel:{{concert.venue_phone}}">{{concert.venue_phone}}</a></p>
-                                    <!--(bake-end)-->
-                                    <!--(bake-start _if="concert.venue_email != ''")-->                                    
-                                    <p>Email: <a class="zrq-link" href="mailto:{{concert.venue_email}}">{{concert.venue_email}}</a></p>
-                                    <!--(bake-end)-->                                    
-                                </div>
+                            <div class="agenda-list">
+                                {% for concert in concerts %}
+                                {% if concert.isEnabled %}
+                                {% include "_concert_card_en.html" %}
+                                {% endif %}
+                                {% endfor %}
                             </div>
-                           <!--(bake-start _if="concert.venue_info.en != ''")-->
-                            <div class="approach-item">
-                                <i class="fa fa-circle-info fa-2x"></i>
-                                <div class="approach-content black">
-                                    <h4 class="title">Information</h4>
-                                    <p>{{concert.venue_info.en}}</p>
-                                </div>
-                            </div>
-                            <!--(bake-end)-->
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
-            <div class="row no-margin">
-                <div class="text-center">
-                    <a href="{{concert.link_tickets}}" target="_blank"
-                        class="zrq-focus-input btn book-now-btn black-bg btn-white">BUY TICKETS</a>
-                </div>
-            </div>            
         </div>
     </div>
 </div>

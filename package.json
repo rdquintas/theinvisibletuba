@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "^1.6.1",
-    "grunt-bake": "^1.9.0",
-    "grunt-contrib-watch": "^1.1.0"
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-nunjucks": "^0.1.4",
+    "grunt-nunjucks-2-html": "^2.2.0"
   },
   "scripts": {
     "git": "git add . && git commit -m",
-    "postgit": "git push & git ftp push"  
+    "postgit": "git push & git ftp push"
   }
 }
