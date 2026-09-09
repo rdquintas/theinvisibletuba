@@ -1,3 +1,6 @@
+# Stripe / shop secrets
+api/config.php
+
 # Logs
 logs
 *.log

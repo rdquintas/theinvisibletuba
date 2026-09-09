@@ -1,0 +1,101 @@
+{
+  "currency": "EUR",
+  "products": [
+    {
+      "id": "cracha-grande-tuba",
+      "price": 5.00,
+      "images": [
+        "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80",
+        "https://images.unsplash.com/photo-1618354691229-88d47f285158?w=800&q=80",
+        "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"
+      ],
+      "pt": {
+        "title": "T-Shirt Clássica Preta",
+        "description": "T-shirt 100% algodão com o logo da banda estampado no peito."
+      },
+      "en": {
+        "title": "Classic Black T-Shirt",
+        "description": "100% cotton t-shirt with the band logo printed on the chest."
+      }
+    },
+    {
+      "id": "cracha-grande-swing",
+      "price": 5.00,
+      "images": [
+        "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80",
+        "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80"
+      ],
+      "pt": {
+        "title": "Hoodie com Logo",
+        "description": "Sweatshirt com capuz, forro macio e o logo do The Invisible Tuba nas costas."
+      },
+      "en": {
+        "title": "Logo Hoodie",
+        "description": "Soft fleece-lined hoodie with The Invisible Tuba logo on the back."
+      }
+    },
+    {
+      "id": "cap-embroidered",
+      "price": 18.00,
+      "images": [
+        "https://images.unsplash.com/photo-1560774358-d727658f457c?w=800&q=80",
+        "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800&q=80"
+      ],
+      "pt": {
+        "title": "Boné Bordado",
+        "description": "Boné ajustável com o logo bordado. Um clássico para os concertos ao ar livre."
+      },
+      "en": {
+        "title": "Embroidered Cap",
+        "description": "Adjustable cap with embroidered logo. A classic for outdoor shows."
+      }
+    },
+    {
+      "id": "tote-bag",
+      "price": 12.00,
+      "images": [
+        "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80",
+        "https://images.unsplash.com/photo-1535981444082-2a5dc0548ef3?w=800&q=80"
+      ],
+      "pt": {
+        "title": "Saco de Pano",
+        "description": "Saco de algodão resistente, perfeito para levar discos, cartazes e o resto."
+      },
+      "en": {
+        "title": "Tote Bag",
+        "description": "Sturdy cotton tote bag, perfect for carrying records, posters and everything else."
+      }
+    },
+    {
+      "id": "vinyl-happy-right-now",
+      "price": 25.00,
+      "images": [
+        "https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?w=800&q=80",
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80"
+      ],
+      "pt": {
+        "title": "Vinil \"Happy Right Now\" EP",
+        "description": "Edição limitada em vinil do nosso EP. Inclui download digital."
+      },
+      "en": {
+        "title": "\"Happy Right Now\" EP Vinyl",
+        "description": "Limited-edition vinyl pressing of our EP. Includes digital download."
+      }
+    },
+    {
+      "id": "enamel-pin",
+      "price": 8.00,
+      "images": [
+        "https://images.unsplash.com/photo-1782364743064-803af0c97f82?w=800&q=80"
+      ],
+      "pt": {
+        "title": "Pin Esmaltado",
+        "description": "Pequeno pin esmaltado com o logo da banda. Cabe em qualquer mochila ou casaco."
+      },
+      "en": {
+        "title": "Enamel Pin",
+        "description": "Small enamel pin with the band logo. Fits on any bag or jacket."
+      }
+    }
+  ]
+}

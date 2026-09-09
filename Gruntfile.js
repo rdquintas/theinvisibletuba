@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     nunjucks: {
       options: {
         // Carrega os dados do JSON exatamente como tinhas no bake
-        data: grunt.file.readJSON("app/data.json"),
+        data: grunt.file.readJSON("app/dados/artigos_loja.json"),
         // Aponta para a pasta onde estão os ficheiros HTML e os parciais
         paths: ["app"],
       },
@@ -21,6 +21,8 @@ module.exports = function (grunt) {
           "contact_en.html": "app/contact_en.html",
           "mediakit.html": "app/mediakit.html",
           "mediakit_en.html": "app/mediakit_en.html",
+          "shop.html": "app/shop.html",
+          "shop_en.html": "app/shop_en.html",
         },
       },
     },
