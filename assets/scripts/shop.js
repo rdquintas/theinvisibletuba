@@ -146,6 +146,9 @@
     closeBtn.innerHTML = '&times;';
     closeBtn.setAttribute('aria-label', 'Close');
 
+    var media = document.createElement('div');
+    media.className = 'shop-lightbox-media';
+
     var stage = document.createElement('div');
     stage.className = 'shop-lightbox-stage';
 
@@ -169,6 +172,9 @@
 
     thumbsWrap = document.createElement('div');
     thumbsWrap.className = 'shop-lightbox-thumbs';
+
+    media.appendChild(stage);
+    media.appendChild(thumbsWrap);
 
     var info = document.createElement('div');
     info.className = 'shop-lightbox-info';
@@ -195,8 +201,7 @@
     info.appendChild(infoFooter);
 
     box.appendChild(closeBtn);
-    box.appendChild(stage);
-    box.appendChild(thumbsWrap);
+    box.appendChild(media);
     box.appendChild(info);
     lightboxOverlay.appendChild(box);
     document.body.appendChild(lightboxOverlay);

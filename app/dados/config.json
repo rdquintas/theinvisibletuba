@@ -1,0 +1,16 @@
+{
+  "phone1": "(+351)967 285 043",
+  "phone1_name": "Ricardo",
+  "phone1_whatsapp": "351967285043",
+  "phone2": "",
+  "phone2_name": "",
+  "email": "info@theinvisibletuba.com",
+  "newsletter_link": "https://theinvisibletuba.com/forms/newsletter",
+  "instagram_followers": "10.000",
+  "newsletter_subscribers": "1000",
+  "epk_link_pt": "/docs/epk/TheInvisibleTuba_PT.pdf",
+  "epk_link_en": "/docs/epk/TheInvisibleTuba_EN.pdf",
+  "concert": {
+    "isEnabled": true
+  }
+}

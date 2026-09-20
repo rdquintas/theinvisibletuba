@@ -150,7 +150,7 @@
 .shop-lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(20, 20, 20, 0.8);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -171,32 +171,62 @@
   position: relative;
   width: 100%;
   max-width: 720px;
-  color: #fff;
+  max-height: 90vh;
+  background: #fff;
+  color: #252525;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+@media (min-width: 760px) {
+  .shop-lightbox {
+    max-width: 960px;
+    flex-direction: row;
+  }
 }
 
 .shop-lightbox-close {
   position: absolute;
-  top: -44px;
-  right: 0;
-  background: none;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85);
   border: none;
-  color: #fff;
-  font-size: 32px;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  color: #252525;
+  font-size: 24px;
   line-height: 1;
   cursor: pointer;
 }
 .shop-lightbox-close:hover {
-  color: #af8c45;
+  color: #fff;
+  background: #af8c45;
+}
+
+.shop-lightbox-media {
+  flex: 0 0 auto;
+  padding: 20px;
+}
+@media (min-width: 760px) {
+  .shop-lightbox-media {
+    flex: 0 0 46%;
+    max-width: 46%;
+  }
 }
 
 .shop-lightbox-stage {
   position: relative;
-  background: #111;
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  border-radius: 4px;
 }
 .shop-lightbox-stage img {
   max-width: 100%;
@@ -211,16 +241,19 @@
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.85);
   border: none;
-  color: #fff;
+  border-radius: 50%;
+  color: #252525;
   width: 42px;
   height: 42px;
   font-size: 20px;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 .shop-lightbox-arrow:hover {
   background: #af8c45;
+  color: #fff;
 }
 .shop-lightbox-prev {
   left: 12px;
@@ -230,21 +263,36 @@
 }
 
 .shop-lightbox-info {
-  padding: 16px 4px 0;
+  padding: 20px 24px 24px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 760px) {
+  .shop-lightbox-info {
+    padding: 30px 30px 24px 10px;
+  }
 }
 .shop-lightbox-info h3 {
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   font-size: 18px;
+  color: #252525;
 }
 .shop-lightbox-info p {
   margin: 0 0 12px;
-  font-size: 18px;
-  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  white-space: pre-line;
 }
 .shop-lightbox-info .shop-lightbox-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
 }
 .shop-lightbox-info .shop-card-price {
   color: #af8c45;
@@ -263,7 +311,7 @@
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.15);
   cursor: pointer;
   padding: 0;
 }
