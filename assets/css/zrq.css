@@ -387,6 +387,8 @@ section concerts
   color: #121212;
   font-weight: bold;
   text-decoration: none;
+  min-width: 200px;
+  text-align: center;
   border-radius: 4px;
 }
 
