@@ -21,6 +21,26 @@
       "isEnabled": true
     },
     {
+      "id": "event-leiria",
+      "day": "9",
+      "month": "OUT",
+      "month_en": "OCT",
+      "name": "Mercado de Sant’Ana",
+      "location": "Leiria",
+      "time": "21:30",
+      "buttonText": "Gratuito 😊",
+      "buttonText_en": "Free 😊",
+      "buttonLink": "#",
+      "address": "Largo de Santana 3, 2400-137 Leiria",
+      "mapsUrl": "https://maps.app.goo.gl/ETUWWkB2QL7bcj9W9",
+      "websiteUrl": "https://www.instagram.com/edeleiria.oficial/",
+      "phone": "",
+      "email": "",
+      "info": "",
+      "info_en": "",
+      "isEnabled": true
+    },
+    {
       "id": "event-contabilistas",
       "day": "15",
       "month": "OUT",
