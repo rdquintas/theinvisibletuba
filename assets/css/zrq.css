@@ -401,7 +401,7 @@ section concerts
 }
 
 .zrq-concerts .zrq-cursor:hover {
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .zrq-concerts .expand-content {
