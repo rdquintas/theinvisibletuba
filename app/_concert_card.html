@@ -1,11 +1,11 @@
 <!-- Evento 1 -->
 <div class="agenda-card">
     <div class="agenda-main">
-        <div class="agenda-date">
+        <div class="agenda-date zrq-cursor" onclick="toggleDetails('{{concert.id}}')">
             <span class="day">{{concert.day}}</span>
             <span class="month">{{concert.month}}</span>
         </div>
-        <div class="agenda-details">
+        <div class="agenda-details zrq-cursor" onclick="toggleDetails('{{concert.id}}')">
             <h3 class="event-name">{{concert.name}}</h3>
             {% if concert.location %}
             <p class="event-info">{{concert.location}}</p>

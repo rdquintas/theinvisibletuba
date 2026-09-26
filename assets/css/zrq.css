@@ -400,6 +400,10 @@ section concerts
   background-color: #161616;
 }
 
+.zrq-concerts .zrq-cursor:hover {
+  cursor: pointer;
+}
+
 .zrq-concerts .expand-content {
   padding: 20px 25px;
   border-top: 1px solid #2a2a2a;
@@ -419,7 +423,7 @@ section concerts
 }
 
 @media (max-width: 650px) {
- .zrq-concerts .agenda-main {
+  .zrq-concerts .agenda-main {
     flex-direction: column;
     text-align: center;
     gap: 15px;
@@ -434,8 +438,8 @@ section concerts
     width: 100%;
   }
 
- .zrq-concerts .btn-details,
- .zrq-concerts .btn-agenda {
+  .zrq-concerts .btn-details,
+  .zrq-concerts .btn-agenda {
     width: 100%;
     text-align: center;
   }
