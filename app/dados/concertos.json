@@ -61,6 +61,26 @@
       "isEnabled": true
     },
     {
+      "id": "event-campopequeno",
+      "day": "24",
+      "month": "OUT",
+      "month_en": "OCT",
+      "name": "Ao vivo no Campo Pequeno",
+      "location": "Lisboa",
+      "time": "22:00",
+      "buttonText": "Comprar Bilhetes",
+      "buttonText_en": "Buy Tickets",
+      "buttonLink": "https://www.sagrescampopequeno.pt/pt/a-cerveja-em-lisboa-2026",
+      "address": "Campo Pequeno, 1000-306 Lisboa",
+      "mapsUrl": "https://maps.app.goo.gl/iwwtuwUpv5fUEom56",
+      "websiteUrl": "",
+      "phone": "",
+      "email": "",
+      "info": "A CERVEJA EM FESTA NO SAGRES CAMPO PEQUENO. O evento A Cerveja em Lisboa está de volta ao Sagres Campo Pequeno, entre os dias 23 e 25 de Outubro de 2026. Com uma animação pensada para levar qualquer um ao brinde, os “tchins tchins” das canecas e a música das bandas ao vivo vão animar os apreciadores de cerveja, numa festa de elogio à bebida mais popular do mundo, à alegria e à amizade!",
+      "info_en": "BEER CELEBRATION AT SAGRES CAMPO PEQUENO. The 'A Cerveja em Lisboa' event returns to Sagres Campo Pequeno from October 23 to 25, 2026. With entertainment designed to inspire a toast, the clinking of mugs and live bands will delight beer lovers at a celebration honoring the world's most popular drink, as well as joy and friendship!",
+      "isEnabled": true
+    },
+    {
       "id": "event-tokyo",
       "day": "18",
       "month": "OUT",
