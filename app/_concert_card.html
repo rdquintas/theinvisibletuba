@@ -21,6 +21,7 @@
     <!-- Painel Expansível -->
     <div id="{{concert.id}}" class="agenda-expand">
         <div class="expand-content">
+            <p><strong>📅 Data:</strong> {{concert.day}}/{{concert.month}} {{concert.time}}</p>
             {% if concert.address %}
                 <p><strong>📍 Morada:</strong> {{concert.address}}</p>
             {% endif %}
