@@ -120,6 +120,15 @@ index.html
   margin-top: 2rem;
 }
 
+.zrq-page-index .zrq-img-spotify {
+  min-width: initial;
+  max-width: initial;
+  min-height: initial;
+  max-height: initial;
+  width: 100%;
+}
+
+
 .zrq-page-index .zrq-hero-slider i {
   padding: 0px;
 }
@@ -1098,6 +1107,10 @@ mediakit.html
 */
 .zrq-page-mediakit .hero-title {
   text-align: center;
+}
+
+.zrq-page-mediakit .zrq-socialmedia-icon {
+  width: 40px;
 }
 
 .zrq-page-mediakit .zrq-red-bold {
