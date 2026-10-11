@@ -5,7 +5,8 @@
     "grunt": "^1.6.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-nunjucks": "^0.1.4",
-    "grunt-nunjucks-2-html": "^2.2.0"
+    "grunt-nunjucks-2-html": "^2.2.0",
+    "sharp": "^0.34.5"
   },
   "scripts": {
     "git": "git add . && git commit -m",

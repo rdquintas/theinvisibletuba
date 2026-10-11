@@ -1,0 +1,44 @@
+{#
+    PRÓXIMOS CONCERTOS (lista com bloco de data, inspirada em codepen.io/Tylenator/pen/JKWMBO)
+    Antes do include, definir a língua: {% set lang = 'pt' %} ou {% set lang = 'en' %}
+#}
+{% set en = (lang == 'en') %}
+{# eventos passados: ficam fora na compilação (isPast) e o zrq.js esconde no browser os que passarem depois #}
+{% set shows = concerts | selectattr("isEnabled") | rejectattr("isPast") %}
+<div class="zrq-concerts">
+    <img class="img-responsive img-center zrq-center-img active" src="/assets/img/2560_1440_v05.avif" alt="The Invisible Tuba">
+    <section id="agenda" class="tit-shows">
+        <div class="tit-shows__container">
+            <header class="tit-shows__header">
+                <h2 class="tit-shows__title">{{ "Upcoming Concerts" if en else "Próximos Concertos" }}</h2>
+                <p class="tit-shows__intro">{{ "Come dance with us! Discover where the next gig will be." if en else "Vem dançar connosco! Descobre onde será a próxima festa." }}</p>
+            </header>
+
+            {% if shows | length %}
+            <ul class="tit-shows__list">
+                {% for concert in shows %}
+                {% set month = concert.month_en if en else concert.month %}
+                <li class="tit-show" data-date="{{concert.data}}">
+                    <!-- a linha inteira abre a página do evento (dominio/concerts/<id> ou dominio/concerts/<id>-en) -->
+                    <a class="tit-show__row" href="/concerts/{{concert.id}}{{ '-en' if en }}/">
+                        <span class="tit-show__date">
+                            <span class="tit-show__day">{{concert.day}}</span>
+                            <span class="tit-show__month">{{month}}</span>
+                            <span class="tit-show__time">{{concert.time}}</span>
+                        </span>
+                        <span class="tit-show__info">
+                            <span class="tit-show__name">{{concert.name}}</span>
+                            {% if concert.location %}
+                            <span class="tit-show__venue"><i class="fa fa-map-marker" aria-hidden="true"></i> {{concert.location}}</span>
+                            {% endif %}
+                        </span>
+                        <span class="tit-show__more">{{ "Details" if en else "Detalhes" }} <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <p class="tit-shows__empty"{% if shows | length %} hidden{% endif %}>{{ "New dates coming soon. Subscribe to our newsletter so you don't miss them!" if en else "Novas datas em breve. Subscreve a newsletter para não perderes nenhuma!" }}</p>
+        </div>
+    </section>
+</div>

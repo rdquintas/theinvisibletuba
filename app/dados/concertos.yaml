@@ -1,50 +1,40 @@
+# data: 'yyyymmdd' (ex: '20261024'). Dia ainda por confirmar: '202610??'
+#
+# Cada concerto com isEnabled: true tem uma página própria:
+#   dominio/concerts/<id>      (PT)
+#   dominio/concerts/<id>-en   (EN)
+# id: único, só letras minúsculas, números e '-'.
+#   Atenção: mudar o id muda o link de um evento que já foi partilhado.
+# imagem_h: hero em desktop (horizontal, ex: '/assets/img/2560_1440_v05.avif')
+# imagem_v: hero em telemóvel (vertical, ex: '/assets/img/1170_2532_v00.avif')
+#   Vazias = imagens por defeito (evento_imagem_h / evento_imagem_v em config.yaml).
+# A imagem de partilha (og, 1200x630 jpg) é gerada automaticamente a partir da imagem_h
+# em assets/img/og/ quando se corre o grunt.
+# ticketsLink: preenchido = botão "Comprar Bilhetes" / "Buy Tickets" com link.
+#   Vazio ('') = botão não clicável "Entrada Gratuita" / "Free Entrance".
 concerts:
-  - id: event-entrelinhas
-    day: '26'
-    month: SET
-    month_en: SEP
-    name: ENTRELINHAS
+  - id: entrelinhas
+    data: '20261026'
+    name: Ao vivo no Entrelinhas
     location: Alverca
     time: '21:00'
-    buttonText: "Gratuito 😊"
-    buttonText_en: "Free 😊"
-    buttonLink: '#'
+    ticketsLink: ''
     address: 'R. José António Veríssimo Silva Lt 4.22, 2615-107 Alverca do Ribatejo'
     mapsUrl: 'https://maps.app.goo.gl/WZLfTFx6bpibXf6F8'
     websiteUrl: 'https://www.instagram.com/entrelinhas2019/'
     phone: (+351) 219 574 276
-    email: ''
+    email: 'rduintas@gmail.com'
     info: 'O Entrelinhas é único. Com uma decoração cheia de personalidade e um ambiente acolhedor, é o local perfeito para desfrutar de música ao vivo de alta qualidade enquanto saboreia deliciosos cocktails e petiscos.'
     info_en: 'Entrelinhas is unique. With a decor full of personality and a welcoming atmosphere, it''s the perfect place to enjoy high-quality live music while savoring delicious cocktails and snacks.'
+    imagem_h: ''
+    imagem_v: ''
     isEnabled: false
-  - id: event-leiria
-    day: '9'
-    month: OUT
-    month_en: OCT
-    name: Mercado de Sant’Ana
-    location: Leiria
-    time: '21:30'
-    buttonText: "Gratuito 😊"
-    buttonText_en: "Free 😊"
-    buttonLink: '#'
-    address: 'Largo de Santana 3, 2400-137 Leiria'
-    mapsUrl: 'https://maps.app.goo.gl/ETUWWkB2QL7bcj9W9'
-    websiteUrl: 'https://www.instagram.com/edeleiria.oficial/'
-    phone: ''
-    email: ''
-    info: ''
-    info_en: ''
-    isEnabled: false
-  - id: event-contabilistas
-    day: '15'
-    month: OUT
-    month_en: OCT
+  - id: conferencia-feminina
+    data: '20261015'
     name: 16.ª Grande Conferência Liderança Feminina
     location: Lisboa
     time: '14:00'
-    buttonText: Comprar Bilhetes
-    buttonText_en: Buy Tickets
-    buttonLink: 'https://3cket.com/pt/event/16-grande-conferencia-lideranca-feminina'
+    ticketsLink: 'https://3cket.com/pt/event/16-grande-conferencia-lideranca-feminina'
     address: 'Av. Barbosa du Bocage 45, 1049-013 Lisboa'
     mapsUrl: 'https://maps.app.goo.gl/urggvUWdxC24ZZLm8'
     websiteUrl: ''
@@ -52,35 +42,31 @@ concerts:
     email: ''
     info: 'Há algo que nunca aconteceu antes nas organizações: pela primeira vez, convivem quatro gerações de profissionais. Cada uma traz uma visão do mundo, uma forma de trabalhar, de comunicar e de liderar. E é neste encontro de experiências, ambições e perspetivas que se joga o futuro das empresas. A edição deste ano da Grande Conferência de Liderança Feminina convida-a a explorar este tema incontornável: a liderança através das gerações. Ao longo de um dia de inspiração, conhecimento e partilha, reuniremos mulheres que estão a dar os primeiros passos na liderança, gestoras em ascensão, CEOs, administradoras e líderes que marcaram o mundo empresarial. Histórias diferentes, percursos únicos e uma convicção comum: a liderança constrói-se todos os dias, independentemente da idade. Junte-se a nós nos dias 14 e 15 de outubro!'
     info_en: ''
+    imagem_h: ''
+    imagem_v: ''
     isEnabled: true
-  - id: event-campopequeno
-    day: '24'
-    month: OUT
-    month_en: OCT
+  - id: no-campo-pequeno
+    data: '20261024'
     name: Ao vivo no Sagres Campo Pequeno
     location: Lisboa
     time: '22:00'
-    buttonText: Comprar Bilhetes
-    buttonText_en: Buy Tickets
-    buttonLink: 'https://www.sagrescampopequeno.pt/pt/a-cerveja-em-lisboa-2026'
+    ticketsLink: ''
     address: 'Campo Pequeno, 1000-306 Lisboa'
     mapsUrl: 'https://maps.app.goo.gl/iwwtuwUpv5fUEom56'
-    websiteUrl: 'https://www.sagrescampopequeno.pt/'
+    websiteUrl: 'https://www.sagrescampopequeno.pt/pt/agenda/a-cerveja-em-lisboa-2026'
     phone: ''
     email: ''
     info: 'A CERVEJA EM FESTA NO SAGRES CAMPO PEQUENO. O evento A Cerveja em Lisboa está de volta ao Sagres Campo Pequeno, entre os dias 23 e 25 de Outubro de 2026. Com uma animação pensada para levar qualquer um ao brinde, os “tchins tchins” das canecas e a música das bandas ao vivo vão animar os apreciadores de cerveja, numa festa de elogio à bebida mais popular do mundo, à alegria e à amizade!'
     info_en: 'BEER CELEBRATION AT SAGRES CAMPO PEQUENO. The ''A Cerveja em Lisboa'' event returns to Sagres Campo Pequeno from October 23 to 25, 2026. With entertainment designed to inspire a toast, the clinking of mugs and live bands will delight beer lovers at a celebration honoring the world''s most popular drink, as well as joy and friendship!'
+    imagem_h: '/assets/img/concertos/cerveja_h.jpeg'
+    imagem_v: '/assets/img/concertos/cerveja_v.jpeg'
     isEnabled: true
-  - id: event-tokyo
-    day: '18'
-    month: OUT
-    month_en: OCT
+  - id: tokyo-natal
+    data: '20261018'
     name: TOKYO BAR
     location: Lisboa
     time: '22:00'
-    buttonText: Comprar Bilhetes
-    buttonText_en: Buy Tickets
-    buttonLink: 'https://tickets.tokyo.com.pt/events/308'
+    ticketsLink: 'https://tickets.tokyo.com.pt/events/308'
     address: 'Cais do Gás 1, 1200-109 Lisboa'
     mapsUrl: 'https://maps.app.goo.gl/TuGnhkFFXTrbhiYT8'
     websiteUrl: 'https://tokyo.com.pt/'
@@ -88,17 +74,15 @@ concerts:
     email: tokyo@tokyo.com.pt
     info: ''
     info_en: ''
+    imagem_h: ''
+    imagem_v: ''
     isEnabled: false
-  - id: event-titanic
-    day: '7'
-    month: JUL
-    month_en: JUL
+  - id: titanic-sur-mer
+    data: '20260707'
     name: TITANIC SUR MER
     location: Lisboa
     time: '21:30'
-    buttonText: Gratuito
-    buttonText_en: Buy Tickets
-    buttonLink: 'https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324'
+    ticketsLink: 'https://www.seetickets.com/pt/event/the-invisible-tuba-concert-at-entrelinhas-bar/entrelinhas/3529324'
     address: 'Cais da Ribeira Nova, Armazém B. Cais do Sodré, Lisboa'
     mapsUrl: 'https://maps.app.goo.gl/ZCf3tTvTsw3Un5Ez5'
     websiteUrl: 'https://www.facebook.com/titanicsurmer/?locale=pt_PT'
@@ -106,17 +90,15 @@ concerts:
     email: info.titanicsurmer@gmail.com
     info: ''
     info_en: ''
+    imagem_h: ''
+    imagem_v: ''
     isEnabled: false
-  - id: event-swingsmile
-    day: '17'
-    month: ABR
-    month_en: APR
+  - id: swingsmile-dance
+    data: '20260417'
     name: SWING N' TUBA
     location: '''Os Combatentes'', Lisboa'
     time: '21:00'
-    buttonText: Gratuito
-    buttonText_en: Free
-    buttonLink: '#'
+    ticketsLink: ''
     address: 'Rua do Possolo 5-9 1350, 1350-046 Lisboa'
     mapsUrl: 'https://maps.app.goo.gl/VkJgNAxpSejSznWr'
     websiteUrl: 'https://gdecombatentes.pt'
@@ -124,17 +106,15 @@ concerts:
     email: geral@swingnsmile.com
     info: 'Vem dançar ao som dos The Invisible Tuba! Se a tuba é invisível… o talento definitivamente não é! No dia 17 de abril, vamos encher o fantástico espaço dos Combatentes com boa música, muita energia e uma pista pronta para dançar. Se ainda não danças, aproveita a aula aberta de Lindy Hop dada pela Swing n'' Smile e descobre como é fácil começar. Depois, fica para o concerto e deixa-te levar pelo ritmo!  E se o que procuras é simplesmente boa música em Lisboa, também és mais do que bem-vindo. Vem passar uma noite diferente connosco! Programa 19h00 Abertura de Portas e DJ ''Até Terça''- 20h00 Aula aberta de Lindy Hop - 21h00-23h00 Concerto com The Invisible Tuba- 23h00-00h00 DJ ''Até Terça'''
     info_en: 'Come dance to the sounds of The Invisible Tuba! If the tuba is invisible… talent definitely isn''t! On April 17th, we''ll fill the fantastic Combatentes venue with great music, lots of energy, and a dance floor ready to go. If you don''t dance yet, take advantage of the open Lindy Hop class given by Swing n'' Smile and discover how easy it is to start. Then, stay for the concert and let yourself be carried away by the rhythm! And if what you''re looking for is simply good music in Lisbon, you''re more than welcome too. Come spend a different kind of night with us!'
+    imagem_h: ''
+    imagem_v: ''
     isEnabled: false
-  - id: event-margem
-    day: '??'
-    month: OUT
-    month_en: OCT
+  - id: restaurante-margem
+    data: '202610??'
     name: RESTAURANTE À MARGEM
     location: Lisboa. Torre de Belém
     time: '15:00'
-    buttonText: Gratuito
-    buttonText_en: Free
-    buttonLink: '#'
+    ticketsLink: ''
     address: 'Doca do Bom Sucesso, 1400-038 Lisboa'
     mapsUrl: 'https://maps.app.goo.gl/WtFeGto2nVvSSAjt7'
     websiteUrl: 'https://www.facebook.com/amargem.belem/?locale=pt_PT'
@@ -142,4 +122,6 @@ concerts:
     email: ''
     info: 'Vamos estar a tocar na esplanada deste maravilhoso restaurante, com uma vista incrível sobre o rio Tejo e a Torre de Belém. Um local perfeito para desfrutar de boa música, boa comida e boa companhia.'
     info_en: 'We will be playing on the terrace of this wonderful restaurant, with an incredible view of the Tagus River and Belém Tower. A perfect place to enjoy great music, delicious food, and great company.'
+    imagem_h: ''
+    imagem_v: ''
     isEnabled: false

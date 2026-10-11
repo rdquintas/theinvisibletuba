@@ -1,0 +1,103 @@
+    <!doctype html>
+<html lang="{{ lang }}">
+
+{#
+    PÁGINA DE UM EVENTO — gerada pelo Gruntfile para cada concerto com isEnabled: true
+    concerts/<id>/index.html (PT) e concerts/<id>-en/index.html (EN)
+    Variáveis: event (concerto do concertos.yaml), lang, share_url, root
+#}
+{% set en = (lang == 'en') %}
+{% set month = event.month_en if en else event.month %}
+{% set info = event.info_en if en else event.info %}
+
+{% include "_head.html" %}
+
+<body class="loading zrq-page-mediakit zrq-page-event">
+    {% if en %}{% include "_menu_en.html" %}{% else %}{% include "_menu.html" %}{% endif %}
+
+    <main class="sv__main--content">
+        <article class="container-fluid white-bg no-padding hero">
+            <div class="section container-fluid no-padding hero-container hero-static">
+                <!-- hero: imagem_h em desktop, imagem_v em telemóvel (media query no zrq.css) -->
+                <div class="hero-background zrq-event-hero" style="--hero-h: url('{{ event.imagem_h }}'); --hero-v: url('{{ event.imagem_v }}');"></div>
+            </div>
+            <div class="container-fluid">
+                <div class="angle-top" style="border-right-color: #fff;"></div>
+                <div class="sv__container--sm">
+                    <div class="zrq-event">
+                        <p class="zrq-event__date">
+                            <span>{% if event.day != '??' %}{{ event.day }} {% endif %}{{ month }}</span>
+                            {% if event.time %}<span class="tit-show__divider" aria-hidden="true"></span><span>{{ event.time }}</span>{% endif %}
+                        </p>
+                        <h1 class="zrq-event__name">{{ event.name }}</h1>
+
+                        {% if event.isPast %}
+                        <p class="zrq-event__past">{{ "This concert has already taken place. See you at the next one!" if en else "Este concerto já aconteceu. Vemo-nos no próximo!" }}</p>
+                        {% endif %}
+
+                        <ul class="zrq-event__list">
+                            {% if event.address %}
+                            <li><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                {% if event.mapsUrl %}<a href="{{ event.mapsUrl }}" target="_blank" rel="noopener">{{ event.address }}</a>{% else %}{{ event.address }}{% endif %}
+                            </li>
+                            {% endif %}
+                            {% if event.websiteUrl %}
+                            <li><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{ event.websiteUrl }}" target="_blank" rel="noopener">{{ event.websiteUrl }}</a></li>
+                            {% endif %}
+                            {% if event.phone %}
+                            <li><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:{{ event.phone }}">{{ event.phone }}</a></li>
+                            {% endif %}
+                            {% if event.email %}
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ event.email }}">{{ event.email }}</a></li>
+                            {% endif %}
+                        </ul>
+
+                        {% if info %}
+                        <p class="zrq-event__info">{{ info }}</p>
+                        {% endif %}
+
+                        {% if not event.isPast %}
+                        {% if event.ticketsLink and event.ticketsLink != '#' %}
+                        <a href="{{ event.ticketsLink }}" target="_blank" rel="noopener" class="tit-show__btn zrq-event__cta">{{ "Buy Tickets" if en else "Comprar Bilhetes" }}</a>
+                        {% else %}
+                        <span class="tit-show__btn tit-show__btn--static zrq-event__cta">{{ "Free Entrance" if en else "Entrada Gratuita" }}</span>
+                        {% endif %}
+                        {% endif %}
+
+                        <!-- partilhar -->
+                        <div class="zrq-event__share">
+                            <span>{{ "Share" if en else "Partilhar" }}</span>
+                            <a href="https://wa.me/?text={{ (event.name + ' ' + share_url) | urlencode }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | urlencode }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                            <!-- instagram não tem link de partilha: usa a partilha nativa do telemóvel com a imagem og (zrq.js) -->
+                            <a href="#" class="zrq-share-ig" aria-label="Instagram"
+                                data-image="/assets/img/og/{{ event.id }}{{ '-en' if en else '' }}.jpg"
+                                data-title="{{ event.name }}"
+                                data-url="{{ share_url }}"
+                                data-copied="{{ 'Link copied! Paste it in your Instagram story or post.' if en else 'Link copiado! Cola-o na tua story ou publicação do Instagram.' }}"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                        <p class="zrq-event__share-msg" role="status" hidden></p>
+
+                        <a class="zrq-event__back" href="{{ root }}{{ 'index_en.html' if en else 'index.html' }}#agenda"><i class="fa fa-angle-left" aria-hidden="true"></i> {{ "All concerts" if en else "Todos os concertos" }}</a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        <div class="section container-fluid no-padding gold-bg">
+            <div class="inner-md">
+                <div class="row no-margin">
+                    <div class="buy__container">
+                        <div class="col-xs-12 buy-theme-sm">
+                            <h2 class="text-center white">{{ "See you at the party! 😉" if en else "Vemo-nos na festa! 😉" }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% if en %}{% include "_footer_en.html" %}{% else %}{% include "_footer.html" %}{% endif %}
+
+</body>
+</html>

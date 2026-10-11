@@ -317,11 +317,12 @@
 
         <!--
         #################################
-            - CONCERTS -
+            - UPCOMING CONCERTS -
         ################################# 
         -->
         {% if concert.isEnabled %}
-        {% include "_concerts_en.html" %}
+        {% set lang = 'en' %}
+        {% include "_upcoming_concerts.html" %}
         {% endif %}
 
         <!--
