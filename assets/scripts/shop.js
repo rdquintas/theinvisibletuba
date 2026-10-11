@@ -1,12 +1,12 @@
 /* ===========================================================
    The Invisible Tuba — shop catalogue
-   Renders the product grid from shop.json and drives the
+   Renders the product grid from artigos_loja.yaml and drives the
    image lightbox/carousel. Cart state itself lives in zrq-cart.js.
    =========================================================== */
 (function (window, document) {
   'use strict';
 
-  var SHOP_JSON_URL = '../app/dados/artigos_loja.json';
+  var SHOP_YAML_URL = '../app/dados/artigos_loja.yaml';
   var grid = document.getElementById('zrq-shop-grid');
   if (!grid) { return; }
 
@@ -277,8 +277,9 @@
   }
 
   /* ---------------- Init ---------------- */
-  fetch(SHOP_JSON_URL)
-    .then(function (res) { return res.json(); })
+  fetch(SHOP_YAML_URL)
+    .then(function (res) { return res.text(); })
+    .then(function (text) { return window.jsyaml.load(text); })
     .then(function (data) { renderGrid(data.products || []); })
     .catch(function () {
       grid.innerHTML = '<p class="shop-empty">' + t.empty + '</p>';

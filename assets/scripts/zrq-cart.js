@@ -8,7 +8,7 @@
   'use strict';
 
   var STORAGE_KEY = 'tib_shop_cart';
-  var SHOP_JSON_URL = '../app/dados/artigos_loja.json';
+  var SHOP_YAML_URL = '../app/dados/artigos_loja.yaml';
   var VAT_RATE = 23 / 100;
   var CTT_VALUE = 3.50; // fixed shipping cost for Portugal (CTT)
 
@@ -57,8 +57,9 @@
     if (productsPromise) {
       return productsPromise;
     }
-    productsPromise = fetch(SHOP_JSON_URL)
-      .then(function (res) { return res.json(); })
+    productsPromise = fetch(SHOP_YAML_URL)
+      .then(function (res) { return res.text(); })
+      .then(function (text) { return window.jsyaml.load(text); })
       .then(function (data) {
         products = {};
         (data.products || []).forEach(function (p) {

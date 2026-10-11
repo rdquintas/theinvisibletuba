@@ -3,12 +3,12 @@ module.exports = function (grunt) {
   grunt.initConfig({
     nunjucks: {
       options: {
-        // Carrega os dados do JSON exatamente como tinhas no bake
+        // Carrega os dados dos ficheiros YAML
         data: Object.assign(
           {},
-          grunt.file.readJSON("app/dados/config.json"),
-          grunt.file.readJSON("app/dados/concertos.json"),
-          grunt.file.readJSON("app/dados/artigos_loja.json")
+          grunt.file.readYAML("app/dados/config.yaml"),
+          grunt.file.readYAML("app/dados/concertos.yaml"),
+          grunt.file.readYAML("app/dados/artigos_loja.yaml")
         ),
         // Aponta para a pasta onde estão os ficheiros HTML e os parciais
         paths: ["app"],
