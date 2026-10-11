@@ -53,7 +53,7 @@
                         </ul>
 
                         {% if info %}
-                        <p class="zrq-event__info">{{ info }}</p>
+                        <p class="zrq-event__info">{{ info | nl2br | linkify }}</p>
                         {% endif %}
 
                         {% if not event.isPast %}

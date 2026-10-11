@@ -221,6 +221,37 @@ module.exports = function (grunt) {
         },
         // Aponta para a pasta onde estão os ficheiros HTML e os parciais
         paths: ["app"],
+        // nl2br: troca as quebras de linha (\n no yaml) por <br> (não existe no nunjucks 2)
+        configureEnvironment: function (env, nunjucks) {
+          env.addFilter("nl2br", function (str) {
+            if (str == null) return "";
+            const escaped = nunjucks.lib.escape(String(str));
+            return new nunjucks.runtime.SafeString(escaped.replace(/\r\n|\n/g, "<br>\n"));
+          });
+          // linkify: transforma urls (http://, https://, www.) e emails em links
+          env.addFilter("linkify", function (str) {
+            if (str == null) return "";
+            const html = str instanceof nunjucks.runtime.SafeString ? String(str) : nunjucks.lib.escape(String(str));
+            const re = /\b(?:https?:\/\/|www\.)[^\s<]+|[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
+            return new nunjucks.runtime.SafeString(
+              html.replace(re, function (match) {
+                // Pontuação no fim (ex: "ver www.site.pt.") não faz parte do link
+                const trail = match.match(/(?:[.,;:!?)\]]|&quot;|&#39;)+$/);
+                const url = trail ? match.slice(0, -trail[0].length) : match;
+                const rest = trail ? trail[0] : "";
+                let href = url;
+                let attrs = ' target="_blank" rel="noopener"';
+                if (url.indexOf("@") > -1 && !/^(https?:\/\/|www\.)/.test(url)) {
+                  href = "mailto:" + url;
+                  attrs = "";
+                } else if (url.indexOf("www.") === 0) {
+                  href = "https://" + url;
+                }
+                return '<a href="' + href + '"' + attrs + ">" + url + "</a>" + rest;
+              })
+            );
+          });
+        },
       },
       render: {
         // Mantém exatamente o mesmo mapa de destino: origem
