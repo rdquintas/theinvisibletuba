@@ -69,14 +69,7 @@
                             <span>{{ "Share" if en else "Partilhar" }}</span>
                             <a href="https://wa.me/?text={{ (event.name + ' ' + share_url) | urlencode }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
                             <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | urlencode }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
-                            <!-- instagram não tem link de partilha: usa a partilha nativa do telemóvel com a imagem og (zrq.js) -->
-                            <a href="#" class="zrq-share-ig" aria-label="Instagram"
-                                data-image="/assets/img/og/{{ event.id }}{{ '-en' if en else '' }}.jpg"
-                                data-title="{{ event.name }}"
-                                data-url="{{ share_url }}"
-                                data-copied="{{ 'Link copied! Paste it in your Instagram story or post.' if en else 'Link copiado! Cola-o na tua story ou publicação do Instagram.' }}"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
                         </div>
-                        <p class="zrq-event__share-msg" role="status" hidden></p>
 
                         <a class="zrq-event__back" href="{{ root }}{{ 'index_en.html' if en else 'index.html' }}#agenda"><i class="fa fa-angle-left" aria-hidden="true"></i> {{ "All concerts" if en else "Todos os concertos" }}</a>
                     </div>
