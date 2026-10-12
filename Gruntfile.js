@@ -209,14 +209,16 @@ function pageContext(dest, data) {
   const en = /_en\.html$/.test(dest);
   const pageUrl = (f) => site + "/" + (f === "index.html" ? "" : f);
   const alt = en ? dest.replace(/_en\.html$/, ".html") : dest.replace(/\.html$/, "_en.html");
+  const description = en ? "The most entertaining band from Lisbon." : "A banda mais divertida de Lisboa.";
   return {
+    page_description: description,
     og: {
       url: pageUrl(dest),
       alt_url: pageUrl(alt),
       alt_lang: en ? "pt" : "en",
       locale: en ? "en_GB" : "pt_PT",
       title: "The Invisible Tuba",
-      description: "THE INVISIBLE TUBA is the most entertaining band from Lisbon",
+      description: description,
       image: `${site}/${OG_DIR}/${OG_DEFAULT}.jpg`,
       image_type: "image/jpeg",
     },
