@@ -228,11 +228,11 @@ module.exports = function (grunt) {
             const escaped = nunjucks.lib.escape(String(str));
             return new nunjucks.runtime.SafeString(escaped.replace(/\r\n|\n/g, "<br>\n"));
           });
-          // linkify: transforma urls (http://, https://, www.) e emails em links
+          // linkify: transforma urls (http://, https://, www.), emails e @utilizador (instagram) em links
           env.addFilter("linkify", function (str) {
             if (str == null) return "";
             const html = str instanceof nunjucks.runtime.SafeString ? String(str) : nunjucks.lib.escape(String(str));
-            const re = /\b(?:https?:\/\/|www\.)[^\s<]+|[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
+            const re = /\b(?:https?:\/\/|www\.)[^\s<]+|[\w.+-]+@[\w-]+(?:\.[\w-]+)+|(?<![\w.+\/@-])@[A-Za-z0-9_.]+/g;
             return new nunjucks.runtime.SafeString(
               html.replace(re, function (match) {
                 // Pontuação no fim (ex: "ver www.site.pt.") não faz parte do link
@@ -241,7 +241,9 @@ module.exports = function (grunt) {
                 const rest = trail ? trail[0] : "";
                 let href = url;
                 let attrs = ' target="_blank" rel="noopener"';
-                if (url.indexOf("@") > -1 && !/^(https?:\/\/|www\.)/.test(url)) {
+                if (url.charAt(0) === "@") {
+                  href = "https://www.instagram.com/" + url.slice(1) + "/";
+                } else if (url.indexOf("@") > -1 && !/^(https?:\/\/|www\.)/.test(url)) {
                   href = "mailto:" + url;
                   attrs = "";
                 } else if (url.indexOf("www.") === 0) {
