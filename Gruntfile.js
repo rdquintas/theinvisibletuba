@@ -9,6 +9,8 @@ const CONCERTS_DIR = "concerts";
 const OG_DIR = "assets/img/og";
 const OG_W = 1200;
 const OG_H = 630;
+// Imagem og das restantes páginas (só a foto por defeito + logo, sem texto)
+const OG_DEFAULT = "default";
 
 // Hoje no formato yyyymmdd
 function todayYmd() {
@@ -189,6 +191,38 @@ async function renderOg(sharp, grunt, c, lang, fallbackImage) {
   return out;
 }
 
+// imagem og das páginas que não são eventos: só a foto por defeito com o logo
+async function renderDefaultOg(sharp, image) {
+  const logo = await sharp("assets/img/logo_transp_v00.png").resize({ height: 260 }).toBuffer();
+  const out = `${OG_DIR}/${OG_DEFAULT}.jpg`;
+  await sharp(image.replace(/^\/+/, ""))
+    .resize(OG_W, OG_H, { fit: "cover" })
+    .composite([{ input: logo, top: 40, left: 50 }])
+    .jpeg({ quality: 82, mozjpeg: true })
+    .toFile(out);
+  return out;
+}
+
+// Dados de partilha (og) das páginas normais: "contact.html" <-> "contact_en.html"
+function pageContext(dest, data) {
+  const site = String(data.site_url || "").replace(/\/+$/, "");
+  const en = /_en\.html$/.test(dest);
+  const pageUrl = (f) => site + "/" + (f === "index.html" ? "" : f);
+  const alt = en ? dest.replace(/_en\.html$/, ".html") : dest.replace(/\.html$/, "_en.html");
+  return {
+    og: {
+      url: pageUrl(dest),
+      alt_url: pageUrl(alt),
+      alt_lang: en ? "pt" : "en",
+      locale: en ? "en_GB" : "pt_PT",
+      title: "The Invisible Tuba",
+      description: "THE INVISIBLE TUBA is the most entertaining band from Lisbon",
+      image: `${site}/${OG_DIR}/${OG_DEFAULT}.jpg`,
+      image_type: "image/jpeg",
+    },
+  };
+}
+
 module.exports = function (grunt) {
   const config = grunt.file.readYAML("app/dados/config.yaml");
   const data = Object.assign(
@@ -217,7 +251,7 @@ module.exports = function (grunt) {
         // Nas páginas de evento junta os dados desse evento (this = ficheiro a gerar)
         preprocessData: function (d) {
           const page = eventPages[this.dest];
-          return page ? Object.assign(d, eventContext(page.concert, page.lang, d)) : d;
+          return Object.assign(d, page ? eventContext(page.concert, page.lang, d) : pageContext(this.dest, d));
         },
         // Aponta para a pasta onde estão os ficheiros HTML e os parciais
         paths: ["app"],
@@ -294,6 +328,7 @@ module.exports = function (grunt) {
     grunt.file.mkdir(OG_DIR);
     const jobs = [];
     events.forEach((c) => ["pt", "en"].forEach((lang) => jobs.push(renderOg(sharp, grunt, c, lang, config.evento_imagem_h))));
+    jobs.push(renderDefaultOg(sharp, config.evento_imagem_h));
     Promise.all(jobs)
       .then((files) => {
         grunt.log.ok(`${files.length} imagens og geradas em ${OG_DIR}`);
@@ -305,7 +340,7 @@ module.exports = function (grunt) {
   // Apaga as pastas de concerts/ (e as imagens og) dos concertos que já não estão ativos
   // (isEnabled: false, removidos do yaml ou com o id mudado)
   grunt.registerTask("clean-concerts", "Apaga as páginas dos concertos desativados", function () {
-    const keep = {};
+    const keep = { [OG_DEFAULT]: true };
     events.forEach((c) => {
       keep[c.id] = true;
       keep[`${c.id}-en`] = true;
