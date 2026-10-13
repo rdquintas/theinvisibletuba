@@ -1,6 +1,5 @@
 # Stripe / shop secrets
 api/config.php
-forms/config.php
 
 # Logs
 logs

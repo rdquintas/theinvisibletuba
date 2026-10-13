@@ -38,6 +38,6 @@ Cada concerto com `isEnabled: true` gera `concerts/<id>/index.html` (PT) e `conc
 - `api/config.php` (segredos Stripe) está no `.gitignore`; o modelo é `api/config.example.php`.
 
 ### Outras pastas
-- `forms/` — formulários (pedido de orçamento, newsletter) com `send.php`; independentes do build.
-- `landing/` — landing pages autónomas (concerto multilingue, corporate).
+- `forms/newsletter/` — página de subscrição da newsletter (formulário Brevo); independente do build.
+- `landing/` — landing pages autónomas (concerto multilingue).
 - `docs/` — EPK em PDF e media kit.
