@@ -24,6 +24,19 @@ $(document).ready(function () {
   });
 
   $(".youtube-link").grtyoutube();
+
+  // vídeo do YouTube: troca a miniatura pelo player só quando se clica
+  $(".zrq-yt-lite").one("click", function () {
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + this.dataset.id + "?autoplay=1";
+    iframe.title = "YouTube video player";
+    iframe.width = 315;
+    iframe.height = 560;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+    $(this).replaceWith(iframe);
+  });
 });
 
 // esconde concertos cuja data (data-date="yyyymmdd") já passou;

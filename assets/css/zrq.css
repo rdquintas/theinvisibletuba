@@ -243,6 +243,60 @@ index.html
   width: 210px;
 }
 
+/* vídeo do YouTube carregado só ao clicar (zrq.js) */
+.zrq-yt-lite,
+.zrq-youtube-videos iframe {
+  display: block;
+  width: 315px;
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+}
+
+.zrq-yt-lite {
+  position: relative;
+  padding: 0;
+  background: #000;
+  cursor: pointer;
+}
+
+.zrq-yt-lite img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zrq-yt-lite-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background: rgba(33, 33, 33, 0.8);
+  transition: background-color 0.2s;
+}
+
+.zrq-yt-lite-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.zrq-yt-lite:hover .zrq-yt-lite-play,
+.zrq-yt-lite:focus-visible .zrq-yt-lite-play {
+  background: #f00;
+}
+
 .zrq-page-index .zrq-youtube-videos .youtube-link img {
   transition: transform 0.2s ease-in-out;
 }
