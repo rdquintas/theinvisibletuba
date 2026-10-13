@@ -86,7 +86,7 @@
     <meta name="author" content="Ricardo Quintas" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- browsers sem AVIF usam as cópias .webp (geradas no build) -->
-    <script src="{{ root }}assets/scripts/avif-fallback.js"></script>
+    <script src="{{ root }}assets/scripts/avif-fallback.js?v={{ v('assets/scripts/avif-fallback.js') }}"></script>
     {% if slider %}
     <link href="{{ root }}assets/css/revolution5.min.css" rel="stylesheet" type="text/css" media="all" />
     {% endif %}
@@ -95,7 +95,7 @@
     <link href="{{ root }}assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ root }}assets/css/cookie-banner.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link href="{{ root }}assets/css/zrq.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ root }}assets/css/zrq.css?v={{ v('assets/css/zrq.css') }}" rel="stylesheet" type="text/css" media="all" />
     <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>   
         
 </head>

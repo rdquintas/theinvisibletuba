@@ -4,7 +4,7 @@
 {% include "_head.html" %}
 
 <body class="loading zrq-page-shop">
-    <link href="assets/css/shop.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/shop.css?v={{ v('assets/css/shop.css') }}" rel="stylesheet" type="text/css" media="all" />
     {% include "_menu_en.html" %}
 
     <main class="sv__main--content">
@@ -50,7 +50,7 @@
         </div>
     </main>
     {% include "_footer_en.html" %}
-    <script src="assets/scripts/shop.js"></script>
+    <script src="assets/scripts/shop.js?v={{ v('assets/scripts/shop.js') }}"></script>
 
 </body>
 </html>

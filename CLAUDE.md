@@ -21,7 +21,7 @@ Não há testes nem linter. O SCSS em `assets/scss/` não é compilado por nenhu
 - As fontes estão em `app/` (Nunjucks, via `grunt-nunjucks-2-html`). Os ficheiros `*.html` na raiz e em `concerts/` são **gerados — nunca editar**, são sobrescritos no build. (O README fala em `grunt-bake`; isso está desatualizado, exceto em `landing/concert/_sources/camones/`, que tem o seu próprio Gruntfile com bake.)
 - Cada página existe em duas versões: `x.html` (PT) e `x_en.html` (EN). Parciais com prefixo `_` (`_head.html`, `_menu[_en].html`, `_footer[_en].html`, `_upcoming_concerts.html`). Alguns parciais escolhem a língua com `{% set lang = 'en' %}` antes do `include`.
 - Páginas novas têm de ser adicionadas ao mapa `files` do `nunjucks.render` em [Gruntfile.js](Gruntfile.js).
-- Filtros personalizados definidos no Gruntfile: `nl2br` e `linkify` (URLs, emails e `@utilizador` → Instagram).
+- Filtros personalizados definidos no Gruntfile: `nl2br` e `linkify` (URLs, emails e `@utilizador` → Instagram). Função global `v('caminho')` → hash do conteúdo, usada como `?v=` nos links do CSS/JS próprio para o browser não usar versões antigas da cache (usar também em links novos para css/js do site).
 - `preprocessData` injeta por página `og` / `page_description` (`pageContext`) ou, nas páginas de evento, o contexto do evento (`eventContext`).
 
 ### Dados (`app/dados/`)

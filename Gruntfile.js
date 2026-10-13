@@ -265,6 +265,11 @@ module.exports = function (grunt) {
         paths: ["app"],
         // nl2br: troca as quebras de linha (\n no yaml) por <br> (não existe no nunjucks 2)
         configureEnvironment: function (env, nunjucks) {
+          // v('assets/css/zrq.css'): hash do conteúdo, para usar em "?v=" nos links de css/js
+          // (o browser volta a descarregar o ficheiro quando ele muda, em vez de usar o da cache)
+          env.addGlobal("v", function (file) {
+            return require("crypto").createHash("md5").update(grunt.file.read(file)).digest("hex").slice(0, 8);
+          });
           env.addFilter("nl2br", function (str) {
             if (str == null) return "";
             const escaped = nunjucks.lib.escape(String(str));
