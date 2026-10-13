@@ -12,6 +12,10 @@ const OG_H = 630;
 // Imagem og das restantes páginas (só a foto por defeito + logo, sem texto)
 const OG_DEFAULT = "default";
 
+// Cópias .webp das imagens .avif, para browsers sem AVIF (ver assets/scripts/avif-fallback.js)
+const WEBP_SRC = ["assets/img/**/*.avif", "forms/assets/img/**/*.avif"];
+const WEBP_QUALITY = 80;
+
 // Hoje no formato yyyymmdd
 function todayYmd() {
   const n = new Date();
@@ -343,6 +347,34 @@ module.exports = function (grunt) {
       .catch(done);
   });
 
+  // Gera <imagem>.webp ao lado de cada <imagem>.avif (só as novas ou alteradas desde a última vez)
+  grunt.registerTask("webp", "Gera cópias .webp das imagens .avif", function () {
+    const done = this.async();
+    const fs = require("fs");
+    const sharp = require("sharp");
+    const todo = grunt.file.expand(WEBP_SRC).filter((src) => {
+      const out = src.replace(/.avif$/i, ".webp");
+      return !fs.existsSync(out) || fs.statSync(out).mtimeMs < fs.statSync(src).mtimeMs;
+    });
+    // uma de cada vez: as fotos grandes (2560px) gastam muita memória a descodificar
+    todo
+      .reduce(
+        (p, src) =>
+          p.then(() =>
+            sharp(src)
+              .webp({ quality: WEBP_QUALITY, effort: 5 })
+              .toFile(src.replace(/.avif$/i, ".webp"))
+              .then(() => grunt.verbose.writeln(`webp: ${src}`))
+          ),
+        Promise.resolve()
+      )
+      .then(() => {
+        grunt.log.ok(`${todo.length} imagens .webp geradas (${grunt.file.expand(WEBP_SRC).length - todo.length} já estavam em dia)`);
+        done();
+      })
+      .catch(done);
+  });
+
   // Apaga as pastas de concerts/ (e as imagens og) dos concertos que já não estão ativos
   // (isEnabled: false, removidos do yaml ou com o id mudado)
   grunt.registerTask("clean-concerts", "Apaga as páginas dos concertos desativados", function () {
@@ -367,5 +399,5 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks("grunt-nunjucks-2-html");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.registerTask("default", ["clean-concerts", "og", "nunjucks"]);
+  grunt.registerTask("default", ["clean-concerts", "og", "webp", "nunjucks"]);
 };

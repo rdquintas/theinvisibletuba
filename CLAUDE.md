@@ -6,9 +6,10 @@ Site estático da banda The Invisible Tuba (theinvisibletuba.com), bilingue PT/E
 
 ## Comandos
 
-- `npx grunt` — build completo (tarefa `default`): `clean-concerts` → `og` → `nunjucks`.
+- `npx grunt` — build completo (tarefa `default`): `clean-concerts` → `og` → `webp` → `nunjucks`.
 - `npx grunt nunjucks` — só recompila o HTML (rápido, sem gerar imagens).
 - `npx grunt og` — regenera as imagens de partilha em `assets/img/og/` (usa `sharp`).
+- `npx grunt webp` — gera `<imagem>.webp` ao lado de cada `.avif` em `assets/img/` e `forms/assets/img/` (só as novas/alteradas).
 - `npx grunt watch` — recompila (`nunjucks`) quando muda algo em `app/*.*`. Nota: não vê `app/dados/*.yaml` nem corre `og`/`clean-concerts`; depois de mexer em concertos corre `npx grunt`.
 - `npm run git -- "mensagem"` — `git add . && git commit`, seguido de `git push` e `git ftp push` (deploy por FTP com [git-ftp](https://github.com/git-ftp/git-ftp)). É um deploy para produção.
 
@@ -36,6 +37,9 @@ Cada concerto com `isEnabled: true` gera `concerts/<id>/index.html` (PT) e `conc
 - `assets/scripts/shop.js` e `zrq-cart.js` carregam `app/dados/artigos_loja.yaml` em runtime no browser (com `js-yaml`) — por isso `app/dados/` tem de estar publicado no servidor.
 - `api/create-checkout-session.php` cria a sessão Stripe Checkout com preços validados do lado do servidor, lidos do mesmo `app/dados/artigos_loja.yaml` (via `api/yaml.php`, que usa a extensão `yaml` do PHP se existir, senão um leitor simples incluído).
 - `api/config.php` (segredos Stripe) está no `.gitignore`; o modelo é `api/config.example.php`.
+
+### Imagens AVIF + fallback WebP
+As imagens do site são `.avif`; a tarefa `webp` cria cópias `.webp` (que têm de ir no commit, porque o deploy é por git-ftp). `assets/scripts/avif-fallback.js`, carregado no `<head>` (`_head.html`, landing pages e newsletter), troca `.avif` por `.webp` em browsers sem AVIF (Safari/iOS < 16): nos `<img>` quando dão erro, e nos `background-image` (inline, CSS e postos por JS) depois de testar o suporte. Nos templates continua-se a usar só `.avif`.
 
 ### Outras pastas
 - `forms/newsletter/` — página de subscrição da newsletter (formulário Brevo); independente do build.
