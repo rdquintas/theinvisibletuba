@@ -62,6 +62,21 @@
         </div>
     </footer>   
 
+    <script src="{{ root }}assets/scripts/jquery.min.js"></script>
+    {% if slider %}
+    <!-- Revolution Slider: só nas páginas com slider (index), com {% raw %}{% set slider = true %}{% endraw %} -->
+    <script src="{{ root }}assets/scripts/jquery.themepunch.tools.min.js"></script>
+    <script src="{{ root }}assets/scripts/jquery.themepunch.revolution.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.actions.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.migration.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="{{ root }}assets/scripts/extensions/revolution.extension.video.min.js"></script>
+    {% endif %}
     <script src="{{ root }}assets/scripts/jquery.menu-aim.js"></script>
     <script src="{{ root }}assets/scripts/modernizr.min.js"></script>
     <script src="{{ root }}assets/scripts/bootstrap.min.js"></script>
@@ -78,6 +93,7 @@
     <script src="{{ root }}assets/scripts/zrq.js"></script>
     <script src="{{ root }}assets/scripts/js-yaml.min.js"></script>
     <script src="{{ root }}assets/scripts/zrq-cart.js"></script>
+    {% if slider %}
     <script>
     (function($) {
     'use strict';
@@ -206,6 +222,7 @@
 
     })(jQuery);
     </script>
+    {% endif %}
 
     <!-- Cookie Banner -->
     <div class="nk-cookie-banner alert alert-warning text-center mb-0" role="alert">

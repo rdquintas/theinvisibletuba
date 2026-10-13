@@ -87,26 +87,14 @@
     <meta name="twitter:image" content="https://theinvisibletuba.com/assets/img/og/default.jpg" />
     
     <meta name="author" content="Ricardo Quintas" />
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" /> 
-    <link href="assets/css/revolution5.min.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/grt-youtube-popup.css">
     <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/cookie-banner.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link href="assets/css/zrq.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/scripts/jquery.themepunch.tools.min.js"></script> 
-    <script src="assets/scripts/jquery.themepunch.revolution.min.js"></script> 
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.video.min.js"></script>
     <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>   
         
 </head>
@@ -364,6 +352,8 @@
         </div>
     </footer>
   
+    <script src="assets/scripts/jquery.min.js"></script>
+    
     <script src="assets/scripts/jquery.menu-aim.js"></script>
     <script src="assets/scripts/modernizr.min.js"></script>
     <script src="assets/scripts/bootstrap.min.js"></script>
@@ -380,134 +370,7 @@
     <script src="assets/scripts/zrq.js"></script>
     <script src="assets/scripts/js-yaml.min.js"></script>
     <script src="assets/scripts/zrq-cart.js"></script>
-    <script>
-    (function($) {
-    'use strict';
-        // Revolution Slider Settings
-        // ==========================================================================
-        var tpj = jQuery;
-        var sliderId = "#rev_slider_46_1";
-  
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            sliderId = "#rev_slider_46_1_mobile";
-        } 
-        
-        var revapi46;
-        tpj(document).ready(function() {
-            if (tpj(sliderId).revolution == undefined) {
-                revslider_showDoubleJqueryError(sliderId);
-            } else {
-                revapi46 = tpj(sliderId).show().revolution({
-                    sliderType: "standard",
-                    jsFileLocation: "assets/scripts/",
-                    sliderLayout: "fullscreen",
-                    dottedOverlay: "none",
-                    delay: 4500,
-                    navigation: {
-                        keyboardNavigation: "off",
-                        keyboard_direction: "horizontal",
-                        mouseScrollNavigation: "off",
-                        onHoverStop:"false",
-                        touch: {
-                            touchenabled: "on",
-                            swipe_threshold: 75,
-                            swipe_min_touches: 1,
-                            swipe_direction: "horizontal",
-                            drag_block_vertical: false
-                        },
-                        arrows: {
-                            style: "erinyen",
-                            enable: true,
-                            hide_onmobile: false,
-                            hide_under: 600,
-                            hide_onleave: false,
-                            hide_delay: 200,
-                            hide_delay_mobile: 1200,
-                            // tmp: '<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div>    <div class="tp-arr-img-over">   </div><span class="tp-arr-titleholder"></span>     </div>',
-                            left: {
-                                h_align: "left",
-                                v_align: "center",
-                                h_offset: 30,
-                                v_offset: 0
-                            },
-                            right: {
-                                h_align: "right",
-                                v_align: "center",
-                                h_offset: 30,
-                                v_offset: 0
-                            }
-                        },
-                        thumbnails: {
-                            style: "gyges",
-                            enable: true,
-                            width: 100,
-                            height: 60,
-                            min_width: 60,
-                            wrapper_padding: 0,
-                            wrapper_color: "transparent",
-                            wrapper_opacity: "1",
-                            // tmp: '<span class="tp-thumb-img-wrap">  <span class="tp-thumb-image"></span></span>',
-                            visibleAmount: 0,
-                            hide_onmobile: true,
-                            hide_under: 800,
-                            hide_onleave: false,
-                            direction: "horizontal",
-                            span: false,
-                            position: "inner",
-                            space: 0,
-                            h_align: "center",
-                            v_align: "bottom",
-                            h_offset: 0,
-                            v_offset: 20
-                        }
-                    },
-                    responsiveLevels: [1300, 1186, 977, 778, 480],
-                    gridwidth: [1400, 1186, 977, 778, 480],
-                    gridheight: [960, 868, 768, 960, 720],
-                    lazyType: "none",
-                    parallax: {
-                        type: "mouse",
-                        origo: "slidercenter",
-                        speed: 2000,
-                        levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
-                        disable_onmobile: "on"
-                    },
-                    shadow: 0,
-                    spinner: "off",
-                    stopLoop: "off",
-                    stopAfterLoops: 3,
-                    shuffle: "off",
-                    autoHeight: "off",
-                    fullScreenAlignForce: "off",
-                    fullScreenOffsetContainer: "",
-                    fullScreenOffset: "0px",
-                    disableProgressBar: "on",
-                    hideThumbsOnMobile: "off",
-                    hideSliderAtLimit: 0,
-                    hideCaptionAtLimit: 0,
-                    hideAllCaptionAtLilmit: 0,
-                    debugMode: false,
-                    fallbacks: {
-                        simplifyAll: "off",
-                        nextSlideOnWindowFocus: "off",
-                        disableFocusListener: false,
-                    }
-                });
-            }
-        }); /*ready*/
-
-        $(window).bind('resizeEnd', function() {
-            $(sliderId).revredraw();
-        });
-        $(window).on('resize', function() {
-            if (this.resizeTO) clearTimeout(this.resizeTO);
-            this.resizeTO = setTimeout(function() {
-                $(this).trigger('resizeEnd');
-            }, 500);
-        });
-
-    })(jQuery);
-    </script>
+    
 
     <!-- Cookie Banner -->
     <div class="nk-cookie-banner alert alert-warning text-center mb-0" role="alert">
