@@ -29,11 +29,10 @@
     <!-- <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/d5f65c4162a39.js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0"></script> -->
  
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R49G5Y633V"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    // RGPD: sem cookies até a pessoa aceitar no banner (closeCookies em zrq.js);
+    // RGPD: sem cookies até a pessoa aceitar no banner (cookie-banner.js);
     // quem já aceitou antes fica com o consentimento guardado no localStorage
     var cookiesAceites = false;
     try { cookiesAceites = localStorage.getItem('web_dev_isCookieAccepted') === 'yes'; } catch (e) {}
@@ -47,6 +46,18 @@
     gtag('js', new Date());
 
     gtag('config', 'G-R49G5Y633V');
+
+    // o gtag.js só é descarregado depois de aceitar os cookies: aqui, se já
+    // aceitou numa visita anterior, ou no "Aceitar" do banner (cookie-banner.js)
+    function carregarGA() {
+        if (window.gaCarregado) return;
+        window.gaCarregado = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-R49G5Y633V';
+        document.head.appendChild(s);
+    }
+    if (cookiesAceites) carregarGA();
     </script>
     
     <meta charset="utf-8" />

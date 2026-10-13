@@ -25,6 +25,10 @@ function hideCookieBanner(){
             analytics_storage: "granted",
         });
     }
+    // só agora descarrega o gtag.js (carregarGA está no <head> de cada página)
+    if (typeof carregarGA === "function") {
+        carregarGA();
+    }
 
     let cookieBanner = document.getElementsByClassName("nk-cookie-banner")[0];
     cookieBanner.style.display = "none";
