@@ -6,7 +6,7 @@
 (function (window, document) {
   'use strict';
 
-  var SHOP_YAML_URL = '../app/dados/artigos_loja.yaml';
+  var SHOP_YAML_URL = '/app/dados/artigos_loja.yaml';
   var grid = document.getElementById('zrq-shop-grid');
   if (!grid) { return; }
 

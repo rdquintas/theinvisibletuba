@@ -11,6 +11,8 @@ epk_link_pt: /docs/epk/TheInvisibleTuba_PT.pdf
 epk_link_en: /docs/epk/TheInvisibleTuba_EN.pdf
 concert:
   isEnabled: true
+# Loja: true mostra o carrinho e o link "Shop" no menu (shop.html funciona sempre)
+loja_ativa: false
 # Domínio do site (usado nos links de partilha / imagens og das páginas de evento)
 site_url: 'https://theinvisibletuba.com'
 # Imagens do hero das páginas de evento quando o concerto não define imagem_h / imagem_v

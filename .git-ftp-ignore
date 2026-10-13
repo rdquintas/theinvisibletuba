@@ -1,0 +1,14 @@
+# Ficheiros que o git-ftp NÃO envia para o servidor (só servem para desenvolvimento).
+# Atenção: app/dados/ tem de continuar a ser enviado (a loja lê os yaml no browser e no PHP).
+.git-ftp-ignore
+.gitignore
+.vscode/*
+CLAUDE.md
+README.md
+Gruntfile.js
+package.json
+package-lock.json
+api/config.example.php
+assets/scss/*
+landing/concert/_sources/*
+app/*.html

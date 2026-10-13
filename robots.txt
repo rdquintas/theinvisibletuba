@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /api/
+Disallow: /app/
+Disallow: /landing/concert/_sources/
+
+Sitemap: https://theinvisibletuba.com/sitemap.xml

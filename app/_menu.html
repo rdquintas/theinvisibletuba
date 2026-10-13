@@ -3,7 +3,9 @@
         - MENU -
     #################################
     -->
+    {% if loja_ativa or pagina_loja %}
     <link href="{{ root }}assets/css/zrq-cart.css?v={{ v('assets/css/zrq-cart.css') }}" rel="stylesheet" type="text/css" media="all" />
+    {% endif %}
     <header id="header" class="nav-shadow">
         <a id="sv__logo" href="{{ root }}index.html" class="zrq-header">
             <div class="sv__logo--img zrq-logo">
@@ -12,10 +14,12 @@
             </div>
         </a>
         <div class="zrq-header-actions">
-            <!-- <button type="button" id="zrqCartTrigger" class="zrq-cart-trigger" aria-label="Carrinho de compras">
+            {% if loja_ativa %}
+            <button type="button" id="zrqCartTrigger" class="zrq-cart-trigger" aria-label="Carrinho de compras">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span id="zrqCartCount" class="zrq-cart-count" hidden>0</span>
-            </button> -->
+            </button>
+            {% endif %}
             <div class="cd-dropdown-wrapper open-to-left">
                 <a href="#" class="cd-dropdown-trigger">Menu</a>
                 <nav class="cd-dropdown">
@@ -27,8 +31,8 @@
                         <li class="single-item"><a href="{{ root }}audio.html">Audio</a></li>
                         <li class="single-item"><a href="{{ root }}contact.html">Contactos</a></li>
                         <li class="single-item"><a href="{{ root }}mediakit.html">Media Kit</a></li>
-                        <!-- <li class="single-item"><a href="{{ root }}shop.html">Shop</a></li> -->
-                        <li class="single-item"><a href="{{ alt_lang_url or (root or "") + "index_en.html" }}"><img class="zrq-country-icon" src="/assets/img/icons/united-kingdom.avif"></img>English</a></li>
+                        {% if loja_ativa %}<li class="single-item"><a href="{{ root }}shop.html">Shop</a></li>{% endif %}
+                        <li class="single-item"><a href="{{ alt_lang_url or (root or "") + "index_en.html" }}"><img class="zrq-country-icon" src="/assets/img/icons/united-kingdom.avif" alt="" />English</a></li>
                     </ul>
                 </nav>
             </div>

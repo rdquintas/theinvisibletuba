@@ -8,9 +8,14 @@
   'use strict';
 
   var STORAGE_KEY = 'tib_shop_cart';
-  var SHOP_YAML_URL = '../app/dados/artigos_loja.yaml';
-  var VAT_RATE = 23 / 100;
-  var CTT_VALUE = 3.50; // fixed shipping cost for Portugal (CTT)
+  // caminhos absolutos: o carrinho também corre em /concerts/<id>/
+  var SHOP_YAML_URL = '/app/dados/artigos_loja.yaml';
+  var CHECKOUT_URL = '/api/create-checkout-session.php';
+  // IVA (%) e portes (EUR) vêm do artigos_loja.yaml (loja_iva / loja_portes),
+  // os mesmos valores que o api/create-checkout-session.php cobra no Stripe
+  var MAX_QTY = 99; // o mesmo limite do api/create-checkout-session.php
+  var vatRate = 0;
+  var shippingCost = 0;
 
   var lang = /_en\.html?$/i.test(window.location.pathname) ? 'en' : 'pt';
 
@@ -21,7 +26,7 @@
       clear: 'Limpar Carrinho',
       checkout: 'Finalizar Compra',
       checkoutBusy: 'A processar...',
-      vatTotal: 'IVA Total (23%)',
+      vatTotal: 'IVA Total',
       shipping: 'Portes de Envio*',
       shippingNote: '* Envios apenas para Portugal Continental e Ilhas.',
       total: 'Total Final',
@@ -37,7 +42,7 @@
       clear: 'Clear Cart',
       checkout: 'Checkout',
       checkoutBusy: 'Processing...',
-      vatTotal: 'VAT Total (23%)',
+      vatTotal: 'VAT Total',
       shipping: 'Shipping*',
       shippingNote: '* We only ship to mainland Portugal and the islands.',
       total: 'Final Total',
@@ -62,6 +67,8 @@
       .then(function (text) { return window.jsyaml.load(text); })
       .then(function (data) {
         products = {};
+        vatRate = (Number(data.loja_iva) || 0) / 100;
+        shippingCost = Number(data.loja_portes) || 0;
         (data.products || []).forEach(function (p) {
           products[p.id] = p;
         });
@@ -247,7 +254,7 @@
       var entry = cart.find(function (i) { return i.id === id; });
       if (!entry) { return; }
       if (action === 'inc') {
-        entry.qty += 1;
+        entry.qty = Math.min(MAX_QTY, entry.qty + 1);
       } else if (action === 'dec') {
         entry.qty -= 1;
         if (entry.qty <= 0) {
@@ -291,13 +298,16 @@
     }
 
     checkoutBtn.disabled = false;
-    var grandTotal = 0;
+    // contas em cêntimos, com o IVA arredondado por unidade como no Stripe
+    var netCents = 0;
+    var grossCents = 0;
 
     cart.forEach(function (item) {
       var product = products[item.id];
       if (!product) { return; }
       var lineTotal = product.price * item.qty;
-      grandTotal += lineTotal;
+      netCents += Math.round(product.price * 100) * item.qty;
+      grossCents += Math.round(product.price * 100 * (1 + vatRate)) * item.qty;
 
       var row = document.createElement('div');
       row.className = 'zrq-cart-item';
@@ -338,11 +348,10 @@
       itemsEl.appendChild(row);
     });
 
-    var vatAmount = grandTotal * VAT_RATE;
-    var shippingAmount = CTT_VALUE;
-    vatEl.textContent = formatPrice(vatAmount);
-    shippingEl.textContent = formatPrice(shippingAmount);
-    totalEl.textContent = formatPrice(grandTotal + vatAmount + shippingAmount);
+    var shippingCents = Math.round(shippingCost * 100);
+    vatEl.textContent = formatPrice((grossCents - netCents) / 100);
+    shippingEl.textContent = formatPrice(shippingCents / 100);
+    totalEl.textContent = formatPrice((grossCents + shippingCents) / 100);
   }
 
   function openDrawer() {
@@ -369,7 +378,7 @@
     var originalLabel = checkoutBtn.textContent;
     checkoutBtn.textContent = t.checkoutBusy;
 
-    fetch('api/create-checkout-session.php', {
+    fetch(CHECKOUT_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: cart, lang: lang })
@@ -397,7 +406,7 @@
     var cart = readCart();
     var entry = cart.find(function (i) { return i.id === id; });
     if (entry) {
-      entry.qty += qty;
+      entry.qty = Math.min(MAX_QTY, entry.qty + qty);
     } else {
       cart.push({ id: id, qty: qty });
     }
@@ -410,11 +419,12 @@
   }
 
   function init() {
+    // sem o botão do carrinho no menu (loja desativada) não há nada a fazer;
+    // os produtos só são descarregados quando se abre o carrinho
     var trigger = document.getElementById('zrqCartTrigger');
-    if (trigger) {
-      trigger.addEventListener('click', openDrawer);
-    }
-    loadProducts().then(updateBadge);
+    if (!trigger) { return; }
+    trigger.addEventListener('click', openDrawer);
+    updateBadge();
   }
 
   if (document.readyState === 'loading') {

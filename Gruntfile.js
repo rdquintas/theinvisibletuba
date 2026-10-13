@@ -12,6 +12,31 @@ const OG_H = 630;
 // Imagem og das restantes páginas (só a foto por defeito + logo, sem texto)
 const OG_DEFAULT = "default";
 
+// Página de erro "não encontrado" (o servidor tem de a usar: ErrorDocument 404 no .htaccess)
+const PAGE_404 = "404.html";
+
+// Redes sociais da banda (dados estruturados / JSON-LD, "sameAs")
+const SOCIAL_LINKS = [
+  "https://www.instagram.com/theinvisibletuba/",
+  "https://open.spotify.com/artist/2CqJyOnOEm6hm7QGs2llZ2",
+  "https://www.tiktok.com/@theinvisibletuba",
+  "https://www.youtube.com/@theinvisibletuba4630",
+  "https://www.facebook.com/theinvisibletuba/",
+];
+
+// Imagens novas (jpg, png, ...) postas nas pastas de imagens são convertidas para .avif no build;
+// o original passa para ORIGINAIS_DIR (no .gitignore, não vai para o servidor).
+// As og (geradas em jpg para as redes sociais) e o logo em png ficam como estão.
+const AVIF_SRC = [
+  "assets/img/**/*.{jpg,jpeg,png,gif,tif,tiff,JPG,JPEG,PNG,GIF,TIF,TIFF}",
+  "forms/assets/img/**/*.{jpg,jpeg,png,gif,tif,tiff,JPG,JPEG,PNG,GIF,TIF,TIFF}",
+  "!assets/img/og/**",
+  "!assets/img/logo_transp_v00.png",
+];
+const AVIF_QUALITY = 60;
+const AVIF_MAX = 2560; // lado maior, em px (as fotos maiores são reduzidas)
+const ORIGINAIS_DIR = "_originais";
+
 // Cópias .webp das imagens .avif, para browsers sem AVIF (ver assets/scripts/avif-fallback.js)
 const WEBP_SRC = ["assets/img/**/*.avif", "forms/assets/img/**/*.avif"];
 const WEBP_QUALITY = 80;
@@ -85,6 +110,7 @@ function eventContext(c, lang, data) {
   const intro = en ? `The Invisible Tuba live: ${when}` : `The Invisible Tuba ao vivo: ${when}`;
   const description = [intro + (where ? `, ${where}` : "") + ".", shortText(info, 180)].filter(Boolean).join(" ");
   const title = `${c.name} | The Invisible Tuba`;
+  const ogImage = `${site}/${OG_DIR}/${c.id}${en ? "-en" : ""}.jpg`;
   return {
     root: "/",
     lang: lang,
@@ -101,10 +127,85 @@ function eventContext(c, lang, data) {
       locale: en ? "en_GB" : "pt_PT",
       title: title,
       description: description,
-      image: `${site}/${OG_DIR}/${c.id}${en ? "-en" : ""}.jpg`,
+      image: ogImage,
       image_type: "image/jpeg",
     },
+    jsonld: eventJsonLd(c, lang, site, site + url, description, ogImage),
   };
+}
+
+// Converte um objeto em JSON para pôr num <script type="application/ld+json">
+// ("<" escapado para o texto nunca fechar a tag </script>)
+function jsonLd(obj) {
+  return JSON.stringify(obj, null, 2).replace(/</g, "\\u003c");
+}
+
+// Diferença horária de Lisboa nessa data, no formato "+01:00" (hora de verão) / "+00:00"
+function lisbonOffset(y, m, d) {
+  const name = new Intl.DateTimeFormat("en-US", { timeZone: "Europe/Lisbon", timeZoneName: "longOffset" })
+    .formatToParts(new Date(Date.UTC(y, m - 1, d, 12)))
+    .find((p) => p.type === "timeZoneName").value; // "GMT+01:00" ou "GMT"
+  return name === "GMT" ? "+00:00" : name.replace("GMT", "");
+}
+
+// Dados estruturados (schema.org MusicEvent) para o Google mostrar o concerto nos resultados.
+// Só para concertos com o dia definido (o Google exige a data de início).
+function eventJsonLd(c, lang, site, pageUrl, description, ogImage) {
+  const m = /^(\d{4})(\d{2})(\d{2})$/.exec(String(c.data || ""));
+  if (!m) return null;
+  let startDate = `${m[1]}-${m[2]}-${m[3]}`;
+  const t = /^(\d{1,2})[:h](\d{2})$/.exec(String(c.time || "").trim());
+  if (t) startDate += `T${t[1].padStart(2, "0")}:${t[2]}:00${lisbonOffset(+m[1], +m[2], +m[3])}`;
+  const hero = /^https?:\/\//.test(c.imagem_h) ? c.imagem_h : site + c.imagem_h;
+  const free = !c.ticketsLink || c.ticketsLink === "#";
+  return jsonLd({
+    "@context": "https://schema.org",
+    "@type": "MusicEvent",
+    name: c.name,
+    description: description,
+    url: pageUrl,
+    inLanguage: lang === "en" ? "en" : "pt",
+    image: [ogImage, hero],
+    startDate: startDate,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: {
+      "@type": "Place",
+      name: c.location || c.address || "",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: c.address || undefined,
+        addressLocality: c.location || undefined,
+        addressCountry: "PT",
+      },
+    },
+    performer: { "@type": "MusicGroup", name: "The Invisible Tuba", url: site + "/" },
+    isAccessibleForFree: free,
+    offers: {
+      "@type": "Offer",
+      url: free ? pageUrl : c.ticketsLink,
+      price: free ? 0 : undefined,
+      priceCurrency: free ? "EUR" : undefined,
+      availability: "https://schema.org/InStock",
+    },
+  });
+}
+
+// Dados estruturados da banda (schema.org MusicGroup), na página inicial
+function bandJsonLd(site, data, en) {
+  return jsonLd({
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    name: "The Invisible Tuba",
+    url: site + "/" + (en ? "index_en.html" : ""),
+    logo: `${site}/assets/img/logo_transp_v00.png`,
+    image: `${site}/${OG_DIR}/${OG_DEFAULT}.jpg`,
+    description: en ? "The most entertaining band from Lisbon." : "A banda mais divertida de Lisboa.",
+    genre: ["Swing", "Jazz", "New Orleans Jazz"],
+    foundingLocation: { "@type": "Place", name: "Lisboa, Portugal" },
+    email: data.email || undefined,
+    sameAs: SOCIAL_LINKS,
+  });
 }
 
 // --- imagem og: foto do hero + data / nome / local por cima ---
@@ -212,6 +313,8 @@ async function renderDefaultOg(sharp, image) {
 function pageContext(dest, data) {
   const site = String(data.site_url || "").replace(/\/+$/, "");
   const en = /_en\.html$/.test(dest);
+  // a página 404 é mostrada em qualquer endereço: sem canonical / og
+  if (dest === PAGE_404) return { page_description: "The Invisible Tuba" };
   const pageUrl = (f) => site + "/" + (f === "index.html" ? "" : f);
   const alt = en ? dest.replace(/_en\.html$/, ".html") : dest.replace(/\.html$/, "_en.html");
   const description = en ? "The most entertaining band from Lisbon." : "A banda mais divertida de Lisboa.";
@@ -228,7 +331,36 @@ function pageContext(dest, data) {
       image: `${site}/${OG_DIR}/${OG_DEFAULT}.jpg`,
       image_type: "image/jpeg",
     },
+    jsonld: /^index(_en)?\.html$/.test(dest) ? bandJsonLd(site, data, en) : null,
   };
+}
+
+// Escreve o sitemap.xml: todas as páginas (PT e EN, ligadas com hreflang) e os concertos ativos.
+// Fora: a 404 e a loja enquanto loja_ativa for false.
+function writeSitemap(grunt, data, pageFiles, events) {
+  const site = String(data.site_url || "").replace(/\/+$/, "");
+  const pageUrl = (f) => site + "/" + (f === "index.html" ? "" : f);
+  const pairs = [];
+  Object.keys(pageFiles)
+    .filter((f) => !/_en\.html$/.test(f) && f !== PAGE_404)
+    .filter((f) => data.loja_ativa || !/^shop/.test(f))
+    .forEach((f) => pairs.push([pageUrl(f), pageUrl(f.replace(/\.html$/, "_en.html"))]));
+  events.forEach((c) => pairs.push([`${site}/${CONCERTS_DIR}/${c.id}/`, `${site}/${CONCERTS_DIR}/${c.id}-en/`]));
+  const entry = (loc, pt, en) =>
+    `  <url>\n    <loc>${escapeXml(loc)}</loc>\n` +
+    `    <xhtml:link rel="alternate" hreflang="pt" href="${escapeXml(pt)}"/>\n` +
+    `    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(en)}"/>\n` +
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(pt)}"/>\n  </url>`;
+  const urls = [];
+  pairs.forEach(([pt, en]) => urls.push(entry(pt, pt, en), entry(en, pt, en)));
+  grunt.file.write(
+    "sitemap.xml",
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
+      `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
+      urls.join("\n") +
+      `\n</urlset>\n`
+  );
+  return urls.length;
 }
 
 module.exports = function (grunt) {
@@ -249,6 +381,25 @@ module.exports = function (grunt) {
     eventPages[`${CONCERTS_DIR}/${c.id}-en/index.html`] = { concert: c, lang: "en" };
   });
   Object.keys(eventPages).forEach((dest) => (eventFiles[dest] = "app/event.html"));
+
+  // Páginas normais (destino: origem)
+  const pageFiles = {
+    "index.html": "app/index.html",
+    "index_en.html": "app/index_en.html",
+    "pictures.html": "app/pictures.html",
+    "pictures_en.html": "app/pictures_en.html",
+    "audio.html": "app/audio.html",
+    "audio_en.html": "app/audio_en.html",
+    "contact.html": "app/contact.html",
+    "contact_en.html": "app/contact_en.html",
+    "mediakit.html": "app/mediakit.html",
+    "mediakit_en.html": "app/mediakit_en.html",
+    "shop.html": "app/shop.html",
+    "shop_en.html": "app/shop_en.html",
+    "privacy.html": "app/privacy.html",
+    "privacy_en.html": "app/privacy_en.html",
+    [PAGE_404]: "app/404.html",
+  };
 
   // Project configuration.
   grunt.initConfig({
@@ -304,25 +455,7 @@ module.exports = function (grunt) {
       },
       render: {
         // Mantém exatamente o mesmo mapa de destino: origem
-        files: Object.assign(
-          {
-            "index.html": "app/index.html",
-            "index_en.html": "app/index_en.html",
-            "pictures.html": "app/pictures.html",
-            "pictures_en.html": "app/pictures_en.html",
-            "audio.html": "app/audio.html",
-            "audio_en.html": "app/audio_en.html",
-            "contact.html": "app/contact.html",
-            "contact_en.html": "app/contact_en.html",
-            "mediakit.html": "app/mediakit.html",
-            "mediakit_en.html": "app/mediakit_en.html",
-            "shop.html": "app/shop.html",
-            "shop_en.html": "app/shop_en.html",
-            "privacy.html": "app/privacy.html",
-            "privacy_en.html": "app/privacy_en.html",
-          },
-          eventFiles
-        ),
+        files: Object.assign({}, pageFiles, eventFiles),
       },
     },
     watch: {
@@ -347,6 +480,49 @@ module.exports = function (grunt) {
     Promise.all(jobs)
       .then((files) => {
         grunt.log.ok(`${files.length} imagens og geradas em ${OG_DIR}`);
+        done();
+      })
+      .catch(done);
+  });
+
+  // Converte as imagens novas (AVIF_SRC) em <imagem>.avif e move o original para ORIGINAIS_DIR
+  // (se já existir um .avif com o mesmo nome é substituído). O .webp é feito a seguir pela tarefa webp.
+  grunt.registerTask("avif", "Converte as imagens novas (jpg, png, ...) para .avif", function () {
+    const done = this.async();
+    const fs = require("fs");
+    const path = require("path");
+    const sharp = require("sharp");
+    const seen = {};
+    const todo = grunt.file.expand(AVIF_SRC).filter((src) => {
+      const out = src.replace(/\.[^.\/]+$/, ".avif");
+      if (seen[out]) {
+        grunt.log.warn(`avif: ${src} ignorada (${seen[out]} também dá ${out})`);
+        return false;
+      }
+      seen[out] = src;
+      return true;
+    });
+    // uma de cada vez, como na tarefa webp
+    todo
+      .reduce(
+        (p, src) =>
+          p.then(() =>
+            sharp(src)
+              .rotate() // aplica a orientação EXIF das fotos do telemóvel
+              .resize({ width: AVIF_MAX, height: AVIF_MAX, fit: "inside", withoutEnlargement: true })
+              .avif({ quality: AVIF_QUALITY, effort: 4 })
+              .toFile(src.replace(/\.[^.\/]+$/, ".avif"))
+              .then(() => {
+                const dest = path.join(ORIGINAIS_DIR, src);
+                grunt.file.mkdir(path.dirname(dest));
+                fs.renameSync(src, dest);
+                grunt.log.writeln(`avif: ${src} (original em ${dest})`);
+              })
+          ),
+        Promise.resolve()
+      )
+      .then(() => {
+        grunt.log.ok(`${todo.length} imagens convertidas para .avif`);
         done();
       })
       .catch(done);
@@ -402,7 +578,11 @@ module.exports = function (grunt) {
     grunt.log.ok(`${removed} pastas de concertos desativados apagadas`);
   });
 
+  grunt.registerTask("sitemap", "Gera o sitemap.xml", function () {
+    grunt.log.ok(`sitemap.xml com ${writeSitemap(grunt, data, pageFiles, events)} endereços`);
+  });
+
   grunt.loadNpmTasks("grunt-nunjucks-2-html");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.registerTask("default", ["clean-concerts", "og", "webp", "nunjucks"]);
+  grunt.registerTask("default", ["clean-concerts", "avif", "og", "webp","nunjucks", "sitemap"]);
 };

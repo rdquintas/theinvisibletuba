@@ -105,3 +105,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Ficheiros do sistema (macOS / Windows)
+.DS_Store
+Thumbs.db
+
+# Originais das imagens convertidas para .avif pelo build (grunt avif)
+_originais/

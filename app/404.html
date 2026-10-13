@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt">
+
+{#
+    PÁGINA 404 — mostrada pelo servidor em qualquer endereço que não exista
+    (ErrorDocument 404 /404.html no .htaccess); por isso os links são todos absolutos (root = "/")
+#}
+{% set root = "/" %}
+{% set noindex = true %}
+{% set page_title = "Página não encontrada | The Invisible Tuba" %}
+{% include "_head.html" %}
+
+<body class="loading zrq-page-privacy">
+    {% include "_menu.html" %}
+    <main class="sv__main--content">
+        <div class="section container-fluid white-bg">
+            <div class="row">
+                <div class="col-xs-12 inner__header--sm">
+                    <h2>Página não encontrada</h2>
+                </div>
+            </div>
+            <div class="row sv__container--sm">
+                <div class="col-xs-12 zrq-privacy text-center">
+                    <p>Esta página não existe (ou já não existe). Mas a festa continua!</p>
+                    <p><a href="/index.html">Página inicial</a> · <a href="/index.html#agenda">Próximos concertos</a> · <a href="/contact.html">Contactos</a></p>
+                    <p lang="en"><em>Page not found. But the party goes on!</em><br>
+                    <a href="/index_en.html">Home</a> · <a href="/index_en.html#agenda">Upcoming concerts</a> · <a href="/contact_en.html">Contacts</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include "_footer.html" %}
+</body>
+</html>

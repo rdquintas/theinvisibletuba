@@ -42,6 +42,10 @@ if (!is_array($catalog)) {
     echo json_encode(['error' => 'Shop catalog could not be read.']);
     exit;
 }
+// IVA e portes: os mesmos valores que o carrinho mostra (zrq-cart.js)
+$ivaRate = isset($catalog['loja_iva']) ? ((float) $catalog['loja_iva']) / 100 : 0;
+$portesCents = isset($catalog['loja_portes']) ? (int) round(((float) $catalog['loja_portes']) * 100) : 0;
+
 $productsById = [];
 foreach (($catalog['products'] ?? []) as $product) {
     $productsById[$product['id']] = $product;
@@ -55,12 +59,21 @@ $fields = [
     'mode' => 'payment',
     'success_url' => $config['success_url'] . '?session_id={CHECKOUT_SESSION_ID}&lang=' . $lang,
     'cancel_url' => $config['cancel_url'] . '?lang=' . $lang,
+    // envios só para Portugal (continente e ilhas), como diz o carrinho
+    'shipping_address_collection[allowed_countries][0]' => 'PT',
+    'phone_number_collection[enabled]' => 'true',
 ];
+if ($portesCents > 0) {
+    $fields['shipping_options[0][shipping_rate_data][type]'] = 'fixed_amount';
+    $fields['shipping_options[0][shipping_rate_data][fixed_amount][amount]'] = $portesCents;
+    $fields['shipping_options[0][shipping_rate_data][fixed_amount][currency]'] = $config['currency'];
+    $fields['shipping_options[0][shipping_rate_data][display_name]'] = $lang === 'en' ? 'Shipping (CTT)' : 'Portes de envio (CTT)';
+}
 
 $lineIndex = 0;
 foreach ($body['items'] as $item) {
     $id = is_array($item) && isset($item['id']) ? (string) $item['id'] : null;
-    $qty = is_array($item) && isset($item['qty']) ? max(1, (int) $item['qty']) : 1;
+    $qty = is_array($item) && isset($item['qty']) ? min(99, max(1, (int) $item['qty'])) : 1;
 
     if ($id === null || !isset($productsById[$id])) {
         continue;
@@ -73,7 +86,8 @@ foreach ($body['items'] as $item) {
     $prefix = "line_items[$lineIndex]";
     $fields[$prefix . '[quantity]'] = $qty;
     $fields[$prefix . '[price_data][currency]'] = $config['currency'];
-    $fields[$prefix . '[price_data][unit_amount]'] = (int) round(((float) $product['price']) * 100);
+    // preço unitário com IVA, arredondado ao cêntimo (igual ao carrinho)
+    $fields[$prefix . '[price_data][unit_amount]'] = (int) round(((float) $product['price']) * 100 * (1 + $ivaRate));
     $fields[$prefix . '[price_data][product_data][name]'] = $title;
 
     if (!empty($product['images'][0])) {
