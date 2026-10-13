@@ -309,6 +309,8 @@ module.exports = function (grunt) {
             "mediakit_en.html": "app/mediakit_en.html",
             "shop.html": "app/shop.html",
             "shop_en.html": "app/shop_en.html",
+            "privacy.html": "app/privacy.html",
+            "privacy_en.html": "app/privacy_en.html",
           },
           eventFiles
         ),

@@ -250,7 +250,7 @@
       var officeDetails = '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">The Shave</h1>'+
+        '<h1 id="firstHeading" class="firstHeading">The Invisible Tuba</h1>'+
         '<div id="bodyContent">'+
         '<p>2355 Two Bits St.' +
         '<br>Grooming, CA 30003</p>'+

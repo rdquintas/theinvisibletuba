@@ -1525,3 +1525,16 @@ _footer.html
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+/*
+=================
+privacy.html
+=================
+*/
+.zrq-page-privacy .zrq-privacy {
+  text-align: left;
+  margin-bottom: 5rem;
+}
+
+.zrq-page-privacy .zrq-privacy h3 {
+  margin-top: 3rem;
+}

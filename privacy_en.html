@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+
+
+<!-- 
+   Hi, you're looking at a web page built with love by:
+   
+   Ricardo
+
+  /$$$$$$            /$$             /$$                        
+ /$$__  $$          |__/            | $$                        
+| $$  \ $$ /$$   /$$ /$$ /$$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$$
+| $$  | $$| $$  | $$| $$| $$__  $$|_  $$_/   |____  $$ /$$_____/
+| $$  | $$| $$  | $$| $$| $$  \ $$  | $$      /$$$$$$$|  $$$$$$ 
+| $$/$$ $$| $$  | $$| $$| $$  | $$  | $$ /$$ /$$__  $$ \____  $$
+|  $$$$$$/|  $$$$$$/| $$| $$  | $$  |  $$$$/|  $$$$$$$ /$$$$$$$/
+ \____ $$$ \______/ |__/|__/  |__/   \___/   \_______/|_______/ 
+      \__/                                                                      
+   http://www.ricardoquintas.com
+   
+   June/2023
+-->
+
+<head>  
+    <!-- <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/d5f65c4162a39.js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0"></script> -->
+ 
+    <!-- Google tag (gtag.js) -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // RGPD: sem cookies até a pessoa aceitar no banner (cookie-banner.js);
+    // quem já aceitou antes fica com o consentimento guardado no localStorage
+    var cookiesAceites = false;
+    try { cookiesAceites = localStorage.getItem('web_dev_isCookieAccepted') === 'yes'; } catch (e) {}
+    var consentimento = cookiesAceites ? 'granted' : 'denied';
+    gtag('consent', 'default', {
+        ad_storage: consentimento,
+        ad_user_data: consentimento,
+        ad_personalization: consentimento,
+        analytics_storage: consentimento
+    });
+    gtag('js', new Date());
+
+    gtag('config', 'G-R49G5Y633V');
+
+    // o gtag.js só é descarregado depois de aceitar os cookies: aqui, se já
+    // aceitou numa visita anterior, ou no "Aceitar" do banner (cookie-banner.js)
+    function carregarGA() {
+        if (window.gaCarregado) return;
+        window.gaCarregado = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-R49G5Y633V';
+        document.head.appendChild(s);
+    }
+    if (cookiesAceites) carregarGA();
+    </script>
+    
+    <meta charset="utf-8" />
+    <title>Privacy Policy | The Invisible Tuba</title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.png" />
+    <meta name="description" content="The most entertaining band from Lisbon."  />
+    
+    <!-- Partilha (WhatsApp, Facebook, X...) -->
+    <link rel="canonical" href="https://theinvisibletuba.com/privacy_en.html" />
+    
+    <!-- versões por língua: a própria página, a outra língua e a por defeito (PT) -->
+    <link rel="alternate" hreflang="en" href="https://theinvisibletuba.com/privacy_en.html" />
+    <link rel="alternate" hreflang="pt" href="https://theinvisibletuba.com/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://theinvisibletuba.com/privacy.html" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Invisible Tuba" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://theinvisibletuba.com/privacy_en.html" />
+    <meta property="og:title" content="The Invisible Tuba" />
+    <meta property="og:description" content="The most entertaining band from Lisbon." />
+    <meta property="og:image" content="https://theinvisibletuba.com/assets/img/og/default.jpg" />
+    
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    
+    <meta property="og:image:alt" content="The Invisible Tuba" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Invisible Tuba" />
+    <meta name="twitter:description" content="The most entertaining band from Lisbon." />
+    <meta name="twitter:image" content="https://theinvisibletuba.com/assets/img/og/default.jpg" />
+    
+    <meta name="author" content="Ricardo Quintas" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" /> 
+    <link href="assets/css/revolution5.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/grt-youtube-popup.css">
+    <link href="assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/cookie-banner.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="assets/css/zrq.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/jquery.themepunch.tools.min.js"></script> 
+    <script src="assets/scripts/jquery.themepunch.revolution.min.js"></script> 
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/extensions/revolution.extension.video.min.js"></script>
+    <script src="https://kit.fontawesome.com/0c3372b073.js" crossorigin="anonymous"></script>   
+        
+</head>
+
+<body class="loading zrq-page-privacy">
+        <!--
+    #################################
+        - MENU -
+    #################################
+    -->
+    <link href="assets/css/zrq-cart.css" rel="stylesheet" type="text/css" media="all" />
+    <header id="header" class="nav-shadow">
+        <a id="sv__logo" href="index_en.html" class="zrq-header">
+            <div class="sv__logo--img zrq-logo">
+                <img class="img-responsive logo-white" src="/assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
+                <img class="img-responsive logo-black" src="/assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
+            </div>
+        </a>
+        <div class="zrq-header-actions">
+            <!-- <button type="button" id="zrqCartTrigger" class="zrq-cart-trigger" aria-label="Shopping cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="zrqCartCount" class="zrq-cart-count" hidden>0</span>
+            </button> -->
+            <div class="cd-dropdown-wrapper open-to-left">
+                <a href="#" class="cd-dropdown-trigger">Menu</a>
+                <nav class="cd-dropdown">
+                    <h2>Menu</h2>
+                    <a href="#0" class="cd-close">Close</a>
+                    <ul class="cd-dropdown-content">
+                        <li class="single-item"><a href="index_en.html">Home</a></li>
+                        <li class="single-item"><a href="pictures_en.html">Photos/Videos</a></li>
+                        <li class="single-item"><a href="audio_en.html">Audio</a></li>
+                        <li class="single-item"><a href="contact_en.html">Contacts</a></li>
+                        <li class="single-item"><a href="mediakit_en.html">Media Kit</a></li>
+                        <!-- <li class="single-item"><a href="shop_en.html">Shop</a></li> -->
+                        <li class="single-item"><a href="privacy.html"><img class="zrq-country-icon" src="/assets/img/icons/portugal.avif">Português</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="sv__main--content">
+        <div class="section container-fluid white-bg">
+            <div class="row">
+                <div class="col-xs-12 inner__header--sm">
+                    <h2>Privacy Policy</h2>
+                </div>
+            </div>
+            <div class="row sv__container--sm">
+                <div class="col-xs-12 zrq-privacy">
+                    <p><em>Last updated: October 2026</em></p>
+
+                    <p>This website (theinvisibletuba.com) belongs to the band The Invisible Tuba. This page explains which personal data we collect, what for, and who we share it with. For any question about your data, write to <a href="mailto:info@theinvisibletuba.com">info@theinvisibletuba.com</a>.</p>
+
+                    <h3>Cookies and Google Analytics</h3>
+                    <p>We use Google Analytics 4 (Google Ireland Limited) to find out how many people visit the site and which pages they view. Google Analytics is only loaded if you click "Accept" on the cookie notice; if you reject, no analytics cookies are set. Google Analytics collects data such as the pages visited, device and browser type, approximate location and an anonymous identifier stored in cookies (<code>_ga</code>, <code>_ga_*</code>). This data may be processed by Google outside the European Union. More information: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</p>
+                    <p>Your choice (accept or reject) is stored in your browser's local storage. To change your mind, clear this site's data in your browser and the notice will appear again.</p>
+
+                    <h3>Shop and payments (Stripe)</h3>
+                    <p>Shop payments are made on Stripe Checkout (Stripe Payments Europe, Ltd.). Payment details (card, name, email, billing address) are entered directly on Stripe and never go through our servers. We only receive from Stripe what is needed to process the order. Stripe may use its own cookies for fraud prevention. More information: <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's privacy policy</a>.</p>
+                    <p>Your shopping cart is stored in your browser's local storage, not on our server.</p>
+
+                    <h3>Quote requests</h3>
+                    <p>When you fill in the quote request form we receive the details you enter (name, email, event date and location, comments, etc.) by email. We use them only to answer your request and prepare the quote, and we send you a copy by email.</p>
+
+                    <h3>Newsletter (Brevo)</h3>
+                    <p>The newsletter subscription is managed by Brevo (Sendinblue SAS, France). We keep your email only to send you news about concerts and promotions. You can unsubscribe at any time using the link at the bottom of every email.</p>
+
+                    <h3>Third-party content</h3>
+                    <p>Some pages include YouTube videos (in privacy-enhanced mode, youtube-nocookie.com) and Spotify players. When you play that content, YouTube or Spotify may collect data under their own policies. The site's fonts are loaded from Google Fonts.</p>
+
+                    <h3>Your rights</h3>
+                    <p>Under the GDPR you can ask to access, correct or delete your data, or object to its processing, by writing to <a href="mailto:info@theinvisibletuba.com">info@theinvisibletuba.com</a>. You can also lodge a complaint with the Portuguese data protection authority, CNPD (<a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>).</p>
+                </div>
+            </div>
+        </div>
+    </main>
+      <!--
+    #################################
+        - Footer -
+    #################################
+    -->
+    <div id="zrq-footer"></div>
+    <footer class="loading zrq-footer">
+        <div class="sv__container--md">
+            <div class="footer__wrapper">
+                <div class="row footer__row">
+                    <div class="footer__logo no-padding">
+                        <div class="logo__container">
+                            <a href="index_en.html" target="_blank">
+                                <div class="footer__logo--img zrq-logo">
+                                    <img class="img-responsive logo-white" src="/assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
+                                </div>
+                                <p class="white zrq-text-size">A band that makes you <span class="zrq-normal-text">#HappyRightNow</span></p>
+                            </a>                                
+                        </div>
+                    </div>
+                    <div class="footer__desc">                
+                        <div class="row footer__contact">
+                            <h2 class="">Contacts</h2>
+                            <div class="col-xs-12 col-sm-12 footer__address no-padding">
+                                <p>EMAIL</p>
+                                <a class="email" href="mailto:info@theinvisibletuba.com">info@theinvisibletuba.com</a>
+                                <br><br>
+                                <p>PHONE</p>
+                                <a class="phone" href="tel:(+351)967 285 043">(+351)967 285 043 | Ricardo</a>
+                                
+                                <br><br>
+                                                                
+                                <p>WHATSAPP</p>
+                                <a aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/351967285043"> 
+                                    <img class="zrq-zapezape" alt="Chat on WhatsApp" src="/assets/img/icons/WhatsAppButtonGreenLarge.avif" />
+                                </a>
+                                
+                            </div>                     
+                        </div>
+                        <div class="row social-footer zrq-top-margin">
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <!-- <p class="text-center">Social Media</p> -->
+                                <ul class="text-center">
+                                    <li><a target="_blank" href="https://www.instagram.com/theinvisibletuba/"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/instagram.avif"/></a></li>
+                                    <li><a target="_blank" href="https://open.spotify.com/artist/2CqJyOnOEm6hm7QGs2llZ2?si=qKnEiOglRLGIvY5vBNmFNg/"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/spotify.avif"/></a></li>
+                                    <li><a target="_blank" href="https://www.tiktok.com/@theinvisibletuba"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/tiktok.avif"/></a></li>
+                                    <li><a target="_blank" href="https://www.youtube.com/@theinvisibletuba4630"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/youtube.avif"/></a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/theinvisibletuba/"><img class="zrq-socialmedia-icon" alt="" src="/assets/img/icons/facebook.avif"/></a></li>                                    
+                                </ul>
+                            </div>                       
+                        </div>                                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="zrq-cookies">
+            <p><a class="book__nav" href="privacy_en.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+  
+    <script src="assets/scripts/jquery.menu-aim.js"></script>
+    <script src="assets/scripts/modernizr.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <script src="assets/scripts/skrollr.min.js"></script>
+    <script src="assets/scripts/imagesloaded.min.js"></script>
+    <script src="assets/scripts/jquery-placeholder.min.js"></script>
+    <script src="assets/scripts/jquery.prefetch.min.js"></script>
+    <script src="assets/scripts/ScrollMagic.min.js"></script>
+    <script src="assets/scripts/debug.addIndicators.min.js"></script>
+    <script src="assets/scripts/window-settings.min.js"></script>
+    <script src="assets/scripts/nav-settings.min.js"></script>
+    <script src="assets/scripts/main-settings.min.js"></script>
+    <script src="assets/scripts/grt-youtube-popup.js"></script>
+    <script src="assets/scripts/zrq.js"></script>
+    <script src="assets/scripts/js-yaml.min.js"></script>
+    <script src="assets/scripts/zrq-cart.js"></script>
+    <script>
+    (function($) {
+    'use strict';
+        // Revolution Slider Settings
+        // ==========================================================================
+        var tpj = jQuery;
+        var sliderId = "#rev_slider_46_1";
+  
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            sliderId = "#rev_slider_46_1_mobile";
+        } 
+        
+        var revapi46;
+        tpj(document).ready(function() {
+            if (tpj(sliderId).revolution == undefined) {
+                revslider_showDoubleJqueryError(sliderId);
+            } else {
+                revapi46 = tpj(sliderId).show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "assets/scripts/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 4500,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop:"false",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "erinyen",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_under: 600,
+                            hide_onleave: false,
+                            hide_delay: 200,
+                            hide_delay_mobile: 1200,
+                            // tmp: '<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div>    <div class="tp-arr-img-over">   </div><span class="tp-arr-titleholder"></span>     </div>',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 30,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 30,
+                                v_offset: 0
+                            }
+                        },
+                        thumbnails: {
+                            style: "gyges",
+                            enable: true,
+                            width: 100,
+                            height: 60,
+                            min_width: 60,
+                            wrapper_padding: 0,
+                            wrapper_color: "transparent",
+                            wrapper_opacity: "1",
+                            // tmp: '<span class="tp-thumb-img-wrap">  <span class="tp-thumb-image"></span></span>',
+                            visibleAmount: 0,
+                            hide_onmobile: true,
+                            hide_under: 800,
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            span: false,
+                            position: "inner",
+                            space: 0,
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 20
+                        }
+                    },
+                    responsiveLevels: [1300, 1186, 977, 778, 480],
+                    gridwidth: [1400, 1186, 977, 778, 480],
+                    gridheight: [960, 868, 768, 960, 720],
+                    lazyType: "none",
+                    parallax: {
+                        type: "mouse",
+                        origo: "slidercenter",
+                        speed: 2000,
+                        levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
+                        disable_onmobile: "on"
+                    },
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "off",
+                    stopAfterLoops: 3,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "0px",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*ready*/
+
+        $(window).bind('resizeEnd', function() {
+            $(sliderId).revredraw();
+        });
+        $(window).on('resize', function() {
+            if (this.resizeTO) clearTimeout(this.resizeTO);
+            this.resizeTO = setTimeout(function() {
+                $(this).trigger('resizeEnd');
+            }, 500);
+        });
+
+    })(jQuery);
+    </script>
+
+    <!-- Cookie Banner -->
+    <div class="nk-cookie-banner alert alert-warning text-center mb-0" role="alert">
+        &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
+        <a href="privacy_en.html" class="alert-link">Learn more</a>
+        <button type="button" class="btn btn-primary btn-sm ml-3" onclick="closeCookies()">
+        Accept
+        </button>
+        <button type="button" class="btn btn-primary btn-sm ml-3" onclick="window.nk_rejectCookieBanner()">
+        Reject
+        </button>
+    </div>
+    <script type="text/javascript" src="assets/scripts/cookie-banner.js"></script>
+    <!-- End of Cookie Banner -->
+
+     <!--
+    #################################
+        - MODAL -
+    #################################
+    -->
+    <div class="modal fade zrq-modal-newsletter"  id="warningModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form id="zrqForm" action="https://theinvisibletuba.com/forms/newsletter" method="post">
+                  <h4>Write your email</h4>
+                  <div class="form-group">
+                    <input class="form-control " type="email" id="EMAIL" name="EMAIL" autocomplete="off"
+                                        placeholder="EMAIL" data-required="true" required />
+
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-success">SEND</button>          
+                  <button type="button" class="zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Cancel</button>      
+                </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- OBRIGADO Modal -->
+      <div class="modal fade zrq-modal-newsletter"  id="obrigadoModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                 <div class="modal-body">
+                      <h2>Than you 😁</h2>
+                      <p>Subscription Confirmed</p>
+                      <button type="button" class="btn-primary zrq-btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                 </div>
+            </div>
+          </div>
+      </div>
+  
+      <!-- SPINNER Modal -->
+      <div class="modal fade" id="spinnerModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+              <div class="text-center">
+                  <div class="spinner-border m-5" role="status">
+                  <span class="visually-hidden">Sending...</span>
+                  </div>
+                  <div>
+                      <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+                      <h3 data-i18n="form.spinner">Please wait</h3>
+                  </div>                
+              </div>
+              </div>
+          </div>
+      </div>
+</body>
+</html>
