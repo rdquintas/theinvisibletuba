@@ -92,6 +92,7 @@ function eventContext(c, lang, data) {
     og: {
       url: site + url,
       alt_url: site + (en ? urlPt : urlEn),
+      lang: en ? "en" : "pt",
       alt_lang: en ? "pt" : "en",
       locale: en ? "en_GB" : "pt_PT",
       title: title,
@@ -215,6 +216,7 @@ function pageContext(dest, data) {
     og: {
       url: pageUrl(dest),
       alt_url: pageUrl(alt),
+      lang: en ? "en" : "pt",
       alt_lang: en ? "pt" : "en",
       locale: en ? "en_GB" : "pt_PT",
       title: "The Invisible Tuba",

@@ -16,6 +16,27 @@ function showCookieBanner(){
 function hideCookieBanner(){
     localStorage.setItem("web_dev_isCookieAccepted", "yes");
 
+    // Aceitar: dá o consentimento ao Google Analytics (por defeito está "denied")
+    if (typeof gtag === "function") {
+        gtag("consent", "update", {
+            ad_user_data: "granted",
+            ad_personalization: "granted",
+            ad_storage: "granted",
+            analytics_storage: "granted",
+        });
+    }
+
+    let cookieBanner = document.getElementsByClassName("nk-cookie-banner")[0];
+    cookieBanner.style.display = "none";
+}
+
+/**
+ * Recusar: esconde o banner e guarda "rejected" (o consentimento do Google
+ * Analytics fica "denied", como está por defeito no _head.html)
+ */
+function rejectCookieBanner(){
+    localStorage.setItem("web_dev_isCookieAccepted", "rejected");
+
     let cookieBanner = document.getElementsByClassName("nk-cookie-banner")[0];
     cookieBanner.style.display = "none";
 }
@@ -39,3 +60,4 @@ function initializeCookieBanner(){
 // Assigning values to window object
 window.onload = initializeCookieBanner();
 window.nk_hideCookieBanner = hideCookieBanner;
+window.nk_rejectCookieBanner = rejectCookieBanner;

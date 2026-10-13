@@ -28,6 +28,17 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // RGPD: sem cookies até a pessoa aceitar no banner (cookie-banner.js);
+    // quem já aceitou antes fica com o consentimento guardado no localStorage
+    var cookiesAceites = false;
+    try { cookiesAceites = localStorage.getItem('web_dev_isCookieAccepted') === 'yes'; } catch (e) {}
+    var consentimento = cookiesAceites ? 'granted' : 'denied';
+    gtag('consent', 'default', {
+        ad_storage: consentimento,
+        ad_user_data: consentimento,
+        ad_personalization: consentimento,
+        analytics_storage: consentimento
+    });
     gtag('js', new Date());
 
     gtag('config', 'G-R49G5Y633V');
@@ -774,11 +785,14 @@
 
     <!-- Cookie Banner -->
     <div class="nk-cookie-banner alert alert-warning text-center mb-0" role="alert">
-    &#x1F36A; This website uses cookies to ensure you get the best experience on our website.
-    <a href="https://www.cookiesandyou.com/" target="blank" class="alert-link">Learn more</a>
-    <button type="button" class="btn btn-primary btn-sm ml-3" onclick="window.nk_hideCookieBanner()">
-    I Got It
-    </button>
+        &#x1F36A; Este site utiliza cookies de forma a garantir uma melhor experiência de navegação.
+        <a href="https://www.cookiesandyou.com/" target="blank" class="alert-link">Saber mais</a>
+        <button type="button" class="btn btn-primary btn-sm ml-3" onclick="window.nk_hideCookieBanner()">
+        Aceitar
+        </button>
+        <button type="button" class="btn btn-primary btn-sm ml-3" onclick="window.nk_rejectCookieBanner()">
+        Recusar
+        </button>
     </div>
     <script type="text/javascript" src="../../assets/scripts/cookie-banner.js"></script>
     <!-- End of Cookie Banner -->  

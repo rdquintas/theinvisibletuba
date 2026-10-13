@@ -13,6 +13,9 @@ $(document).ready(function () {
 
   $("#zrqForm")[0].reset();
 
+  // anti-spam: hora a que a página abriu (o send.php recusa envios sem isto ou demasiado rápidos)
+  $("#check").val(Date.now());
+
   if (tagFromURL) {
     $("#tag").val(tagFromURL);
   } else {

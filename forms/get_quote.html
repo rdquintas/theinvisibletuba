@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <!-- 
    Hi, you're looking at a web page built with love by:
    
@@ -79,6 +79,12 @@
 
       <!-- TAG -->
       <input type="hidden" name="tag" id="tag" value="" />
+
+      <!-- ANTI-SPAM: "website" fica escondido (só os bots o preenchem); "check" é preenchido pelo zrq.js -->
+      <input type="hidden" name="check" id="check" value="" />
+      <div style="position:absolute;left:-10000px;" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </div>
 
       <!-- SET THE DEFAULT LANGUAGE -->
       <input type="hidden" name="language" id="lang" value="PT" />

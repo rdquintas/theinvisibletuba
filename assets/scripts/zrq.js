@@ -11,14 +11,9 @@ document.addEventListener(
   true,
 );
 
+// aceitar cookies (o consentimento do Google Analytics é dado no cookie-banner.js)
 function closeCookies() {
   window.nk_hideCookieBanner();
-  gtag("consent", "update", {
-    ad_user_data: "granted",
-    ad_personalization: "granted",
-    ad_storage: "granted",
-    analytics_storage: "granted",
-  });
 }
 
 $(document).ready(function () {
