@@ -34,7 +34,7 @@ Cada concerto com `isEnabled: true` gera `concerts/<id>/index.html` (PT) e `conc
 
 ### Loja (Stripe)
 - `assets/scripts/shop.js` e `zrq-cart.js` carregam `app/dados/artigos_loja.yaml` em runtime no browser (com `js-yaml`) — por isso `app/dados/` tem de estar publicado no servidor.
-- `api/create-checkout-session.php` cria a sessão Stripe Checkout com preços validados do lado do servidor; atenção que lê `shop.json` na raiz, que não existe no repositório (a fonte usada no browser é o YAML).
+- `api/create-checkout-session.php` cria a sessão Stripe Checkout com preços validados do lado do servidor, lidos do mesmo `app/dados/artigos_loja.yaml` (via `api/yaml.php`, que usa a extensão `yaml` do PHP se existir, senão um leitor simples incluído).
 - `api/config.php` (segredos Stripe) está no `.gitignore`; o modelo é `api/config.example.php`.
 
 ### Outras pastas

@@ -3,7 +3,7 @@
  * Creates a Stripe Checkout Session for the current cart and returns
  * its URL so the browser can redirect the shopper to Stripe's hosted
  * payment page. Prices are always looked up server-side from
- * shop.json — the client only sends product ids + quantities — so a
+ * app/dados/artigos_loja.yaml — the client only sends product ids + quantities — so a
  * tampered request can never buy something below its real price.
  */
 
@@ -34,8 +34,14 @@ if (!is_array($body) || empty($body['items']) || !is_array($body['items'])) {
 
 $lang = (isset($body['lang']) && $body['lang'] === 'en') ? 'en' : 'pt';
 
-$catalogFile = __DIR__ . '/../shop.json';
-$catalog = json_decode(file_get_contents($catalogFile), true);
+// o mesmo catálogo que a loja usa no browser
+require_once __DIR__ . '/yaml.php';
+$catalog = ler_yaml(__DIR__ . '/../app/dados/artigos_loja.yaml');
+if (!is_array($catalog)) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Shop catalog could not be read.']);
+    exit;
+}
 $productsById = [];
 foreach (($catalog['products'] ?? []) as $product) {
     $productsById[$product['id']] = $product;
