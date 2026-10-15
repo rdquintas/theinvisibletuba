@@ -44,7 +44,7 @@ concerts:
     info_en: "Something is happening in organizations that has never happened before: for the first time, four generations of professionals are working side by side. Each brings its own worldview, way of working, communicating, and leading. And it is in this intersection of experiences, ambitions, and perspectives that the future of companies is at stake.\nThis year's edition of the Women's Leadership Grand Conference invites you to explore this key topic: leadership across generations. Throughout a day of inspiration, knowledge, and sharing, we will bring together women who are taking their first steps in leadership, rising managers, CEOs, board members, and leaders who have left their mark on the business world. Different stories, unique paths, and a shared conviction: leadership is built every day, regardless of age.\nJoin us on October 14th and 15th!"
     imagem_h: ''
     imagem_v: ''
-    isEnabled: true
+    isEnabled: false
   - id: no-campo-pequeno
     data: '20261024'
     name: Ao vivo no Sagres Campo Pequeno
