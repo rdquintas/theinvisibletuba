@@ -5,8 +5,8 @@ const MONTHS_EN = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"
 // Pasta onde ficam as páginas dos concertos: concerts/<id>/ e concerts/<id>-en/
 const CONCERTS_DIR = "concerts";
 
-// Imagens de partilha (og), sempre em jpg e sem logo nem texto: <id>.jpg por evento (cópia da imagem_v)
-// e default.jpg para as restantes páginas (cópia da default_imagem_v do config.yaml)
+// Imagens de partilha (og), sempre em jpg e sem logo nem texto: <id>.jpg por evento (cópia da imagem_v_1440x1800)
+// e default.jpg para as restantes páginas (cópia da default_imagem_v_1440x1800 do config.yaml)
 const OG_DIR = "assets/img/og";
 // tamanho máximo das cópias jpg (as maiores são reduzidas, para a partilha ser leve)
 const OG_MAX_W = 1080;
@@ -95,7 +95,7 @@ function prepareConcerts(data, config, grunt) {
       // '??' só conta como passado quando o mês inteiro já passou
       isPast: d.replace("??", "99") < today,
       imagem_h: avifPath(imagePath(c.imagem_h) || imagePath(config.default_imagem_h)),
-      imagem_v: avifPath(imagePath(c.imagem_v) || imagePath(config.default_imagem_v)),
+      imagem_v_1440x1800: avifPath(imagePath(c.imagem_v_1440x1800) || imagePath(config.default_imagem_v_1440x1800)),
     });
   });
   // '??' fica depois de qualquer dia do mesmo mês ('?' > '9' em ASCII)
@@ -131,7 +131,7 @@ function avifSize(file) {
   return { width: b.readUInt32BE(i + 8), height: b.readUInt32BE(i + 12) };
 }
 
-// Imagem de partilha de um evento: assets/img/og/<id>.jpg, cópia da imagem_v em jpg
+// Imagem de partilha de um evento: assets/img/og/<id>.jpg, cópia da imagem_v_1440x1800 em jpg
 // (sem texto nem logo), gerada pela tarefa og. As redes sociais não mostram .avif.
 function ogEventImage(c, site, grunt) {
   const file = `${OG_DIR}/${c.id}.jpg`;
@@ -154,12 +154,14 @@ function eventContext(c, lang, data, grunt) {
   const intro = en ? `The Invisible Tuba live: ${when}` : `The Invisible Tuba ao vivo: ${when}`;
   const description = [intro + (where ? `, ${where}` : "") + ".", shortText(info, 180)].filter(Boolean).join(" ");
   const title = `${c.name} | The Invisible Tuba`;
-  // descrição da partilha: "24 OUT 22:00" e o nome do evento por baixo
-  const shareDescription = [(c.day === "??" ? month : `${c.day} ${month}`) + (c.time ? ` ${c.time}` : ""), c.name].join("\n");
+  // descrição da partilha: "24 OUT 22:00", o nome do evento por baixo e os primeiros 200 caracteres do info + "..."
+  const infoText = String(info || "").replace(/\s+/g, " ").trim();
+  const shareInfo = infoText.length > 200 ? infoText.slice(0, 200).trimEnd() + "..." : infoText;
+  const shareDescription = [(c.day === "??" ? month : `${c.day} ${month}`) + (c.time ? ` ${c.time}` : ""), c.name, shareInfo].filter(Boolean).join("\n");
   const img = ogEventImage(c, site, grunt);
   const ogImage = img.url;
-  // proporção da imagem_v ("900 / 1600"): no telemóvel o hero ocupa a largura toda com essa proporção
-  const heroV = avifSize(c.imagem_v.replace(/^\/+/, ""));
+  // proporção da imagem_v_1440x1800 ("900 / 1600"): no telemóvel o hero ocupa a largura toda com essa proporção
+  const heroV = avifSize(c.imagem_v_1440x1800.replace(/^\/+/, ""));
   return {
     root: "/",
     lang: lang,
@@ -264,10 +266,10 @@ function escapeXml(s) {
   return String(s).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[ch]);
 }
 
-// imagem og de um evento: a imagem_v convertida para jpg, sem mais nada
+// imagem og de um evento: a imagem_v_1440x1800 convertida para jpg, sem mais nada
 // (imagens externas (http) não são descarregadas: usa a imagem vertical por defeito)
 async function renderEventOg(sharp, grunt, c, fallbackImage) {
-  let src = (/^https?:\/\//.test(c.imagem_v) ? fallbackImage : c.imagem_v).replace(/^\/+/, "");
+  let src = (/^https?:\/\//.test(c.imagem_v_1440x1800) ? fallbackImage : c.imagem_v_1440x1800).replace(/^\/+/, "");
   if (!grunt.file.exists(src)) {
     grunt.log.warn(`og: imagem "${src}" do evento "${c.id}" não existe, a usar a imagem por defeito`);
     src = fallbackImage.replace(/^\/+/, "");
@@ -275,7 +277,7 @@ async function renderEventOg(sharp, grunt, c, fallbackImage) {
   return renderOgJpg(sharp, src, `${OG_DIR}/${c.id}.jpg`);
 }
 
-// imagem og das páginas que não são eventos: a default_imagem_v convertida para jpg, sem mais nada
+// imagem og das páginas que não são eventos: a default_imagem_v_1440x1800 convertida para jpg, sem mais nada
 function renderDefaultOg(sharp, image) {
   return renderOgJpg(sharp, image.replace(/^\/+/, ""), `${OG_DIR}/${OG_DEFAULT}.jpg`);
 }
@@ -352,7 +354,7 @@ module.exports = function (grunt) {
   const concertosYaml = grunt.file.readYAML("app/dados/concertos.yaml");
   // Fotos dos concertos tal como estão no yaml (sem "/" inicial; só as locais), para as tarefas avif e webp
   const concertImages = (concertosYaml.concerts || [])
-    .reduce((list, c) => list.concat(c.imagem_h, c.imagem_v), [config.default_imagem_h, config.default_imagem_v])
+    .reduce((list, c) => list.concat(c.imagem_h, c.imagem_v_1440x1800), [config.default_imagem_h, config.default_imagem_v_1440x1800])
     .map((p) => imagePath(p).replace(/^\/+/, ""))
     .filter((p, i, list) => p && !/^https?:\/\//.test(p) && list.indexOf(p) === i);
   const data = Object.assign(
@@ -459,13 +461,13 @@ module.exports = function (grunt) {
     },
   });
 
-  // Gera assets/img/og/<id>.jpg (cópia da imagem_v de cada evento) e default.jpg (cópia da default_imagem_v)
+  // Gera assets/img/og/<id>.jpg (cópia da imagem_v_1440x1800 de cada evento) e default.jpg (cópia da default_imagem_v_1440x1800)
   grunt.registerTask("og", "Gera as imagens de partilha (og) em jpg", function () {
     const done = this.async();
     const sharp = require("sharp");
     grunt.file.mkdir(OG_DIR);
     // as imagens por defeito também podem estar no config.yaml como .jpg / .png: usa o .avif
-    const defaultV = avifPath(imagePath(config.default_imagem_v));
+    const defaultV = avifPath(imagePath(config.default_imagem_v_1440x1800));
     const jobs = events.map((c) => renderEventOg(sharp, grunt, c, defaultV));
     jobs.push(renderDefaultOg(sharp, defaultV));
     Promise.all(jobs)

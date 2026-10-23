@@ -6,14 +6,15 @@
 # id: único, só letras minúsculas, números e '-'.
 #   Atenção: mudar o id muda o link de um evento que já foi partilhado.
 # imagem_h: hero em desktop (horizontal, ex: '/assets/img/2560_1440_v05.avif')
-# imagem_v: hero em telemóvel (vertical, ex: '/assets/img/1170_2532_v00.avif')
-#   Vazias = imagens por defeito (default_imagem_h / default_imagem_v em config.yaml).
+# imagem_v_1440x1800: hero em telemóvel (vertical, ex: '/assets/img/1170_2532_v00.avif')
+#   Vazias = imagens por defeito (default_imagem_h / default_imagem_v_1440x1800 em config.yaml).
 #   Podem ser .jpg, .png, .webp, .gif, .tif ou .avif: no build (npx grunt) cria-se o .avif e o .webp
 #   com o mesmo nome (o original passa para _originais/) e a página usa sempre o .avif.
 #   Pode ficar o nome original no yaml (ex: 'cerveja_v.png').
-# A imagem de partilha (og) é assets/img/og/<id>.jpg: cópia em jpg da imagem_v (sem texto nem logo),
+# A imagem de partilha (og) é assets/img/og/<id>.jpg: cópia em jpg da imagem_v_1440x1800 (sem texto nem logo),
 #   gerada quando se corre o grunt.
-#   A descrição da partilha é a data e hora + o nome (ex: "24 OUT 22:00" / "Ao vivo no Sagres Campo Pequeno").
+#   A descrição da partilha é a data e hora + o nome + os primeiros 200 caracteres do info (info_en em EN) e "..."
+#   (ex: "24 OUT 22:00" / "Ao vivo no Sagres Campo Pequeno" / "O Pai Natal sabe...").
 # ticketsLink: preenchido = botão "Comprar Bilhetes" / "Buy Tickets" com link.
 #   Vazio ('') = botão não clicável "Entrada Gratuita" / "Free Entrance".
 concerts:
@@ -31,7 +32,7 @@ concerts:
     info: 'O Entrelinhas é único. Com uma decoração cheia de personalidade e um ambiente acolhedor, é o local perfeito para desfrutar de música ao vivo de alta qualidade enquanto saboreia deliciosos cocktails e petiscos.'
     info_en: 'Entrelinhas is unique. With a decor full of personality and a welcoming atmosphere, it''s the perfect place to enjoy high-quality live music while savoring delicious cocktails and snacks.'
     imagem_h: ''
-    imagem_v: ''
+    imagem_v_1440x1800: ''
     isEnabled: false
   - id: conferencia-feminina
     data: '20261015'
@@ -47,7 +48,7 @@ concerts:
     info: 'Há algo que nunca aconteceu antes nas organizações: pela primeira vez, convivem quatro gerações de profissionais. Cada uma traz uma visão do mundo, uma forma de trabalhar, de comunicar e de liderar. E é neste encontro de experiências, ambições e perspetivas que se joga o futuro das empresas. A edição deste ano da Grande Conferência de Liderança Feminina convida-a a explorar este tema incontornável: a liderança através das gerações. Ao longo de um dia de inspiração, conhecimento e partilha, reuniremos mulheres que estão a dar os primeiros passos na liderança, gestoras em ascensão, CEOs, administradoras e líderes que marcaram o mundo empresarial. Histórias diferentes, percursos únicos e uma convicção comum: a liderança constrói-se todos os dias, independentemente da idade. Junte-se a nós nos dias 14 e 15 de outubro!'
     info_en: "Something is happening in organizations that has never happened before: for the first time, four generations of professionals are working side by side. Each brings its own worldview, way of working, communicating, and leading. And it is in this intersection of experiences, ambitions, and perspectives that the future of companies is at stake.\nThis year's edition of the Women's Leadership Grand Conference invites you to explore this key topic: leadership across generations. Throughout a day of inspiration, knowledge, and sharing, we will bring together women who are taking their first steps in leadership, rising managers, CEOs, board members, and leaders who have left their mark on the business world. Different stories, unique paths, and a shared conviction: leadership is built every day, regardless of age.\nJoin us on October 14th and 15th!"
     imagem_h: ''
-    imagem_v: ''
+    imagem_v_1440x1800: ''
     isEnabled: false
   - id: no-campo-pequeno
     data: '20261024'
@@ -63,7 +64,7 @@ concerts:
     info: 'A CERVEJA EM FESTA NO SAGRES CAMPO PEQUENO. O evento A Cerveja em Lisboa está de volta ao Sagres Campo Pequeno, entre os dias 23 e 25 de Outubro de 2026. Com uma animação pensada para levar qualquer um ao brinde, os “tchins tchins” das canecas e a música das bandas ao vivo vão animar os apreciadores de cerveja, numa festa de elogio à bebida mais popular do mundo, à alegria e à amizade!'
     info_en: 'BEER CELEBRATION AT SAGRES CAMPO PEQUENO. The ''A Cerveja em Lisboa'' event returns to Sagres Campo Pequeno from October 23 to 25, 2026. With entertainment designed to inspire a toast, the clinking of mugs and live bands will delight beer lovers at a celebration honoring the world''s most popular drink, as well as joy and friendship!'
     imagem_h: '/assets/img/concertos/cerveja_h.avif'
-    imagem_v: '/assets/img/concertos/cerveja2_v.png'
+    imagem_v_1440x1800: '/assets/img/concertos/cerveja2_v.png'
     isEnabled: true
   - id: tokyo-natal
     data: '20261211'
@@ -91,7 +92,7 @@ concerts:
       👉 @simo_carugati (banjo)
       👉 @marianyanchyk (violin)      
     imagem_h: '/assets/img/concertos/tokyo_natal_h.avif'
-    imagem_v: '/assets/img/concertos/tokyo_natal_v.avif'
+    imagem_v_1440x1800: '/assets/img/concertos/tokyo_natal_v.avif'
     isEnabled: false
   - id: titanic-sur-mer
     data: '20260707'
@@ -107,7 +108,7 @@ concerts:
     info: ''
     info_en: ''
     imagem_h: ''
-    imagem_v: ''
+    imagem_v_1440x1800: ''
     isEnabled: false
   - id: swingsmile-dance
     data: '20260417'
@@ -123,7 +124,7 @@ concerts:
     info: 'Vem dançar ao som dos The Invisible Tuba! Se a tuba é invisível… o talento definitivamente não é! No dia 17 de abril, vamos encher o fantástico espaço dos Combatentes com boa música, muita energia e uma pista pronta para dançar. Se ainda não danças, aproveita a aula aberta de Lindy Hop dada pela Swing n'' Smile e descobre como é fácil começar. Depois, fica para o concerto e deixa-te levar pelo ritmo!  E se o que procuras é simplesmente boa música em Lisboa, também és mais do que bem-vindo. Vem passar uma noite diferente connosco! Programa 19h00 Abertura de Portas e DJ ''Até Terça''- 20h00 Aula aberta de Lindy Hop - 21h00-23h00 Concerto com The Invisible Tuba- 23h00-00h00 DJ ''Até Terça'''
     info_en: 'Come dance to the sounds of The Invisible Tuba! If the tuba is invisible… talent definitely isn''t! On April 17th, we''ll fill the fantastic Combatentes venue with great music, lots of energy, and a dance floor ready to go. If you don''t dance yet, take advantage of the open Lindy Hop class given by Swing n'' Smile and discover how easy it is to start. Then, stay for the concert and let yourself be carried away by the rhythm! And if what you''re looking for is simply good music in Lisbon, you''re more than welcome too. Come spend a different kind of night with us!'
     imagem_h: ''
-    imagem_v: ''
+    imagem_v_1440x1800: ''
     isEnabled: false
   - id: restaurante-margem
     data: '202610??'
@@ -139,5 +140,5 @@ concerts:
     info: 'Vamos estar a tocar na esplanada deste maravilhoso restaurante, com uma vista incrível sobre o rio Tejo e a Torre de Belém. Um local perfeito para desfrutar de boa música, boa comida e boa companhia.'
     info_en: 'We will be playing on the terrace of this wonderful restaurant, with an incredible view of the Tagus River and Belém Tower. A perfect place to enjoy great music, delicious food, and great company.'
     imagem_h: ''
-    imagem_v: ''
+    imagem_v_1440x1800: ''
     isEnabled: false

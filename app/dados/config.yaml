@@ -15,8 +15,8 @@ concert:
 loja_ativa: false
 # Domínio do site (usado nos links de partilha / imagens og das páginas de evento)
 site_url: 'https://theinvisibletuba.com'
-# Imagens do hero das páginas de evento quando o concerto não define imagem_h / imagem_v.
-# A default_imagem_v é também a imagem de partilha (og) das páginas que não são concertos.
+# Imagens do hero das páginas de evento quando o concerto não define imagem_h / imagem_v_1440x1800.
+# A default_imagem_v_1440x1800 é também a imagem de partilha (og) das páginas que não são concertos.
 # Podem ser .jpg, .png, .webp, .gif, .tif ou .avif, como as fotos dos concertos (o build cria o .avif e o .webp)
 default_imagem_h: '/assets/img/concertos/default_h.png'
-default_imagem_v: '/assets/img/concertos/default_v.png'
+default_imagem_v_1440x1800: '/assets/img/concertos/default_v.png'
