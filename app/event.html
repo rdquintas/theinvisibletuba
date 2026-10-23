@@ -17,9 +17,9 @@
 
     <main class="sv__main--content">
         <article class="container-fluid white-bg no-padding hero">
-            <div class="section container-fluid no-padding hero-container hero-static">
+            <div class="section container-fluid no-padding hero-container hero-static{% if hero_v_ratio %} zrq-hero-ratio{% endif %}">
                 <!-- hero: imagem_h em desktop, imagem_v em telemóvel (media query no zrq.css) -->
-                <div class="hero-background zrq-event-hero" style="--hero-h: url('{{ event.imagem_h }}'); --hero-v: url('{{ event.imagem_v }}');"></div>
+                <div class="hero-background zrq-event-hero" style="--hero-h: url('{{ event.imagem_h }}'); --hero-v: url('{{ event.imagem_v }}');{% if hero_v_ratio %} --hero-v-ratio: {{ hero_v_ratio }};{% endif %}"></div>
             </div>
             <div class="container-fluid">
                 <div class="angle-top" style="border-right-color: #fff;"></div>

@@ -607,7 +607,8 @@ event.html (página de cada concerto: dominio/<slug>)
 */
 
 /* hero: imagem horizontal em desktop (inteira, sem cortes, com a mesma imagem
-   desfocada a preencher as laterais), vertical em telemóvel */
+   desfocada a preencher as laterais); em telemóvel a vertical a ocupar a largura toda,
+   com a altura da proporção da imagem (--hero-v-ratio, calculada no build) */
 .zrq-page-event .zrq-event-hero {
   opacity: 1;
 }
@@ -647,8 +648,18 @@ event.html (página de cada concerto: dominio/<slug>)
     background-size: cover;
   }
 
+  /* sem proporção conhecida (ex: imagem externa) fica com altura fixa */
   .zrq-page-event .hero-static {
     height: 85vh;
+  }
+
+  .zrq-page-event .hero-static.zrq-hero-ratio {
+    height: auto;
+  }
+
+  .zrq-page-event .zrq-hero-ratio .zrq-event-hero {
+    aspect-ratio: var(--hero-v-ratio);
+    min-height: 0;
   }
 }
 

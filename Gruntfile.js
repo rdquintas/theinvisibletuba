@@ -123,6 +123,16 @@ function jpgSize(file) {
   return null;
 }
 
+// Largura / altura de um .avif, lidas da caixa "ispe" do ficheiro (null se não der)
+function avifSize(file) {
+  const fs = require("fs");
+  if (!/\.avif$/i.test(file) || !fs.existsSync(file)) return null;
+  const b = fs.readFileSync(file);
+  const i = b.indexOf("ispe");
+  if (i < 0 || i + 16 > b.length) return null;
+  return { width: b.readUInt32BE(i + 8), height: b.readUInt32BE(i + 12) };
+}
+
 // Imagem de partilha de um evento: assets/img/og/<id>.jpg, cópia da imagem_v em jpg
 // (sem texto nem logo), gerada pela tarefa og. As redes sociais não mostram .avif.
 function ogEventImage(c, site, grunt) {
@@ -150,10 +160,13 @@ function eventContext(c, lang, data, grunt) {
   const shareDescription = [(c.day === "??" ? month : `${c.day} ${month}`) + (c.time ? ` ${c.time}` : ""), c.name].join("\n");
   const img = ogEventImage(c, site, grunt);
   const ogImage = img.url;
+  // proporção da imagem_v ("900 / 1600"): no telemóvel o hero ocupa a largura toda com essa proporção
+  const heroV = avifSize(c.imagem_v.replace(/^\/+/, ""));
   return {
     root: "/",
     lang: lang,
     event: c,
+    hero_v_ratio: heroV ? `${heroV.width} / ${heroV.height}` : null,
     page_title: title,
     page_description: description,
     alt_lang_url: en ? urlPt : urlEn,
