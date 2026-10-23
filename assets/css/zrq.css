@@ -666,6 +666,18 @@ event.html (página de cada concerto: dominio/<slug>)
   .zrq-page-event .angle-top {
     display: none;
   }
+
+  /* logo dentro do header branco (60px de altura), sem ficar por cima da imagem */
+  .zrq-page-event .zrq-header .zrq-logo,
+  .zrq-page-event .zrq-header .zrq-logo img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .zrq-page-event .zrq-header .zrq-logo {
+    top: 0;
+    margin: 5px 10px !important;
+  }
 }
 
 .zrq-event {
