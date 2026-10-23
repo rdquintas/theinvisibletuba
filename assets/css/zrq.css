@@ -661,6 +661,11 @@ event.html (página de cada concerto: dominio/<slug>)
     aspect-ratio: var(--hero-v-ratio);
     min-height: 0;
   }
+
+  /* sem o canto oblíquo branco por cima do fundo da imagem */
+  .zrq-page-event .angle-top {
+    display: none;
+  }
 }
 
 .zrq-event {
