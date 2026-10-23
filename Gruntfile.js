@@ -5,10 +5,13 @@ const MONTHS_EN = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"
 // Pasta onde ficam as páginas dos concertos: concerts/<id>/ e concerts/<id>-en/
 const CONCERTS_DIR = "concerts";
 
-// Imagem de partilha (og) gerada para cada evento
+// Imagens de partilha (og), sempre em jpg: <id>.jpg por evento (cópia da imagem_v) e default.jpg
 const OG_DIR = "assets/img/og";
 const OG_W = 1200;
 const OG_H = 630;
+// tamanho máximo da cópia jpg da imagem_v (as maiores são reduzidas, para a partilha ser leve)
+const OG_EVENT_MAX_W = 1080;
+const OG_EVENT_MAX_H = 1920;
 // Imagem og das restantes páginas (só a foto por defeito + logo, sem texto)
 const OG_DEFAULT = "default";
 
@@ -54,6 +57,13 @@ function imagePath(p) {
   return "/" + p.replace(/^\/+/, "");
 }
 
+// Fotos dos concertos: no yaml podem ser .jpg, .png, .webp, ... mas a página usa sempre o .avif
+// com o mesmo nome (criado no build pela tarefa avif, o .webp pela tarefa webp)
+const CONCERT_IMG_EXT = /\.(jpe?g|png|gif|tiff?|webp)$/i;
+function avifPath(p) {
+  return /^https?:\/\//.test(p) ? p : p.replace(CONCERT_IMG_EXT, ".avif");
+}
+
 // corta um texto para a descrição de partilha, sem partir palavras
 function shortText(text, max) {
   text = String(text || "").replace(/\s+/g, " ").trim();
@@ -86,8 +96,8 @@ function prepareConcerts(data, config, grunt) {
       month_en: MONTHS_EN[+m[2] - 1],
       // '??' só conta como passado quando o mês inteiro já passou
       isPast: d.replace("??", "99") < today,
-      imagem_h: imagePath(c.imagem_h) || imagePath(config.evento_imagem_h),
-      imagem_v: imagePath(c.imagem_v) || imagePath(config.evento_imagem_v),
+      imagem_h: avifPath(imagePath(c.imagem_h) || imagePath(config.evento_imagem_h)),
+      imagem_v: avifPath(imagePath(c.imagem_v) || imagePath(config.evento_imagem_v)),
     });
   });
   // '??' fica depois de qualquer dia do mesmo mês ('?' > '9' em ASCII)
@@ -96,8 +106,34 @@ function prepareConcerts(data, config, grunt) {
   return data;
 }
 
+// Largura / altura de um .jpg, lidas do marcador SOF do ficheiro (null se não der)
+function jpgSize(file) {
+  const fs = require("fs");
+  if (!fs.existsSync(file)) return null;
+  const b = fs.readFileSync(file);
+  let i = 2;
+  while (i + 9 < b.length && b[i] === 0xff) {
+    const marker = b[i + 1];
+    // SOF0..SOF15, exceto DHT (c4), JPG (c8) e DAC (cc)
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+      return { width: b.readUInt16BE(i + 7), height: b.readUInt16BE(i + 5) };
+    }
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  return null;
+}
+
+// Imagem de partilha de um evento: assets/img/og/<id>.jpg, cópia da imagem_v em jpg
+// (sem texto nem logo), gerada pela tarefa og. As redes sociais não mostram .avif.
+function ogEventImage(c, site, grunt) {
+  const file = `${OG_DIR}/${c.id}.jpg`;
+  const size = jpgSize(file);
+  if (!size) grunt.log.warn(`og: "${file}" do evento "${c.id}" não existe (corre "npx grunt og")`);
+  return Object.assign({ url: `${site}/${file}`, type: "image/jpeg" }, size);
+}
+
 // Dados extra de uma página de evento (app/event.html), por língua
-function eventContext(c, lang, data) {
+function eventContext(c, lang, data, grunt) {
   const en = lang === "en";
   const site = String(data.site_url || "").replace(/\/+$/, "");
   const urlPt = `/${CONCERTS_DIR}/${c.id}/`;
@@ -110,7 +146,10 @@ function eventContext(c, lang, data) {
   const intro = en ? `The Invisible Tuba live: ${when}` : `The Invisible Tuba ao vivo: ${when}`;
   const description = [intro + (where ? `, ${where}` : "") + ".", shortText(info, 180)].filter(Boolean).join(" ");
   const title = `${c.name} | The Invisible Tuba`;
-  const ogImage = `${site}/${OG_DIR}/${c.id}${en ? "-en" : ""}.jpg`;
+  // descrição da partilha: "24 OUT 22:00" e o nome do evento por baixo
+  const shareDescription = [(c.day === "??" ? month : `${c.day} ${month}`) + (c.time ? ` ${c.time}` : ""), c.name].join("\n");
+  const img = ogEventImage(c, site, grunt);
+  const ogImage = img.url;
   return {
     root: "/",
     lang: lang,
@@ -126,9 +165,11 @@ function eventContext(c, lang, data) {
       alt_lang: en ? "pt" : "en",
       locale: en ? "en_GB" : "pt_PT",
       title: title,
-      description: description,
+      description: shareDescription,
       image: ogImage,
-      image_type: "image/jpeg",
+      image_type: img.type,
+      image_width: img.width,
+      image_height: img.height,
     },
     jsonld: eventJsonLd(c, lang, site, site + url, description, ogImage),
   };
@@ -208,90 +249,22 @@ function bandJsonLd(site, data, en) {
   });
 }
 
-// --- imagem og: foto do hero + data / nome / local por cima ---
-
 function escapeXml(s) {
   return String(s).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[ch]);
 }
 
-// parte o nome em linhas de até maxChars (no máximo maxLines; o resto leva "…")
-function wrapText(text, maxChars, maxLines) {
-  const lines = [];
-  let line = "";
-  String(text).split(/\s+/).forEach((word) => {
-    if (line && (line + " " + word).length > maxChars) {
-      lines.push(line);
-      line = word;
-    } else {
-      line = line ? line + " " + word : word;
-    }
-  });
-  if (line) lines.push(line);
-  if (lines.length > maxLines) {
-    lines.length = maxLines;
-    lines[maxLines - 1] = lines[maxLines - 1].replace(/\s*\S*$/, "") + "…";
-  }
-  return lines;
-}
-
-function ogSvg(c, lang) {
-  const en = lang === "en";
-  const month = en ? c.month_en : c.month;
-  const date = c.day === "??" ? month : `${c.day} ${month}`;
-  const long = String(c.name).length > 40;
-  const size = long ? 50 : 64;
-  const lineH = Math.round(size * 1.1);
-  const lines = wrapText(c.name, long ? 32 : 24, 3);
-  const font = "Lato, 'Segoe UI', Arial, sans-serif";
-
-  // de baixo para cima: local, nome, data
-  let y = OG_H - 60;
-  const parts = [];
-  if (c.location) {
-    parts.push(`<text x="60" y="${y}" font-size="32" fill="#dddddd">${escapeXml(c.location)}</text>`);
-    y -= 56;
-  }
-  lines
-    .slice()
-    .reverse()
-    .forEach((l) => {
-      parts.push(`<text x="60" y="${y}" font-size="${size}" font-weight="700" fill="#ffffff">${escapeXml(l)}</text>`);
-      y -= lineH;
-    });
-  y -= 6;
-  parts.push(
-    `<text x="60" y="${y}" font-size="44" font-weight="900" fill="#d4af37">${escapeXml(date)}` +
-      (c.time ? `<tspan fill="#ffffff" font-weight="400" dx="18">${escapeXml(c.time)}</tspan>` : "") +
-      `</text>`
-  );
-  parts.push(`<rect x="60" y="${y + 18}" width="80" height="4" fill="#d4af37"/>`);
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}">
-  <defs>
-    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0.35">
-      <stop offset="0" stop-color="#000" stop-opacity="0.88"/>
-      <stop offset="0.55" stop-color="#000" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0.1"/>
-    </linearGradient>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#fade)"/>
-  <g font-family="${font}">${parts.join("\n")}</g>
-</svg>`;
-}
-
-async function renderOg(sharp, grunt, c, lang, fallbackImage) {
-  // imagens externas (http) não são descarregadas: usa a imagem por defeito
-  let src = /^https?:\/\//.test(c.imagem_h) ? fallbackImage : c.imagem_h;
-  src = src.replace(/^\/+/, "");
+// imagem og de um evento: a imagem_v convertida para jpg, sem mais nada
+// (imagens externas (http) não são descarregadas: usa a imagem vertical por defeito)
+async function renderEventOg(sharp, grunt, c, fallbackImage) {
+  let src = (/^https?:\/\//.test(c.imagem_v) ? fallbackImage : c.imagem_v).replace(/^\/+/, "");
   if (!grunt.file.exists(src)) {
     grunt.log.warn(`og: imagem "${src}" do evento "${c.id}" não existe, a usar a imagem por defeito`);
     src = fallbackImage.replace(/^\/+/, "");
   }
-  const logo = await sharp("assets/img/logo_transp_v00.png").resize({ height: 150 }).toBuffer();
-  const out = `${OG_DIR}/${c.id}${lang === "en" ? "-en" : ""}.jpg`;
+  const out = `${OG_DIR}/${c.id}.jpg`;
   await sharp(src)
-    .resize(OG_W, OG_H, { fit: "cover" })
-    .composite([{ input: Buffer.from(ogSvg(c, lang)) }, { input: logo, top: 30, left: 45 }])
+    .resize({ width: OG_EVENT_MAX_W, height: OG_EVENT_MAX_H, fit: "inside", withoutEnlargement: true })
+    .flatten({ background: "#000000" }) // jpg não tem transparência
     .jpeg({ quality: 82, mozjpeg: true })
     .toFile(out);
   return out;
@@ -330,6 +303,8 @@ function pageContext(dest, data) {
       description: description,
       image: `${site}/${OG_DIR}/${OG_DEFAULT}.jpg`,
       image_type: "image/jpeg",
+      image_width: OG_W,
+      image_height: OG_H,
     },
     jsonld: /^index(_en)?\.html$/.test(dest) ? bandJsonLd(site, data, en) : null,
   };
@@ -365,10 +340,16 @@ function writeSitemap(grunt, data, pageFiles, events) {
 
 module.exports = function (grunt) {
   const config = grunt.file.readYAML("app/dados/config.yaml");
+  const concertosYaml = grunt.file.readYAML("app/dados/concertos.yaml");
+  // Fotos dos concertos tal como estão no yaml (sem "/" inicial; só as locais), para as tarefas avif e webp
+  const concertImages = (concertosYaml.concerts || [])
+    .reduce((list, c) => list.concat(c.imagem_h, c.imagem_v), [config.evento_imagem_h, config.evento_imagem_v])
+    .map((p) => imagePath(p).replace(/^\/+/, ""))
+    .filter((p, i, list) => p && !/^https?:\/\//.test(p) && list.indexOf(p) === i);
   const data = Object.assign(
     {},
     config,
-    prepareConcerts(grunt.file.readYAML("app/dados/concertos.yaml"), config, grunt),
+    prepareConcerts(concertosYaml, config, grunt),
     grunt.file.readYAML("app/dados/artigos_loja.yaml")
   );
 
@@ -410,7 +391,7 @@ module.exports = function (grunt) {
         // Nas páginas de evento junta os dados desse evento (this = ficheiro a gerar)
         preprocessData: function (d) {
           const page = eventPages[this.dest];
-          return Object.assign(d, page ? eventContext(page.concert, page.lang, d) : pageContext(this.dest, d));
+          return Object.assign(d, page ? eventContext(page.concert, page.lang, d, grunt) : pageContext(this.dest, d));
         },
         // Aponta para a pasta onde estão os ficheiros HTML e os parciais
         paths: ["app"],
@@ -469,13 +450,12 @@ module.exports = function (grunt) {
     },
   });
 
-  // Gera assets/img/og/<id>.jpg e <id>-en.jpg para a partilha dos eventos
-  grunt.registerTask("og", "Gera as imagens de partilha (og) dos eventos", function () {
+  // Gera assets/img/og/<id>.jpg (cópia da imagem_v de cada evento) e default.jpg (páginas normais)
+  grunt.registerTask("og", "Gera as imagens de partilha (og) em jpg", function () {
     const done = this.async();
     const sharp = require("sharp");
     grunt.file.mkdir(OG_DIR);
-    const jobs = [];
-    events.forEach((c) => ["pt", "en"].forEach((lang) => jobs.push(renderOg(sharp, grunt, c, lang, config.evento_imagem_h))));
+    const jobs = events.map((c) => renderEventOg(sharp, grunt, c, config.evento_imagem_v));
     jobs.push(renderDefaultOg(sharp, config.evento_imagem_h));
     Promise.all(jobs)
       .then((files) => {
@@ -485,7 +465,8 @@ module.exports = function (grunt) {
       .catch(done);
   });
 
-  // Converte as imagens novas (AVIF_SRC) em <imagem>.avif e move o original para ORIGINAIS_DIR
+  // Converte as imagens novas (AVIF_SRC e as fotos dos concertos em jpg, png, webp, ... estejam onde estiverem)
+  // em <imagem>.avif e move o original para ORIGINAIS_DIR
   // (se já existir um .avif com o mesmo nome é substituído). O .webp é feito a seguir pela tarefa webp.
   grunt.registerTask("avif", "Converte as imagens novas (jpg, png, ...) para .avif", function () {
     const done = this.async();
@@ -493,7 +474,14 @@ module.exports = function (grunt) {
     const path = require("path");
     const sharp = require("sharp");
     const seen = {};
-    const todo = grunt.file.expand(AVIF_SRC).filter((src) => {
+    const concertSrc = concertImages.filter((p) => {
+      if (!CONCERT_IMG_EXT.test(p)) return false;
+      if (grunt.file.exists(p)) return true;
+      if (!grunt.file.exists(avifPath(p))) grunt.log.warn(`avif: a foto "${p}" de concertos.yaml não existe`);
+      return false;
+    });
+    const todo = grunt.file.expand(AVIF_SRC).concat(concertSrc).filter((src) => {
+      if (seen[src.replace(/\.[^.\/]+$/, ".avif")] === src) return false; // já está na lista
       const out = src.replace(/\.[^.\/]+$/, ".avif");
       if (seen[out]) {
         grunt.log.warn(`avif: ${src} ignorada (${seen[out]} também dá ${out})`);
@@ -528,12 +516,17 @@ module.exports = function (grunt) {
       .catch(done);
   });
 
-  // Gera <imagem>.webp ao lado de cada <imagem>.avif (só as novas ou alteradas desde a última vez)
+  // Gera <imagem>.webp ao lado de cada <imagem>.avif (só as novas ou alteradas desde a última vez),
+  // incluindo as fotos dos concertos que estejam fora de WEBP_SRC
   grunt.registerTask("webp", "Gera cópias .webp das imagens .avif", function () {
     const done = this.async();
     const fs = require("fs");
     const sharp = require("sharp");
-    const todo = grunt.file.expand(WEBP_SRC).filter((src) => {
+    const all = grunt.file.expand(WEBP_SRC);
+    concertImages.map(avifPath).forEach((p) => {
+      if (/\.avif$/i.test(p) && grunt.file.exists(p) && all.indexOf(p) < 0) all.push(p);
+    });
+    const todo = all.filter((src) => {
       const out = src.replace(/.avif$/i, ".webp");
       return !fs.existsSync(out) || fs.statSync(out).mtimeMs < fs.statSync(src).mtimeMs;
     });
@@ -550,16 +543,16 @@ module.exports = function (grunt) {
         Promise.resolve()
       )
       .then(() => {
-        grunt.log.ok(`${todo.length} imagens .webp geradas (${grunt.file.expand(WEBP_SRC).length - todo.length} já estavam em dia)`);
+        grunt.log.ok(`${todo.length} imagens .webp geradas (${all.length - todo.length} já estavam em dia)`);
         done();
       })
       .catch(done);
   });
 
-  // Apaga as pastas de concerts/ (e as imagens og) dos concertos que já não estão ativos
+  // Apaga as pastas de concerts/ dos concertos que já não estão ativos (e as imagens og que não sejam a default)
   // (isEnabled: false, removidos do yaml ou com o id mudado)
   grunt.registerTask("clean-concerts", "Apaga as páginas dos concertos desativados", function () {
-    const keep = { [OG_DEFAULT]: true };
+    const keep = {};
     events.forEach((c) => {
       keep[c.id] = true;
       keep[`${c.id}-en`] = true;
@@ -573,7 +566,8 @@ module.exports = function (grunt) {
       removed++;
     });
     grunt.file.expand(`${OG_DIR}/*.jpg`).forEach((file) => {
-      if (!keep[file.split("/").pop().replace(/\.jpg$/, "")]) grunt.file.delete(file);
+      const name = file.split("/").pop().replace(/\.jpg$/, "");
+      if (name !== OG_DEFAULT && !events.some((c) => c.id === name)) grunt.file.delete(file);
     });
     grunt.log.ok(`${removed} pastas de concertos desativados apagadas`);
   });

@@ -8,8 +8,12 @@
 # imagem_h: hero em desktop (horizontal, ex: '/assets/img/2560_1440_v05.avif')
 # imagem_v: hero em telemóvel (vertical, ex: '/assets/img/1170_2532_v00.avif')
 #   Vazias = imagens por defeito (evento_imagem_h / evento_imagem_v em config.yaml).
-# A imagem de partilha (og, 1200x630 jpg) é gerada automaticamente a partir da imagem_h
-# em assets/img/og/ quando se corre o grunt.
+#   Podem ser .jpg, .png, .webp, .gif, .tif ou .avif: no build (npx grunt) cria-se o .avif e o .webp
+#   com o mesmo nome (o original passa para _originais/) e a página usa sempre o .avif.
+#   Pode ficar o nome original no yaml (ex: 'cerveja_v.png').
+# A imagem de partilha (og) é assets/img/og/<id>.jpg: cópia em jpg da imagem_v (sem texto nem logo),
+#   gerada quando se corre o grunt.
+#   A descrição da partilha é a data e hora + o nome (ex: "24 OUT 22:00" / "Ao vivo no Sagres Campo Pequeno").
 # ticketsLink: preenchido = botão "Comprar Bilhetes" / "Buy Tickets" com link.
 #   Vazio ('') = botão não clicável "Entrada Gratuita" / "Free Entrance".
 concerts:
@@ -59,7 +63,7 @@ concerts:
     info: 'A CERVEJA EM FESTA NO SAGRES CAMPO PEQUENO. O evento A Cerveja em Lisboa está de volta ao Sagres Campo Pequeno, entre os dias 23 e 25 de Outubro de 2026. Com uma animação pensada para levar qualquer um ao brinde, os “tchins tchins” das canecas e a música das bandas ao vivo vão animar os apreciadores de cerveja, numa festa de elogio à bebida mais popular do mundo, à alegria e à amizade!'
     info_en: 'BEER CELEBRATION AT SAGRES CAMPO PEQUENO. The ''A Cerveja em Lisboa'' event returns to Sagres Campo Pequeno from October 23 to 25, 2026. With entertainment designed to inspire a toast, the clinking of mugs and live bands will delight beer lovers at a celebration honoring the world''s most popular drink, as well as joy and friendship!'
     imagem_h: '/assets/img/concertos/cerveja_h.avif'
-    imagem_v: '/assets/img/concertos/cerveja_v.avif'
+    imagem_v: '/assets/img/concertos/cerveja2_v.png'
     isEnabled: true
   - id: tokyo-natal
     data: '20261211'
