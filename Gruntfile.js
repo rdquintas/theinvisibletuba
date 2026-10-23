@@ -5,14 +5,12 @@ const MONTHS_EN = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP"
 // Pasta onde ficam as páginas dos concertos: concerts/<id>/ e concerts/<id>-en/
 const CONCERTS_DIR = "concerts";
 
-// Imagens de partilha (og), sempre em jpg: <id>.jpg por evento (cópia da imagem_v) e default.jpg
+// Imagens de partilha (og), sempre em jpg e sem logo nem texto: <id>.jpg por evento (cópia da imagem_v)
+// e default.jpg para as restantes páginas (cópia da default_imagem_v do config.yaml)
 const OG_DIR = "assets/img/og";
-const OG_W = 1200;
-const OG_H = 630;
-// tamanho máximo da cópia jpg da imagem_v (as maiores são reduzidas, para a partilha ser leve)
-const OG_EVENT_MAX_W = 1080;
-const OG_EVENT_MAX_H = 1920;
-// Imagem og das restantes páginas (só a foto por defeito + logo, sem texto)
+// tamanho máximo das cópias jpg (as maiores são reduzidas, para a partilha ser leve)
+const OG_MAX_W = 1080;
+const OG_MAX_H = 1920;
 const OG_DEFAULT = "default";
 
 // Página de erro "não encontrado" (o servidor tem de a usar: ErrorDocument 404 no .htaccess)
@@ -96,8 +94,8 @@ function prepareConcerts(data, config, grunt) {
       month_en: MONTHS_EN[+m[2] - 1],
       // '??' só conta como passado quando o mês inteiro já passou
       isPast: d.replace("??", "99") < today,
-      imagem_h: avifPath(imagePath(c.imagem_h) || imagePath(config.evento_imagem_h)),
-      imagem_v: avifPath(imagePath(c.imagem_v) || imagePath(config.evento_imagem_v)),
+      imagem_h: avifPath(imagePath(c.imagem_h) || imagePath(config.default_imagem_h)),
+      imagem_v: avifPath(imagePath(c.imagem_v) || imagePath(config.default_imagem_v)),
     });
   });
   // '??' fica depois de qualquer dia do mesmo mês ('?' > '9' em ASCII)
@@ -274,22 +272,19 @@ async function renderEventOg(sharp, grunt, c, fallbackImage) {
     grunt.log.warn(`og: imagem "${src}" do evento "${c.id}" não existe, a usar a imagem por defeito`);
     src = fallbackImage.replace(/^\/+/, "");
   }
-  const out = `${OG_DIR}/${c.id}.jpg`;
-  await sharp(src)
-    .resize({ width: OG_EVENT_MAX_W, height: OG_EVENT_MAX_H, fit: "inside", withoutEnlargement: true })
-    .flatten({ background: "#000000" }) // jpg não tem transparência
-    .jpeg({ quality: 82, mozjpeg: true })
-    .toFile(out);
-  return out;
+  return renderOgJpg(sharp, src, `${OG_DIR}/${c.id}.jpg`);
 }
 
-// imagem og das páginas que não são eventos: só a foto por defeito com o logo
-async function renderDefaultOg(sharp, image) {
-  const logo = await sharp("assets/img/logo_transp_v00.png").resize({ height: 260 }).toBuffer();
-  const out = `${OG_DIR}/${OG_DEFAULT}.jpg`;
-  await sharp(image.replace(/^\/+/, ""))
-    .resize(OG_W, OG_H, { fit: "cover" })
-    .composite([{ input: logo, top: 40, left: 50 }])
+// imagem og das páginas que não são eventos: a default_imagem_v convertida para jpg, sem mais nada
+function renderDefaultOg(sharp, image) {
+  return renderOgJpg(sharp, image.replace(/^\/+/, ""), `${OG_DIR}/${OG_DEFAULT}.jpg`);
+}
+
+// cópia em jpg de uma imagem (reduzida a OG_MAX_W x OG_MAX_H, sem cortes)
+async function renderOgJpg(sharp, src, out) {
+  await sharp(src)
+    .resize({ width: OG_MAX_W, height: OG_MAX_H, fit: "inside", withoutEnlargement: true })
+    .flatten({ background: "#000000" }) // jpg não tem transparência
     .jpeg({ quality: 82, mozjpeg: true })
     .toFile(out);
   return out;
@@ -304,6 +299,7 @@ function pageContext(dest, data) {
   const pageUrl = (f) => site + "/" + (f === "index.html" ? "" : f);
   const alt = en ? dest.replace(/_en\.html$/, ".html") : dest.replace(/\.html$/, "_en.html");
   const description = en ? "The most entertaining band from Lisbon." : "A banda mais divertida de Lisboa.";
+  const size = jpgSize(`${OG_DIR}/${OG_DEFAULT}.jpg`) || {};
   return {
     page_description: description,
     og: {
@@ -316,8 +312,8 @@ function pageContext(dest, data) {
       description: description,
       image: `${site}/${OG_DIR}/${OG_DEFAULT}.jpg`,
       image_type: "image/jpeg",
-      image_width: OG_W,
-      image_height: OG_H,
+      image_width: size.width,
+      image_height: size.height,
     },
     jsonld: /^index(_en)?\.html$/.test(dest) ? bandJsonLd(site, data, en) : null,
   };
@@ -356,7 +352,7 @@ module.exports = function (grunt) {
   const concertosYaml = grunt.file.readYAML("app/dados/concertos.yaml");
   // Fotos dos concertos tal como estão no yaml (sem "/" inicial; só as locais), para as tarefas avif e webp
   const concertImages = (concertosYaml.concerts || [])
-    .reduce((list, c) => list.concat(c.imagem_h, c.imagem_v), [config.evento_imagem_h, config.evento_imagem_v])
+    .reduce((list, c) => list.concat(c.imagem_h, c.imagem_v), [config.default_imagem_h, config.default_imagem_v])
     .map((p) => imagePath(p).replace(/^\/+/, ""))
     .filter((p, i, list) => p && !/^https?:\/\//.test(p) && list.indexOf(p) === i);
   const data = Object.assign(
@@ -463,13 +459,15 @@ module.exports = function (grunt) {
     },
   });
 
-  // Gera assets/img/og/<id>.jpg (cópia da imagem_v de cada evento) e default.jpg (páginas normais)
+  // Gera assets/img/og/<id>.jpg (cópia da imagem_v de cada evento) e default.jpg (cópia da default_imagem_v)
   grunt.registerTask("og", "Gera as imagens de partilha (og) em jpg", function () {
     const done = this.async();
     const sharp = require("sharp");
     grunt.file.mkdir(OG_DIR);
-    const jobs = events.map((c) => renderEventOg(sharp, grunt, c, config.evento_imagem_v));
-    jobs.push(renderDefaultOg(sharp, config.evento_imagem_h));
+    // as imagens por defeito também podem estar no config.yaml como .jpg / .png: usa o .avif
+    const defaultV = avifPath(imagePath(config.default_imagem_v));
+    const jobs = events.map((c) => renderEventOg(sharp, grunt, c, defaultV));
+    jobs.push(renderDefaultOg(sharp, defaultV));
     Promise.all(jobs)
       .then((files) => {
         grunt.log.ok(`${files.length} imagens og geradas em ${OG_DIR}`);
@@ -490,7 +488,7 @@ module.exports = function (grunt) {
     const concertSrc = concertImages.filter((p) => {
       if (!CONCERT_IMG_EXT.test(p)) return false;
       if (grunt.file.exists(p)) return true;
-      if (!grunt.file.exists(avifPath(p))) grunt.log.warn(`avif: a foto "${p}" de concertos.yaml não existe`);
+      if (!grunt.file.exists(avifPath(p))) grunt.log.warn(`avif: a foto "${p}" (concertos.yaml / config.yaml) não existe`);
       return false;
     });
     const todo = grunt.file.expand(AVIF_SRC).concat(concertSrc).filter((src) => {

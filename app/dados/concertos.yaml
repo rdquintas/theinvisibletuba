@@ -7,7 +7,7 @@
 #   Atenção: mudar o id muda o link de um evento que já foi partilhado.
 # imagem_h: hero em desktop (horizontal, ex: '/assets/img/2560_1440_v05.avif')
 # imagem_v: hero em telemóvel (vertical, ex: '/assets/img/1170_2532_v00.avif')
-#   Vazias = imagens por defeito (evento_imagem_h / evento_imagem_v em config.yaml).
+#   Vazias = imagens por defeito (default_imagem_h / default_imagem_v em config.yaml).
 #   Podem ser .jpg, .png, .webp, .gif, .tif ou .avif: no build (npx grunt) cria-se o .avif e o .webp
 #   com o mesmo nome (o original passa para _originais/) e a página usa sempre o .avif.
 #   Pode ficar o nome original no yaml (ex: 'cerveja_v.png').
