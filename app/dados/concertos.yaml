@@ -34,44 +34,12 @@ concerts:
     imagem_h: ''
     imagem_v_1440x1800: ''
     isEnabled: false
-  - id: conferencia-feminina
-    data: '20261015'
-    name: 16.ª Grande Conferência Liderança Feminina
-    location: Lisboa
-    time: '14:00'
-    ticketsLink: 'https://3cket.com/pt/event/16-grande-conferencia-lideranca-feminina'
-    address: 'Av. Barbosa du Bocage 45, 1049-013 Lisboa'
-    mapsUrl: 'https://maps.app.goo.gl/urggvUWdxC24ZZLm8'
-    websiteUrl: ''
-    phone: ''
-    email: ''
-    info: 'Há algo que nunca aconteceu antes nas organizações: pela primeira vez, convivem quatro gerações de profissionais. Cada uma traz uma visão do mundo, uma forma de trabalhar, de comunicar e de liderar. E é neste encontro de experiências, ambições e perspetivas que se joga o futuro das empresas. A edição deste ano da Grande Conferência de Liderança Feminina convida-a a explorar este tema incontornável: a liderança através das gerações. Ao longo de um dia de inspiração, conhecimento e partilha, reuniremos mulheres que estão a dar os primeiros passos na liderança, gestoras em ascensão, CEOs, administradoras e líderes que marcaram o mundo empresarial. Histórias diferentes, percursos únicos e uma convicção comum: a liderança constrói-se todos os dias, independentemente da idade. Junte-se a nós nos dias 14 e 15 de outubro!'
-    info_en: "Something is happening in organizations that has never happened before: for the first time, four generations of professionals are working side by side. Each brings its own worldview, way of working, communicating, and leading. And it is in this intersection of experiences, ambitions, and perspectives that the future of companies is at stake.\nThis year's edition of the Women's Leadership Grand Conference invites you to explore this key topic: leadership across generations. Throughout a day of inspiration, knowledge, and sharing, we will bring together women who are taking their first steps in leadership, rising managers, CEOs, board members, and leaders who have left their mark on the business world. Different stories, unique paths, and a shared conviction: leadership is built every day, regardless of age.\nJoin us on October 14th and 15th!"
-    imagem_h: ''
-    imagem_v_1440x1800: ''
-    isEnabled: false
-  - id: no-campo-pequeno
-    data: '20261024'
-    name: Ao vivo no Sagres Campo Pequeno
-    location: Lisboa
-    time: '22:00'
-    ticketsLink: ''
-    address: 'Campo Pequeno, 1000-306 Lisboa'
-    mapsUrl: 'https://maps.app.goo.gl/iwwtuwUpv5fUEom56'
-    websiteUrl: 'https://www.sagrescampopequeno.pt/pt/agenda/a-cerveja-em-lisboa-2026'
-    phone: ''
-    email: ''
-    info: 'A CERVEJA EM FESTA NO SAGRES CAMPO PEQUENO. O evento A Cerveja em Lisboa está de volta ao Sagres Campo Pequeno, entre os dias 23 e 25 de Outubro de 2026. Com uma animação pensada para levar qualquer um ao brinde, os “tchins tchins” das canecas e a música das bandas ao vivo vão animar os apreciadores de cerveja, numa festa de elogio à bebida mais popular do mundo, à alegria e à amizade!'
-    info_en: 'BEER CELEBRATION AT SAGRES CAMPO PEQUENO. The ''A Cerveja em Lisboa'' event returns to Sagres Campo Pequeno from October 23 to 25, 2026. With entertainment designed to inspire a toast, the clinking of mugs and live bands will delight beer lovers at a celebration honoring the world''s most popular drink, as well as joy and friendship!'
-    imagem_h: '/assets/img/concertos/cerveja_h.avif'
-    imagem_v_1440x1800: '/assets/img/concertos/cerveja2_v.png'
-    isEnabled: true
   - id: tokyo-natal
     data: '20261211'
     name: Jingle Bells no Tokyo
     location: Lisboa
     time: '22:00'
-    ticketsLink: 'https://tickets.tokyo.com.pt/events/308'
+    ticketsLink: 'https://tickets.tokyo.com.pt/events/509'
     address: 'Cais do Gás 1, 1200-109 Lisboa'
     mapsUrl: 'https://maps.app.goo.gl/TuGnhkFFXTrbhiYT8'
     websiteUrl: 'https://tokyo.com.pt/'
@@ -82,18 +50,18 @@ concerts:
       O "Jingle Bells sem tretas" é a festa oficial para quem está na lista dos malcomportados. 
       Prepara-te para uma noite cheia de surpresas com convidados de peso:
       👉 @clarinhamartinez (voz)
-      👉 @simo_carugati (banjo)
-      👉 @marianyanchyk (violino)      
+      👉 @simo_carugati (banjo/voz)
+      👉 @marianyanchyk (violino)
     info_en: |-
       Santa knows if you've been naughty or nice... but at Tokyo nobody cares! 
       "Jingle Bells sem tretas" is the official party for everyone on the naughty list. 
       Get ready for a night full of surprises with heavyweight guests:
       👉 @clarinhamartinez (voice)
-      👉 @simo_carugati (banjo)
-      👉 @marianyanchyk (violin)      
+      👉 @simo_carugati (banjo/voice)
+      👉 @marianyanchyk (violin)
     imagem_h: '/assets/img/concertos/tokyo_natal_h.avif'
-    imagem_v_1440x1800: '/assets/img/concertos/tokyo_natal_v.avif'
-    isEnabled: false
+    imagem_v_1440x1800: '/assets/img/concertos/tokyo_natal_v.png'
+    isEnabled: true
   - id: titanic-sur-mer
     data: '20260707'
     name: TITANIC SUR MER
