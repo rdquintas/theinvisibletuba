@@ -1,12 +1,12 @@
 # Configuração do Netlify (https://docs.netlify.com/configure-builds/file-based-configuration/)
 #
-# O Netlify corre o build e publica a pasta dist/ (uma cópia do site sem os ficheiros de desenvolvimento:
-# build.js, templates de app/, package.json, node_modules, ...; ver DIST_EXCLUDE no build.js).
+# O Netlify corre o build e publica a pasta dist/, gerada a partir de src/ pelo build.js
+# (páginas PT na raiz, EN em /en/; o dist/_redirects manda os endereços antigos x_en.html para /en/x.html).
 # A loja (Stripe) usa a função netlify/functions/create-checkout-session.mjs, que precisa da
 # variável de ambiente STRIPE_SECRET_KEY (Site configuration > Environment variables).
 
 [build]
-  command = "npm run netlify"
+  command = "npm run build:netlify"
   publish = "dist"
 
 [build.environment]

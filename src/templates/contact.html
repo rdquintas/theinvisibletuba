@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="{{ lang }}">
+
+{% include "_head.html" %}
+
+<body class="loading zrq-page-contact">
+    {% include "_menu.html" %}
+    <main class="sv__main--content">
+        <!--
+        #################################
+         - Contact Us -
+        #################################
+        -->
+        <div class="section container-fluid white-bg">
+            <div class="row">
+                <div class="col-xs-12 inner__header--sm">
+                    <h2>{{#lang pt}}Diz Olá{{/lang}}{{#lang en}}Say Hi{{/lang}}!</h2>
+                </div>
+            </div>
+            <div class="row sv__container--sm">
+                <div class="col-xs-12 contact__header">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h3>{{#lang pt}}Telefone{{/lang}}{{#lang en}}Phone{{/lang}}</h3>
+                        <a href="tel:{{phone1}}">{{phone1}} <br> {{phone1_name}}</a>
+                        <br>
+                        <a href="https://wa.me/{{phone1_whatsapp}}">{{phone2}} <br> {{phone2_name}}</a>
+                        <br><br>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h3>Email</h3>
+                        <a href="mailto:{{email}}">{{email}}</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 meta-share">
+                        <h3>{{#lang pt}}Fica Conectado{{/lang}}{{#lang en}}Get Connected{{/lang}}</h3>
+                        <ul class="text-center zrq-social-cenas">
+                            <li><a target="_blank" href="https://www.instagram.com/theinvisibletuba/"><img class="zrq-socialmedia-icon" alt="Instagram" src="/assets/img/icons/instagram.avif"/></a></li>
+                            <li><a target="_blank" href="https://open.spotify.com/artist/2CqJyOnOEm6hm7QGs2llZ2?si=qKnEiOglRLGIvY5vBNmFNg"><img class="zrq-socialmedia-icon" alt="Spotify" src="/assets/img/icons/spotify.avif"/></a></li>
+                            <li><a target="_blank" href="https://www.tiktok.com/@theinvisibletuba"><img class="zrq-socialmedia-icon" alt="TikTok" src="/assets/img/icons/tiktok.avif"/></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/@theinvisibletuba4630"><img class="zrq-socialmedia-icon" alt="YouTube" src="/assets/img/icons/youtube.avif"/></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/theinvisibletuba/"><img class="zrq-socialmedia-icon" alt="Facebook" src="/assets/img/icons/facebook.avif"/></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row zrq-section-whatsapp">
+                <div class="col-xs-12 no-padding text-center">
+                    <a aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/{{phone1_whatsapp}}">
+                        <img class="zrq-zapezape" alt="Chat on WhatsApp" src="/assets/img/icons/WhatsAppButtonGreenLarge.avif" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="zrq-subtitle2 section container-fluid {{#lang pt}}{{/lang}}{{#lang en}}no-padding {{/lang}}gold-bg">
+            <div class="inner-sm">
+                <div class="row no-margin">
+                    <div class="col-xs-12">
+                        <h3 class="text-center white">{{#lang pt}}Temos uma Newsletter.{{/lang}}{{#lang en}}We have a Newsletter{{/lang}}</h3>
+                        <h4 class="text-center white">{{#lang pt}}Queres ficar a par dos nossos concertos e ter acesso a promoções{{/lang}}{{#lang en}}Do you want to receive information about our concerts and promos{{/lang}} ?</h4>
+                        <div class="text-center">
+                            <a target="_blank" href="{{newsletter_link}}" class="zrq-subs-newsletter btn book-now-btn black-bg btn-white">{{#lang pt}}Subscreve a{{/lang}}{{#lang en}}Subscribe{{/lang}} Newsletter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include "_footer.html" %}
+</body>
+</html>

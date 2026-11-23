@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ lang }}">
+
+{#
+    PÁGINA 404 — mostrada pelo Netlify em qualquer endereço que não exista:
+    dist/404.html (PT) e dist/en/404.html (EN, para os endereços em /en/, ver _redirects no build.js).
+    Os links são todos absolutos porque a página aparece em qualquer endereço.
+#}
+{% set noindex = true %}
+{% set page_title = ("Page not found" if lang == "en" else "Página não encontrada") + " | The Invisible Tuba" %}
+{% include "_head.html" %}
+
+<body class="loading zrq-page-privacy">
+    {% include "_menu.html" %}
+    <main class="sv__main--content">
+        <div class="section container-fluid white-bg">
+            <div class="row">
+                <div class="col-xs-12 inner__header--sm">
+                    <h2>{{#lang pt}}Página não encontrada{{/lang}}{{#lang en}}Page not found{{/lang}}</h2>
+                </div>
+            </div>
+            <div class="row sv__container--sm">
+                <div class="col-xs-12 zrq-privacy text-center">
+                    <p>{{#lang pt}}Esta página não existe (ou já não existe). Mas a festa continua!{{/lang}}{{#lang en}}This page does not exist (or no longer exists). But the party goes on!{{/lang}}</p>
+                    <p><a href="{{ base }}index.html">{{#lang pt}}Página inicial{{/lang}}{{#lang en}}Home{{/lang}}</a> · <a href="{{ base }}index.html#agenda">{{#lang pt}}Próximos concertos{{/lang}}{{#lang en}}Upcoming concerts{{/lang}}</a> · <a href="{{ base }}contact.html">{{#lang pt}}Contactos{{/lang}}{{#lang en}}Contacts{{/lang}}</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include "_footer.html" %}
+</body>
+</html>

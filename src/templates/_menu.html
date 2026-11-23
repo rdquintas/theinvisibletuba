@@ -1,0 +1,42 @@
+    <!--
+    #################################
+        - MENU -
+    #################################
+    -->
+    {% if loja_ativa or pagina_loja %}
+    <link href="{{ root }}assets/css/zrq-cart.css?v={{ v('assets/css/zrq-cart.css') }}" rel="stylesheet" type="text/css" media="all" />
+    {% endif %}
+    <header id="header" class="nav-shadow">
+        <a id="sv__logo" href="{{ base }}index.html" class="zrq-header">
+            <div class="sv__logo--img zrq-logo">
+                <img class="img-responsive logo-white" src="/assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
+                <img class="img-responsive logo-black" src="/assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
+            </div>
+        </a>
+        <div class="zrq-header-actions">
+            {% if loja_ativa %}
+            <button type="button" id="zrqCartTrigger" class="zrq-cart-trigger" aria-label="{{#lang pt}}Carrinho de compras{{/lang}}{{#lang en}}Shopping cart{{/lang}}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="zrqCartCount" class="zrq-cart-count" hidden>0</span>
+            </button>
+            {% endif %}
+            <div class="cd-dropdown-wrapper open-to-left">
+                <a href="#" class="cd-dropdown-trigger">Menu</a>
+                <nav class="cd-dropdown">
+                    <h2>Menu</h2>
+                    <a href="#0" class="cd-close">{{#lang pt}}Fechar{{/lang}}{{#lang en}}Close{{/lang}}</a>
+                    <ul class="cd-dropdown-content">
+                        <li class="single-item"><a href="{{ base }}index.html">Home</a></li>
+                        <li class="single-item"><a href="{{ base }}pictures.html">{{#lang pt}}Fotos{{/lang}}{{#lang en}}Photos{{/lang}}/Videos</a></li>
+                        <li class="single-item"><a href="{{ base }}audio.html">Audio</a></li>
+                        <li class="single-item"><a href="{{ base }}contact.html">{{#lang pt}}Contactos{{/lang}}{{#lang en}}Contacts{{/lang}}</a></li>
+                        <li class="single-item"><a href="{{ base }}mediakit.html">Media Kit</a></li>
+                        {% if loja_ativa %}<li class="single-item"><a href="{{ base }}shop.html">Shop</a></li>{% endif %}
+                        <!-- a mesma página na outra língua (alt_lang_url é definido no build.js) -->
+                        {{#lang pt}}<li class="single-item"><a href="{{ alt_lang_url }}" hreflang="en" lang="en"><img class="zrq-country-icon" src="/assets/img/icons/united-kingdom.avif" alt="" />English</a></li>{{/lang}}
+                        {{#lang en}}<li class="single-item"><a href="{{ alt_lang_url }}" hreflang="pt" lang="pt"><img class="zrq-country-icon" src="/assets/img/icons/portugal.avif" alt="" />Português</a></li>{{/lang}}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>

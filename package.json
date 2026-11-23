@@ -10,14 +10,16 @@
   },
   "scripts": {
     "build": "node build.js",
-    "html": "node build.js html",
+    "build:netlify": "node build.js clean static og html sitemap redirects",
+    "dev": "node build.js dev",
     "watch": "node build.js watch",
+    "serve": "node build.js serve",
+    "clean": "node build.js clean",
+    "html": "node build.js html",
     "og": "node build.js og",
     "avif": "node build.js avif",
     "webp": "node build.js webp",
-    "sitemap": "node build.js sitemap",
-    "clean-concerts": "node build.js clean-concerts",
-    "netlify": "node build.js clean-concerts og html sitemap dist",
+    "sitemap": "node build.js sitemap redirects",
     "git": "git add . && git commit -m",
     "postgit": "git push"
   }
