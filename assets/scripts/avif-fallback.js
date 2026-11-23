@@ -1,5 +1,5 @@
 // Fallback para browsers sem suporte AVIF (ex: Safari/iOS < 16): troca *.avif por *.webp.
-// As cópias .webp são geradas no build (tarefa "webp" do Gruntfile) ao lado de cada .avif.
+// As cópias .webp são geradas no build (tarefa "webp" do build.js) ao lado de cada .avif.
 // Tem de ser carregado no <head>, antes das imagens, e sem async/defer.
 (function () {
   var RE = /\.avif\b/gi;

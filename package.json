@@ -2,13 +2,19 @@
   "name": "The Invisible Tuba",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "^1.6.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-nunjucks": "^0.1.4",
-    "grunt-nunjucks-2-html": "^2.2.0",
+    "js-yaml": "^4.1.0",
+    "nunjucks": "^3.2.4",
     "sharp": "^0.34.5"
   },
   "scripts": {
+    "build": "node build.js",
+    "html": "node build.js html",
+    "watch": "node build.js watch",
+    "og": "node build.js og",
+    "avif": "node build.js avif",
+    "webp": "node build.js webp",
+    "sitemap": "node build.js sitemap",
+    "clean-concerts": "node build.js clean-concerts",
     "git": "git add . && git commit -m",
     "postgit": "git push"
   }

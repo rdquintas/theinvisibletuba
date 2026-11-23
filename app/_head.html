@@ -89,7 +89,7 @@
     <meta name="robots" content="noindex" />
     {% endif %}
     {% if jsonld %}
-    <!-- dados estruturados (schema.org) para o Google; gerados no Gruntfile -->
+    <!-- dados estruturados (schema.org) para o Google; gerados no build.js -->
     <script type="application/ld+json">{{ jsonld | safe }}</script>
     {% endif %}
     <meta name="author" content="Ricardo Quintas" />

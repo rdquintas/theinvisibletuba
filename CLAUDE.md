@@ -6,13 +6,16 @@ Site estático da banda The Invisible Tuba (theinvisibletuba.com), bilingue PT/E
 
 ## Comandos
 
-- `npx grunt` — build completo (tarefa `default`): `clean-concerts` → `avif` → `og` → `webp` → `nunjucks` → `sitemap`.
-- `npx grunt sitemap` — regenera o `sitemap.xml` (páginas PT/EN + concertos ativos; sem a 404 e sem a loja enquanto `loja_ativa: false`).
-- `npx grunt nunjucks` — só recompila o HTML (rápido, sem gerar imagens).
-- `npx grunt og` — regenera as imagens de partilha em jpg em `assets/img/og/`: `<id>.jpg` por concerto ativo (cópia da `imagem_v_1440x1800`) e `default.jpg` das páginas normais (cópia da `default_imagem_v_1440x1800`), sem logo nem texto (usa `sharp`).
-- `npx grunt avif` — converte as imagens novas (jpg, png, gif, tif) de `assets/img/` e `forms/assets/img/` para `.avif` (máx. 2560px) e move o original para `_originais/` (no `.gitignore`). Não mexe em `assets/img/og/` nem no `logo_transp_v00.png`.
-- `npx grunt webp` — gera `<imagem>.webp` ao lado de cada `.avif` em `assets/img/` e `forms/assets/img/` (só as novas/alteradas).
-- `npx grunt watch` — recompila (`nunjucks`) quando muda algo em `app/*.*`. Nota: não vê `app/dados/*.yaml` nem corre `og`/`clean-concerts`; depois de mexer em concertos corre `npx grunt`.
+O build é feito por [build.js](build.js) (Node, sem Grunt): `node build.js [tarefa ...]`; os scripts do `package.json` chamam-no.
+
+- `npm run build` — build completo: `clean-concerts` → `avif` → `og` → `webp` → `html` → `sitemap`.
+- `npm run sitemap` — regenera o `sitemap.xml` (páginas PT/EN + concertos ativos; sem a 404 e sem a loja enquanto `loja_ativa: false`).
+- `npm run html` — só recompila o HTML (rápido, sem gerar imagens).
+- `npm run og` — regenera as imagens de partilha em jpg em `assets/img/og/`: `<id>.jpg` por concerto ativo (cópia da `imagem_v_1440x1800`) e `default.jpg` das páginas normais (cópia da `default_imagem_v_1440x1800`), sem logo nem texto (usa `sharp`).
+- `npm run avif` — converte as imagens novas (jpg, png, gif, tif) de `assets/img/` e `forms/assets/img/` para `.avif` (máx. 2560px) e move o original para `_originais/` (no `.gitignore`). Não mexe em `assets/img/og/` nem no `logo_transp_v00.png`.
+- `npm run webp` — gera `<imagem>.webp` ao lado de cada `.avif` em `assets/img/` e `forms/assets/img/` (só as novas/alteradas).
+- `npm run clean-concerts` — apaga as páginas e as og dos concertos desativados/removidos.
+- `npm run watch` — recompila o HTML quando muda algo em `app/` (templates e `app/dados/*.yaml`). Não corre `og`/`avif`/`webp`/`clean-concerts`; depois de mexer em concertos corre `npm run build`.
 - `npm run git -- "mensagem"` — `git add . && git commit`, seguido de `git push`.
 
 Não há testes nem linter. O SCSS em `assets/scss/` não é compilado por nenhum script do projeto; o CSS próprio do site está em `assets/css/zrq.css`, `zrq-cart.css`, `shop.css`.
@@ -20,13 +23,13 @@ Não há testes nem linter. O SCSS em `assets/scss/` não é compilado por nenhu
 ## Arquitetura
 
 ### Templates → HTML gerado
-- As fontes estão em `app/` (Nunjucks, via `grunt-nunjucks-2-html`). Os ficheiros `*.html` na raiz e em `concerts/` são **gerados — nunca editar**, são sobrescritos no build. (O README fala em `grunt-bake`; isso está desatualizado, exceto em `landing/concert/_sources/camones/`, que tem o seu próprio Gruntfile com bake.)
+- As fontes estão em `app/` (Nunjucks, renderizado pelo [build.js](build.js), tarefa `html`). Os ficheiros `*.html` na raiz e em `concerts/` são **gerados — nunca editar**, são sobrescritos no build.
 - Cada página existe em duas versões: `x.html` (PT) e `x_en.html` (EN). Parciais com prefixo `_` (`_head.html`, `_menu[_en].html`, `_footer[_en].html`, `_upcoming_concerts.html`). Alguns parciais escolhem a língua com `{% set lang = 'en' %}` antes do `include`.
-- Páginas novas têm de ser adicionadas ao mapa `pageFiles` em [Gruntfile.js](Gruntfile.js) (usado no render e no sitemap).
+- Páginas novas têm de ser adicionadas ao mapa `PAGE_FILES` em [build.js](build.js) (usado no render e no sitemap).
 - `404.html` (de `app/404.html`) usa `root = "/"` e `noindex`; o servidor tem de a servir com `ErrorDocument 404 /404.html` no `.htaccess`.
-- Variáveis de página no `_head.html`: `noindex` (meta robots) e `jsonld` (dados estruturados schema.org: `MusicGroup` na index, `MusicEvent` nas páginas de evento, gerados no Gruntfile).
-- Filtros personalizados definidos no Gruntfile: `nl2br` e `linkify` (URLs, emails e `@utilizador` → Instagram). Função global `v('caminho')` → hash do conteúdo, usada como `?v=` nos links do CSS/JS próprio para o browser não usar versões antigas da cache (usar também em links novos para css/js do site).
-- `preprocessData` injeta por página `og` / `page_description` / `jsonld` (`pageContext`) ou, nas páginas de evento, o contexto do evento (`eventContext`).
+- Variáveis de página no `_head.html`: `noindex` (meta robots) e `jsonld` (dados estruturados schema.org: `MusicGroup` na index, `MusicEvent` nas páginas de evento, gerados no build.js).
+- Filtros personalizados definidos em `createEnv` no build.js: `nl2br` e `linkify` (URLs, emails e `@utilizador` → Instagram). Função global `v('caminho')` → hash do conteúdo, usada como `?v=` nos links do CSS/JS próprio para o browser não usar versões antigas da cache (usar também em links novos para css/js do site).
+- A tarefa `html` junta aos dados, por página, `og` / `page_description` / `jsonld` (`pageContext`) ou, nas páginas de evento, o contexto do evento (`eventContext`).
 
 ### Dados (`app/dados/`)
 Os três YAML são juntados num único objeto de dados disponível em todos os templates:

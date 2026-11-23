@@ -8,11 +8,11 @@
 # imagem_h: hero em desktop (horizontal, ex: '/assets/img/2560_1440_v05.avif')
 # imagem_v_1440x1800: hero em telemóvel (vertical, ex: '/assets/img/1170_2532_v00.avif')
 #   Vazias = imagens por defeito (default_imagem_h / default_imagem_v_1440x1800 em config.yaml).
-#   Podem ser .jpg, .png, .webp, .gif, .tif ou .avif: no build (npx grunt) cria-se o .avif e o .webp
+#   Podem ser .jpg, .png, .webp, .gif, .tif ou .avif: no build (npm run build) cria-se o .avif e o .webp
 #   com o mesmo nome (o original passa para _originais/) e a página usa sempre o .avif.
 #   Pode ficar o nome original no yaml (ex: 'cerveja_v.png').
 # A imagem de partilha (og) é assets/img/og/<id>.jpg: cópia em jpg da imagem_v_1440x1800 (sem texto nem logo),
-#   gerada quando se corre o grunt.
+#   gerada quando se corre o build (npm run build).
 #   A descrição da partilha é a data e hora + o nome + os primeiros 200 caracteres do info (info_en em EN) e "..."
 #   (ex: "24 OUT 22:00" / "Ao vivo no Sagres Campo Pequeno" / "O Pai Natal sabe...").
 # ticketsLink: preenchido = botão "Comprar Bilhetes" / "Buy Tickets" com link.
