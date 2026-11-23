@@ -13,7 +13,7 @@ Site estático da banda The Invisible Tuba (theinvisibletuba.com), bilingue PT/E
 - `npx grunt avif` — converte as imagens novas (jpg, png, gif, tif) de `assets/img/` e `forms/assets/img/` para `.avif` (máx. 2560px) e move o original para `_originais/` (no `.gitignore`). Não mexe em `assets/img/og/` nem no `logo_transp_v00.png`.
 - `npx grunt webp` — gera `<imagem>.webp` ao lado de cada `.avif` em `assets/img/` e `forms/assets/img/` (só as novas/alteradas).
 - `npx grunt watch` — recompila (`nunjucks`) quando muda algo em `app/*.*`. Nota: não vê `app/dados/*.yaml` nem corre `og`/`clean-concerts`; depois de mexer em concertos corre `npx grunt`.
-- `npm run git -- "mensagem"` — `git add . && git commit`, seguido de `git push` e `git ftp push` (deploy por FTP com [git-ftp](https://github.com/git-ftp/git-ftp)). É um deploy para produção. O `.git-ftp-ignore` lista o que não vai para o servidor (Gruntfile, templates `app/*.html`, scss, ...).
+- `npm run git -- "mensagem"` — `git add . && git commit`, seguido de `git push`.
 
 Não há testes nem linter. O SCSS em `assets/scss/` não é compilado por nenhum script do projeto; o CSS próprio do site está em `assets/css/zrq.css`, `zrq-cart.css`, `shop.css`.
 
@@ -44,7 +44,7 @@ Cada concerto com `isEnabled: true` gera `concerts/<id>/index.html` (PT) e `conc
 - `api/config.php` (segredos Stripe) está no `.gitignore`; o modelo é `api/config.example.php`.
 
 ### Imagens AVIF + fallback WebP
-As imagens do site são `.avif`; a tarefa `webp` cria cópias `.webp` (que têm de ir no commit, porque o deploy é por git-ftp). `assets/scripts/avif-fallback.js`, carregado no `<head>` (`_head.html`, landing pages e newsletter), troca `.avif` por `.webp` em browsers sem AVIF (Safari/iOS < 16): nos `<img>` quando dão erro, e nos `background-image` (inline, CSS e postos por JS) depois de testar o suporte. Nos templates continua-se a usar só `.avif`.
+As imagens do site são `.avif`; a tarefa `webp` cria cópias `.webp` (que têm de ir no commit). `assets/scripts/avif-fallback.js`, carregado no `<head>` (`_head.html`, landing pages e newsletter), troca `.avif` por `.webp` em browsers sem AVIF (Safari/iOS < 16): nos `<img>` quando dão erro, e nos `background-image` (inline, CSS e postos por JS) depois de testar o suporte. Nos templates continua-se a usar só `.avif`.
 
 ### Outras pastas
 - `forms/newsletter/` — página de subscrição da newsletter (formulário Brevo); independente do build.

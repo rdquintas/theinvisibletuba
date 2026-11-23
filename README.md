@@ -7,7 +7,6 @@ This is the repo for the website:
 
 ## Some details
 - uses [grunt-bake](https://github.com/roboshoes/grunt-bake) plugin, to concatenate all those boring html files
-- uses [git-ftp](https://github.com/git-ftp/git-ftp) to deploy using FTP from the console 
 - uses [grt-youtube-popup](https://grt107.github.io/grt-youtube-popup/) GRT Youtube Popup - jQuery Plugin 
 
 
@@ -21,23 +20,4 @@ This is the repo for the website:
   
   ``npm run git -- 'message here'``
 
-  this will do a git push and git ftp push
-
-## How to deploy with GIT FTP ?
-
-- ### Setup
-  ``git config git-ftp.url "ftp://ftp.example.net:21/public_html"``
-
-  ``git config git-ftp.user "ftp-user"``
-  
-  ``git config git-ftp.password "secr3t"``
-
-- ### Or if the files are already there
-  ``git ftp catchup``
-
-- ### Work and deploy
-  ``echo "new content" >> index.txt``
-
-  ``git commit index.txt -m "Add new content"``
-
-  ``git ftp push``
+  this will do a git add, git commit and git push
