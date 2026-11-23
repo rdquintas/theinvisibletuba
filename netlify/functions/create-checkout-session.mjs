@@ -1,7 +1,7 @@
 // Netlify Function: cria a sessão Stripe Checkout do carrinho e devolve o URL da página de pagamento
 // do Stripe, para onde o browser é enviado (assets/scripts/zrq-cart.js faz POST para /api/create-checkout-session).
 //
-// Os preços vêm sempre do dados/artigos_loja.yaml publicado no site (o mesmo que o carrinho usa):
+// Os preços vêm sempre do config/artigos_loja.yaml publicado no site (o mesmo que o carrinho usa):
 // o browser só manda id + quantidade, por isso um pedido alterado nunca compra abaixo do preço real.
 //
 // Variáveis de ambiente (Netlify > Site configuration > Environment variables):
@@ -34,7 +34,7 @@ export default async (req) => {
   // o mesmo catálogo que a loja usa no browser
   let catalog;
   try {
-    const res = await fetch(`${origin}/dados/artigos_loja.yaml`);
+    const res = await fetch(`${origin}/config/artigos_loja.yaml`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     catalog = yaml.load(await res.text());
   } catch (e) {

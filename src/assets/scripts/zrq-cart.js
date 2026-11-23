@@ -9,7 +9,7 @@
 
   var STORAGE_KEY = 'tib_shop_cart';
   // caminhos absolutos: o carrinho também corre em /concerts/<id>/
-  var SHOP_YAML_URL = '/dados/artigos_loja.yaml';
+  var SHOP_YAML_URL = '/config/artigos_loja.yaml';
   var CHECKOUT_URL = '/api/create-checkout-session'; // Netlify Function (netlify/functions/create-checkout-session.mjs)
   // IVA (%) e portes (EUR) vêm do artigos_loja.yaml (loja_iva / loja_portes),
   // os mesmos valores que a função create-checkout-session cobra no Stripe

@@ -1,7 +1,7 @@
     <!doctype html>
 <html lang="{{ lang }}">
 {% set pagina_loja = true %}
-{# enquanto a loja estiver desativada (config.yaml), a página não aparece no Google #}
+{# enquanto a loja estiver desativada (site.yaml), a página não aparece no Google #}
 {% set noindex = not loja_ativa %}
 
 {% include "_head.html" %}

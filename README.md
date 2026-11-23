@@ -18,7 +18,7 @@ This is the repo for the website:
 | folder | what |
 | --- | --- |
 | ``src/templates`` | pages (``index.html``, ``contact.html``, ...), partials (``_menu.html``, ...) and ``event.html`` (concert pages) |
-| ``src/dados`` | yaml data (concerts, config, shop) |
+| ``src/config`` | yaml data (site, concerts, shop) |
 | ``src/assets``, ``src/docs``, ``src/landing``, ``src/forms``, ``src/checkout``, ... | copied as-is to ``/dist`` |
 | ``dist`` | the generated site (**never edit**, it is deleted and rebuilt on every build) |
 | ``netlify/functions`` | the shop checkout (Netlify Function) |

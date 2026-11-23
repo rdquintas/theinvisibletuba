@@ -8,7 +8,7 @@ Site estático da banda The Invisible Tuba (theinvisibletuba.com), bilingue PT/E
 
 - `src/` — todas as fontes do site.
   - `src/templates/` — templates Nunjucks: páginas (`index.html`, `contact.html`, ...), parciais com prefixo `_` (`_head.html`, `_menu.html`, `_footer.html`, `_upcoming_concerts.html`) e `event.html` (páginas dos concertos).
-  - `src/dados/` — os yaml (`config.yaml`, `concertos.yaml`, `artigos_loja.yaml`). Também são publicados em `/dados/` (a loja lê-os).
+  - `src/config/` — os yaml (`site.yaml`, `concertos.yaml`, `artigos_loja.yaml`). Também são publicados em `/config/` (a loja lê-os).
   - o resto (`assets/`, `docs/`, `landing/`, `forms/`, `checkout/`, `robots.txt`, `favicon.png`, ...) é copiado tal e qual para `dist/`, exceto o `STATIC_EXCLUDE` do build.js (`templates`, `assets/scss`, `landing/concert/_sources`).
 - `dist/` — o site gerado (no `.gitignore`). É apagado e refeito em cada build: **nunca editar**.
 - `netlify/functions/` — a Netlify Function da loja.
@@ -23,7 +23,7 @@ Site estático da banda The Invisible Tuba (theinvisibletuba.com), bilingue PT/E
 - Variáveis de todas as páginas (definidas no build.js, `langContext`): `lang` (`pt`/`en`), `base` (`/` ou `/en/`, para links entre páginas: `{{ base }}contact.html`), `root` (`/`, para assets: `{{ root }}assets/...`) e `alt_lang_url` (a mesma página na outra língua, usada no seletor de língua do `_menu.html`).
 - Os links são sempre absolutos (as páginas EN estão numa subpasta).
 - No browser, `zrq-cart.js` e `shop.js` sabem a língua pelo endereço (`/en/...`).
-- Os endereços antigos (`x_en.html`, `concerts/<id>-en/`, `app/dados/`) são redirecionados com 301 pelo `dist/_redirects` (tarefa `redirects`), que também serve a `/en/404.html` nos endereços em `/en/` que não existem.
+- Os endereços antigos (`x_en.html`, `concerts/<id>-en/`, `app/dados/`, `dados/`) são redirecionados com 301 pelo `dist/_redirects` (tarefa `redirects`), que também serve a `/en/404.html` nos endereços em `/en/` que não existem.
 
 ## Comandos
 
@@ -62,9 +62,9 @@ Não há testes nem linter. O SCSS em `src/assets/scss/` não é compilado por n
 - Filtros personalizados definidos em `createEnv` no build.js: `nl2br` e `linkify` (URLs, emails e `@utilizador` → Instagram). Função global `v('caminho')` → hash do conteúdo de `src/<caminho>`, usada como `?v=` nos links do CSS/JS próprio para o browser não usar versões antigas da cache (usar também em links novos para css/js do site).
 - A tarefa `html` junta aos dados, por página e língua, `lang` / `base` / `alt_lang_url` / `og` / `page_description` / `jsonld` (`pageContext`) ou, nas páginas de evento, o contexto do evento (`eventContext`).
 
-### Dados (`src/dados/`)
+### Dados (`src/config/`)
 Os três YAML são juntados num único objeto de dados disponível em todos os templates:
-- `config.yaml` — contactos, `site_url`, imagens por defeito dos eventos, `loja_ativa` (mostra o carrinho e o link "Shop" e carrega os scripts da loja em todas as páginas).
+- `site.yaml` — contactos, `site_url`, `social_links` (redes sociais, `sameAs` do JSON-LD), imagens por defeito dos eventos, `loja_ativa` (mostra o carrinho e o link "Shop" e carrega os scripts da loja em todas as páginas).
 - `concertos.yaml` — lista `concerts`. O cabeçalho do ficheiro documenta os campos. `prepareConcerts` valida (`data` em `yyyymmdd` ou `yyyymm??`; `id` único em kebab-case, porque é o URL), calcula `day`/`month`/`month_en`/`isPast` **no momento do build** e ordena por data.
 - `artigos_loja.yaml` — produtos da loja (`price` sem IVA), `loja_iva` (%) e `loja_portes` (EUR por encomenda), usados pelo carrinho e pelo checkout.
 
@@ -73,8 +73,8 @@ Cada concerto com `isEnabled: true` gera `dist/concerts/<id>/index.html` (PT) e 
 
 ### Loja (Stripe)
 - Com `loja_ativa: false` só a `shop.html` (PT e EN) carrega os scripts da loja (`pagina_loja`) e fica com `noindex`.
-- `src/assets/scripts/shop.js` e `zrq-cart.js` carregam `/dados/artigos_loja.yaml` em runtime no browser (com `js-yaml`) — por isso `src/dados/` é publicado.
-- `netlify/functions/create-checkout-session.mjs` (Netlify Function em `/api/create-checkout-session`, chamada pelo `zrq-cart.js`) cria a sessão Stripe Checkout com preços validados do lado do servidor, lidos do `/dados/artigos_loja.yaml` publicado no próprio site (preço + IVA arredondado por unidade, portes fixos, moeda do `currency` do yaml, morada só em Portugal — as contas do carrinho seguem as mesmas regras).
+- `src/assets/scripts/shop.js` e `zrq-cart.js` carregam `/config/artigos_loja.yaml` em runtime no browser (com `js-yaml`) — por isso `src/config/` é publicado.
+- `netlify/functions/create-checkout-session.mjs` (Netlify Function em `/api/create-checkout-session`, chamada pelo `zrq-cart.js`) cria a sessão Stripe Checkout com preços validados do lado do servidor, lidos do `/config/artigos_loja.yaml` publicado no próprio site (preço + IVA arredondado por unidade, portes fixos, moeda do `currency` do yaml, morada só em Portugal — as contas do carrinho seguem as mesmas regras).
 - A chave secreta é a variável de ambiente `STRIPE_SECRET_KEY` do Netlify (nunca no repositório).
 - Depois do pagamento o Stripe volta para `checkout/success.html` (esvazia o carrinho) ou `checkout/cancel.html`, com `?lang=en|pt`. São páginas estáticas feitas à mão em `src/checkout/` (não geradas pelos templates), com `noindex`.
 

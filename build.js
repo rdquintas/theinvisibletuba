@@ -2,7 +2,7 @@
 //
 // As fontes estão em src/ e o site gerado vai todo para dist/ (a pasta publicada no Netlify).
 //   src/templates/  páginas (Nunjucks) com as duas línguas no mesmo ficheiro: {{#lang pt}}..{{/lang}}{{#lang en}}..{{/lang}}
-//   src/dados/      yaml com os dados do site (concertos, config, loja)
+//   src/config/     yaml com os dados do site (site, concertos, loja)
 //   o resto de src/ (assets, docs, landing, forms, checkout, ...) é copiado tal e qual para dist/
 //
 // Cada página de src/templates/ é gerada duas vezes: dist/<página> (PT, a língua por defeito) e dist/en/<página> (EN).
@@ -28,8 +28,8 @@ const SRC_DIR = "src";
 // todos os outros *.html são páginas, geradas em PT e em EN (não é preciso registar páginas novas)
 const TEMPLATES_DIR = `${SRC_DIR}/templates`;
 const EVENT_TEMPLATE = "event.html";
-// Dados (yaml). São também publicados em /dados/ (a loja lê o artigos_loja.yaml no browser e na Netlify Function)
-const DATA_DIR = `${SRC_DIR}/dados`;
+// Dados (yaml). São também publicados em /config/ (a loja lê o artigos_loja.yaml no browser e na Netlify Function)
+const DATA_DIR = `${SRC_DIR}/config`;
 
 // Site gerado (publicado no Netlify, ver netlify.toml). É apagado e refeito em cada build: nunca editar.
 const DIST_DIR = "dist";
@@ -53,7 +53,7 @@ const otherLang = (lang) => (lang === "en" ? "pt" : "en");
 const CONCERTS_DIR = "concerts";
 
 // Imagens de partilha (og), sempre em jpg e sem logo nem texto: <id>.jpg por evento (cópia da imagem_v_1440x1800)
-// e default.jpg para as restantes páginas (cópia da default_imagem_v_1440x1800 do config.yaml).
+// e default.jpg para as restantes páginas (cópia da default_imagem_v_1440x1800 do site.yaml).
 // São geradas no build (só existem em dist/).
 const OG_DIR = "assets/img/og";
 // tamanho máximo das cópias jpg (as maiores são reduzidas, para a partilha ser leve)
@@ -66,15 +66,6 @@ const PAGE_404 = "404.html";
 
 // Páginas antigas com o sufixo _en (x_en.html), que passaram para /en/x.html: o _redirects manda-as para o sítio novo
 const OLD_EN_PAGES = ["index", "pictures", "audio", "contact", "mediakit", "shop", "privacy"];
-
-// Redes sociais da banda (dados estruturados / JSON-LD, "sameAs")
-const SOCIAL_LINKS = [
-  "https://www.instagram.com/theinvisibletuba/",
-  "https://open.spotify.com/artist/2CqJyOnOEm6hm7QGs2llZ2",
-  "https://www.tiktok.com/@theinvisibletuba",
-  "https://www.youtube.com/@theinvisibletuba4630",
-  "https://www.facebook.com/theinvisibletuba/",
-];
 
 // Pastas de imagens do site (dentro de src/)
 const IMG_DIRS = ["assets/img", "forms/assets/img"];
@@ -199,9 +190,9 @@ function prepareConcerts(data, config) {
   return data;
 }
 
-// Lê os yaml de src/dados/ e junta tudo num único objeto (disponível em todos os templates)
+// Lê os yaml de src/config/ e junta tudo num único objeto (disponível em todos os templates)
 function loadData() {
-  const config = readYaml(`${DATA_DIR}/config.yaml`);
+  const config = readYaml(`${DATA_DIR}/site.yaml`);
   const concertosYaml = readYaml(`${DATA_DIR}/concertos.yaml`);
   // Fotos dos concertos tal como estão no yaml (sem "/" inicial; só as locais), para as tarefas avif e webp
   const concertImages = (concertosYaml.concerts || [])
@@ -402,7 +393,7 @@ function bandJsonLd(site, data, lang) {
     genre: ["Swing", "Jazz", "New Orleans Jazz"],
     foundingLocation: { "@type": "Place", name: "Lisboa, Portugal" },
     email: data.email || undefined,
-    sameAs: SOCIAL_LINKS,
+    sameAs: data.social_links && data.social_links.length ? data.social_links : undefined, // redes sociais (site.yaml)
   });
 }
 
@@ -592,7 +583,7 @@ const tasks = {
     const concertSrc = concertImages.map(srcPath).filter((p) => {
       if (!CONCERT_IMG_EXT.test(p)) return false;
       if (fs.existsSync(p)) return true;
-      if (!fs.existsSync(avifPath(p))) log.warn(`avif: a foto "${p}" (concertos.yaml / config.yaml) não existe`);
+      if (!fs.existsSync(avifPath(p))) log.warn(`avif: a foto "${p}" (concertos.yaml / site.yaml) não existe`);
       return false;
     });
     const found = IMG_DIRS.map(srcPath)
@@ -659,7 +650,7 @@ const tasks = {
     const ogDir = distPath(OG_DIR);
     fs.rmSync(ogDir, { recursive: true, force: true }); // sem as og de concertos que já não estão ativos
     fs.mkdirSync(ogDir, { recursive: true });
-    // as imagens por defeito também podem estar no config.yaml como .jpg / .png: usa o .avif
+    // as imagens por defeito também podem estar no site.yaml como .jpg / .png: usa o .avif
     const defaultV = avifPath(imagePath(config.default_imagem_v_1440x1800));
     const jobs = events.map((c) => renderEventOg(sharp, c, defaultV));
     jobs.push(renderOgJpg(sharp, srcPath(defaultV), `${ogDir}/${OG_DEFAULT}.jpg`));
@@ -724,7 +715,7 @@ const tasks = {
     log.ok(`sitemap.xml com ${urls.length} endereços`);
   },
 
-  // Escreve o dist/_redirects (Netlify): os endereços antigos (x_en.html, concerts/<id>-en/, app/dados/)
+  // Escreve o dist/_redirects (Netlify): os endereços antigos (x_en.html, concerts/<id>-en/, app/dados/, dados/)
   // passam para os novos com 301 (links já partilhados e o Google), e a 404 em inglês para os endereços em /en/
   redirects: ({ events }) => {
     const lines = ["# Gerado pelo build.js (tarefa redirects): não editar"];
@@ -733,7 +724,9 @@ const tasks = {
       lines.push(`/${CONCERTS_DIR}/${c.id}-en  ${eventPath(c, "en")}  301`);
       lines.push(`/${CONCERTS_DIR}/${c.id}-en/*  ${eventPath(c, "en")}  301`);
     });
-    lines.push("/app/dados/*  /dados/:splat  301");
+    lines.push("/app/dados/*  /config/:splat  301");
+    lines.push("/dados/config.yaml  /config/site.yaml  301");
+    lines.push("/dados/*  /config/:splat  301");
     lines.push(`/en/*  /en/${PAGE_404}  404`);
     writeFile(distPath("_redirects"), lines.join("\n") + "\n");
     log.ok(`_redirects com ${lines.length - 1} regras`);

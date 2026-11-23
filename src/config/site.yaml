@@ -20,3 +20,10 @@ site_url: 'https://theinvisibletuba.com'
 # Podem ser .jpg, .png, .webp, .gif, .tif ou .avif, como as fotos dos concertos (o build cria o .avif e o .webp)
 default_imagem_h: '/assets/img/concertos/default_h.png'
 default_imagem_v_1440x1800: '/assets/img/concertos/default_v.png'
+# Redes sociais da banda (dados estruturados / JSON-LD, "sameAs")
+social_links:
+  - 'https://www.instagram.com/theinvisibletuba/'
+  - 'https://open.spotify.com/artist/2CqJyOnOEm6hm7QGs2llZ2'
+  - 'https://www.tiktok.com/@theinvisibletuba'
+  - 'https://www.youtube.com/@theinvisibletuba4630'
+  - 'https://www.facebook.com/theinvisibletuba/'
