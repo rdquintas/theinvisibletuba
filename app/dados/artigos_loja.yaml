@@ -1,6 +1,6 @@
 currency: EUR
 # Os preços dos produtos (price) são SEM IVA; o IVA e os portes são somados
-# no carrinho (assets/scripts/zrq-cart.js) e no Stripe (api/create-checkout-session.php)
+# no carrinho (assets/scripts/zrq-cart.js) e no Stripe (netlify/functions/create-checkout-session.mjs)
 loja_iva: 23
 # portes de envio fixos (CTT), em euros, por encomenda
 loja_portes: 3.5

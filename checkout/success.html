@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+    Página para onde o Stripe envia o cliente depois do pagamento
+    (success_url em netlify/functions/create-checkout-session.mjs).
+    A língua vem em ?lang=en; sem isso fica em PT. Feita à mão (não é gerada pelo build.js).
+-->
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <title>The Invisible Tuba — Obrigado pela tua compra!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/css/zrq.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        body { background: #252525; }
+        .zrq-order-status { max-width: 520px; margin: 90px auto; padding: 50px 40px; background: #fff; text-align: center; }
+        .zrq-order-status img { width: 90px; margin-bottom: 20px; }
+        .zrq-order-status h1 { font-size: 22px; margin-bottom: 16px; }
+        .zrq-order-status p { color: #666; margin-bottom: 28px; }
+        .zrq-order-status .btn { border: 3px solid #252525; padding: 10px 24px; margin: 0 6px; display: inline-block; text-transform: uppercase; font-size: 12px; font-weight: bold; letter-spacing: .5px; color: #252525; }
+        .zrq-order-status .btn:hover { background: #af8c45; border-color: #af8c45; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="zrq-order-status">
+        <img src="/assets/img/logo_transp_v00.png" alt="The Invisible Tuba" />
+        <h1 id="title">Obrigado pela tua compra! 😁</h1>
+        <p id="body">O teu pagamento foi confirmado. Vais receber um email com os detalhes da encomenda em breve.</p>
+        <a class="btn" id="back" href="/shop.html">Voltar à Loja</a>
+        <a class="btn" id="home" href="/index.html">Página Inicial</a>
+    </div>
+    <script>
+        // a compra terminou: esvazia o carrinho
+        try { localStorage.removeItem('tib_shop_cart'); } catch (e) {}
+
+        if (new URLSearchParams(window.location.search).get('lang') === 'en') {
+            document.documentElement.lang = 'en';
+            document.title = 'The Invisible Tuba — Thank you for your order!';
+            document.getElementById('title').textContent = 'Thank you for your order! 😁';
+            document.getElementById('body').textContent = 'Your payment has been confirmed. You will receive an email with your order details shortly.';
+            var back = document.getElementById('back');
+            back.textContent = 'Back to Shop';
+            back.href = '/shop_en.html';
+            var home = document.getElementById('home');
+            home.textContent = 'Home';
+            home.href = '/index_en.html';
+        }
+    </script>
+</body>
+</html>

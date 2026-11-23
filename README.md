@@ -22,3 +22,11 @@ This is the repo for the website:
   ``npm run git -- 'message here'``
 
   this will do a git add, git commit and git push
+
+## How to deploy ?
+
+The site is hosted on [Netlify](https://www.netlify.com/) (see ``netlify.toml``):
+
+- every push to the deployed branch triggers a build (``npm run netlify``), which publishes the ``dist`` folder (the site without the development files)
+- ``.avif`` / ``.webp`` images are **not** generated on Netlify: run ``npm run build`` locally and commit them
+- the shop checkout is the Netlify Function ``netlify/functions/create-checkout-session.mjs``; set the ``STRIPE_SECRET_KEY`` environment variable in the Netlify site settings

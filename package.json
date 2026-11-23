@@ -1,8 +1,10 @@
 {
   "name": "The Invisible Tuba",
   "version": "0.1.0",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
   "devDependencies": {
-    "js-yaml": "^4.1.0",
     "nunjucks": "^3.2.4",
     "sharp": "^0.34.5"
   },
@@ -15,6 +17,7 @@
     "webp": "node build.js webp",
     "sitemap": "node build.js sitemap",
     "clean-concerts": "node build.js clean-concerts",
+    "netlify": "node build.js clean-concerts og html sitemap dist",
     "git": "git add . && git commit -m",
     "postgit": "git push"
   }

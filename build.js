@@ -1,7 +1,8 @@
 // Build do site (sem Grunt): node build.js [tarefa ...]
 //
-// Tarefas: clean-concerts, avif, og, webp, html, sitemap, watch
+// Tarefas: clean-concerts, avif, og, webp, html, sitemap, dist, watch
 // Sem tarefas corre o build completo: clean-concerts → avif → og → webp → html → sitemap
+// (dist só é usada no Netlify: npm run netlify)
 // (ver os scripts em package.json: npm run build, npm run html, ...)
 
 const fs = require("fs");
@@ -28,8 +29,26 @@ const OG_MAX_W = 1080;
 const OG_MAX_H = 1920;
 const OG_DEFAULT = "default";
 
-// Página de erro "não encontrado"
+// Página de erro "não encontrado" (o Netlify serve-a sozinho para endereços que não existem)
 const PAGE_404 = "404.html";
+
+// Pasta publicada no Netlify (netlify.toml): cópia do site sem os ficheiros de desenvolvimento.
+// Fora ficam também todos os ficheiros/pastas da raiz começados por "." (.git, .vscode, .netlify, .env, ...)
+// e os templates de app/ (só app/dados/ é publicado: a loja lê os yaml no browser e na Netlify Function).
+const DIST_DIR = "dist";
+const DIST_EXCLUDE = [
+  "node_modules",
+  "netlify",
+  "netlify.toml",
+  "build.js",
+  "package.json",
+  "package-lock.json",
+  "CLAUDE.md",
+  "README.md",
+  "assets/scss",
+  "landing/concert/_sources",
+  "api", // antiga loja em PHP: pode ainda existir localmente o api/config.php com a chave secreta do Stripe
+];
 
 // Páginas normais (destino: origem). Páginas novas têm de ser adicionadas aqui (render e sitemap).
 const PAGE_FILES = {
@@ -615,6 +634,31 @@ const tasks = {
         `\n</urlset>\n`
     );
     log.ok(`sitemap.xml com ${urls.length} endereços`);
+  },
+
+  // Copia o site para DIST_DIR (a pasta que o Netlify publica), sem os ficheiros de desenvolvimento
+  dist: () => {
+    const dataDir = `${APP_DIR}/dados`;
+    const isPublic = (rel) => {
+      if (rel.startsWith(".") || rel === DIST_DIR || rel === ORIGINAIS_DIR) return false;
+      if (DIST_EXCLUDE.some((p) => rel === p || rel.startsWith(p + "/"))) return false;
+      if (rel.startsWith(APP_DIR + "/") && rel !== dataDir && !rel.startsWith(dataDir + "/")) return false;
+      return true;
+    };
+    fs.rmSync(DIST_DIR, { recursive: true, force: true });
+    let copied = 0;
+    const copyDir = (dir) => {
+      fs.readdirSync(dir || ".", { withFileTypes: true }).forEach((e) => {
+        const rel = dir ? `${dir}/${e.name}` : e.name;
+        if (!isPublic(rel)) return;
+        if (e.isDirectory()) return copyDir(rel);
+        fs.mkdirSync(path.dirname(`${DIST_DIR}/${rel}`), { recursive: true });
+        fs.copyFileSync(rel, `${DIST_DIR}/${rel}`);
+        copied++;
+      });
+    };
+    copyDir("");
+    log.ok(`${copied} ficheiros copiados para ${DIST_DIR}/`);
   },
 };
 

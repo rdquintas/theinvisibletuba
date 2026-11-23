@@ -1,5 +1,9 @@
-# Stripe / shop secrets
+# Antigo ficheiro de segredos do Stripe (PHP); a chave agora é a variável STRIPE_SECRET_KEY no Netlify
 api/config.php
+
+# Netlify: pasta publicada (gerada no build) e ficheiros locais do Netlify CLI
+dist/
+.netlify/
 
 # Logs
 logs

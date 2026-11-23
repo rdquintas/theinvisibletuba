@@ -3,7 +3,7 @@
 
 {#
     PÁGINA 404 — mostrada pelo servidor em qualquer endereço que não exista
-    (ErrorDocument 404 /404.html no .htaccess); por isso os links são todos absolutos (root = "/")
+    (o Netlify serve a 404.html da raiz sozinho); por isso os links são todos absolutos (root = "/")
 #}
 {% set root = "/" %}
 {% set noindex = true %}
