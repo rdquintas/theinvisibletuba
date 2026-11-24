@@ -1,1 +1,6 @@
-{}
+{
+  // Os yaml de src/config/ são dados do site, não playbooks Ansible (o SchemaStore associa o site.yaml ao schema do Ansible)
+  "yaml.schemas": {
+    "./.vscode/dados.schema.json": "src/config/*.yaml"
+  }
+}

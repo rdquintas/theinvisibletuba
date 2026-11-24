@@ -4,26 +4,27 @@ phone1_whatsapp: '351967285043'
 phone2: ''
 phone2_name: ''
 email: theinvisibletubapt@gmail.com
-newsletter_link: 'https://theinvisibletuba.com/forms/newsletter'
 instagram_followers: '10.000'
 newsletter_subscribers: '1000'
-epk_link_pt: /docs/epk/TheInvisibleTuba_PT.pdf
-epk_link_en: /docs/epk/TheInvisibleTuba_EN.pdf
 concert:
   isEnabled: true
 # Loja: true mostra o carrinho e o link "Shop" no menu (shop.html funciona sempre)
 loja_ativa: false
-# Domínio do site (usado nos links de partilha / imagens og das páginas de evento)
-site_url: 'https://theinvisibletuba.com'
+# Links do site (nos templates: {{ links.instagram }}, ...)
+# site_url: domínio do site (usado nos links de partilha / imagens og e no JSON-LD)
+# instagram, spotify, tiktok, youtube e facebook são as redes sociais da banda (também no JSON-LD, "sameAs")
+links:
+  newsletter: 'https://theinvisibletuba.com/forms/newsletter'
+  epk_pt: '/docs/epk/TheInvisibleTuba_PT.pdf'
+  epk_en: '/docs/epk/TheInvisibleTuba_EN.pdf'
+  site_url: 'https://theinvisibletuba.com'
+  instagram: 'https://www.instagram.com/theinvisibletuba/'
+  spotify: 'https://open.spotify.com/artist/2CqJyOnOEm6hm7QGs2llZ2'
+  tiktok: 'https://www.tiktok.com/@theinvisibletuba'
+  youtube: 'https://www.youtube.com/@theinvisibletuba4630'
+  facebook: 'https://www.facebook.com/theinvisibletuba/'
 # Imagens do hero das páginas de evento quando o concerto não define imagem_h / imagem_v_1440x1800.
 # A default_imagem_v_1440x1800 é também a imagem de partilha (og) das páginas que não são concertos.
 # Podem ser .jpg, .png, .webp, .gif, .tif ou .avif, como as fotos dos concertos (o build cria o .avif e o .webp)
 default_imagem_h: '/assets/img/concertos/default_h.png'
 default_imagem_v_1440x1800: '/assets/img/concertos/default_v.png'
-# Redes sociais da banda (dados estruturados / JSON-LD, "sameAs")
-social_links:
-  - 'https://www.instagram.com/theinvisibletuba/'
-  - 'https://open.spotify.com/artist/2CqJyOnOEm6hm7QGs2llZ2'
-  - 'https://www.tiktok.com/@theinvisibletuba'
-  - 'https://www.youtube.com/@theinvisibletuba4630'
-  - 'https://www.facebook.com/theinvisibletuba/'

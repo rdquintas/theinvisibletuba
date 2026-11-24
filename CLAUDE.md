@@ -64,7 +64,7 @@ Não há testes nem linter. O SCSS em `src/assets/scss/` não é compilado por n
 
 ### Dados (`src/config/`)
 Os três YAML são juntados num único objeto de dados disponível em todos os templates:
-- `site.yaml` — contactos, `site_url`, `social_links` (redes sociais, `sameAs` do JSON-LD), imagens por defeito dos eventos, `loja_ativa` (mostra o carrinho e o link "Shop" e carrega os scripts da loja em todas as páginas).
+- `site.yaml` — contactos, `links` (newsletter, EPK, `site_url` e redes sociais — `instagram`, `spotify`, `tiktok`, `youtube`, `facebook`, também o `sameAs` do JSON-LD; nos templates `{{ links.instagram }}`), imagens por defeito dos eventos, `loja_ativa` (mostra o carrinho e o link "Shop" e carrega os scripts da loja em todas as páginas).
 - `concertos.yaml` — lista `concerts`. O cabeçalho do ficheiro documenta os campos. `prepareConcerts` valida (`data` em `yyyymmdd` ou `yyyymm??`; `id` único em kebab-case, porque é o URL), calcula `day`/`month`/`month_en`/`isPast` **no momento do build** e ordena por data.
 - `artigos_loja.yaml` — produtos da loja (`price` sem IVA), `loja_iva` (%) e `loja_portes` (EUR por encomenda), usados pelo carrinho e pelo checkout.
 
@@ -82,6 +82,7 @@ Cada concerto com `isEnabled: true` gera `dist/concerts/<id>/index.html` (PT) e 
 As imagens do site são `.avif`; a tarefa `webp` cria cópias `.webp` (que têm de ir no commit). `src/assets/scripts/avif-fallback.js`, carregado no `<head>` (`_head.html`, landing pages e newsletter), troca `.avif` por `.webp` em browsers sem AVIF (Safari/iOS < 16): nos `<img>` quando dão erro, e nos `background-image` (inline, CSS e postos por JS) depois de testar o suporte. Nos templates continua-se a usar só `.avif`.
 
 ### Outras pastas (em `src/`, copiadas tal e qual)
+Nos ficheiros estáticos `.html` / `.txt` / `.xml` (landing pages, newsletter, docs, `robots.txt`) o `copyStatic` do build.js troca `{{ links.xxx }}` pelo link do `site.yaml` (só isto: não passam pelo Nunjucks; dá erro se o link não existir). Os links da banda e do site nunca se escrevem à mão: vêm sempre de `links` no `site.yaml`.
 - `forms/newsletter/` — página de subscrição da newsletter (formulário Brevo); independente dos templates.
 - `landing/` — landing pages autónomas (concerto multilingue).
 - `docs/` — EPK em PDF e media kit.

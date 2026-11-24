@@ -3,4 +3,4 @@ Disallow: /api/
 Disallow: /app/
 Disallow: /landing/concert/_sources/
 
-Sitemap: https://theinvisibletuba.com/sitemap.xml
+Sitemap: {{ links.site_url }}/sitemap.xml

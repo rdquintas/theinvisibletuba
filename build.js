@@ -216,7 +216,14 @@ function listPages() {
 // ---------------------------------------------------------------------------
 // Endereços
 
-const siteUrl = (data) => String(data.site_url || "").replace(/\/+$/, "");
+const siteUrl = (data) => String((data.links && data.links.site_url) || "").replace(/\/+$/, "");
+
+// redes sociais da banda (links do site.yaml), para o "sameAs" do JSON-LD
+const SOCIAL_KEYS = ["instagram", "spotify", "tiktok", "youtube", "facebook"];
+function socialLinks(data) {
+  const urls = SOCIAL_KEYS.map((k) => data.links && data.links[k]).filter(Boolean);
+  return urls.length ? urls : undefined;
+}
 
 // endereço (sem domínio) de uma página numa língua: "/contact.html", "/en/contact.html", "/" e "/en/" para a index
 function pagePath(file, lang) {
@@ -393,7 +400,7 @@ function bandJsonLd(site, data, lang) {
     genre: ["Swing", "Jazz", "New Orleans Jazz"],
     foundingLocation: { "@type": "Place", name: "Lisboa, Portugal" },
     email: data.email || undefined,
-    sameAs: data.social_links && data.social_links.length ? data.social_links : undefined, // redes sociais (site.yaml)
+    sameAs: socialLinks(data), // redes sociais (links do site.yaml)
   });
 }
 
@@ -539,13 +546,29 @@ function staticRel(file) {
   return rel;
 }
 
+// Ficheiros estáticos de texto onde "{{ links.xxx }}" é trocado pelo link do site.yaml ao copiar
+// (landing pages, newsletter, docs, robots.txt: não passam pelo Nunjucks, só por esta troca)
+const STATIC_LINKS_EXT = /\.(html?|txt|xml)$/i;
+const STATIC_LINKS_RE = /\{\{\s*links\.([A-Za-z0-9_]+)\s*\}\}/g;
+
+// troca "{{ links.xxx }}" pelos links do site.yaml (erro se o link não existir)
+function replaceLinks(text, rel) {
+  if (text.search(STATIC_LINKS_RE) < 0) return text; // (search: o .test de um regex /g guarda o lastIndex)
+  const links = readYaml(`${DATA_DIR}/site.yaml`).links || {};
+  return text.replace(STATIC_LINKS_RE, (m, key) => {
+    if (links[key] == null) throw new Error(`${rel}: o link "${key}" não existe em links no site.yaml`);
+    return String(links[key]);
+  });
+}
+
 // copia um ficheiro de src/ para dist/ (só os que vão para o site)
 function copyStatic(file) {
   const rel = staticRel(file);
   if (!rel || !fs.existsSync(file) || !fs.statSync(file).isFile()) return false;
   const dest = distPath(rel);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.copyFileSync(file, dest);
+  if (STATIC_LINKS_EXT.test(rel)) fs.writeFileSync(dest, replaceLinks(fs.readFileSync(file, "utf8"), rel));
+  else fs.copyFileSync(file, dest);
   return true;
 }
 
@@ -757,6 +780,12 @@ function watch() {
     const files = [...changed];
     changed.clear();
     files.forEach(syncStatic);
+    // mudou o site.yaml: volta a copiar os ficheiros estáticos que usam {{ links.xxx }}
+    if (files.some((f) => /\/config\/site\.ya?ml$/.test(f))) {
+      listFiles(SRC_DIR)
+        .filter((f) => staticRel(f) && STATIC_LINKS_EXT.test(f))
+        .forEach(syncStatic);
+    }
     const html = files.some((f) => !staticRel(f) || /\.(html|ya?ml|css|js)$/i.test(f));
     if (!html) return log.ok(`${files.length} ficheiros copiados`);
     run(["html", "sitemap"]).catch((e) => console.error(`ERRO: ${e.message}`));
